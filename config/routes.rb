@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :user
   root 'welcome#index'
 end
