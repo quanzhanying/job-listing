@@ -2,5 +2,16 @@
     <h2>新增讨论版</h2>
 
     <hr>
-    <%= render "form" %>
+    <%= form_for @group do |f| %>
+
+    標題
+    <%= f.text_field :title %>
+    <br>
+    敘述
+    <br>
+    <%= f.text_area :description %>
+    <br>
+
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+    <% end %>
 </div>
