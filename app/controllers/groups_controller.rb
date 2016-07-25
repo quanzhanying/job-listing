@@ -8,9 +8,13 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
+
+
   def show
      @group = Group.find(params[:id])
    end
+
+
 
    def edit
      @group = Group.find(params[:id])
@@ -33,6 +37,12 @@ class GroupsController < ApplicationController
     @group.update(group_params)
 
     redirect_to groups_path, notice: "Update Success"
+  end
+
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy(group_params)
+    redirect_to groups_path, alert: "Group deleted"
   end
 
    private
