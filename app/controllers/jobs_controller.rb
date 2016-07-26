@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 	before_action :find_job_and_check_permit, only: [:destroy, :edit, :update]
 
 	def index
-		@jobs = Job.all
+		@jobs = Job.where(:is_hidden => flase).order("created_at DESC")
 	end
 
 	def show
