@@ -4,7 +4,7 @@ class Admin::JobsController < ApplicationController
   before_action :find_job,only:[:edit,:update,:destroy]
 
   def index
-    @jobs = current_user.jobs
+    @jobs = Job.all
   end
 
   def show
