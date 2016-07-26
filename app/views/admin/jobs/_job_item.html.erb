@@ -1,10 +1,11 @@
 <tr>
   <td>
-    <% if job.is_hidden %>
+    <!-- <% if job.is_hidden %>
       <span style="color:red">( Private )</span>
     <% else %>
       <span style="color:green">( Public )</span>
-    <% end %>
+    <% end %> -->
+    <%= render_job_status(job) %>
   </td>
   <td><%= link_to(job.title, admin_job_path(job)) %></td>
   <td><%= render_job_description(job) %></td>
