@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_many :jobs
 
   def admin?
-    email == '18301662790@163.com'
+    is_admin
   end
 end
