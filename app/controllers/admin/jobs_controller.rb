@@ -20,6 +20,8 @@ class Admin::JobsController < ApplicationController
   end
 
   def create
+    @job = Job.new(job_params)
+    @job.user = current_user
     if @job.save
       redirect_to admin_jobs_path
     else
@@ -29,7 +31,7 @@ class Admin::JobsController < ApplicationController
 
   def update
     if @job.update(job_params)
-      redirect_to admin_jobs_path,notice: "Update Success"
+      redirect_to admin_jobs_path, notice: "Update Success"
     else
       render :edit
     end
@@ -37,12 +39,12 @@ class Admin::JobsController < ApplicationController
 
   def destroy
     @job.destroy
-    redirect_to admin_jobs_path,alert: "Job deleted!"
+    redirect_to admin_jobs_path, alert: "Job deleted!"
   end
 
   private
 
-  
+
 
   def find_job
     @job = Job.find(params[:id])
