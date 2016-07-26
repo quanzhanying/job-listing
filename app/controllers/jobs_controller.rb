@@ -3,8 +3,9 @@ class JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
   end
+  
   def index
-    @jobs = Job.all
+    @jobs = Job.all.where("is_hidden = 'false'")
   end
 
   def new
