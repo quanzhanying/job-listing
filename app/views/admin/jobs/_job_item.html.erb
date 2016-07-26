@@ -1,0 +1,12 @@
+<tr>
+  <td>#</td>
+  <td><%= link_to(job.title, admin_job_path(job)) %></td>
+  <td><%= render_job_description(job) %></td>
+  <td><%= job.created_at %></td>
+  <td>
+    <% if current_user && current_user == job.user %>
+      <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default") %>
+      <%= link_to("Delete", admin_job_path(job), class: "btn btn-sm btn-default", method: :delete, data: {confirm: "Admin, Are you sure?"}) %>
+    <% end %>
+  </td>
+</tr>

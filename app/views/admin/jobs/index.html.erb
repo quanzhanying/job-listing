@@ -1,0 +1,16 @@
+<h1>...Admin...XD...</h1>
+<div class="col-md-12">
+  <div class="Job"><%= link_to("New Job", new_admin_job_path, class: "btn btn-primary pull-right") %></div>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Title</td>
+      <td>Description</td>
+      <td>Create At</td>
+    </tr>
+  </thead>
+  <tbody><%= render :partial => "job_item", :collection => @jobs, :as => :job %></tbody>
+</table>
