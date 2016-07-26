@@ -1,0 +1,22 @@
+<div class="col-md-12">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td><span class="glyphicon glyphicon-asterisk"></span></td>
+        <td>Title</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+      <tr>
+        <td><span class="glyphicon glyphicon-asterisk"></span></td>
+        <td><%= link_to(job.title, job_path(job)) %></td>
+        <td><%= job.description %></td>
+        <%#<td class:"btn btn-primary pull-right" >Edit</td>
+        <td class:"btn btn-primary pull-right" >Delete</td>%>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
