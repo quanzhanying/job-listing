@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all.where("is_hidden = 'false'").order(created_at: :desc)
+    @jobs = Job.all.show_public.recent
   end
 
   def new
