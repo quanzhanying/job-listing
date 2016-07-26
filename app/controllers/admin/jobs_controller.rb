@@ -7,8 +7,24 @@ class Admin::JobsController < ApplicationController
     @jobs = current_user.jobs
   end
 
+  def show
+    @job = Job.find(params[:id])
+  end
+
   def edit
 
+  end
+
+  def new
+    @job = Job.new
+  end
+
+  def create
+    if @job.save
+      redirect_to admin_jobs_path
+    else
+      render :new
+    end
   end
 
   def update
