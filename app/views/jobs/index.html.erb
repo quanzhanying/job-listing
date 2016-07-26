@@ -1,6 +1,10 @@
 <div class="col-md-12">
   <div class="job">
-    <%= link_to("New Job", new_job_path, class: "btn btn-primary pull-right") %>
+
+    <% if current_admin %>
+      <%= link_to("New Job", new_job_path, class: "btn btn-primary pull-right") %>
+    <% end %>
+
   </div>
   <table class="table table-hover">
     <thead>
@@ -8,22 +12,12 @@
         <td>#</td>
         <td>Title</td>
         <td>Contact</td>
+        <td>Creator</td>
         <td>Created Time</td>
       </tr>
     </thead>
     
-     <% @jobs.each do |job| %>
-          <td>#</td>
-          <td><%= link_to(job.title, job_path(job)) %></td>
-          <td><%= job.contact %></td>
-          <td><%= job.created_at %></td>
-          <td>
-              <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default", 
-                          method: :delete, data: { confirm: "Are you sure?" } )%>
-          </td>
-        </tr>
-      <% end %>
+     <%= render :partial => "job_item", :collection => @jobs, :as => :job %>
     
   </table>
 </div>

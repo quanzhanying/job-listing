@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
 
+	before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
 	before_action :find_job_and_check_permit, only: [:destroy, :edit, :update]
 
 	def index
@@ -16,6 +17,7 @@ class JobsController < ApplicationController
 
 	def create
 		@job = Job.new(job_params)
+		@job.admin = current_admin
 
 		if @job.save
 			redirect_to jobs_path
