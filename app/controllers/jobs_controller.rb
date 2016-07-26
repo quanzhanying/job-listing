@@ -1,15 +1,22 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
+
+  def index
+    @jobs = Job.all
+  end
+
   def new
     @job = Job.new
   end
 
   def create
     @job = Job.new(job_paramas)
+    @job.user = current_user
+
     if @job.save
       redirect_to jobs_path, notice: "Job Create Success."
     else
-      redirect_to root_path, alert: "You have no permission."
+      render :new
     end
   end
 
@@ -22,12 +29,12 @@ class JobsController < ApplicationController
     if @job.update(job_paramas)
       redirect_to jobs_path, notice: "Job Update Success."
     else
-      redirect_to root_path, alert: "You have no permission."
+      render :edit
     end
   end
 
   def destroy
-    @job = Job.find(:first)
+    @job = Job.find(params[:id])
     @job.destroy
     redirect_to jobs_path, alert: "Job Del Success."
   end
