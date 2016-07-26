@@ -1,0 +1,19 @@
+<%= form_for @job do |f| %>
+<% if @job.errors.any? %>
+<ul>
+  <% @job.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+职位
+<%= f.text_field :title %>
+<br>
+叙述
+<br>
+<%= f.text_area :description %>
+<br>
+
+<%= f.submit "Submit", :disable_with => 'Submitting...' %>
+<% end %>
