@@ -1,0 +1,27 @@
+<%= form_for @job do |f| -%>
+<% if @job.errors.any? %>
+<ul>
+  <% @job.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+职位
+<%= f.text_field :title %>
+<br>
+描述
+<br>
+<%= f.text_area :description %>
+<br>
+工资上限
+<%= f.text_field :wage_upper_bound %>
+<br>
+工资下限
+<%= f.text_field :wage_lower_bound %>
+<br>
+联系方式
+<%= f.text_field :contact %>
+<br>
+
+<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end -%>
