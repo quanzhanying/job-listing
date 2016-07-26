@@ -2,6 +2,7 @@ class JobsController < ApplicationController
     before_action :authenticate_user!,only:[:new,:create,:edit,:update,:destroy]
     before_action :find_job_and_check_permission,only:[:edit,:update,:destroy]
 
+
     def index
       @jobs = Job.all
     end
@@ -16,6 +17,7 @@ class JobsController < ApplicationController
 
     def create
       @job = Job.new(job_params)
+      @job.user = current_user
 
       if @job.save
         redirect_to jobs_path
@@ -40,6 +42,8 @@ class JobsController < ApplicationController
       redirect_to jobs_path,alert: "Job Deleted"
     end
 
+
+
     private
 
     def job_params
@@ -49,4 +53,6 @@ class JobsController < ApplicationController
     def find_job_and_check_permission
       @job = Job.find(params[:id])
     end
+
+    
 end

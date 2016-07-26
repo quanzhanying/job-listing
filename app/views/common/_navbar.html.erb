@@ -23,7 +23,7 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li></li>
+              <li><%= link_to("My Jobs",admin_jobs_path)%></li>
               <li class="divider"></li>
               <li><%= link_to("登出",destroy_user_session_path,method: :delete) %></li>
             </ul>
