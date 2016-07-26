@@ -5,9 +5,9 @@ module JobsHelper
 
   def render_job_status(job)
     if job.is_hidden
-      content_tag(:span, "( Private )", style: "color:red")
+      content_tag(:span, "", style: "color:red", class: "fa fa-lock fa-1")
     else
-      content_tag(:span, "( Private )", style: "color:green")
+      content_tag(:span, "", style: "color:green", class: "fa fa-globe fa-1")
     end
   end
 end
