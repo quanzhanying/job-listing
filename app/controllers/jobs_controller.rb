@@ -13,6 +13,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = current_user
     if @job.save
+      current_user.join!(@job)
       redirect_to jobs_path
     else
       render :new
@@ -48,7 +49,7 @@ class JobsController < ApplicationController
   end
 
   def find_job_and_check_permission
-    @group = Job.find(params[:id])
+    @job = Job.find(params[:id])
 
     if current_user != @job.user
       redirect_to root_path, alert: "Fuck! You have no permission."

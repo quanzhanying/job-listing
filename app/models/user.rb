@@ -12,4 +12,8 @@ class User < ApplicationRecord
     created_jobs.include?(job)
 
   end
+
+  def join!(job)
+    created_jobs << job
+  end
 end
