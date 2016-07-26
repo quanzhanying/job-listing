@@ -4,6 +4,14 @@
     <hr>
     <%= form_for @job do |f| %>
 
+    <% if @job.errors.any? %>
+<ul>
+  <% @job.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
     职位名称
     <%= f.text_field :title %>
     <br>
