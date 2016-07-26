@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 	before_action :find_job_and_check_permit, only: [:destroy, :edit, :update]
 
 	def index
-		@jobs = Job.where(:is_hidden => flase).order("created_at DESC")
+		@jobs = Job.where(:is_hidden => false).order("created_at DESC")
 	end
 
 	def show
@@ -54,6 +54,6 @@ class JobsController < ApplicationController
 	end
 
 	def job_params
-		params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact)
+		params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact, :is_hidden)
 	end
 end
