@@ -1,19 +1,16 @@
 <%= form_for @job do |f| %>
-<% if @job.errors.any? %>
-<ul>
-  <% @job.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
 
-职位
-<%= f.text_field :title %>
-<br>
-叙述
-<br>
-<%= f.text_area :description %>
-<br>
+<div class="form-job">
+  <div class="form-job string optional">
+    <%= f.label "title", :class => "string optional control-label" %>
+    <%= f.text_field :title, :class =>"string optional form-control form-control" %>
+  </div>
 
-<%= f.submit "Submit", :disable_with => 'Submitting...' %>
+  <div class="form-job string optional">
+    <%= f.label "description", :class => "string optional control-label" %>
+    <%= f.text_area :description, :class => "string optional form-control" %>
+  </div>
+
+</div>
+<%= f.submit"Submit", class:"btn btn-primary", data:{ disable_with:"Submitting..."} %>
 <% end %>
