@@ -47,6 +47,24 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path, alert: "Job Delete Success."
   end
 
+  def open
+    @job = Job.find(params[:id])
+    if @job.update_columns(is_hidden: "false")
+      redirect_to admin_jobs_path, notice: "Open Job Success."
+    else
+      redirect_to admin_jobs_path, notice: "Open Job Failed."
+    end
+  end
+
+  def close
+    @job = Job.find(params[:id])
+    if @job.update_columns(is_hidden: "true")
+      redirect_to admin_jobs_path, notice: "Close Job Success."
+    else
+      redirect_to admin_jobs_path, notice: "Close Job Failed."
+    end
+  end
+
   private
 
   def require_is_admin

@@ -17,6 +17,12 @@
     <% if current_user && current_user == job.user %>
       <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default") %>
       <%= link_to("Delete", admin_job_path(job), class: "btn btn-sm btn-default", method: :delete, data: {confirm: "Admin, Are you sure?"}) %>
+      <% if job.is_hidden %>
+        <%= link_to("open", open_admin_job_path(job), class: "btn btn-sm btn-default", method: :post) %>
+      <% else %>
+        <%= link_to("close", close_admin_job_path(job), class: "btn btn-sm btn-default") %>
+      <% end %>
+
     <% end %>
   </td>
 </tr>
