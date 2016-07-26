@@ -2,6 +2,9 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
   def show
     @job = Job.find(params[:id])
+    if @job.is_hidden
+      redirect_to jobs_path, alert: "Your operation have been denied."
+    end
   end
 
   def index
