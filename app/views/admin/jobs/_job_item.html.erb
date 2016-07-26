@@ -1,5 +1,11 @@
 <tr>
-  <td>#</td>
+  <td>
+    <% if job.is_hidden %>
+      <span style="color:red">( Private )</span>
+    <% else %>
+      <span style="color:green">( Public )</span>
+    <% end %>
+  </td>
   <td><%= link_to(job.title, admin_job_path(job)) %></td>
   <td><%= render_job_description(job) %></td>
   <td><%= job.wage_lower_bound %></td>
