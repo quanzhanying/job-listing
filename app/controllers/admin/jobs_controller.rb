@@ -51,7 +51,7 @@ class Admin::JobsController < ApplicationController
   private
 
   def require_is_admin
-    if !current_user.admin?(current_user.email)
+    if !current_user.admin?
       redirect_to root_path, alert: "You have no permission."
     end
   end

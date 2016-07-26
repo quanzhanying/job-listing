@@ -13,7 +13,7 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><% if current_user.admin?(current_user.email) %><%= link_to("Admin Dashboard", admin_jobs_path) %><% end %></li>
+              <li><% if current_user.admin? %><%= link_to("Admin Dashboard", admin_jobs_path) %><% end %></li>
               <li><%= link_to("Log out", destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
