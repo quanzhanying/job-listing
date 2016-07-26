@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
-
+  def show
+    @job = Job.find(params[:id])
+  end
   def index
     @jobs = Job.all
   end
