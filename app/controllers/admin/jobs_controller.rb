@@ -14,7 +14,6 @@ class Admin::JobsController < ApplicationController
     @job = Job.new
   end
 
-
   def create
     @job = Job.new(job_params)
     @job.user = current_user
@@ -37,7 +36,7 @@ class Admin::JobsController < ApplicationController
     if @job.update(job_params)
       redirect_to admin_jobs_path, notice: "Admin Update Success."
     else
-      puts "--------------"
+      # puts "--------------"
       render :edit
     end
   end
@@ -57,6 +56,6 @@ class Admin::JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
   end
 end
