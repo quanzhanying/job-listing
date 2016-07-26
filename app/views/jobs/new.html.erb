@@ -1,0 +1,18 @@
+<div class="col-md-4 col-md-offset-4">
+    <h2>新增职位</h2>
+
+    <hr>
+    <%= form_for @job do |f| %>
+
+    职位名称
+    <%= f.text_field :title %>
+    <br>
+    职位描述
+    <br>
+    <%= f.text_area :description %>
+    <br>
+
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+    <% end %>
+
+</div>
