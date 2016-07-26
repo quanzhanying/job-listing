@@ -19,9 +19,11 @@
           <td><%= job.description %></td>
           <td><%= job.user.email %></td>
           <td>
+            <% if current_user && current_user == group.user %>
               <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
               <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you fucking sure?" } )%>
+            <% end %>
           </td>
         </tr>
       <% end %>
