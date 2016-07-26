@@ -27,6 +27,12 @@ def update
   redirect_to jobs_path, notice: "Update Success"
 end
 
+def destroy
+  @job = Job.find(params[:id])
+  @job.destroy
+  redirect_to jobs_path, alert: "Job Deleted"
+end
+
 
 private
 
