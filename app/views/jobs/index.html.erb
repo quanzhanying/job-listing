@@ -1,10 +1,14 @@
 <div class="col-md-12">
+  <div class="group">
+    <%= link_to("New Job", new_job_path, class: "btn btn-primary pull-right") %>
+  </div>
   <table class="table table-hover">
     <thead>
       <tr>
         <td><span class="glyphicon glyphicon-asterisk"></span></td>
         <td>Title</td>
         <td>Description</td>
+        <td>Created Time</td>
       </tr>
     </thead>
     <tbody>
@@ -13,8 +17,12 @@
         <td><span class="glyphicon glyphicon-asterisk"></span></td>
         <td><%= link_to(job.title, job_path(job)) %></td>
         <td><%= job.description %></td>
-        <%#<td class:"btn btn-primary pull-right" >Edit</td>
-        <td class:"btn btn-primary pull-right" >Delete</td>%>
+        <td><%= job.created_at %> </td>
+        <td>
+          <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default") %>
+          <%= link_to("Delete", job_path(job), class: "btn btn-sm btn-default",
+          method: :delete, data: { confirm: "Are you sure?"} )%>
+        </td>
       </tr>
       <% end %>
     </tbody>
