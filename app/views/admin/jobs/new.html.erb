@@ -1,0 +1,12 @@
+<div class="col-md-4 col-md-offset-4">
+  <h2>Add a job</h2>
+
+  <hr>
+  <%= simple_form_for @job do |f| %>
+   <div class="form-Job">
+     <%= f.input :title, input_html: { class: "form-control"} %>
+     <%= f.input :description, input_html: { class: "form-control"} %>
+   </div>
+   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..."} %>
+   <% end %>
+</div>
