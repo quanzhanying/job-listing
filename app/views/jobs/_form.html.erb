@@ -2,6 +2,9 @@
   <div class="form-job">
     <%= f.input :title, input_html: { class: "form-control"} %>
     <%= f.input :description, input_html: { class: "form-control"} %>
+    <%= f.input :wage_upper_bound, input_html: { class: "form-control"} %>
+    <%= f.input :wage_lower_bound, input_html: { class: "form-control"} %>
+    <%= f.input :contact_email, input_html: { class: "form-control"} %>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
 <% end %>
