@@ -29,6 +29,12 @@ class JobsController < ApplicationController
     redirect_to jobs_path, notice: "Upadate Success"
   end
 
+  def destroy
+    @group = Job.find(params[:id])
+    @group.destroy
+    redirect_to jobs_path, alert: "Job deleted"
+  end
+
 private
 
 def job_params
