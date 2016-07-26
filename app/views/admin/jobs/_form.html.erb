@@ -2,10 +2,10 @@
   <div class="form-group">
     <%= job.input :title,input_html:{class: "form-control"} %>
     <%= job.input :description,input_html:{class: "form-control"} %>
-    <%= job.input :wage_lower_bound,input_html:{class: "form-control"} %>
-    <%= job.input :wage_upper_bound,input_html:{class: "form-control"} %>
+    <%= job.input :wage_lower_bound,label: "薪资下限",input_html:{class: "form-control"} %>
+    <%= job.input :wage_upper_bound,label: "薪资上限",input_html:{class: "form-control"} %>
     <%= job.input :contact_email,input_html:{class: "form-control"} %>
-    <%= job.check_box :is_hidden,input_html:{class: "form-control"} %> 是否隐藏
+    <%= job.input :is_hidden%>
   </div>
 
   <%= job.submit "Submit",class: "btn btn-primary",data: {disable_with: "Submiting..."} %>
