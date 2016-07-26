@@ -3,9 +3,9 @@ class JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
   end
-  
+
   def index
-    @jobs = Job.all.where("is_hidden = 'false'")
+    @jobs = Job.all.where("is_hidden = 'false'").order(created_at: :desc)
   end
 
   def new
