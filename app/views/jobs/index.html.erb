@@ -7,6 +7,9 @@
       <% @jobs.each do |job| %>
         <tr>
           <td><%= link_to(job.title, job_path(job)) %></td>
+          <td><%= link_to(job.wage_upper_bound, job_path(job)) %></td>
+          <td><%= link_to(job.wage_lower_bound, job_path(job)) %></td>
+          <td><%= link_to(job.contact_email, job_path(job)) %></td>          
           <td>
               <%= link_to("Edit", edit_job_path(job))%>
               <%= "|" %>
