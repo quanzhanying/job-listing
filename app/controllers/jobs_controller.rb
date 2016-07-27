@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
     before_action :authenticate_user!,only:[:new,:create,:edit,:update,:destroy]
     before_action :find_job_and_check_permission,only:[:edit,:update,:destroy]
-
+    before_action :check_show_permission,only:[:show]
 
     def index
       @jobs = Job.where(:is_hidden => false).order("created_at DESC")
@@ -54,5 +54,11 @@ class JobsController < ApplicationController
       @job = Job.find(params[:id])
     end
 
+    def check_show_permission
+      @job = Job.find(params[:id])
+      if @job.is_hidden
+        redirect_to root_path, alert: "You have no permission."
+      end
+    end
 
 end
