@@ -25,7 +25,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   def admin?
-    email == '123@gmail.com'
+    is_admin
   end
 
 end
