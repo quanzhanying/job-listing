@@ -1,4 +1,8 @@
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<% if current_user && current_user.admin? %>
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<% else %>
+  <div class="col-md-12">
+<% end %>
   <div class="group"><%= link_to("New Job", new_job_path, class:"btn btn-primary pull-right") %></div>
 
 <table class="table table-hover">
