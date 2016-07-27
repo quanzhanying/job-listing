@@ -10,7 +10,7 @@ before_filter :authenticate_user!, only: [:new, :create, :update , :edit , :dest
     if @job.save
       redirect_to jobs_path
     else
-      render new
+      render :new
     end
   end
 
