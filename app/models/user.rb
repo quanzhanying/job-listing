@@ -28,6 +28,10 @@ class User < ApplicationRecord
 
   def join!(group)
   participated_jobs << jobs
-end
+  end
+
+  def admin?
+    is_admin
+  end
 
 end
