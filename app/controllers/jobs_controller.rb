@@ -29,7 +29,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     if @job.update(job_params)
-      redirect_to jobs_path, notice "Update Success"
+      redirect_to jobs_path, notice: 'Update Success'
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     @job.destroy
-    redirect_to jobs_path, alert "Job deleted"
+    redirect_to jobs_path, alert: 'Job deleted'
   end
 
   private
