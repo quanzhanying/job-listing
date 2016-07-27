@@ -1,0 +1,36 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("New Job", new_admin_job_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <h2 class="text-center">我发布的工作</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Job Title</th>
+        <th>Description</th>
+        <th>Last Update</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @jobs.each do |job| %>
+      <tr>
+
+        <td>#</td>
+        <td> <%= job.title %> </td>
+        <td> <%= job.description %> </td>
+        <td> <%= job.created_at %> </td>
+        <td>
+          <% if current_user && current_user == job.user %>
+          <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default") %>
+          <%= link_to("Delete", admin_job_path(job), class: "btn btn-sm btn-default",
+          method: :delete, data: { confirm: "真尼玛要删除?"} )%>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
