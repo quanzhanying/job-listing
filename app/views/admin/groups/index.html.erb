@@ -1,0 +1,22 @@
+<div class="pull-right">
+  <%= link_to("Add a job", new_admin_group_path, :class => "btn btn-default" ) %>
+</div>
+
+<br><br>
+
+<table class="table table-boldered">
+  <% @groups.each do |group| %>
+  <tr>
+    <td>
+      <%= link_to(group.title, admin_group_path(group)) %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_admin_group_path(group)) %> |
+      <%= link_to("Destroy", admin_group_path(group), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+    <td>
+      <%= group.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
