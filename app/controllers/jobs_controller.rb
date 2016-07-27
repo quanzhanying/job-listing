@@ -46,6 +46,8 @@ class JobsController < ApplicationController
     redirect_to jobs_path, alert: "Job deleted"
   end
 
+
+
   private
 
   def job_params
