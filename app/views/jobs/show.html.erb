@@ -1,0 +1,17 @@
+<div class="col-md-12">
+  <div class="job">
+
+    <% if current_user && current_user == @job.user %>
+      <span class="pull-right"><label class="label label-success"> 你是本Job的admin </label></span>
+      <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right")%>
+    <% end %>
+
+  </div>
+  <h2><%= @job.title %></h2>
+  <p><%= @job.description %></p>
+  <tr>
+    <td><%= @job.wage_upper_bound %></td>
+    <td><%= @job.wage_lower_bound %></td>
+    <td><%= @job.contact_email %></td>
+  </tr>
+</div>

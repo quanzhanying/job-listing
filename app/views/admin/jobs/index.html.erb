@@ -1,0 +1,32 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我创建的jobs </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> # </th>
+        <th> Title </th>
+        <th> Description </th>
+        <td>Upper Wage</td>
+        <td>Lower Wage</td>
+        <td>Contact</td>
+        <th> Last Update </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td> # </td>
+          <td> <%= link_to(job.title, job_path(job)) %> </td>
+          <td> <%= job.description %> </td>
+          <td><%= job.wage_upper_bound %></td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.contact_email %></td>
+          <td> <%= job.updated_at %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
