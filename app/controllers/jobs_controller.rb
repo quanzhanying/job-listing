@@ -12,8 +12,12 @@ before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destro
 
   def create
     @job = Job.new(job_params)
-    @job.save
+    if @job.save
     redirect_to jobs_path
+  else
+    render :new
+  end
+  
   end
 
   def edit
@@ -44,5 +48,5 @@ end
 private
 
 def job_params
-  params.require(:job).permit(:title,:description)
+  params.require(:job).permit(:title,:description, :wage_lower_bound, :wage_upper_bound, :contact_email)
 end

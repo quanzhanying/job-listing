@@ -1,4 +1,14 @@
-<%= simple_form_for @job do |f| %>
+<%= simple_form_for [:admin,@job] do |f| %>
+<% if @job.errors.any? %>
+<ul>
+  <% @job.errors.full_messages.each do |msg| %>
+  <li>
+    <% msg %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
   <div class="form-group">
     <%= f.input :title, input_html: {class:"form-control"} %>
     <%= f.input :description, input_html: {class:"form-control"} %>
@@ -7,4 +17,4 @@
     <%= f.input :contact_email %>
    </div>
   <%= f.submit "Submit", class:"btn btn-primary", data:{disable_with:"Submitting..."}%>
-  <% end %>
+<% end %>
