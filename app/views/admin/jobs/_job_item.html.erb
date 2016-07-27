@@ -1,0 +1,20 @@
+<tr>
+    <td>#</td>
+    <td><%= link_to(job.title, job_path(job)) %>
+        <% if job.is_hidden %>
+            <span> (Private) </span>
+        <% else %>
+            <span> (Public) </span>
+        <% end %>
+    </td>
+    <td><%= job.contact %></td>
+    <td><%= job.created_at %></td>
+
+    <td>
+      <% if current_admin && current_admin == job.admin %>
+        <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default")%>
+        <%= link_to("Delete", admin_job_path(job),    class: "btn btn-sm btn-default", 
+                    method: :delete, data: { confirm: "Are you sure?" } )%>
+      <% end %>
+    </td>
+</tr>
