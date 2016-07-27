@@ -1,3 +1,4 @@
+<div class="col-md-10 col-md-offset-2">
 <div class="pull-right">
   <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default") %>
 </div>
@@ -8,15 +9,19 @@
   <% @jobs.each do |job| %>
   <tr>
     <td>
-      <%= link_to(job.title, admin_jobs_path(job))%>
+      <%= link_to(job.title, admin_job_path(job))%>
     </td>
-    <td>
-      <%= link_to("Edit",edit_admin_job_path(job)) %> |
-      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?"}) %>
-    </td>
+
     <td>
       <%= job.created_at %>
     </td>
+    <td>
+      <div class="pull-right">
+      <%= link_to("Edit",edit_admin_job_path(job),class:"btn btn-primary") %>
+      <%= link_to("Destroy", admin_job_path(job),class:"btn btn-danger", :method => :delete, :data => { :confirm => "Are you sure?"}) %>
+    </td>
+
+
   </tr>
   <% end %>
 </table>
