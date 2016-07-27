@@ -23,4 +23,5 @@ class Job < ApplicationRecord
 	validates :wage_lower_bound, numericality: true
 
 	belongs_to :admin
+
 end
