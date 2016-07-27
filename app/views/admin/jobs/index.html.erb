@@ -12,6 +12,10 @@
       <%= job.description %>
     </td>
     <td>
+      <%= render_job_staus(job) %>
+      
+    </td>
+    <td>
       <%= link_to("Edit", edit_admin_job_path(job)) %> |
       <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
     </td>
