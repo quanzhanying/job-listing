@@ -9,6 +9,11 @@
   <% @jobs.each do |job| %>
   <tr>
     <td>
+      <%= render_job_status(job) %>
+
+      <% link_to(job.title, admin_job_path(job)) %>
+    </td>
+    <td>
       <%= link_to(job.title, admin_job_path(job))%>
     </td>
 
@@ -17,8 +22,13 @@
     </td>
     <td>
       <div class="pull-right">
-      <%= link_to("Edit",edit_admin_job_path(job),class:"btn btn-primary") %>
-      <%= link_to("Destroy", admin_job_path(job),class:"btn btn-danger", :method => :delete, :data => { :confirm => "Are you sure?"}) %>
+      <%= link_to("Edit",edit_admin_job_path(job),class:"btn btn-xs btn-primary") %>
+      <%= link_to("Destroy", admin_job_path(job),class:"btn btn-xs btn-danger", :method => :delete, :data => { :confirm => "Are you sure?"}) %>
+      <% if job.is_hidden %>
+      <%= link_to("Publish",publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default")%>
+      <% else %>
+      <%= link_to("Hide",hide_admin_job_path(job), :method => :post, :class =>"btn btn-xs btn-default") %>
+      <% end %>
     </td>
 
 
