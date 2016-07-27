@@ -1,11 +1,17 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!
+  before_action :require_is_admin
 
   def index
     @jobs = current_user.created_jobs
-    if !current_user.require_is_admin(@jobs)
+  end
+
+  private
+
+  def require_is_admin
+    if !current_user.admin?
+      flash[:alert] = "You are not admin. Get away from here!"
       redirect_to root_path
-      flash[:warning] = "你不是admin，无法查看My Jobs，滚！"
     end
   end
 end

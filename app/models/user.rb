@@ -8,9 +8,8 @@ class User < ApplicationRecord
   has_many :companies
   has_many :created_jobs, :through => :companies, :source => :job
 
-  def require_is_admin(job)
-    created_jobs.include?(job)
-
+  def admin?
+    is_admin
   end
 
   def join!(job)
