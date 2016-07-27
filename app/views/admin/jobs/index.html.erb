@@ -1,33 +1,23 @@
 <div class="col-md-12">
-  <h2 class="text-center">我创建的职位</h2>
-
   <div class="group">
     <%= link_to("New A JOB", new_admin_job_path, class: "btn btn-primary pull-right") %>
   </div>
 
+
+
   <table class="table">
     <thead>
       <tr>
-        <th>
-          #
-        </th>
-        <th>
-          Title
-        </th>
-        <th>
-          Description
-        </th>
-        <th>
-          Last Update
-        </th>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Last Update</th>
       </tr>
 
       <tbody>
         <% @jobs.each do |job| %>
           <tr>
-            <td>
-              #
-            </td>
+            <td>#</td>
             <td>
               <%= render_job_status(job) %>
               <%= link_to(job.title,admin_job_path(job)) %>
