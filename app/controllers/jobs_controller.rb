@@ -40,9 +40,9 @@ def update
   end
 end
 
-def Destroy
+def destroy
   @job = Job.find (params[:id])
-  @job.Destroy
+  @job.destroy
   redirect_to jobs_path
 end
 
