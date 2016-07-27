@@ -1,0 +1,32 @@
+<div class="col-md-12">
+  <div class="job">
+    <%= link_to("New job", new_job_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Title</td>
+        <td>Description</td>
+        <td>Creator</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td><%= job.description %></td>
+          <td><%= job.user.email %></td>
+          <td>
+            <% if current_user && current_user == group.user %>
+              <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
+              <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you fucking sure?" } )%>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
