@@ -6,7 +6,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def show
-    @job = Job.find(parmas[:id])
+    @job = Job.find(params[:id])
   end
 
   def new
@@ -20,6 +20,7 @@ class Admin::JobsController < ApplicationController
     else
       render :new
     end
+  end
 
     def edit
       @job = Job.find(params[:id])
@@ -38,8 +39,8 @@ class Admin::JobsController < ApplicationController
      @job = Job.find(params[:id])
      @job.destroy
      redirect_to admin_jobs_path
-   end
-end
+    end
+
 
 private
 
@@ -47,11 +48,6 @@ private
     params.require(:job).permit(:title, :description)
   end
 
-  def require_is_admin
-    if !current_user.admin?
-      flash[:alert] = "You have no permission"
-      redirect_to root_path
-    end
-  end
+
 
 end
