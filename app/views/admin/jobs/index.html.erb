@@ -1,0 +1,34 @@
+<div class="col-md-12">
+
+  <h2 class="text-center">我发布的工作</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Last Update</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @jobs.each do |job| %>
+      <tr>
+
+        <td>#</td>
+        <td> <%= job.title %> </td>
+        <td> <%= job.description %> </td>
+        <td> <%= job.created_at %> </td>
+        <td>
+          <% if current_user && current_user == job.user %>
+          <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default") %>
+          <%= link_to("Delete", job_path(job), class: "btn btn-sm btn-default",
+          method: :delete, data: { confirm: "真尼玛要删除?"} )%>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
