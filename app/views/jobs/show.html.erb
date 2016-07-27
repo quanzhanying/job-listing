@@ -3,11 +3,11 @@
 
   描述<%= simple_format(@job.description)%>
   薪酬
-  <br /><br />
-  <%= @job.wage_lower_bound %>元 - <%= @job.wage_lower_bound %>元
-  <br  /><br />
+  <br />
+  <%= @job.wage_lower_bound %>元 - <%= @job.wage_upper_bound %>元
+  <br  />
   邮箱
-  <br  /><br />
+  <br  />
   <%= @job.contact_email %>
 
 </p>
