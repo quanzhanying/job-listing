@@ -14,7 +14,8 @@
       <% @jobs.each do |job| %>
         <tr>
           <!--td>#</td -->
-          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td>
+            <%= link_to(job.title, job_path(job)) %></td>
           <!-- td><%= job.description %></td -->
           <td>
               <%= link_to("Edit", edit_job_path(job))%> |
