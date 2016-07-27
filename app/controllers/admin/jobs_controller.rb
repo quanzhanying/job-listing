@@ -3,7 +3,7 @@ class Admin::JobsController < ApplicationController
     before_filter :require_is_admin
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.order("id DESC")
   end
 
   def new
@@ -47,6 +47,6 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-      params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
+      params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
     end
 end
