@@ -1,25 +1,62 @@
-<div class="pull-right">
-  <%= link_to("Add a job" , new_admin_job_path, :class => "btn btn-default")%>
-</div>
-<br />
-<br />
-<table class="table table-boldered">
-  <% @jobs.each do |job|%>
-<tr>
-  <td>
-    <%= render_job_status(job)%>
-    <%= link_to(job.title , admin_job_path(job)) %>
-  </td>
-  <td>
-    <%= link_to("Edit", edit_admin_job_path(job)) %>
-  </td>
-  <td>
-    <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?"}) %>
 
-  </td>
-  <td>
-    <%= job.created_at %>
-  </td>
-</tr>
-  <% end %>
-</table>
+<br />
+<div class="container">
+
+  <div class="row">
+    <div class="pull-right">
+      <%= link_to("Add a job" , new_admin_job_path, :class => "btn btn-default")%>
+    </div>
+  </div>
+  <br />
+  <div class="col-md-1">
+
+  <div class="btn-group-vertical" role="group" aria-label="...">
+      <button type="button" class="btn-default btn">
+        招聘管理
+      </button>
+
+      <button type="button" class="btn-default btn">
+      工作管理
+    </button>
+    <button type="button" class="btn-default btn">
+      查看简历
+    </button>
+  </div>
+
+
+</div>
+  <div class="col-md-10">
+    <table class="table table-boldered .table-striped .table-bordered ">
+      <% @jobs.each do |job|%>
+    <tr>
+      <td class="col-md-5">
+
+        <%= fa_stacked_icon "twitter", text: render_job_status(job), right: true%>
+
+        <%= link_to(job.title , admin_job_path(job)) %>
+      </td>
+      <td>
+        <%= link_to("Edit", edit_admin_job_path(job)) %>
+      </td>
+      <td>
+        <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?"}) %>
+
+      </td>
+      <% if(job.is_hidden)%>
+      <td>
+      <%= button_to("Public" , change_hidden_admin_job_path(job)) %>
+    </td>
+    <% else%>
+    <td>
+    <%= button_to("Hidden" , change_hidden_admin_job_path(job)) %>
+    </td>
+
+      <%end%>
+      <td>
+        <%= job.created_at %>
+      </td>
+    </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -4,6 +4,12 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+
+    if @job.is_hidden
+      redirect_to admin_jobs_path, alert: "the job is hidden"
+    else
+      render :show
+    end
   end
 
   def index
@@ -45,6 +51,18 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path
   end
 
+  def change_hidden
+    @job = Job.find(params[:id])
+
+    if @job.is_hidden
+      is_hidden = false
+    else
+      is_hidden = true
+    end
+    if @job.update_column(:is_hidden , is_hidden)
+      redirect_to admin_jobs_path , notice: "Update Success"
+    end
+  end
 
 
   private
