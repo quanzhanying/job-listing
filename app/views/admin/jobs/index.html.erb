@@ -30,9 +30,11 @@
       <% @jobs.each do |job|%>
     <tr>
       <td class="col-md-5">
-
-        <%= fa_stacked_icon "twitter", text: render_job_status(job), right: true%>
-
+        <% if(job.is_hidden)%>
+          <%= fa_icon "lock", text: render_job_status(job), right: true%>
+        <% else%>
+          <%= fa_icon "unlock", text: render_job_status(job), right: true%>
+        <%end%>
         <%= link_to(job.title , admin_job_path(job)) %>
       </td>
       <td>
@@ -43,13 +45,13 @@
 
       </td>
       <% if(job.is_hidden)%>
-      <td>
-      <%= button_to("Public" , change_hidden_admin_job_path(job)) %>
-    </td>
-    <% else%>
-    <td>
-    <%= button_to("Hidden" , change_hidden_admin_job_path(job)) %>
-    </td>
+        <td>
+        <%= button_to("Public" , change_hidden_admin_job_path(job)) %>
+        </td>
+        <% else%>
+        <td>
+        <%= button_to("Hidden" , change_hidden_admin_job_path(job)) %>
+        </td>
 
       <%end%>
       <td>
