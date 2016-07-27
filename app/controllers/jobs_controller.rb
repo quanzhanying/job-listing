@@ -1,9 +1,7 @@
 class JobsController < ApplicationController
-before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-
-
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-    @jobs = Job.all
+    @jobs = Job.where(:is_hidden=>false)
   end
 
   def new
@@ -13,12 +11,13 @@ before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   def create
     @job = Job.new(job_params)
     if @job.save
-    redirect_to jobs_path
-  else
-    render :new
+      redirect_to jobs_path
+    else
+      render :new
+    end
   end
-  
-  end
+
+
 
   def edit
     @job = Job.find(params[:id])
@@ -28,7 +27,6 @@ before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destro
     @job = Job.find(params[:id])
     @job.update
     redirect_to jobs_path, notice:"Update success"
-
   end
 
   def show
@@ -41,12 +39,10 @@ before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destro
     redirect_to jobs_path, alert:"Job deleted"
   end
 
+  private
 
-
-end
-
-private
-
-def job_params
-  params.require(:job).permit(:title,:description, :wage_lower_bound, :wage_upper_bound, :contact_email)
+  def job_params
+    #params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email,:is_hidden)
+  end
 end
