@@ -5,9 +5,10 @@
     <%= f.input :wage_lower_bound, input_html: { class: "form-control"} %>
     <%= f.input :wage_upper_bound, input_html: { class: "form-control"} %>
     <%= f.input :contact, input_html: { class: "form-control"} %>
-    <%= f.input :is_hidden, input_html: { class: "form-control"} %>
+    <%= f.input :is_hidden, as: :boolean, checked_value: true, unchecked_value: false %>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
+
 <% end %>
 
 

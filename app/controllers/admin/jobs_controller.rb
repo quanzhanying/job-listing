@@ -28,13 +28,15 @@ class Admin::JobsController < ApplicationController
 	def update
 		
 		if @job.update(job_params)
-			redirect_to admin_jobs_path, notice: "Job Updated"
+			redirect_to admin_jobs_path, notice: "Updated"
 		else
 			render :edit
 		end
 	end
 
 	def destroy
+		@job = Job.find(params[:id])
+
 		@job.destroy
 
 		redirect_to admin_jobs_path, alert: "Job Deleted"

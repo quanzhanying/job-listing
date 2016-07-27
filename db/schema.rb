@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 20160726105522) do
     t.text     "description"
     t.integer  "wage_upper_bound"
     t.integer  "wage_lower_bound"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "contact"
     t.integer  "admin_id"
-    t.boolean  "is_hidden"
+    t.boolean  "is_hidden",        default: false
   end
 
 end
