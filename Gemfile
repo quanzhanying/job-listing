@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "annotate"
+
 gem "simple_form"
 
 gem "devise"

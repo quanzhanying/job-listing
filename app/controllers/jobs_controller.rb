@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
+
   def index
     @jobs = Job.all
   end
@@ -37,10 +38,11 @@ before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   end
 
 
+
+end
+
 private
 
 def job_params
   params.require(:job).permit(:title,:description)
-end
-
 end
