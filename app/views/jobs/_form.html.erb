@@ -1,0 +1,11 @@
+<%= simple_form_for @job do |f| %>
+ <div class="form-group">
+   <%= f.input :title, input_html: { class: "form-control"} %>
+   <%= f.input :description, input_html: { class: "form-control"} %>
+   <%= f.input :wage_lower_bound, :label => "薪資下限" %>
+   <%= f.input :wage_upper_bound, :label => "薪資上限" %>
+   <%= f.input :contact_email %>
+   <%= f.input :is_hidden %>
+ </div>
+ <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..."} %>
+ <% end %>
