@@ -23,4 +23,15 @@ class Job < ApplicationRecord
 
   scope :show_public, -> { where("is_hidden = 'false'") } # :is_hidden => false
   scope :recent, -> { order(created_at: :desc) }
+
+  def open!
+    self.is_hidden = false
+    self.save
+  end
+
+  def close!
+    self.is_hidden = true
+    self.save
+  end
+
 end

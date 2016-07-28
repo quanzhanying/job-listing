@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
-  before_action :authenticate_user! 
+  before_action :authenticate_user!
   before_action :require_is_admin
+  layout "admin"
 
   def index
     @jobs = Job.all
@@ -49,20 +50,24 @@ class Admin::JobsController < ApplicationController
 
   def open
     @job = Job.find(params[:id])
-    if @job.update_columns(is_hidden: "false")
-      redirect_to admin_jobs_path, notice: "Open Job Success."
-    else
-      redirect_to admin_jobs_path, notice: "Open Job Failed."
-    end
+    @job.open!
+    redirect_to :back
+    # if @job.update_columns(is_hidden: "false")
+    #   redirect_to admin_jobs_path, notice: "Open Job Success."
+    # else
+    #   redirect_to admin_jobs_path, notice: "Open Job Failed."
+    # end
   end
 
   def close
     @job = Job.find(params[:id])
-    if @job.update_columns(is_hidden: "true")
-      redirect_to admin_jobs_path, notice: "Close Job Success."
-    else
-      redirect_to admin_jobs_path, notice: "Close Job Failed."
-    end
+    @job.close!
+    redirect_to :back
+    # if @job.update_columns(is_hidden: "true")
+    #   redirect_to admin_jobs_path, notice: "Close Job Success."
+    # else
+    #   redirect_to admin_jobs_path, notice: "Close Job Failed."
+    # end
   end
 
   private

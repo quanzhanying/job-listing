@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>job-listing</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="container-fluid"><%= render "common/navbar" %><%= render "common/flashes" %>
+      <div class="row">
+        <div class="col-md-2">
+          <%= render "common/sidebar" %>
+        </div>
+        <div class="col-md-10"><%= yield %></div>
+      </div>
+    </div>
+    <%= render "common/footer" %>
+  </body>
+</html>
