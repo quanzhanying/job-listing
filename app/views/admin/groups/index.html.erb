@@ -8,6 +8,8 @@
   <% @groups.each do |group| %>
   <tr>
     <td>
+      <%= render_group_status(group) %>
+      
       <%= link_to(group.title, admin_group_path(group)) %>
     </td>
     <td>
