@@ -10,6 +10,7 @@
 #  contact          :text
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  is_hidden        :boolean          default(TRUE)
 #
 
 require 'test_helper'
