@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :update, :edit, :destroy]
   before_filter :require_is_admin
+  layout "admin"
   def require_is_admin
     if !current_user.email?
       flash[:alert] = 'You are not admin'
@@ -54,6 +55,8 @@ class Admin::JobsController < ApplicationController
 
     redirect_to admin_jobs_path
   end
+
+  
 
   private
 
