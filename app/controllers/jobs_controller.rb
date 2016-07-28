@@ -17,8 +17,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     @job.user = current_user
-
-    if @job.save
+    if @job.save!
       current_user.join!(@job)
       redirect_to jobs_path
     else
@@ -46,16 +45,16 @@ class JobsController < ApplicationController
   end
 
   def require_is_admin
-  if current_user.admin?
-    flash[:alert] = 'You are not admin'
-  end
-    redirect_to root_path
+    if !current_user.admin?
+      flash[:alert] = 'You are not admin'
+      redirect_to root_path
+    end
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
   end
 
 end
