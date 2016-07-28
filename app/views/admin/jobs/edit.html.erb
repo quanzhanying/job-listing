@@ -1,5 +1,7 @@
-<h1> Edit a job </h1>
+<div class="col-md-4 col-md-offset-4">
 
+<h1> Edit this job </h1>
+<hr>
 <%= simple_form_for [:admin, @job ] do |f| %>
 
 <%= f.input :title %>
@@ -7,5 +9,8 @@
 <%= f.input :wage_lower_bound, :label => "薪资下线" %>
 <%= f.input :wage_upper_bound, :label => "薪资上线" %>
 <%= f.input :contact_email %>
+<input type="checkbox" checked> Hide this job
+<hr>
 <%= f.submit "Submit" %>
 <% end %>
+</div>

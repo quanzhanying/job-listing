@@ -27,7 +27,6 @@ class Admin::JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
-    redirect_to admin_jobs_path
   end
 
   def update
