@@ -2,7 +2,8 @@ class Admin::JobsController < ApplicationController
 
 	before_action :authenticate_user!, only: [:edit, :new, :update, :destroy, :create]
 	before_action :require_is_admin
-	before_action :find_job_and_check_permit, only: [:edit, :destroy, :update]
+	before_action :find_job_and_check_permit, only: [:edit, :destroy, :update, :publish, :hide]
+	layout "admin"
 
 	def index
 		@jobs = Job.all.order("created_at DESC")
@@ -45,11 +46,24 @@ class Admin::JobsController < ApplicationController
 	end
 
 	def publish
-		
+
+		if @job.is_hidden
+			@job.is_hidden = false
+			@job.save
+		end
+
+		redirect_to admin_jobs_path
 	end
 
+
 	def hide
+
+		if !@job.is_hidden
+			@job.is_hidden = true
+			@job.save
+		end
 		
+		redirect_to admin_jobs_path
 	end
 
 
