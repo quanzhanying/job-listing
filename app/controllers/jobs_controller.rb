@@ -8,6 +8,10 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
   def show
     @job = Job.find(params[:id])
+    if @job.is_hidden
+      flash[:warning] = "This Job already archieved"
+      redirect_to root_path
+    end
   end
 
   def new
