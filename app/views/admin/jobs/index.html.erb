@@ -10,7 +10,12 @@
   <tr>
 
     <td>
+      <%= render_job_status(job) %>
       <%= link_to(job.title,admin_job_path(job)) %>
+    </td>
+
+    <td>
+      <%= job.created_at %>
     </td>
 
     <td>
@@ -18,9 +23,7 @@
       <%= link_to("Destroy", admin_job_path(job), :method => :delete, :date => { :confirm => "Are you sure?"}) %>
     </td>
 
-    <td>
-      <%= job.created_at %>
-    </td>
+
 
   </tr>
 
