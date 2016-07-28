@@ -1,7 +1,6 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :require_is_admin
-  layout "admin"
   def index
     @jobs = Job.all.order("created_at DESC")
   end
@@ -23,39 +22,24 @@ class Admin::JobsController < ApplicationController
     end
   end
 
-  def edit
+    def edit
       @job = Job.find(params[:id])
-  end
+    end
 
-  def update
+    def update
       @job = Job.find(params[:id])
       if @job.update(job_params)
         redirect_to admin_jobs_path
       else
         render :edit
       end
-  end
+    end
 
- def destroy
+   def destroy
      @job = Job.find(params[:id])
      @job.destroy
      redirect_to admin_jobs_path
- end
-
- def publish
-     @job = Job.find(params[:id])
-     @job.publish!
-     redirect_to :back
-   end
-
-   def hide
-     @job = Job.find(params[:id])
-     @job.hide!
-     redirect_to :back
-   end
-
-
-
+    end
 
 
 private
