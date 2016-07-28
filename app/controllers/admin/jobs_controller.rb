@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_filter :require_is_admin
+  layout "admin" 
 
   def show
     @job = Job.find(params[:id])
@@ -18,7 +19,7 @@ class Admin::JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
-      redirect_to admin_jobs_path
+      redirect_to jobs_path
     else
       render :new
     end
