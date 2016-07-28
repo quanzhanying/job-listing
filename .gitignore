@@ -20,3 +20,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 config/database.yml
+
+fruits.each do |fruit|
+  puts fruit
+end
