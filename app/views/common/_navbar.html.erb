@@ -25,7 +25,7 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
               <li><%= link_to("My Jobs",admin_jobs_path)%></li>
-              <li class="divider"></li>
+
               <%end %>
 
               <li><%= link_to("登出",destroy_user_session_path,method: :delete) %></li>
