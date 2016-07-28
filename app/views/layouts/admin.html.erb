@@ -9,11 +9,22 @@
   </head>
 
   <body>
-    
+
     <div class="container-fluid">
       <%= render "common/navbar" %>
       <%= render "common/flashes" %>
-      <%= yield %>
+
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+            <li> <%= link_to("AdminJobs", admin_jobs_path) %> </li>
+            <li> <%= link_to("Jobs", jobs_path) %> </li>
+          </ul>
+        </div>
+        <div class="col-md-10">
+          <%= yield %>
+        </div>
+      </div>
     </div>
     <%= render "common/footer" %>
   </body>
