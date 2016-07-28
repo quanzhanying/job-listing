@@ -1,18 +1,26 @@
 
-<div class="pull-right">
-  <%= link_to("Add a job" , new_job_path, :class => "btn btn-default")%>
-</div>
   <table class="table table-boldered">
+<tr>
+<td>工作名称</td>
+<td><%=link_to("工作薪资上限",job_index_upper_bound_url(@jobs))%></td>
+<td>工作薪资下限</td>
+<td>联系邮箱</td>
+<td><%= link_to("创建时间",jobs_path)%></td>
+</tr>
+
+
     <% @jobs.each do |job| %>
     <tr>
       <td>
         <%= link_to(job.title, admin_job_path(job)) %></td>
-      <td><%= job.created_at %></td>
       <td>
-        <%= link_to("Edit" , edit_job_path(job)) %>
+        <%= job.wage_upper_bound%>
       </td>
       <td>
-        <%= link_to("destroy" , job_path(job), :method => :delete, :data => {:confirm => "Are you sure?"})%>
+        <%= job.wage_lower_bound%>
+      </td>
+      <td>
+        <%= job.contact_email%>
       </td>
       <td>
         <%= job.created_at %>

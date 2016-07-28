@@ -15,7 +15,7 @@ before_filter :authenticate_user!, only: [:new, :create, :update , :edit , :dest
   end
 
   def show
-    @job = Job.find(params[:id])
+    @job = Job.find(params[:id]).order("wage_upper_bound DESC")
   end
 
   def edit
@@ -44,6 +44,10 @@ before_filter :authenticate_user!, only: [:new, :create, :update , :edit , :dest
     @jobs = Job.where(:is_hidden =>false).order("created_at DESC")
   end
 
+  def index_upper_bound
+    @jobs = Job.where(:is_hidden =>false).order("wage_upper_bound DESC")
+    render :index
+  end
   private
 
   def job_params

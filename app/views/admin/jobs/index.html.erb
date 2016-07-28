@@ -23,13 +23,22 @@
     <table class="table table-boldered .table-striped .table-bordered ">
       <% @jobs.each do |job|%>
     <tr>
-      <td class="col-md-5">
+      <td class="col-md-3">
         <% if(job.is_hidden)%>
           <%= fa_icon "lock", right: true%>
         <% else%>
           <%= fa_icon "unlock", right: true%>
         <%end%>
         <%= link_to(job.title , admin_job_path(job)) %>
+      </td>
+      <td>
+        <%= job.wage_upper_bound%>
+      </td>
+      <td>
+        <%= job.wage_lower_bound%>
+      </td>
+      <td>
+        <%= job.contact_email%>
       </td>
       <td>
         <%= link_to("Edit", edit_admin_job_path(job)) %>
