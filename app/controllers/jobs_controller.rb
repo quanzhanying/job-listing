@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+
   def index
     @jobs = Job.where(:is_hidden => false).order("id DESC")
   end
@@ -10,6 +11,9 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
+    if current_user != @require_is_admin
+      redirect_to root_path, alert: "You are not admin"
+    end
   end
 
   def show
