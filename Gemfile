@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# gem   , :github =>
+# gem   , :path =>
+
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'

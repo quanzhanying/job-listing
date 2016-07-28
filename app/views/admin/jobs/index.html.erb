@@ -8,20 +8,14 @@
     </div>
   </div>
   <br />
-  <div class="col-md-1">
+  <div class="col-md-2">
 
-  <div class="btn-group-vertical" role="group" aria-label="...">
-      <button type="button" class="btn-default btn">
-        招聘管理
-      </button>
 
-      <button type="button" class="btn-default btn">
-      工作管理
-    </button>
-    <button type="button" class="btn-default btn">
-      查看简历
-    </button>
-  </div>
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="active"><a href="#">招聘管理</a></li>
+       <li role="presentation"><a href="#">工作管理</a></li>
+       <li role="presentation"><a href="#">查看简历</a></li>
+    </ul>
 
 
 </div>
@@ -31,9 +25,9 @@
     <tr>
       <td class="col-md-5">
         <% if(job.is_hidden)%>
-          <%= fa_icon "lock", text: render_job_status(job), right: true%>
+          <%= fa_icon "lock", right: true%>
         <% else%>
-          <%= fa_icon "unlock", text: render_job_status(job), right: true%>
+          <%= fa_icon "unlock", right: true%>
         <%end%>
         <%= link_to(job.title , admin_job_path(job)) %>
       </td>
