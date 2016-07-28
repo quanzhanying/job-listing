@@ -1,6 +1,7 @@
 class Admin::GroupsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_filter :require_is_admin
+  layout "admin"
 
   def index
     @groups = Group.all
@@ -12,6 +13,11 @@ class Admin::GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+
+    if @group.is_hidden
+      flash[:warning] = "This Job is already archived"
+      redirect_to root_path
+    end
   end
 
   def create
@@ -42,6 +48,20 @@ class Admin::GroupsController < ApplicationController
     @group.destroy
     redirect_to admin_groups_path
   end
+
+  def publish
+    @group = Group.find(params[:id])
+    @group.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @group = Group.find(params[:id])
+    @group.hide!
+    redirect_to :back
+  end
+
+
 
   private
 

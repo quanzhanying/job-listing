@@ -1,9 +1,9 @@
 module GroupsHelper
   def render_group_status(group)
     if group.is_hidden
-      "(Hidden)"
+      content_tag(:span, "", :class => "fa fa-lock")
     else
-      "(Public)"
+      content_tag(:span, "", :class => "fa fa-globe")
     end
   end
 end
