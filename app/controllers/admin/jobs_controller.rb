@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :require_is_admin
+  layout "admin"
 
   def index
     @jobs = Job.all
@@ -12,6 +13,10 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    if @job.is_hidden
+      flash[:warning] = "This Job already archived"
+      redirect_to root_path
+    end
   end
 
   def edit
@@ -41,6 +46,20 @@ class Admin::JobsController < ApplicationController
     @job.destroy
 
     redirect_to admin_jobs_path, alert: "Job deleted!"
+  end
+
+  def publish
+    @job = Job.find(params[:id])
+    @job.is_hidden = false
+    @job.save
+    redirect_to :back
+  end
+
+  def hide
+    @job = Job.find(params[:id])
+    @job.is_hidden = true
+    @job.save
+    redirect_to :back
   end
 
   private

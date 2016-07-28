@@ -4,7 +4,7 @@
     <hr>
 
     <%= simple_form_for [:admin, @job] do |f| %>
-      <div class="form-group">
+    <div class="form-group">
         <%= f.input :title, input_html: { class: "form-control"} %>
         <%= f.input :description, input_html: { class: "form-control"} %>
         <%= f.input :wage_lower_bound, :label => "薪資下限" %>
@@ -12,8 +12,8 @@
         <%= f.input :contact_email %>
         <%= f.input :is_hidden %>
 
-      </div>
+    </div>
 
-      <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+    <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
     <% end %>
 </div>

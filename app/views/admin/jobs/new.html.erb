@@ -1,4 +1,6 @@
-<h1> Add a job </h1>
+<h1>
+    Add a job
+</h1>
 
 <%= simple_form_for [:admin,@job] do |f| %>
 
@@ -9,5 +11,5 @@
 <%= f.input :contact_email %>
 <%= f.input :is_hidden %>
 
-  <%= f.submit "Submit" %>
+<%= f.submit "Submit" %>
 <% end %>
