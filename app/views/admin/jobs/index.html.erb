@@ -1,0 +1,58 @@
+
+<br />
+<div class="container">
+
+  <div class="row">
+    <div class="pull-right">
+      <%= link_to("Add a job" , new_admin_job_path, :class => "btn btn-default")%>
+    </div>
+  </div>
+  <br />
+  <div class="col-md-2">
+
+
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="active"><a href="#">招聘管理</a></li>
+       <li role="presentation"><a href="#">工作管理</a></li>
+       <li role="presentation"><a href="#">查看简历</a></li>
+    </ul>
+
+
+</div>
+  <div class="col-md-10">
+    <table class="table table-boldered .table-striped .table-bordered ">
+      <% @jobs.each do |job|%>
+    <tr>
+      <td class="col-md-5">
+        <% if(job.is_hidden)%>
+          <%= fa_icon "lock", right: true%>
+        <% else%>
+          <%= fa_icon "unlock", right: true%>
+        <%end%>
+        <%= link_to(job.title , admin_job_path(job)) %>
+      </td>
+      <td>
+        <%= link_to("Edit", edit_admin_job_path(job)) %>
+      </td>
+      <td>
+        <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?"}) %>
+
+      </td>
+      <% if(job.is_hidden)%>
+        <td>
+        <%= button_to("Public" , change_hidden_admin_job_path(job)) %>
+        </td>
+        <% else%>
+        <td>
+        <%= button_to("Hidden" , change_hidden_admin_job_path(job)) %>
+        </td>
+
+      <%end%>
+      <td>
+        <%= job.created_at %>
+      </td>
+    </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
