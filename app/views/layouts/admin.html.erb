@@ -17,9 +17,12 @@
 
       <div class="row">
         <div class="col-md-2">
-          <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-            <li class="active"> <%= link_to("AdminJobs", admin_jobs_path) %> </li>
-          </ul>
+            <nav class="nav-sidebar">
+                <ul class="nav">
+                  <li class="active"> <%= link_to("AdminJobs", admin_jobs_path) %> </li>
+                  <li><a href="javascript:;">About</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="col-md-10">
           <%= yield %>

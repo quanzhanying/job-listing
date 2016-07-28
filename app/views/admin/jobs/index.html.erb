@@ -1,20 +1,19 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("Add A JOB", new_admin_job_path, class: "btn btn-default pull-right") %>
+    <%= link_to("Add A Job", new_admin_job_path, class: "btn btn-default pull-right") %>
   </div>
   <table class="table">
     <thead>
       <tr>
-        <th>#</th>
         <th>Title</th>
         <th>Description</th>
         <th>Last Update</th>
+        <th>Operate</th>
       </tr>
 
       <tbody>
         <% @jobs.each do |job| %>
           <tr>
-            <td>#</td>
             <td>
               <%= render_job_status(job) %>
               <%= link_to(job.title,admin_job_path(job)) %>
