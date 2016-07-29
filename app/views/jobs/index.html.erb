@@ -2,7 +2,25 @@
     <%# link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
 </div>
 
-<br><br>
+<div class="dropdown clearfix pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      排序
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li>
+          <%= link_to("按照薪資下限排序", jobs_path(:order => "by_lower_bound")) %>
+        </li>
+        <li>
+            <%= link_to("按照薪資上限排序", jobs_path(:order => "by_upper_bound")) %>
+
+        </li>
+        <li>
+          <%= link_to("按照發表時間排序", jobs_path ) %>
+
+        </li>
+    </ul>
+</div>
 
 <table class="table table-boldered">
     <thead>
