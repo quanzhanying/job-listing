@@ -1,10 +1,21 @@
 class JobsController < ApplicationController
 
 	before_action :authenticate_user!, only: [:edit, :new, :update, :destroy, :create]
+	before_action :require_is_admin, only: [:edit, :new, :update, :destroy, :create]
 	before_action :find_job_and_check_permit, only: [:edit, :destroy, :update]
 
 	def index
-		@jobs = Job.all.where(:is_hidden => false).order("created_at DESC")
+
+		if params[:order] == "upperwage"
+			@jobs = Job.all.where(:is_hidden => false).order("wage_upper_bound DESC")
+		elsif params[:order] == "lowerwage"
+			@jobs = Job.all.where(:is_hidden => false).order("wage_lower_bound DESC")
+		elsif params[:order] == "date"
+			@jobs = Job.all.where(:is_hidden => false).order("created_at DESC")
+		else
+			@jobs = Job.all.where(:is_hidden => false)
+		end	
+		
 	end
 
 	def new
