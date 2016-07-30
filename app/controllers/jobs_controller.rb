@@ -8,7 +8,14 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all.show_public.recent
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+              @jobs = Job.show_public.order('wage_upper_bound DESC')
+            when 'by_upper_bound'
+              @jobs = Job.show_public.order('wage_lower_bound DESC')
+            else
+              @jobs = Job.all.show_public.recent
+            end
   end
 
   def new

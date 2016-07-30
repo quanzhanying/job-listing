@@ -1,24 +1,25 @@
-<% if current_user && current_user.admin? %>
-  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-<% else %>
-  <div class="col-md-12">
-<% end %>
-  <div class="group"><%= link_to("New Job", new_job_path, class:"btn btn-primary pull-right") %></div>
+<div class="col-md-12">
+  <div class="dropdown clearfix pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">order by<span class="caret"></span></button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+      <li><%= link_to("Lower Bound DESC", jobs_path(:order => "by_lower_bound")) %></li>
+      <li><%= link_to("Upper Bound DESC", jobs_path(:oder => "by_upper_bound")) %></li>
+      <li><%= link_to("created At DESC", jobs_path()) %></li>
+    </ul>
+  </div>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <td>#</td>
-      <td>Title</td>
-      <td>Description</td>
-      <td>Wage Lower Bound</td>
-      <td>Wage Upper Bound</td>
-      <td>Contact Email</td>
-      <td>Created At</td>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render :partial => "job_item", :collection => @jobs, :as => :job%>
-  </tbody>
-</table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Job Name</td>
+        <td>Wage Lower Bound</td>
+        <td>Wage Upper Bound</td>
+        <td>Created At</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render :partial => "job_item", :collection => @jobs, :as => :job%>
+    </tbody>
+  </table>
 </div>

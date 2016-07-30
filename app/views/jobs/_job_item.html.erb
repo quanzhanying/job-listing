@@ -1,10 +1,8 @@
 <tr>
   <td>#</td>
   <td><%= link_to(job.title, job_path(job)) %></td>
-  <td><%= render_job_description(job) %></td>
   <td><%= job.wage_lower_bound %></td>
   <td><%= job.wage_upper_bound %></td>
-  <td><%= job.contact_email %></td>
   <td><%= job.created_at %></td>
   <td>
     <% if current_user && current_user == job.user %>
