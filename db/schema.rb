@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728030515) do
+ActiveRecord::Schema.define(version: 20160730144611) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20160728030515) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.boolean  "is_hidden",        default: true
+  end
+
+  create_table "resumes", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "pdf_file_file_name"
+    t.string   "pdf_file_content_type"
+    t.integer  "pdf_file_file_size"
+    t.datetime "pdf_file_updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "job_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
