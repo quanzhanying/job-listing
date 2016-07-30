@@ -3,7 +3,7 @@
 <hr />
 
 <%= simple_form_for [@job, @resume] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :attachment %>
-  <%= f.submit "send" %>
+  <%= f.input :content, input_html: { class: "form-control" }%>
+  <%= f.input :attachment, label: 'Attachment(only receive pdf and must less than or equal to 2MB)' %>
+  <%= f.submit "send", class: 'btn btn-primary' %>
 <% end %>
