@@ -1,2 +1,5 @@
-<h2><%= @job.title %></h2>
-<p><%= render_job_description(@job) %></p>
+  <h2><%= @job.title %></h2>
+  <p><%= render_job_description(@job) %></p>
+  <div class="text-center">
+    <%= link_to("submit your resume", new_job_resume_path(@job), class: "btn btn-primary text-center") %>
+  </div>

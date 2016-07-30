@@ -9,17 +9,12 @@
   </head>
 
   <body>
-    <%= render "common/navbar" %>
     <div class="container-fluid">
-      <div class="row">
-        <% if current_user && current_user.admin? %>
-          <%= render "common/sidebar" %>
-        <% end %>
-
-        <%= render "common/flashes" %>
-        <%= yield %>
-      </div>
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <%= yield %>
     </div>
+
     <%= render "common/footer" %>
   </body>
 </html>
