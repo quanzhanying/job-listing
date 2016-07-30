@@ -1,9 +1,16 @@
 class Admin::JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_filter :require_is_admin
+  layout "admin"
 
   def show
     @job = Job.find(params[:id])
+    if @job.is_hidden
+      flash[:warning] = "This Job is already archieved"
+      redirect_to root_path
+    end
   end
+
 
   def index
     @jobs = Job.all.order("created_at DESC")
@@ -45,6 +52,21 @@ class Admin::JobsController < ApplicationController
 
     redirect_to new_admin_job_path
   end
+
+  def publish
+    @job = Job.find(params[:id])
+    @job.user = current_user
+    @job.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @job = Job.find(params[:id])
+    @job.user = current_user
+    @job.hide!
+    redirect_to :back
+  end
+
 
   private
 
