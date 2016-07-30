@@ -1,5 +1,5 @@
 
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<div class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset-1 main">
   <div class="Job"><%= link_to("New Job", new_admin_job_path, class: "btn btn-primary pull-right") %></div>
 
 
@@ -7,12 +7,12 @@
   <thead>
     <tr>
       <td>#</td>
-      <td>Title</td>
-      <td>Description</td>
+      <td>Job Name</td>
+      <td>Resume count</td>
       <td>Wage Lower Bound</td>
       <td>Wage Upper Bound</td>
-      <td>Contact Email</td>
       <td>Created At</td>
+      <td>Manager Operation</td>
     </tr>
   </thead>
   <tbody><%= render :partial => "job_item", :collection => @jobs, :as => :job %></tbody>

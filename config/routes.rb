@@ -12,6 +12,8 @@ Rails.application.routes.draw do
         post :open
         get :close
       end
+
+    resources :resumes
     end
   end
 end

@@ -1,0 +1,7 @@
+<div class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset-1 main">
+  <h2><%= @job.title %> - resume list</h2>
+
+  <hr />
+
+  <%= render :partial => "resume", :collection => @resumes, :as => :resume %>
+</div>
