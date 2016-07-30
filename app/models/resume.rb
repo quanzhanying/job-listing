@@ -18,4 +18,7 @@
 class Resume < ApplicationRecord
 	belongs_to :job
 	belongs_to :user
+
+	has_attached_file :pdf_file
+	validates_attachment_content_type :pdf_file, content_type: { content_type: "application/pdf" }
 end

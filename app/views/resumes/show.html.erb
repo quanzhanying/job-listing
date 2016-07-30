@@ -1,0 +1,26 @@
+<h1> <% @job.title %></h1>
+<div class="pull-right">
+	<% if current_user && !current_user.admin? %>
+        <%= link_to("Edit", edit_job_resume_path(@job), :class => "btn btn-default" ) %>
+      <% end %>
+</div>
+
+<table class="table table-boldered">
+  <tr>
+    <th>Jobs I've Applied</th>
+    <th>Description</th>
+    <th>Submit Time</th> 
+  </tr>
+
+    <tr>
+      <td>
+        <%= @resume.job %>
+      </td>
+      <td><%= link_to("view resume", job_resume_path(@resume)) %></td>
+      <td>
+        <%= @resume.created_at %>
+      </td>
+
+    </tr>
+
+</table>
