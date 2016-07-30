@@ -20,7 +20,11 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
+                                <% if current_user.admin? %>
+                                    <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
+                                <% else %>
+                                    <li> <%= link_to("User Panel", jobs_path) %> </li>
+                                <% end %>
                                 <li class="divider"></li>
                                 <li> <%= link_to("Logout", destroy_user_session_path, method: :delete) %> </li>
                             </ul>

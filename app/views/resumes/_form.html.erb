@@ -1,3 +1,10 @@
-<%= simple_form_for @user, url: users_path do |form| %>
-  <%= form.input :pdf_file, as: :file %>
+<%= simple_form_for @resume, url: job_resumes_path do |f| %>
+
+	<div class="form-job">
+	    <%= f.input :name, input_html: { class: "form-control"} %>
+	    <%= f.input :description, input_html: { class: "form-control"} %>
+	    <%= f.input :pdf_file, as: :file %>
+  	</div>
+
+  <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
 <% end %>

@@ -1,0 +1,34 @@
+
+<table class="table table-boldered">
+  <tr>
+    <% if current_user && current_user.admin? %>
+      <th>Applicants</th>
+      <th>Jobs</th>
+    <% else %>
+      <th>Jobs I've Applied</th>    
+    <% end %>
+
+    <th>Submit Time</th>
+    <th></th> 
+  </tr>
+  <% @resumes.each do |resume| %>
+    <tr>
+      <% if current_user && !current_user.admin? %>
+        <td><%= resume.name %></td>
+      <% end %>
+      <td>
+        <%= resume.job %> |
+        <%= link_to("view resume", job_resume_path(resume)) %>
+      </td>
+      <td>
+        <%= resume.created_at %>
+      </td>
+      <td>
+        <% if current_user && !current_user.admin? %>
+          <%= link_to("Edit", edit_job_resume_path(resume.job, resume) %>
+        <% end %>
+        <%= link_to("Destroy", job_resume_path(resume.job, resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
