@@ -16,6 +16,9 @@ class JobsController < ApplicationController
             else
               @jobs = Job.all.show_public.recent
             end
+    if current_user && current_user.admin?
+      redirect_to admin_jobs_path
+    end
   end
 
   def new

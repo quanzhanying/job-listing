@@ -1,7 +1,7 @@
 <% if flash.any? %>
   <% user_facing_flashes.each do |key, value|%>
     <% if current_user && current_user.admin? %>
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main alert alert-dismissable alert-<%= flash_class(key)%>">
     <% else %>
       <div class="alert alert-dismissable alert-<%= flash_class(key) %>">
     <% end %>
