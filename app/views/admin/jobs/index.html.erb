@@ -9,6 +9,9 @@
   <tr>
     <td>
       <%= link_to(job.title, admin_job_path(job)) %>
+      <%= job.wage_upper_bound %>
+      <%= job.wage_lower_bound %>
+      <%= job.contact_email %>
     </td>
     <td>
       <%= link_to("Edit", edit_admin_job_path(job)) %> |

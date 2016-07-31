@@ -15,7 +15,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def create
-    @admin_job = Job.new(admin_job_params)
+    @admin_job = Job.new(job_params)
 
     if @admin_job.save
       redirect_to admin_jobs_path
@@ -30,7 +30,7 @@ class Admin::JobsController < ApplicationController
 
   def update
     @admin_job = Job.find(params[:id])
-    if @admin_job.update(admin_job_params)
+    if @admin_job.update(job_params)
       redirect_to admin_jobs_path
     else
       render :edit
@@ -46,9 +46,6 @@ class Admin::JobsController < ApplicationController
   end
 
   private
-  def admin_job_params
-    params.require(:job).permit(:title, :description)
-  end
-
+  
 
 end

@@ -10,6 +10,9 @@
     </td>
     <td>
       <%= job.created_at %>
+      <%= job.wage_upper_bound %>
+      <%= job.wage_lower_bound %>
+      <%= job.contact_email %>
     </td>
     <td>
       <%= link_to("Edit", edit_job_path(job)) %> |
