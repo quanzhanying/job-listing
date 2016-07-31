@@ -46,6 +46,6 @@ class Admin::JobsController < ApplicationController
   end
 
   private
-  
+
 
 end
