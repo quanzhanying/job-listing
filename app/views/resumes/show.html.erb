@@ -7,16 +7,18 @@
 
 <table class="table table-boldered">
   <tr>
-    <th>Jobs I've Applied</th>
+    <th>Position</th>
     <th>Description</th>
     <th>Submit Time</th> 
   </tr>
 
     <tr>
       <td>
-        <%= @resume.job %>
+        <%= @resume.job.title %>
       </td>
-      <td><%= link_to("view resume", job_resume_path(@resume)) %></td>
+      <td>
+        <%= @resume.description %> 
+      </td>
       <td>
         <%= @resume.created_at %>
       </td>

@@ -20,7 +20,7 @@ class Resume < ApplicationRecord
 	belongs_to :user
 
 	has_attached_file :pdf_file
-	validates_attachment_content_type :pdf_file, content_type: { content_type: "application/pdf" }
+	validates_attachment_content_type :pdf_file, content_type: { content_type: 'application/pdf' }
 
 	validates :name, presence: true
 	validates :description, presence: true

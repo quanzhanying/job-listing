@@ -9,7 +9,7 @@ class ResumesController < ApplicationController
 
 	def show
 		@resume = Resume.find(params[:id])
-		@job = resume.job
+		@job = @resume.job
 	end
 
 	def new
@@ -44,7 +44,7 @@ class ResumesController < ApplicationController
 
 	def destroy
 		@resume.destroy
-		redirect_to job_resumes, alert: "Your resume has been updated!"
+		redirect_to :back, alert: "Resume has been deleted!"
 	end
 
 	private

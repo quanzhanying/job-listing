@@ -3,7 +3,6 @@ class CreateResumes < ActiveRecord::Migration[5.0]
     create_table :resumes do |t|
       t.string :name
       t.text :description
-      t.attachment :pdf_file
 
       t.timestamps
     end
