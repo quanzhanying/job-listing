@@ -1,0 +1,22 @@
+<table class="table table-boldered">
+  <tr>
+    <th>Jobs I've Applied</th>    
+    <th>Submit Time</th>
+    <th></th> 
+  </tr>
+  <% @resumes.each do |resume| %>
+    <tr>
+      <td>
+        <%= resume.job.title %> |
+        <%= link_to("view resume", job_resume_path(resume.job, resume)) %>
+      </td>
+      <td>
+        <%= resume.created_at %>
+      </td>
+      <td>
+        <%= link_to("Edit", edit_job_resume_path(resume.job, resume)) %> |
+        <%= link_to("Destroy", job_resume_path(resume.job, resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

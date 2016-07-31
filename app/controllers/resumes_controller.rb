@@ -36,7 +36,7 @@ class ResumesController < ApplicationController
 
 	def update
 		if @resume.update(resume_params)
-			redirect_to job_resumes_path(@resume.job), notice: "Your resume has been updated!"
+			redirect_to applicant_resumes_path, notice: "Your resume has been updated!"
 		else
 			render :edit
 		end
