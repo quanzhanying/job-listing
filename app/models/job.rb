@@ -20,6 +20,7 @@ class Job < ApplicationRecord
 	validates :wage_lower_bound, numericality: { greater_than: 0}
 	validates :wage_upper_bound, numericality: { greater_than: :wage_lower_bound}
 
+	belongs_to :user
 	has_many :resumes, dependent: :destroy
 
 end

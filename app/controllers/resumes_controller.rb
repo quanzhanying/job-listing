@@ -4,7 +4,6 @@ class ResumesController < ApplicationController
 	before_action :get_params, only: [:edit, :update, :destroy]
 
 	def index
-		@resumes = current_user.Resume.all
 	end
 
 	def show

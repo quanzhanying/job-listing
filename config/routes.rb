@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
+    resources :resumes
+
   	resources :jobs do
 
   		member do

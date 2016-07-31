@@ -15,6 +15,7 @@ class Admin::JobsController < ApplicationController
 
 	def create
 		@job = Job.new(job_params)
+		@job.user = current_user
 
 		if @job.save
 			redirect_to admin_jobs_path
@@ -37,6 +38,7 @@ class Admin::JobsController < ApplicationController
 
 	def show
 		@job = Job.find(params[:id])
+		@resumes = @job.resumes
 	end
 
 	def destroy
