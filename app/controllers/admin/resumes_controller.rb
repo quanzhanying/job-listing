@@ -5,6 +5,6 @@ class Admin::ResumesController < ApplicationController
 	before_action :get_params, only: [:edit, :update, :destroy]
 
 	def index
-		@jobs = current_user.jobs
+		@jobs = Job.all
 	end
 end
