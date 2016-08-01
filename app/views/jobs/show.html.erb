@@ -2,6 +2,9 @@
   <div class="job">
     <%= link_to("Add a job", new_job_path(@job), class: "btn btn-primary pull-right")%>
   </div>
+  <div class="text-center">
+    <%= link_to("投递简历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;")%>
+  </div>
   <h2><%= @job.title %></h2>
   <p><%= @job.description %></p>
 </div>
