@@ -1,0 +1,17 @@
+<div class="col-md-4 col-md-offset-4">
+  <h2>Add a job</h2>
+
+  <hr>
+  <%= simple_form_for [:admin, @job] do |f| %>
+   <div class="form-Job">
+
+     <%= f.input :title, input_html: { class: "form-control"} %>
+     <%= f.input :description, input_html: { class: "form-control"} %>
+     <%= f.input :wage_lower_bound, :label => "薪資下限" %>
+     <%= f.input :wage_upper_bound, :label => "薪資上限" %>
+     <%= f.input :contact_email %>
+     <%= f.input :is_hidden %>
+   </div>
+   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..."} %>
+   <% end %>
+</div>

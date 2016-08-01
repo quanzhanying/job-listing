@@ -1,0 +1,20 @@
+<p><%= @job.description %></p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>履历内容</th>
+        <th>发表者</th>
+        <th>发表时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.content %> </td>
+        <td><%= resume.user.email %> </td>
+        <td><%= resume.created_at %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
