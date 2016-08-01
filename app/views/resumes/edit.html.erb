@@ -1,7 +1,8 @@
-<h2><%= @job.title %></h2>
-<p><%= simple_format(@job.description) %></p>
-<h3>Resume</h3>
+<div class="col-md-10 col-md-offset-1">
+	<h4><%= @job.title %></h4>
+	<h3>Edit Your Resume</h3>
 
-<hr>
+	<hr>
 
-<%= render 'form' %>
+	<%= render 'form' %>
+</div>
