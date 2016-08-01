@@ -1,0 +1,27 @@
+<div class="col-md-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>简历</th>
+        <th>最后修改时间</th>
+      </tr>
+
+      <tbody>
+        <% @resumes.each do |resume| %>
+          <tr>
+            <td>
+              <%= link_to(resume.content,job_resume_path(@job,resume)) %>
+            </td>
+            <td>
+              <%= resume.updated_at %>
+            </td>
+            <td><%= link_to "Download Resume", resume.attachment_url %></td>
+            <td>
+              <%= link_to("Edit", edit_job_resume_path(@job,resume), class: "btn btn-sm btn-default")%>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </thead>
+  </table>
+</div>
