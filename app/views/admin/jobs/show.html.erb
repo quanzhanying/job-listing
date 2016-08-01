@@ -1,0 +1,13 @@
+<h1> <%= @job.title %> </h1>
+<p>
+
+  描述<%= simple_format(@job.description)%>
+  薪酬
+  <br />
+  <%= @job.wage_lower_bound %>元 - <%= @job.wage_upper_bound %>元
+  <br  />
+  邮箱
+  <br  />
+  <%= @job.contact_email %>
+
+</p>
