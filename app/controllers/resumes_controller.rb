@@ -22,13 +22,14 @@ class ResumesController < ApplicationController
 	end
 
 	def edit
-		
+		@job = @resume.job
 	end
 
 	def update
 		
+		@job = @resume.job
 		if @resume.update(resume_params)
-			redirect_to job_path(@job), notice: "Your Resume has been updated"
+			redirect_to job_path(@job), notice: "Your Resume has been Updated"
 		else
 			render :edit
 		end
@@ -36,7 +37,7 @@ class ResumesController < ApplicationController
 
 	def destroy
 		@resume.destroy
-		redirect_to 
+		redirect_to :back, alert: "Resume has been Deleted"
 	end
 
 
@@ -47,6 +48,6 @@ class ResumesController < ApplicationController
 	end
 
 	def resume_params
-		params.require(:resume).permit(:content, :attachment)
+		params.require(:resume).permit(:content, :attachment, :name)
 	end
 end

@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
   end
 
+  namespace :applicant do
+
+    resources :resumes
+
+  end
+
   namespace :admin do
 
   	resources :jobs do
