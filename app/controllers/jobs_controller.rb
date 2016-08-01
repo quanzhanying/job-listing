@@ -4,7 +4,18 @@ class JobsController < ApplicationController
     before_action :check_show_permission,only:[:show]
 
     def index
-      @jobs = Job.where(:is_hidden => false).order("created_at DESC")
+      @order = params[:order]
+
+      case @order
+      when "wage_upper_bound"
+        @jobs = Job.where(:is_hidden => false).order("wage_upper_bound DESC")
+      when "wage_lower_bound"
+        @jobs = Job.where(:is_hidden => false).order("wage_lower_bound DESC")
+      else
+        @jobs = Job.where(:is_hidden => false).order("created_at DESC")
+      end
+
+
     end
 
     def show
@@ -47,7 +58,7 @@ class JobsController < ApplicationController
     private
 
     def job_params
-      params.require(:job).permit(:title,:description,:wage_upper_bound,:wage_lower_bound,:is_hidden)
+      params.require(:job).permit(:title,:description,:wage_upper_bound,:wage_lower_bound,:is_hidden,:contact_email)
     end
 
     def find_job_and_check_permission

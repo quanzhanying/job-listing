@@ -1,14 +1,46 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("Add A Job", new_job_path, class: "btn btn-primary pull-right") %>
+
+    <script type="text/javascript">
+
+      function a(){
+
+          //alert(1);
+          $("#form").submit();
+
+      }
+
+    </script>
+
+
+      <div class="form-group">
+        <!--<form id="form" class="" action="jobs#index" method="post" >
+          <select id="order_select" class="custom-select" name="order" onchange="a()">
+            <option value="" selected>排序</option>
+            <option value="wage_lower_bound">薪资下限</option>
+            <option value="wage_upper_bound">薪资上限</option>
+            <option value="created_at">发布时间</option>
+          </select>
+
+        </form>-->
+
+        <%= form_tag('/jobs',id: :form ,method: "get") do %>
+         <%= select_tag "order",raw('<option value="">排序</option><option value="wage_lower_bound">薪资下限</option><option value="wage_upper_bound">薪资上限</option><option value="created_at">发布时间</option>'),:onchange=>"a()" %>
+
+        <% end %>
+      </div>
+
+
   </div>
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>Title</td>
-        <td>Description</td>
-        <th>CreateTime</th>
-        <th>Operate</th>
+        <td>职位</td>
+        <td>职位简述</td>
+        <td>薪资下限</td>
+        <td>薪资上限</td>
+        <th>发布时间</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +48,8 @@
         <tr>
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td><%= job.description %></td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.wage_upper_bound %></td>
           <td><%= job.created_at %></td>
           <td>
               <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
