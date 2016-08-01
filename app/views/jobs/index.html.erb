@@ -1,5 +1,5 @@
 <div class="pull-right">
-    <span class="dropdown">
+    <div class="dropdown">
       <button class="dropdown-toggle btn btn-default" data-toggle="dropdown">
         Sort By
         <b class="caret"></b>
@@ -9,7 +9,7 @@
             <li><%= link_to("Wage Lower Bound", jobs_path(:order => 'lowerwage')) %></li>
             <li><%= link_to("Created Time", jobs_path(:order => 'date')) %></li>
         </ul>
-    </span>
+    </div>
       
       <% if current_user && current_user.admin? %>
         <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
