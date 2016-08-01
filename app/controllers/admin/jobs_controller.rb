@@ -21,6 +21,7 @@ class Admin::JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
     if @job.save
       redirect_to admin_jobs_path
     else
@@ -34,7 +35,7 @@ class Admin::JobsController < ApplicationController
     if @job.update(job_params)
       redirect_to admin_jobs_path, notice: "Update Success"
     else
-      render :edit
+      render :new
     end
   end
 
@@ -46,7 +47,7 @@ class Admin::JobsController < ApplicationController
 
   def Publish
     @job = Job.find(params[:id])
-@job.publish!
+    @job.publish!
     redirect_to :back
   end
 

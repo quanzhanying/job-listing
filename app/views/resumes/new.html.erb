@@ -4,8 +4,10 @@
   <div class="form-gorup">
     <%= f.input :content, input_html: { class: "form-control"} %>
   </div>
+    <%= f.input :attachment %>
   <div class="form-action">
     <%= f.submit "Submit", disable_with: "Submiting...", class:"btn btn-primary" %>
   </div>
+
   <% end %>
 </div>

@@ -25,12 +25,16 @@ class Job < ApplicationRecord
   validates :wage_lower_bound, numericality: { greater_than: 0}
 
   def publish!
-    self.is_hidden = false
-    self.save
+    if !is_hidden
+      self.is_hidden = false
+      self.save
+    end
   end
 
   def hide!
-    self.is_hidden = true
-    self.save
+    if !is_hidden
+      self.is_hidden = true
+      self.save
+    end
   end
 end
