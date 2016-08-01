@@ -4,8 +4,4 @@
 
 <hr>
 
-<%= simple_form_for [@job, @resume] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :attachment, as: :file %>
-  <%= f.submit "Submit Your Resume" %>
-<% end %>
+<%= render 'form' %>
