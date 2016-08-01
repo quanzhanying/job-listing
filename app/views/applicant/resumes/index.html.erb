@@ -15,7 +15,7 @@
       </td>
       <td>
         <%= link_to("Edit Resume", edit_applicant_resume_path(resume)) %> |
-        <%= link_to("Destroy", job_resume_path(resume.job, resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+        <%= link_to("Delete", job_resume_path(resume.job, resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
       </td>
     </tr>
   <% end %>
