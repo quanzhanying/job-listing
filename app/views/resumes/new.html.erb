@@ -1,0 +1,11 @@
+<div class="well">
+  <%= form_for [@job,@resume], html: { multipart: true } do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br/>
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
+    <br/>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>
