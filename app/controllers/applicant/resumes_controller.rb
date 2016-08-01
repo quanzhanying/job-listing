@@ -10,7 +10,6 @@ class Applicant::ResumesController < ApplicationController
 
 	def show
 		@resume = Resume.find(params[:id])
-		@job = @resume.job
 	end
 
 	def edit

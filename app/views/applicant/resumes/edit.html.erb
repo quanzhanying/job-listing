@@ -9,7 +9,8 @@
     	<div class="form-job">
 	    <%= f.input :name, input_html: { class: "form-control"} %>
 	    <%= f.input :content, input_html: { class: "form-control"} %>
-	    <%= f.input :attachment, label: 'Choose a PDF Resume', as: :file %>
+	    <%= link_to("Download Your Resume", @resume.attachment.url) if @resume.attachment? %>
+	    <%= f.input :attachment, label: texts_depend_on_existance_of_resume(@resume), as: :file %>
   		</div>
 
   		<%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>

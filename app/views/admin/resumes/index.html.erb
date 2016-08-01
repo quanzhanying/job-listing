@@ -15,13 +15,13 @@
           </td>
           <td>
             <%= resume.name %> |
-            <%= link_to("view resume", job_resume_path(job, resume)) %>
+            <%= link_to("view resume", admin_resume_path(resume)) %>
           </td>
           <td>
             <%= resume.created_at %>
           </td>
           <td>
-            <%= link_to("Destroy", job_resume_path(job, resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+            <%= link_to("Delete", job_resume_path(job, resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
           </td>
         </tr>
       <% end %>

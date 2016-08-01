@@ -3,6 +3,11 @@ class ResumesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :get_params, only: [:edit, :update, :destroy]
 
+	def show
+		@resume = Resume.find(params[:id])
+		@job = Job.find(params[:job_id])
+	end
+
 	def new
 		@job = Job.find(params[:job_id])
 		@resume = Resume.new
