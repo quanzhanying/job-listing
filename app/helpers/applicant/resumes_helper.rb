@@ -1,0 +1,2 @@
+module Applicant::ResumesHelper
+end
