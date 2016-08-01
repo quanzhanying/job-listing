@@ -8,6 +8,7 @@
 #  content    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  attachment :string
 #
 
 class Resume < ApplicationRecord
@@ -15,4 +16,6 @@ class Resume < ApplicationRecord
 	belongs_to :job
 
 	validates :content, presence: true
+
+	mount_uploader :attachment, PdFfileUploader
 end
