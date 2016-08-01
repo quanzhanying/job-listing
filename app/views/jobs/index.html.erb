@@ -1,0 +1,31 @@
+<div class="col-md-12">
+  <!-- <div class="job">
+    <%= link_to("Add a job", new_job_path, class: "btn btn-primary pull-right") %>
+  </div> -->
+  <table class="table table-hover">
+    <thead>
+      <tr>
+
+        <td class="bg-success">Jobs</td>
+        <td class="bg-success">Wage Lower Bound</td>
+        <td class="bg-success">Wage Upper Bound</td>
+        <td class="bg-success">Email</td>
+        <td class="bg-success">Created At</td>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+      <tr>
+        <td>
+          <%= link_to(job.title, job_path(job)) %>
+        </td>
+        <td><%= job.wage_lower_bound %></td>
+        <td><%= job.wage_upper_bound %></td>
+        <td><%= job.contact_email %></td>
+        <td><%= job.created_at %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

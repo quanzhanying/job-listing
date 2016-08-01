@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <div class="container-fluid">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <%= render "common/menudivider" %>
     <%= yield %>
+  </div>
+  <%= render "common/footer" %>
   </body>
 </html>
