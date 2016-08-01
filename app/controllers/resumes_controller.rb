@@ -34,6 +34,8 @@ class ResumesController < ApplicationController
     if @resume.update(resume_params)
       redirect_to job_resumes_path(@job),notice: "Update resume Success"
     else
+      flash[:notice] =  "上传出错！"
+      #如何让不同错误提示不同错误信息
       render :edit
     end
   end
@@ -46,6 +48,6 @@ class ResumesController < ApplicationController
   private
 
   def resume_params
-    params.require(:resume).permit(:content,:user_id,:job_id)
+    params.require(:resume).permit(:content,:user_id,:job_id,:attachment)
   end
 end

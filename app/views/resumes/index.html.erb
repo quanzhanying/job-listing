@@ -15,6 +15,7 @@
             <td>
               <%= resume.updated_at %>
             </td>
+            <td><%= link_to "Download Resume", resume.attachment_url %></td>
             <td>
               <%= link_to("Edit", edit_job_resume_path(@job,resume), class: "btn btn-sm btn-default")%>
             </td>
