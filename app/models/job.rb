@@ -14,6 +14,8 @@
 #
 
 class Job < ApplicationRecord
+  scope :published, -> { where(is_hidden: false)}
+  scope :recent, -> { order("created_at") }
   validates :title, presence: true
 
   validates :wage_upper_bound, presence: true
