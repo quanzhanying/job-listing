@@ -1,4 +1,4 @@
-<h1> <% @job.title %></h1>
+<h3> <%= @job.title %></h3>
 
 <% if current_user && !current_user.admin? %>
 	<div class="pull-right">
@@ -6,7 +6,6 @@
 	</div>
 <% end %>
 
-<h2><%= @job.title %></h2>
 <hr>
 <p>
   <%= simple_format(@job.description)%>
