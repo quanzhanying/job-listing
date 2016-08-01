@@ -1,0 +1,7 @@
+<%= simple_form_for [@job,@resume] do |resume| %>
+  <div class="form-group">
+    <%= resume.input :content,input_html:{class: "form-control"} %>
+  </div>
+
+  <%= resume.submit "Submit",class: "btn btn-primary",data: {disable_with: "Submiting..."} %>
+<% end %>

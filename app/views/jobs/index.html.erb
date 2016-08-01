@@ -40,7 +40,7 @@
         <td>薪资下限</td>
         <td>薪资上限</td>
         <th>发布时间</th>
-        <th>操作</th>
+
       </tr>
     </thead>
     <tbody>
@@ -51,11 +51,13 @@
           <td><%= job.wage_lower_bound %></td>
           <td><%= job.wage_upper_bound %></td>
           <td><%= job.created_at %></td>
+          <!--
           <td>
               <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
               <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
           </td>
+        -->
         </tr>
       <% end %>
     </tbody>
