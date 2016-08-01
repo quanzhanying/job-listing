@@ -8,7 +8,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.order("created_at DESC")
   end
 
   def new
