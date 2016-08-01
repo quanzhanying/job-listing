@@ -1,5 +1,8 @@
 <h3><%= @job.title %></h3>
 <hr>
+  <div class="pull-right">
+      <%= link_to("Edit Job", edit_job_path(@job), :class => "btn btn-default" ) %>
+  </div>
 <p>
   <%= simple_format(@job.description)%>
 </p>
