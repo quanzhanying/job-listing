@@ -1,4 +1,6 @@
 class Job < ApplicationRecord
+  has_many :resumes
+  
   def publish!
     self.is_hidden = false
     self.save
