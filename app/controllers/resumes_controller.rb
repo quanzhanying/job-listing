@@ -6,7 +6,7 @@ class ResumesController < ApplicationController
     @resume = Resume.new
   end
 
-  def creat
+  def create
     @job = Job.find(params[:job_id])
     @resume = Resume.new(resume_params)
     @resume.job = @job

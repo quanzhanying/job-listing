@@ -20,3 +20,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 config/database.yml
+
+# Ignore public files
+public/uploads
