@@ -1,0 +1,12 @@
+<div class="col-md-12">
+  <div class="group">
+
+    <%= link_to("BACK", admin_jobs_path)%>
+    <%= link_to("Edit", edit_admin_job_path(@job), class: "btn btn-primary pull-right")%>
+  </div>
+  <h2><%= @job.title %></h2>
+  <p>责任描述：<%= @job.description %></p>
+  <p>薪资上限：<%= @job.wage_upper_bound %></p>
+  <p>薪资下限：<%= @job.wage_lower_bound %></p>
+  <p>创建时间：<%= @job.created_at %></p>
+</div>
