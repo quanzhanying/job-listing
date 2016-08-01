@@ -1,7 +1,4 @@
-<div class="col-md-12">
-  <!-- <div class="group">
-    <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right")%>
-  </div> -->
+<div class="col-md-13">
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -25,7 +22,27 @@
         </tr>
       </tbody>
     </table>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>履历内容</th>
+          <th>发表者</th>
+          <th>发表时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @resumes.each do |resume| %>
+        <tr>
+          <td><%= resume.content %> </td>
+          <td><%= resume.user.email %> </td>
+          <td><%= resume.created_at %> </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
     <div class="text-center">
-    <%= link_to("提交履历", "#", class: "btn btn-primary" , style: "font-size: 30px;") %>
+    <%= link_to("提交履历", new_job_resume_path(@job), class: "btn btn-primary" , style: "font-size: 30px;") %>
   </div>
 </div>
