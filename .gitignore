@@ -16,7 +16,12 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+public/uploads
 
 # Ignore Byebug command history file.
 .byebug_history
 config/database.yml
+
+fruits.each do |fruit|
+  puts fruit
+end
