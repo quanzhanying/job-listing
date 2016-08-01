@@ -14,7 +14,7 @@
         <%= resume.created_at %>
       </td>
       <td>
-        <%= link_to("Edit", edit_job_resume_path(resume.job, resume)) %> |
+        <%= link_to("Edit", edit_applicant_resume_path(resume)) %> |
         <%= link_to("Destroy", job_resume_path(resume.job, resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
       </td>
     </tr>

@@ -1,0 +1,19 @@
+<div class="col-md-10 col-md-offset-1">
+	<h4><%= @job.title %></h4>
+	<h3>Edit Your Resume</h3>
+
+	<hr>
+
+	<%= simple_form_for [:applicant, @resume] do |f| %>
+    	
+    	<div class="form-job">
+	    <%= f.input :name, input_html: { class: "form-control"} %>
+	    <%= f.input :content, input_html: { class: "form-control"} %>
+	    <%= f.input :attachment, label: 'Choose a PDF Resume', as: :file %>
+  		</div>
+
+  		<%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
+
+	
+	<% end %>
+</div>

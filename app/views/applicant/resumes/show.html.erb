@@ -1,7 +1,7 @@
 <h1> <% @job.title %></h1>
 <div class="pull-right">
 	<% if current_user && !current_user.admin? %>
-        <%= link_to("Edit", edit_job_resume_path(@job), :class => "btn btn-default" ) %>
+        <%= link_to("Edit", edit_applicant_resume_path(@resume), :class => "btn btn-default" ) %>
       <% end %>
 </div>
 
