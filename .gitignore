@@ -20,3 +20,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 config/database.yml
+
+public/uploads
+#ignore the uploads version by users in the future, so don't have to commit the uploads.
