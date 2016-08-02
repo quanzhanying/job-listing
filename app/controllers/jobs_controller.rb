@@ -41,13 +41,20 @@ before_filter :authenticate_user!, only: [:new, :create, :update , :edit , :dest
   end
 
   def index
-    @jobs = Job.where(:is_hidden =>false).order("created_at DESC")
+    @order = params[:order]
+    if @order!=nil
+      @jobs = Job.published.order("#{@order} DESC")
+    else
+      @jobs = Job.published.recent
+    end
   end
 
-  def index_upper_bound
-    @jobs = Job.where(:is_hidden =>false).order("wage_upper_bound DESC")
-    render :index
-  end
+  # def index_upper_bound
+  #   @jobs = Job.where(:is_hidden =>false).order("wage_upper_bound DESC")
+  #   render :index
+  # end
+
+
   private
 
   def job_params

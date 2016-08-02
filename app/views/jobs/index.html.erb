@@ -2,8 +2,8 @@
   <table class="table table-boldered">
 <tr>
 <td>工作名称</td>
-<td><%=link_to("工作薪资上限",job_index_upper_bound_url(@jobs))%></td>
-<td>工作薪资下限</td>
+<td><%=link_to("工作薪资上限",jobs_path(@jobs ,order: "wage_upper_bound"))%></td>
+<td><%= link_to("工作薪资下限",jobs_path(@jobs , order: "wage_lower_bound"))%></td>
 <td>联系邮箱</td>
 <td><%= link_to("创建时间",jobs_path)%></td>
 </tr>
