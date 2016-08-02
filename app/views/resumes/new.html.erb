@@ -1,0 +1,12 @@
+<h2 class="text-center">Create a resume</h2>
+
+<%= simple_form_for [@job, @resume] do |f| %>
+  <div class="form-group">
+    <%= f.input :content %>
+  </div>
+  <!-- <div class="" -->
+  <!-- <%= f.file_field :attachment %> -->
+  <%= f.input :attachment %>
+
+  <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+<% end %>

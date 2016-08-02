@@ -4,4 +4,10 @@
   </div>
   <h2><%= @job.title %></h2>
   <p><%= @job.description %></p>
+
+  <!-- <%= link_to("Submit my resume", new_job_resume_path(@job))  %> -->
+  <div class="text-center">
+    <%= link_to("Submit my resume", new_job_resume_path(@job))  %>
+  </div>
+
 </div>
