@@ -6,29 +6,38 @@
     <thead>
       <tr>
         <td><span class="glyphicon glyphicon-asterisk"></span></td>
-        <td>Job Title</td>
+        <td>工作名称</td>
         <!-- <td>Description</td> -->
-        <td>contact Email</td>
-        <td>Job Add Time</td>
+        <td>薪资下限</td>
+        <td>薪资上限</td>
+        <td>刊登时间</td>
       </tr>
     </thead>
     <tbody>
+      <div class="pull-right">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          排序
+          <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+            <li><%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %></li>
+            <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
+            <li><%= link_to("按照发布时间排序", jobs_path) %></li>
+          </ul>
+          </div>
+        </div>
+      <div>
       <% @jobs.each do |job| %>
       <tr>
         <td><span class="glyphicon glyphicon-asterisk"></span></td>
         <td><%= link_to(job.title, job_path(job)) %></td>
-        <!-- <td><%= job.description %></td> -->
-        <td><%= job.user.email %></td>
+        <td><%= job.wage_lower_bound %></td>
+        <td><%= job.wage_upper_bound %></td>
         <td><%= job.created_at %> </td>
-        <!--<td>
-          <% if current_user && current_user == job.user %>
-          <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default") %>
-          <%= link_to("Delete", job_path(job), class: "btn btn-sm btn-default",
-          method: :delete, data: { confirm: "真尼玛要删除?"} )%>
-          <% end %>
-        </td>-->
       </tr>
       <% end %>
+    </div>
     </tbody>
   </table>
 </div>

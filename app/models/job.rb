@@ -10,8 +10,13 @@
 #  user_id     :integer
 #
 
+
+
 class Job < ApplicationRecord
   belongs_to :user
+
+  scope :published, -> { where(is_hidden: false) }
+  scope :recent, -> { order('created_at DESC') }
 
   validates :title, presence: true
   validates :description, presence: true
