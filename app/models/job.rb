@@ -15,7 +15,6 @@
 
 class Job < ApplicationRecord
   has_many :resumes
-  belongs_to :user
   scope :published, -> { where(is_hidden: false)}
   scope :recent, -> { order("created_at") }
   validates :title, presence: true

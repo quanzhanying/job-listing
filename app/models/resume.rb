@@ -13,7 +13,7 @@
 
 class Resume < ApplicationRecord
   mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.
-  belongs_to :user
   belongs_to :job
+  belongs_to :user
   validates :content, presence: true
 end
