@@ -1,0 +1,10 @@
+<div class="col-md-4 col-md-offset-4">
+  <div class="form-group">
+
+  </div>
+  <h2><%= @job.title %></h2>
+  <hr>
+  <p><%= @job.description %></p>
+  <hr>
+  <%= link_to("提交简历", new_job_resume_path(@job), :class => "btn btn-default pull-right" ) %>
+</div>
