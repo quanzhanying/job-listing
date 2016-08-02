@@ -10,9 +10,6 @@
       <br/>
       <%= @resume.updated_at %>
     </div>
-    <div class="panel-footer"><i class="fa fa-paperclip" aria-hidden="true"></i>
-       <%= link_to "下载简历", @resume.attachment_url %>
-       | <%= link_to("Edit", edit_job_resume_path(@job,@resume))%>
-    </div>
+    <div class="panel-footer"><i class="fa fa-paperclip" aria-hidden="true"></i><%= link_to "下载简历", @resume.attachment_url %></div>
   </div>
 </div>

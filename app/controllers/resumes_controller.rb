@@ -1,5 +1,6 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!,only:[:new,:create,:edit,:update,:destroy]
+  before_action :require_is_admin
 
   def index
     @job = Job.find(params[:job_id])
@@ -19,6 +20,7 @@ class ResumesController < ApplicationController
     if @resume.save
       redirect_to job_path(@job),notice:"提交简历成功"
     else
+      flash[:alert] =  "上传出错！"
       render :new
     end
   end
@@ -34,7 +36,7 @@ class ResumesController < ApplicationController
     if @resume.update(resume_params)
       redirect_to job_resumes_path(@job),notice: "Update resume Success"
     else
-      flash[:notice] =  "上传出错！"
+      flash[:alert] =  "上传出错！"
       #如何让不同错误提示不同错误信息
       render :edit
     end

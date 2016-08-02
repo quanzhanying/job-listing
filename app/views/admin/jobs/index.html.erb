@@ -5,10 +5,11 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Last Update</th>
-        <th>Operate</th>
+        <th>职位</th>
+        <td>投递数量</td>
+        <th>简述</th>
+        <th>最后更新时间</th>
+        <th>操作</th>
       </tr>
 
       <tbody>
@@ -17,6 +18,13 @@
             <td>
               <%= render_job_status(job) %>
               <%= link_to(job.title,admin_job_path(job)) %>
+            </td>
+            <td>
+              <% if job.resumes.count>0 %>
+              <%=  link_to(job.resumes.count,admin_job_resumes_path(job)) %>
+              <% else %>
+                <%= job.resumes.count %>
+              <% end %>
             </td>
             <td>
               <%= job.description %>

@@ -8,7 +8,7 @@
     <div class="panel-heading"><%= resume.user.email %></div>
     <div class="panel-body">
       <p>
-        <%= link_to(simple_format(resume.content),job_resume_path(@job,resume)) %>
+        <%= link_to(simple_format(resume.content),admin_job_resume_path(@job,resume)) %>
       </p>
     </div>
 
@@ -24,8 +24,6 @@
          <% else %>
            无附件
          <% end %>
-         |
-         <%= link_to("Edit", edit_job_resume_path(@job,resume))%>
       </li>
     </ul>
   </div>
@@ -38,27 +36,25 @@
         <th>简历</th>
         <th>最后修改时间</th>
         <th>附件</th>
-        <th>操作</th>
       </tr>
 
       <tbody>
         <% @resumes.each do |resume| %>
           <tr>
             <td>
-              <%= link_to(resume.content,job_resume_path(@job,resume)) %>
+              <%= link_to(resume.content,admin_job_resume_path(@job,resume)) %>
             </td>
             <td>
               <%= resume.updated_at %>
             </td>
             <td>
               <% if resume.attachment_url %>
-              <%= link_to "下载简历", resume.attachment_url %></td>
+              <%= link_to "下载简历", resume.attachment_url %>
               <% else %>
                 还未上传简历
               <% end %>
-            <td>
-              <%= link_to("Edit", edit_job_resume_path(@job,resume), class: "btn btn-sm btn-default")%>
             </td>
+
           </tr>
         <% end %>
       </tbody>
