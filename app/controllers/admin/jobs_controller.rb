@@ -68,6 +68,7 @@ class Admin::JobsController < ApplicationController
   end
 
 
+
   private
 
   def job_params

@@ -25,6 +25,7 @@ class User < ApplicationRecord
   has_many :jobs
   has_many :job_relationships
   has_many :participated_jobs, :through => :job_relationships, :source => :job
+  has_many :resumes
 
   def join!(group)
   participated_jobs << jobs

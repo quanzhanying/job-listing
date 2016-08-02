@@ -5,12 +5,12 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <td><span class="glyphicon glyphicon-asterisk"></span></td>
+        <td>工作编号</td>
         <td>工作名称</td>
-        <!-- <td>Description</td> -->
         <td>薪资下限</td>
         <td>薪资上限</td>
         <td>刊登时间</td>
+        <td>提交简历</td>
       </tr>
     </thead>
     <tbody>
@@ -30,11 +30,12 @@
       <div>
       <% @jobs.each do |job| %>
       <tr>
-        <td><span class="glyphicon glyphicon-asterisk"></span></td>
+        <td><%= job.id %></td>
         <td><%= link_to(job.title, job_path(job)) %></td>
         <td><%= job.wage_lower_bound %></td>
         <td><%= job.wage_upper_bound %></td>
         <td><%= job.created_at %> </td>
+        <td><%= link_to("提交简历", new_job_resume_path(job), :class => "btn btn-default" ) %> </td>
       </tr>
       <% end %>
     </div>
