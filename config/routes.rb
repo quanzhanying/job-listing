@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :jobs do
-    resources :resumes 
+    resources :resumes
   end
   namespace :admin do
     resources :jobs do
       member do
         post :change_hidden
       end
+
+      resources :resumes
     end
   end
   root "jobs#index"

@@ -15,14 +15,18 @@
       <th>
         联系方式
       </th>
-
+<th>
+  简历数量
+</th>
     </tr>
     <tr>
       <td>  <%= simple_format(@job.description)%>    </td>
     <td><%= @job.wage_lower_bound%></td>
       <td><%= @job.wage_upper_bound%></td>
       <td><%= @job.contact_email%></td>
-
+    <td>
+      <%= link_to(@job.resumes.count, admin_job_resumes_path(@job)) %>
+    </td>
     </tr>
 
 </table>
