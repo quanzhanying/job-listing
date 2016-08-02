@@ -1,0 +1,54 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("Add A Job", new_admin_job_path, class: "btn btn-default pull-right") %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>职位</th>
+        <td>投递数量</td>
+        <th>简述</th>
+        <th>最后更新时间</th>
+        <th>操作</th>
+      </tr>
+
+      <tbody>
+        <% @jobs.each do |job| %>
+          <tr>
+            <td>
+              <%= render_job_status(job) %>
+              <%= link_to(job.title,admin_job_path(job)) %>
+            </td>
+            <td>
+              <% if job.resumes.count>0 %>
+              <%=  link_to(job.resumes.count,admin_job_resumes_path(job)) %>
+              <% else %>
+                <%= job.resumes.count %>
+              <% end %>
+            </td>
+            <td>
+              <%= job.description %>
+            </td>
+            <td>
+              <%= job.updated_at %>
+            </td>
+            <td>
+                <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default")%>
+                <%= link_to("Delete", admin_job_path(job),    class: "btn btn-sm btn-default",
+                            method: :delete, data: { confirm: "Are you sure?" } )%>
+
+                <% if job.is_hidden %>
+                  <%= link_to("Publish", publish_admin_job_path(job),    class: "btn btn-sm btn-default",
+                               method: :post,data: { confirm: "Publish,Are you sure?" } )%>
+               <% else %>
+                  <%= link_to("Hide", hide_admin_job_path(job),    class: "btn btn-sm btn-default",
+                               method: :post,data: { confirm: "Hide,Are you sure?" } )%>
+               <% end %>
+
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </thead>
+  </table>
+</div>
