@@ -1,0 +1,9 @@
+<h3> Submit Resume to <%= @group.title %> </h3>
+
+<hr>
+
+<%= simple_form_for [@group, @resume] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :attachment %>
+  <%= f.submit "Submit" %>
+<% end %>

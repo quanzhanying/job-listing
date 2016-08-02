@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :groups
+  resources :groups do
+    resources :resumes
+  end
   root 'groups#index'
 end

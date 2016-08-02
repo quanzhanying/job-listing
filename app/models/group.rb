@@ -39,3 +39,7 @@ class Group < ActiveRecord::Base
   scope :recent, -> {order('created_at DESC')}
 end
 #简化 def index 里的 DESC
+
+class Group < ActiveRecord::Base
+  has_many :resumes
+end
