@@ -17,6 +17,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore PDF
+public/uploads/
+
 # Ignore Byebug command history file.
 .byebug_history
 config/database.yml

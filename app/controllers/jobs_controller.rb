@@ -15,7 +15,7 @@ before_filter :authenticate_user!, only: [:new, :create, :update , :edit , :dest
   end
 
   def show
-    @job = Job.find(params[:id]).order("wage_upper_bound DESC")
+    @job = Job.find(params[:id])
   end
 
   def edit

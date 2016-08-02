@@ -12,7 +12,7 @@
     <% @jobs.each do |job| %>
     <tr>
       <td>
-        <%= link_to(job.title, admin_job_path(job)) %></td>
+        <%= link_to(job.title, job_path(job)) %></td>
       <td>
         <%= job.wage_upper_bound%>
       </td>
