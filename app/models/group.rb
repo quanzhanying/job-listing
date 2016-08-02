@@ -29,3 +29,13 @@ class Group < ActiveRecord::Base
     self.save
   end
 end
+
+class Group < ActiveRecord::Base
+  scope :published, -> {where(is_hidden:false)}
+end
+# 简化 def index 里的 where(is_hidden:false)
+
+class Group < ActiveRecord::Base
+  scope :recent, -> {order('created_at DESC')}
+end
+#简化 def index 里的 DESC

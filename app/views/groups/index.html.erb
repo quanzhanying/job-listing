@@ -2,25 +2,41 @@
   <div class="group">
     <%= link_to("Post New Job", new_group_path, class: "btn btn-primary pull-right") %>
   </div>
+  <div class="dropdown clearfix pull-right">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Sort
+          <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+          <li>
+            <%= link_to("Wage: Lowest first", groups_path(:order => "by_lower_bound")) %>
+          </li>
+          <li>
+              <%= link_to("Wage: Highest first", groups_path(:order => "by_upper_bound")) %>
+
+          </li>
+          <li>
+            <%= link_to("Date: Newest first", groups_path ) %>
+
+          </li>
+      </ul>
+  </div>
   <table class="table table-hover">
     <thead>
       <tr>
         <td>Job No.</td>
-        <td>Job Title</td>
-        <td>Job Description</td>
+        <td>Lower Wage Bound</td>
+        <td>Upper Wage Bound</td>
+        <td>Post Date</td>
       </tr>
     </thead>
     <tbody>
       <% @groups.each do |group| %>
         <tr>
-          <td>#</td>
           <td><%= link_to(group.title, group_path(group)) %></td>
-          <td><%= group.description %></td>
-          <td>
-              <%= link_to("Edit", edit_group_path(group), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", group_path(group),    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "Are you sure?" } )%>
-          </td>
+          <td><%= group.wage_lower_bound %></td>
+          <td><%= group.wage_upper_bound %></td>
+          <td><%= group.created_at %></td>
         </tr>
       <% end %>
     </tbody>
