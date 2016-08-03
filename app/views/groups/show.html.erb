@@ -1,0 +1,12 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary pull-right")%>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-default">
+      <%= link_to("Submit Resume", new_group_resume_path(@group), :style => "font-size: 30px") %>
+    </button>
+  </div>
+  <h2><%= @group.title %></h2>
+  <p><%= @group.description %></p>
+</div>
