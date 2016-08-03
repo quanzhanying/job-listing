@@ -1,0 +1,4 @@
+<h2> <%= @group.title %> - Resume List </h2>
+
+<hr>
+<%= render :partial => "resume", :collection => @resumes, :as => :resume %>

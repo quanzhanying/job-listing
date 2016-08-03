@@ -5,6 +5,29 @@
 <br><br>
 
 <table class="table table-boldered">
+  <thead>
+      <tr>
+          <th>
+              Job No.
+          </th>
+          <th>
+              Received Resumes
+          </th>
+          <th>
+              Lower Wage Bound
+          </th>
+          <th>
+              Upper Wage Bound
+          </th>
+          <th>
+              Manage
+          </th>
+          <th>
+              Post Date
+          </th>
+      </tr>
+  </thead>
+
   <% @groups.each do |group| %>
   <tr>
     <td>
@@ -13,7 +36,16 @@
       <%= link_to(group.title, admin_group_path(group)) %>
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_group_path(group)) %> |
+      <%= link_to(group.resumes.count, admin_group_resumes_path(group)) %>
+    </td>
+    <td>
+      <%= group.wage_lower_bound %>
+    </td>
+    <td>
+      <%= group.wage_upper_bound %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_admin_group_path(group)) %>
       <%= link_to("Destroy", admin_group_path(group), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
 
       <% if group.is_hidden %>
