@@ -1,0 +1,27 @@
+<p>
+  hello
+</p>
+<thead>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Download Link
+    </th>
+  </tr>
+</thead>
+<br/>
+<tbody>
+  <% @resumes.each do |resume| %>
+  <tr>
+    <td>
+      <%= resume.name %>
+    </td>
+    <td>
+      <%= link_to("Download Resume", resume.attachment_url)%>
+    </td>
+  </tr>
+  <br>
+  <% end %>
+</tbody>

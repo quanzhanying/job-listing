@@ -6,3 +6,7 @@
   <%= @admin_job.wage_lower_bound %>
   <%= @admin_job.contact_email %>
 </p>
+
+<p>
+  <%= link_to("查看这个工作收到的简历", job_resumes_path(@admin_job)) %>
+</p>
