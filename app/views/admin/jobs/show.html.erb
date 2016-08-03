@@ -1,0 +1,33 @@
+<h3><%= @job.title %></h3>
+<hr>
+  <div class="pull-right">
+      <%= link_to("Edit Job", edit_job_path(@job), :class => "btn btn-default" ) %>
+  </div>
+<p>
+  <%= simple_format(@job.description)%>
+</p>
+
+<br>
+<br>
+
+<table class="table table-boldered">
+  <tr>
+    <th>Applicant</th>  
+    <th>Submit Time</th>
+    <th></th> 
+  </tr>
+  <% @job.resumes.each do |resume| %>
+    <tr>
+      <td>
+      	<%= resume.name %> ||
+      	<%= link_to("view resume", admin_resume_path(resume)) %>
+      </td>
+      <td>
+        <%= resume.created_at %>
+      </td>
+      <td>
+        <%= link_to("Destroy", job_resume_path(resume.job, resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

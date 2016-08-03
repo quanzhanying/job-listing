@@ -1,0 +1,19 @@
+<h3 class="col-md-offset-1"> <%= @job.title %></h3>
+<hr class="col-md-11">
+<div class="col-md-offset-9 container-fluid">
+	<% if current_user && !current_user.admin? %>
+	    <%= link_to("Submit your Resume", new_job_resume_path(@job), :class => "btn btn-default" ) %>
+
+	<% else %>
+	
+	    <%= link_to("Edit Job", edit_job_path(@job), :class => "btn btn-default" ) %>
+	
+	<% end %>
+</div>
+	
+	<div class="col-md-offset-1">
+		<p>
+		  <%= simple_format(@job.description)%>
+		</p>
+	</div>
+</div>

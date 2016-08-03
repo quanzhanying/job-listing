@@ -1,0 +1,4 @@
+<h2><%= @resume.job.title %></h2>
+<p><%= @resume.content %></p>
+<b><%= link_to("Download the Resume", @resume.attachment.url) if @resume.attachment? %></b>
+
