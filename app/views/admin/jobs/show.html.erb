@@ -1,0 +1,38 @@
+<h1> <%= @admin_job.title %> </h1>
+
+<table class="table">
+  <thead>
+    <th>
+      Description
+    </th>
+    <th>
+      Wage Lower
+    </th>
+    <th>
+      Wage Upper
+    </th>
+    <th>
+      Contact
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= simple_format(@admin_job.description) %>
+      </td>
+      <td>
+          <%= @admin_job.wage_lower_bound %>
+      </td>
+      <td>
+        <%= @admin_job.wage_upper_bound %>
+      </td>
+      <td>
+        <%= @admin_job.contact_email %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to("查看这个工作收到的简历", job_resumes_path(@admin_job), class: "btn btn-danger") %>
+</p>

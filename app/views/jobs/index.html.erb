@@ -1,0 +1,65 @@
+<div class="pull-right">
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+          <li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Hi!, <%= "order" %>
+                  <b class="caret"></b>
+              </a>
+
+              <ul class="dropdown-menu" >
+
+                <li><%= link_to("Lower DESC", jobs_path(:order => "by_lower_bound"))%></li>
+                <li><%= link_to("Upper DESC", jobs_path(:order => "by_upper_bound"))%></li>
+                <li><%= link_to("Created_at DESC", jobs_path) %></li>
+              </ul>
+
+            </li>
+
+          </li>
+      </ul>
+  </div>
+
+</div>
+
+<table class="table table-boldered">
+
+  <tr>
+    <td>
+      <%= "Title" %>
+    </td>
+    <td>
+      <%= "Created At" %>
+    </td>
+    <td>
+      <%= "Upper" %>
+    </td>
+    <td>
+      <%= "Lower" %>
+    </td>
+  </tr>
+  <% @jobs.each do |job| %>
+  <tr>
+    <td>
+      <%= link_to(job.title, job_path(job)) %>
+    </td>
+    <td>
+      <%= job.created_at %>
+    </td>
+    <td>
+      <%= job.wage_upper_bound %>
+    </td>
+    <td>
+        <%= job.wage_lower_bound %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_job_path(job)) %> |
+      <%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+  </tr>
+  <% end %>
+</table>

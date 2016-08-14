@@ -1,0 +1,33 @@
+<h1> <%= @job.title %> </h1>
+
+<table class="table">
+  <thead>
+    <th>
+      Description
+    </th>
+    <th>
+      Salary
+    </th>
+    <th>
+      Contact
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+          <%= simple_format(@job.description) %>
+      </td>
+      <td>
+        <%= @job.wage_lower_bound %> ~ <%= @job.wage_upper_bound %>
+      </td>
+      <td>
+        <%= @job.contact_email %>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+<br/>
+<p>
+  <%= link_to "New Resume", new_job_resume_path(@job), class:"btn btn-primary" %>
+</p>
