@@ -1,0 +1,27 @@
+<div class="col-md-4 col-md-offset-4">
+    <h2>新增招聘信息</h2>
+    <hr>
+    <%= form_for @job do |f| %>
+
+<!-- 防止null
+<% if @job.errors.any? %>
+<ul>
+  <% @job.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+-->
+
+    标题
+    <%= f.text_field :title %>
+    <br>
+    描述
+    <br>
+    <%= f.text_area :description %>
+    <br>
+
+    <%= f.submit "提交", :disable_with => '提交中' %>
+    <% end %>
+
+</div>
