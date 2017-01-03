@@ -49,13 +49,13 @@ def job_params
 	params.require(:job).permit(:title,:description)
 end
 
-def require_is_admin
-	# if !current_user.admin?
-	# 	redirect_to root_path,alert: "You are not admin!"
-	# end
-	unless current_user.admin?
-		redirect_to jobs_path, alert: "You are not admin!"
-	end
-end
+# def require_is_admin
+# 	# if !current_user.admin?
+# 	# 	redirect_to root_path,alert: "You are not admin!"
+# 	# end
+# 	unless current_user.admin?
+# 		redirect_to jobs_path, alert: "You are not admin!"
+# 	end
+# end
 
 end
