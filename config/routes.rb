@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-root 'welcome#index'
+root 'jobs#index'
 resources :jobs
 end
