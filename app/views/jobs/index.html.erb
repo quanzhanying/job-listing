@@ -5,7 +5,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
+        <!--<td>#</td>-->
         <td>标题</td>
         <td>描述</td>
       </tr>
@@ -13,7 +13,7 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td>#</td>
+          <!--<td>#</td>-->
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td><%= job.description %></td>
           <td>
