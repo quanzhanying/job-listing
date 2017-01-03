@@ -2,7 +2,7 @@ class JobsController < ApplicationController
 	before_filter :authenticate_user!,only: [:new,:create,:destroy,:edit]
 	before_filter :require_is_admin,only: [:new,:create,:destroy,:edit]
 	def index
-		@jobs= Job.all
+		@jobs= Job.all.where(:is_hidden=>false).recent
 	end
 
 	def show
