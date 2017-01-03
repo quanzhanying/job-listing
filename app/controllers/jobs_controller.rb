@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.find(job_params)
+    @job = Job.new(job_params)
     if @job.save
       flash[:notice] = "create successful"
       redirect_to jobs_path
@@ -23,8 +23,8 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job = Job.find(job_params)
-    if @job.update
+    @job = Job.find(params[:id])
+    if @job.update(job_params)
       flash[:notice] = "update successful"
       redirect_to jobs_path
     else
@@ -34,13 +34,13 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
-    @job.delete
+    @job.destroy
     flash[:alert] = "delte OK"
     redirect_to jobs_path
   end
 
 private
    def job_params
-
+     params.require(:job).permit(:title, :description)
    end
 end
