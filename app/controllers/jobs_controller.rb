@@ -2,7 +2,7 @@ class JobsController < ApplicationController
 	before_filter :authenticate_user!,only: [:new,:create,:destroy,:edit]
 	before_filter :require_is_admin,only: [:new,:create,:destroy,:edit]
 	def index
-		@jobs= Job.all.where(:is_hidden=>false).recent
+		@jobs= Job.all.where(:is_hidden=>true).recent
 	end
 
 	def show
@@ -46,7 +46,7 @@ class JobsController < ApplicationController
 private
 
 def job_params
-	params.require(:job).permit(:title,:description,:wage_upper_bound,:wage_lower_bound,:contact_email)
+	params.require(:job).permit(:title,:description,:wage_upper_bound,:wage_lower_bound,:contact_email,:is_hidden)
 end
 
 # def require_is_admin

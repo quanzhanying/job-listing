@@ -1,27 +1,33 @@
 <div class="col-md-12">
-<div class="job">
-	<%= link_to("Create a job",new_job_path, class:"btn btn-primary pull-right") %>
-</div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>  </th>
-        <th>  </th>
-        <th>  </th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @jobs.each do |job| %>
-        <tr>
-        <td> <%= link_to(job.title,job_path(job)) %> </td>
-        <td>
-        <%= link_to("Edit",edit_job_path(job)) %> |
-        <%= link_to("Destroy",job_path(job),method: :delete, data:{confirm: "Are you sure?"}) %>
-        </td>
-        <td><%= job.created_at %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+	<div class="job">
+		<%= link_to("Create a job",new_job_path, class:"btn btn-primary pull-right") %>
+	</div>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Name  </th>
+				<th>Created at  </th>
+				<th>  </th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @jobs.each do |job| %>
+			<tr>
+				<td>
+					<% if job.is_hidden  %>
+					(Hidden)
+					<% else %>
+					(Public)
+					<% end %>
+				<%= link_to(job.title,job_path(job)) %> </td>
+				<td><%= job.created_at %></td>
+				<td>
+					<%= link_to("Edit",edit_job_path(job)) %> |
+					<%= link_to("Destroy",job_path(job),method: :delete, data:{confirm: "Are you sure?"}) %>
+				</td>
+				
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>
