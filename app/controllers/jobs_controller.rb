@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
 	before_filter :authenticate_user!,only: [:new,:create,:destroy,:edit]
+	before_filter :require_is_admin,only: [:new,:create,:destroy,:edit]
 	def index
 		@jobs= Job.all
 	end
@@ -46,7 +47,15 @@ private
 
 def job_params
 	params.require(:job).permit(:title,:description)
-	
+end
+
+def require_is_admin
+	# if !current_user.admin?
+	# 	redirect_to root_path,alert: "You are not admin!"
+	# end
+	unless current_user.admin?
+		redirect_to jobs_path, alert: "You are not admin!"
+	end
 end
 
 end
