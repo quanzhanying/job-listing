@@ -1,4 +1,6 @@
 class Admin::JobsController < ApplicationController
+	before_action :authenticate_user!
+	before_action :require_is_admin
 	def index
 		@jobs = Job.all
 	end
@@ -22,6 +24,12 @@ class Admin::JobsController < ApplicationController
 
 	def edit
 		@job = Job.find(params[:id])
+	end
+
+	def require_is_admin
+		unless current_user.email == "liyuanlacfo1990@gmail.com"
+			redirect_to root_path, alert: "You have no permission"
+		end
 	end
 
 	private
