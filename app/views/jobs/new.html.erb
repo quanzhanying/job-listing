@@ -3,15 +3,14 @@
     <hr>
     <%= form_for @job do |f| %>
 
-<!-- 防止null
-<% if @job.errors.any? %>
-<ul>
-  <% @job.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
--->
+<!-- 防止null -->
+    <% if @job.errors.any? %>
+    <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
 
     标题
     <%= f.text_field :title %>
