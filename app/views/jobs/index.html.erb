@@ -16,6 +16,7 @@
         <!--  <td> # </td> -->
           <td><%= job.title%> </td>
           <td><%= job.description%> </td>
+          <td><%= job.is_hidden %></td>
           <td>
               <%= link_to("Edit",edit_job_path(job),class:"btn btn-sm btn-default")%>
               <%= link_to("Destroy",job_path(job),class:"btn btn-sm btn-default",method: :delete,data:{confirm:"Are you sure!"} )%>
