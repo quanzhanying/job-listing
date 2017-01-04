@@ -3,7 +3,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user! , only: [:new,:create,:update,:edit,:destroy]
 
   def index
-     @jobs = Job.all
+     @jobs = Job.where(:is_hidden =>false)
   end
 
   def new
@@ -43,14 +43,7 @@ class JobsController < ApplicationController
 
   end
 
-  def require_is_admin
 
-    unless current_user.admin?
-      flash[:alert] = "You are not admin!"
-      redirect_to root_path
-    end
-
-  end
 
 
 
