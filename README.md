@@ -13,6 +13,7 @@ version-1.1
 
   create at 2017-1-4
 version-1.2
+  在version-1.1上增加功能：
   1.实作 Admin 的 CRUD
   2.身为管理者才可以存取 http://localhost:3000/admin/jobs 下的职缺操作
   3.身为管理者才可以看到 Admin 管理选单的连结
@@ -22,3 +23,8 @@ version-1.3
   1.新增“薪资上限”“薪资下限”“联络 Email”
   2.薪资不能为空，最低薪资至少要大于 0
   3.请贴你的 pull request 网址
+version-1.4
+  在version-1.3上增加功能：
+  1.首页应该看不到隐藏的工作
+  2.首页的工作应该按照建立时间倒叙排列
+  3.后台的 Job List 列表，应该显示哪一些工作是“隐藏”还是“公开”
