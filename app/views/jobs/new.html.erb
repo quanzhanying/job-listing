@@ -1,0 +1,15 @@
+<h1>Add a new job</h1>
+
+  <%= simple_form_for @job do |j| %>
+
+  <%= f.input :title%>
+  <%= f.input :description%>
+  <%= f.input :wage_lower_bound, label: "Wage lower bound"%>
+  <%= f.input :wage_upper_bound, label: "Wage upper bound"%>
+  <%= f.input :contact_email%>
+
+
+
+  <%= j.submit "Submit"%>
+
+<% end %>
