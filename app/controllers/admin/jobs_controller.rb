@@ -27,7 +27,7 @@ class Admin::JobsController < ApplicationController
 	end
 
 	def require_is_admin
-		unless current_user.email == "liyuanlacfo1990@gmail.com"
+		unless current_user.admin?
 			redirect_to root_path, alert: "You have no permission"
 		end
 	end
