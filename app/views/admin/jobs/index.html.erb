@@ -8,6 +8,13 @@
   <% @jobs.each do |j|%>
     <tr>
       <td>
+        <!-- <% if j.is_hidden %>
+        (Hidden)
+        <% else %>
+        (Public)
+        <% end %> -->
+        <%= render_job_status(j)%>
+
         <%= link_to(j.title, admin_job_path(j))%>
       </td>
       <td>
