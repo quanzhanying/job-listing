@@ -13,14 +13,14 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td><%= link_to(job.title, "#") %></td>
+          <td><%= link_to(job.title,job_path(job)) %></td>
           <!-- <td><%= job.description %></td>!-->
           <td>
               <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%> |
               <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
           </td>
-               <td><%= job.created_at%></td> 
+               <td><%= job.created_at%></td>
         </tr>
       <% end %>
     </tbody>
