@@ -1,0 +1,12 @@
+<%= form_for @job do |f| %>
+
+Job Title
+<%= f.text_field :title %>
+<br>
+Job Description
+<br>
+<%= f.text_area :description %>
+<br>
+
+<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end %>
