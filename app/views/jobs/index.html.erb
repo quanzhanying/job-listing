@@ -15,7 +15,7 @@
         <tr>
           <!--<td>#</td>-->
           <td><%= link_to(job.title, job_path(job)) %></td>
-          <td><%= job.description %></td>
+          <td><%= render_job_description(job) %></td>
           <td>
               <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-primary")%>
               <%= link_to("删除", job_path(job),    class: "btn btn-sm btn-danger",

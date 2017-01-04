@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  
+
   # 首页
   def index
     @jobs = Job.all
