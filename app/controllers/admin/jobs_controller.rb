@@ -22,7 +22,7 @@ class Admin::JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = current_user
     if @job.save
-      redirect_to adim_jobs_path
+      redirect_to admin_jobs_path
     else
       render :new
     end
