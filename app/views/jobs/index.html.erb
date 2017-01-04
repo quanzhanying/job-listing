@@ -17,7 +17,7 @@
               <%= "|" %>
               <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: "Are you sure?" } %>
           </td>
-          <td><%= Time.new.strftime("%Y-%m-%d %H:%M:%S %Z") %></td>
+          <td><%= job.created_at %>
         </tr>
       <% end %>
     </tbody>
