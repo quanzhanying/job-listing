@@ -7,7 +7,7 @@
     <% @jobs.each do |job| %>
       <tbody>
         <tr>
-          <td><%= link_to(job.title, admin_job_path(job)) %></td>
+          <td><%= link_to(admin_job.title, admin_jobe_path(job)) %></td>
           <td>
               <%= link_to("Edit", edit_admin_job_path(job)) %> |
               <%= link_to("Destroy", admin_job_path(job), method: :delete, data: { confirm: "Are you sure?" }) %>
