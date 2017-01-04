@@ -1,6 +1,5 @@
 class JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new,:create,:update,:edit,:destroy]
-  before_filter :require_is_admin
   def index
     @jobs = Job.where(:is_hidden => false).order("created_at")
   end
@@ -22,11 +21,10 @@ class JobsController < ApplicationController
     end
   end
 
-  def require_is_admin
-    if !current_user.admin?
-      flash[:alert] = "You are not admin"
-      redirect_to root_path
-    end
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to root_path
   end
 
 private
