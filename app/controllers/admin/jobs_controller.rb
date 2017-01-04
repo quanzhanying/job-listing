@@ -1,4 +1,6 @@
 class Admin::JobsController < ApplicationController
+  before_filter :authenticate_user!,only: [:new,:create,:update,:edit,:destroy]
+  before_filter :require_is_admin
 
   def index
     @jobs = Job.all
@@ -28,7 +30,7 @@ class Admin::JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-    if @job.update(job_params)
+    if @job.update(job_params1)
       redirect_to admin_jobs_path,notice: "Update success!"
     else
       render :edit
@@ -46,9 +48,8 @@ class Admin::JobsController < ApplicationController
 
   private
 
-  def job_params
-
-    params.require(:job).permit(:title,:description)
+  def job_params1
+    params.require(:job).permit(:title,:description,:wage_lower_bound,:wage_upper_bound,:contact_email)
   end
 
 end
