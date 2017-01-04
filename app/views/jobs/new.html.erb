@@ -2,7 +2,14 @@
   <h2>新增工作职位</h2>
 
   <hr>
-  <%= form_for @job do |f| %>
+  <%= form_for @job do |f| -%>
+  <% if @job.errors.any? %>
+  <ul>
+    <% @job.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
 
   标题
   <%= f.text_field :title %>
