@@ -35,6 +35,14 @@ class JobsController < ApplicationController
     end
   end
 
+  # 删除
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    flash[:alert] = "该条记录已删除！"
+    redirect_to jobs_path
+  end
+
   # private def
   private
     def job_params

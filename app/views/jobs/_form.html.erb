@@ -3,5 +3,11 @@
     <%= f.input :title, input_html: { class: "form-control"} %>
     <%= f.input :description, input_html: { class: "form-control"} %>
   </div>
-  <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交中..." } %>
+
+  <div class="jobs_back">
+    <%= link_to("返回", jobs_path, class: "btn btn-success pull-right")%>
+  </div>
+
+  <%= f.submit "更新", class: "btn btn-primary pull-right", data: { disable_with: "提交中..." } %>
+
 <% end %>
