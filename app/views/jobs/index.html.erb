@@ -6,8 +6,9 @@
     <thead>
       <tr>
         <!--<td>#</td>-->
-        <td>标题</td>
-        <td>描述</td>
+        <td>岗位(标题)</td>
+        <td>详情(描述)</td>
+        <td>创建时间</td>
       </tr>
     </thead>
     <tbody>
@@ -16,8 +17,9 @@
           <!--<td>#</td>-->
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td><%= render_job_description(job) %></td>
+          <td><%= job.created_at %></td>
           <td>
-              <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-primary")%>
+              <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-primary")%> |
               <%= link_to("删除", job_path(job),    class: "btn btn-sm btn-danger",
                           method: :delete, data: { confirm: "您确定删除吗?" } )%>
           </td>

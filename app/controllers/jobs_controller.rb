@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-  
+  # before_filter
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   # 首页
   def index
