@@ -1,11 +1,11 @@
 <div class="col-md-12">
   <div class="job">
-      <%= link_to("Add a JOb",new_job_path,class: "btn btn-primary pull-right")%>
+      <%= link_to("Add a job",new_job_path,class: "btn btn-primary pull-right")%>
   </div>
   <table class="table table-hover">
     <thead>
       <tr>
-
+       <td> </td>
         <!--<td> Title </td>
         <td> Description </td> -->
       </tr>
@@ -18,7 +18,7 @@
           <td><%= job.description%> </td>
           <td>
               <%= link_to("Edit",edit_job_path(job),class:"btn btn-sm btn-default")%>
-              <%= link_to("Delete",job_path(job),class:"btn btn-sm btn-default",method: :delete,data:{confirm:"Are you sure!"} )%>
+              <%= link_to("Destroy",job_path(job),class:"btn btn-sm btn-default",method: :delete,data:{confirm:"Are you sure!"} )%>
           </td>
           <td><%= job.created_at %></td>
         </tr>
