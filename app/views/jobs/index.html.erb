@@ -1,30 +1,22 @@
 <div class="col-md-12">
   <div class="job">
-    <%= link_to("添加招聘信息", new_job_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("📎添加招聘信息", new_job_path, class: "btn btn-primary pull-right") %>
   </div>
 
   <table class="table table-hover">
     <thead>
       <tr>
-        <!--<td>#</td>-->
-        <td>岗位(标题)</td>
-        <td>详情(描述)</td>
-        <td>创建时间</td>
+        <td>👤岗位(标题)</td>
+        <td>🔎详情(描述)</td>
+        <td>💰薪资下限</td>
+        <td>💰薪资上限</td>
+        <td>📬联系邮箱</td>
+        <td>🕛创建时间</td>
       </tr>
     </thead>
     <tbody>
       <% @jobs.each do |job| %>
-        <tr>
-          <!--<td>#</td>-->
-          <td><%= link_to(job.title, job_path(job)) %></td>
-          <td><%= render_job_description(job) %></td>
-          <td><%= job.created_at %></td>
-          <td>
-              <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-primary")%> |
-              <%= link_to("删除", job_path(job),    class: "btn btn-sm btn-danger",
-                          method: :delete, data: { confirm: "您确定删除吗?" } )%>
-          </td>
-        </tr>
+        <%= render :partial => "job_item", :collection => @jobs, :as => :job %>
       <% end %>
     </tbody>
   </table>

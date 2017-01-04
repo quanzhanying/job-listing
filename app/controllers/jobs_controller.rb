@@ -1,13 +1,18 @@
 class JobsController < ApplicationController
-  # before_filter
+  # before_filter C & D
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
-  # 首页
+  # 首页 R
   def index
     @jobs = Job.all
   end
 
-  # 新建
+  # 查看 R
+  def show
+    @job = Job.find(params[:id])
+  end
+
+  # 新建 C
   def new
     @job = Job.new
   end
@@ -20,12 +25,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # 查看
-  def show
-    @job = Job.find(params[:id])
-  end
-
-  # 编辑
+  # 编辑 U
   def edit
     @job = Job.find(params[:id])
   end
@@ -38,7 +38,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # 删除
+  # 删除 D
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
