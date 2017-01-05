@@ -16,7 +16,14 @@
   </thead>
   <% @jobs.each do |job| %>
   <tr>
-    <td><%= link_to(job.title, admin_job_path(job)) %></td>
+    <td>
+      <% if job.is_hidden %>
+        <i class="fa fa-lock"></i>
+      <% else %>
+        <i class="fa fa-globe"></i>
+      <% end %>
+      <%= link_to(job.title, admin_job_path(job)) %>
+    </td>
     <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
     <td><%= job.wage_lower_bound %></td>
     <td><%= job.wage_upper_bound %></td>
