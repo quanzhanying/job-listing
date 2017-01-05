@@ -1,3 +1,3 @@
 # README
 
-first week
+the first week
