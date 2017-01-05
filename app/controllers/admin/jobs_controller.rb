@@ -3,7 +3,7 @@ class Admin::JobsController < ApplicationController
 	before_filter :require_is_admin
 
 	def require_is_admin
-		if current_user.email !='xdite@growth.school'
+		if !current_user.admin?
 			flash[:alert] = 'You are not admin'
 			redirect_to root_path
 		end
