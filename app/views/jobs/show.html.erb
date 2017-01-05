@@ -8,4 +8,5 @@
   <p><%= @job.description %></p>
   <p>Salary: <%= @job.wage_lower_bound %> ~ <%= @job.wage_upper_bound %></p>
   <p>Contact: <%= @job.user.email %></p>
+  <p><%= link_to("Back", jobs_path) %> | <%= link_to("Edit", edit_job_path(@job)) %></p>
 </div>

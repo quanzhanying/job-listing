@@ -1,11 +1,9 @@
 <div class="col-md-12">
-  <div class="pull-right">
-    <%= link_to("Edit", edit_job_path(@job), class: "btn btn-default") %>
-  </div>
   <h2 class="text-center">Job details</h2>
   <hr>
   <h4><%= @job.title %></h4>
   <p><%= @job.description %></p>
   <p>Salary: <%= @job.wage_lower_bound %> ~ <%= @job.wage_upper_bound %></p>
   <p>Contact: <%= @job.user.email %></p>
+  <p><%= link_to("Back", admin_jobs_path) %> | <%= link_to("Edit", edit_admin_job_path(@job)) %></p>
 </div>

@@ -1,7 +1,8 @@
 <div class="group">
   <%= link_to("Add a Job", new_admin_job_path, class: "btn btn-default pull-right") %>
 </div>
-<br><br><br>
+<br><br>
+<div class="sidebar"><i class="fa fa-user"></i>  You are at admin panel</div>
 <table class="table table-hover">
   <tbody>
     <% @jobs.each do |job| %>
