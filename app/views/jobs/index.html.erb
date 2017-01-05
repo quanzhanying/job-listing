@@ -1,18 +1,25 @@
-<table class="table table-boldered">
+<div class="col-md-12">
+
+<!--12是用来调衡div class中的元素的位置-->
   <%= link_to("Add a job", new_job_path, :class => "btn btn-primary pull-right")%>
 </div>
+<table class="table table-boldered">
+<tbody>
   <% @jobs.each do |job| %>
   <tr>
     <td>
       <%= link_to(job.title, job_path(job)) %>
     </td>
     <td>
-      <%= link_to("Edit", edit_job_path(job)) %> |
-      <%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-    </td>
-    <td>
       <%= job.created_at %>
     </td>
+    <td>
+      <%= link_to("Edit", edit_job_path(job),class: "btn btn-sm btn-default") %> |
+      <%= link_to("Destroy", job_path(job), class: "btn btn-sm btn-default",
+           :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+
   </tr>
+</tbody>
   <% end %>
 </table>
