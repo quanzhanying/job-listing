@@ -1,0 +1,7 @@
+<tr>
+	<td><%= link_to(job.title, job_path(job)) %></td>
+	<td><%= job.updated_at %></td>
+	<td><%= link_to("Edit", edit_job_path(job), class: "btn btn-primary btn-sm") %> |
+	<%= link_to("Delete", job_path(job), class: "btn btn-primary btn-sm", method: :delete, data: {confirm: "Are you sure"}) %>
+	</td>
+</tr>

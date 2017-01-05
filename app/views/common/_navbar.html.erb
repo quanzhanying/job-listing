@@ -1,0 +1,34 @@
+<div class="container-fluid">
+	<div class="navbar navbar-default">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target="#ex1">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="/" class="navbar-brand">Job Listing</a>
+		</div>
+		<div class="collaspe navbar-collapse " id="ex1">
+			<ul class="nav navbar-nav navbar-right">
+				<% if !current_user %>
+					<li><%= link_to("Sign Up", new_user_registration_path) %></li>
+					<li><%= link_to("Sign In", new_user_session_path) %></li>
+				<% else %>
+					<li class="dropdown">
+						<a href="#" class="drop-toggle" data-toggle="dropdown">
+							Hi, <%= current_user.email %>
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<% if current_user.is_admin %>
+								<li><%= link_to("Admin Panel", admin_jobs_path) %></li>
+								<li class="divider"></li>
+							<% end %>
+							<li><%= link_to("登出", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"}) %></li>
+						</ul>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

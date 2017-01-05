@@ -1,0 +1,18 @@
+<div class="container-fluid">
+	<%= render "sidebar" %>
+	<div class="col-md-8 col-md-offset-3" style="margin-left: 50px;">
+		<div class="pull-right" style="margin-bottom: 20px;">
+			<%= link_to("Add a new job", new_admin_job_path, class: "btn btn-default") %>
+		</div>
+		<table class="table table-bordered">
+			<thead>
+				<th>职位名称</th>
+				<th>更新时间</th>
+				<th colspan="2"></th>
+			</thead>
+			<tbody>
+				<%= render :partial => "jobs_table", :collection => @jobs, :as => :job %>
+			</tbody>
+		</table>
+	</div>
+</div>
