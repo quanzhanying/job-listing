@@ -5,11 +5,7 @@
     <%= f.input :wage_lower_bound, :label => "薪资下限" %>
     <%= f.input :wage_upper_bound, :label => "薪资上限"  %>
     <%= f.input :contact_email, input_html: { class: "form-control"} %>
-    <% if :is_hidden %>
-       <%= link_to 'Publish', publish_admin_job_path(@job), method: :post, class: "btn btn-default" %>
-    <% else %>
-       <%= link_to 'Hide', hide_admin_job_path(@job), method: :post, class: "btn btn-default" %>
-     <% end %>
+    <%= f.input :is_hidden %>
   </div>
   <hr>
 
