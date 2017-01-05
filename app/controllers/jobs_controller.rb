@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-	before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+	before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, 
+		:wage_upper_bound, :wage_lower_bound, :contact_email]
 	def index
 		@jobs = Job.all
 	end
