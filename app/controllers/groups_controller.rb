@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_admin! , only: [:new]
+  before_action :authenticate_admin! , only: [:new, :create]
 
   def index
     @groups = Group.all
@@ -19,8 +19,9 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    if @group.save
+    @group.admin = current_admin
 
+    if @group.save
     redirect_to groups_path
   else
     render :new
