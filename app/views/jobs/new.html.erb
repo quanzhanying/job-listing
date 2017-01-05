@@ -2,16 +2,7 @@
   <h2>新增岗位</h2>
 
   <hr>
-  <%= form_for @job do |f| %>
 
-  岗位
-  <%= f.text_field :title %>
-  <br>
-  描述
-  <br>
-  <%= f.text_area :description %>
-  <br>
+  <%= render "form" %>
 
-  <%=f.submit "Submit", :disable_with => 'Submiting...' %>
-  <% end %>
 </div>
