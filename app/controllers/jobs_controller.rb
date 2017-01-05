@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+before_filter :authenticate_user!, only: [:new,:create,:update,:edit,:destroy]
 
   def index
   @jobs= Job.all
@@ -14,6 +15,8 @@ class JobsController < ApplicationController
 
   def edit
   @job = Job.find(params[:id])
+
+
   end
 
   def create
