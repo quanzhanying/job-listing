@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
 
   def admin?
-    email == '18551038995@163.com'
+    is_admin
   end
 end
