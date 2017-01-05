@@ -4,7 +4,7 @@ class Admin::JobsController < ApplicationController
 
   # 首页
   def index
-    @jobs = Job.all
+    @jobs = Job.all.recent
   end
 
   # private def

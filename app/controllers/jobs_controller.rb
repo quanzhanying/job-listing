@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
   # 首页 R
   def index
-    @jobs = Job.all
+    @jobs = Job.where(:is_hidden => false).recent
   end
 
   # 查看 R
@@ -49,6 +49,6 @@ class JobsController < ApplicationController
   # private def
   private
     def job_params
-      params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
+      params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
     end
 end
