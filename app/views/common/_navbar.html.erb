@@ -1,0 +1,23 @@
+<nav class='navbar navbar-default' role='navigation'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <a class='navbar-brand' href='/'>JobHunter</a>
+    </div>
+
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+      <ul class='nav navbar-nav navbar-right'>
+        <% if !current_user %>
+        <li><%= link_to('登入', new_user_session_path) %></li>
+        <li><%= link_to('注册', new_user_regiteration_path) %></li>
+        <% else %>
+        <li><a href='#'>Hi, <%= current_user.email %></a>
+          <ul>
+            <li><%= link_to('登出', user_session_path, method: destroy) %></li>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>
