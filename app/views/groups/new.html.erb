@@ -3,6 +3,13 @@
 
     <hr>
     <%= form_for @group do |f| %>
+    <% if @group.errors.any? %>
+<ul>
+  <% @group.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
 
     职位
     <%= f.text_field :title %>
