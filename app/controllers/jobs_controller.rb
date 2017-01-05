@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
   def index
     #@jobs = Job.all
-    @jobs = Job.where(:is_hidden => false)
+    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
   end
 
   def new
