@@ -2,6 +2,9 @@
   <div class="group">
     <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary pull-right")%>
   </div>
-  <h3><%= @group.title %></h3>
-  <p><%= @group.descrtiption %></p>
+  <h3>职位：<%= @group.title %></h3>
+  <p>描述：<%= @group.descrtiption %></p>
+  <p>薪资上限：<%= @group.up %></p>
+  <p>薪资下限：<%= @group.down %></p>
+  <p>联系方式：<%= @group.email %></p>
 </div>
