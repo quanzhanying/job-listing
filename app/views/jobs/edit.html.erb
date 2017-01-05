@@ -1,0 +1,14 @@
+<h2>Edit a job</h2>
+
+<hr>
+<%= simple_form_for @job do |f| %>
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: "form-control"} %>
+    <%= f.input :description, input_html: { class: "form-control"} %>
+    <%= f.input :wage_upper_bound, input_html: { class: "form-control"} %>
+    <%= f.input :wage_lower_bound, input_html: { class: "form-control"} %>
+    <%= f.input :contact_email, input_html: { class: "form-control"} %>
+    <%= f.check_box :is_hidden, input_html: { class: "form-control"} %> is hidden
+  </div>
+  <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
+<% end %>
