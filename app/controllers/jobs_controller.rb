@@ -38,11 +38,15 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.find(params[:id])
+		if @job.is_hidden
+			redirect_to root_path
+		end
 	end
 
 	private
 
 	def job_params
 		params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email)
-	end	
+	end
+	
 end
