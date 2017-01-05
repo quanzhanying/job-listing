@@ -1,2 +1,5 @@
 class WelcomeController < ApplicationController
+
+  
+
 end
