@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_hidden, only: [:show]
 
   def index
     #@jobs = Job.all
@@ -48,6 +49,14 @@ class JobsController < ApplicationController
   end
 
 private
+   def check_hidden
+     @job = Job.find(params[:id])
+
+     if @job.is_hidden == true
+       redirect_to root_path, alert: "You have no permission to see hidden jobs"
+     end
+   end
+
    def job_params
      params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
    end
