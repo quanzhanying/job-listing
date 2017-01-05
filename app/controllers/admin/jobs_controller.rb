@@ -42,6 +42,20 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path, alert: "Job deleted!"
   end
 
+  def hide
+    @job = Job.find(params[:id])
+    @job.is_hidden = true;
+    @job.save
+    redirect_to admin_jobs_path
+  end
+
+  def public
+    @job = Job.find(params[:id])
+    @job.is_hidden = false;
+    @job.save
+    redirect_to admin_jobs_path
+  end
+
   def job_params
     params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
   end
