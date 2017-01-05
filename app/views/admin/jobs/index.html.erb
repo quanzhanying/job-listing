@@ -8,9 +8,9 @@
   <tr>
     <td>
       <% if job.is_hidden %>
-      (Hidden)
+        <%= link_to("(Hidden)", publish_admin_job_path(job), method: :post, class: "btn btn-xs btn-default") %>
       <% else %>
-      (Public)
+        <%= link_to("(Public)", hide_admin_job_path(job), method: :post, class: "btn btn-xs btn-default") %>
       <% end %>
       <%= link_to(job.title, admin_job_path(job)) %>
     </td>

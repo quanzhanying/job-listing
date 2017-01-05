@@ -41,6 +41,22 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path
   end
 
+  def hide
+    @job = Job.find(params[:id])
+    if @job.hide!
+      flash[:notice] = "隐藏成功！"
+      redirect_to :back
+    end
+  end
+
+  def publish
+    @job = Job.find(params[:id])
+    if @job.publish!
+      flash[:notice] = "公开成功！"
+      redirect_to :back
+    end
+  end
+
   private
 
   def job_params
