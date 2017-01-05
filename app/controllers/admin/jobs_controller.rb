@@ -3,7 +3,8 @@ class Admin::JobsController < ApplicationController
   before_filter :require_is_admin
 
   def index
-    @jobs = Job.all
+    #@jobs = Job.all
+    @jobs = Job.where(:is_hidden => false)
   end
 
   def new
