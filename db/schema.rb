@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170104230155) do
+ActiveRecord::Schema.define(version: 20170105022837) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170104230155) do
     t.integer  "wage_upper_bound"
     t.integer  "wage_lower_bound"
     t.string   "contact_email"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
