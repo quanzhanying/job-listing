@@ -1,11 +1,21 @@
 # README
 
-First Week
+## First Week-Homework
 
-First time for Homework
 
-- bootstrap
+### Install bootstrap
 
-- devise
+ 1. Add gem
+ 2. Edit application.css
 
-- simple_form
+### Install devise
+
+1. Add gem file
+2. rails generate devise:install
+3. rails generate devise user
+4. rake db:migrate
+
+### Install simple_form
+
+1. add gem file
+2. rails generate simple_form:install --bootstrap
