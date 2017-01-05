@@ -1,6 +1,10 @@
 <tr>
 	<td>
-		<%= render_job_status(job) %>
+		<% if job.is_hidden %>
+			<i class="fa fa-lock" aria-hidden="true"></i>
+		<% else %>
+			<i class="fa fa-globe" aria-hidden="true"></i>
+		<% end %>
 		<%= link_to(job.title, admin_job_path(job)) %>
 	</td>
 	<td><%= job.updated_at %></td>
