@@ -1,0 +1,25 @@
+<div class="group">
+  <%= link_to("Add a Job", new_admin_job_path, class: "btn btn-default pull-right") %>
+</div>
+<br><br>
+<div class="sidebar"><i class="fa fa-user"></i>  You are at admin panel</div>
+<table class="table table-hover">
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= raw render_job_status(job) %><%= link_to(job.title, admin_job_path(job)) %></td>
+        <td>
+          <%= link_to("Edit", edit_admin_job_path(job)) %> |
+          <%= link_to("Destroy", admin_job_path(job), method: :delete, data: {confirm: "Are you sure?"}) %>
+        </td>
+        <td><%= job.created_at %></td>
+        <td>
+          <%= button_to("Public", public_admin_job_path(job), class: "btn btn-default btn-xs") %>
+        </td>
+        <td>
+          <%= button_to("Hide", hide_admin_job_path(job), class: "btn btn-default btn-xs") %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
