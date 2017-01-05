@@ -4,8 +4,13 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all.where(:is_hidden => false).recent
   end
+
   def show
     @job = Job.find(params[:id])
+    if @job.is_hidden
+      flash[:alert] = "You have no permission to see hidden job"
+      redirect_to root_path
+    end
   end
 
   def new
