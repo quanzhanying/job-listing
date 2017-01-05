@@ -1,0 +1,27 @@
+<div class="col-md-4 col-md-offset-4">
+    <h2>职位需求</h2>
+
+    <hr>
+    <%= form_for @group do |f| %>
+
+    职位
+    <%= f.text_field :title %>
+    <br>
+    叙述
+    <br>
+    <%= f.text_area :descrtiption %>
+    <br>
+    薪资上限
+    <%= f.text_field :up %>
+    <br>
+    薪资下限
+    <%= f.text_field :down %>
+    <br>
+    Contact email
+    <%= f.text_field :email %>
+    <br>
+
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+    <% end %>
+
+</div>
