@@ -1,6 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
+第一周作业，第二次练习
 application up and running.
 
 Things you may want to cover:
