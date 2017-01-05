@@ -1,29 +1,23 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("New group", new_group_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("New Job", new_group_path, class: "btn btn-primary pull-right") %>
   </div>
   <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>Title</td>
-        <td>Description</td>
-        <td>Creator </td>
-      </tr>
-    </thead>
+
     <tbody>
       <% @groups.each do |group| %>
         <tr>
-          <td>#</td>
+
           <td><%= link_to(group.title, group_path(group)) %></td>
-          <td><%= group.descrtiption %></td>
-          <td><%= group.admin.email %> </td>
+
           <td>
             <% if current_admin && current_admin == group.admin %>
-              <%= link_to("Edit", edit_group_path(group), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", group_path(group),    class: "btn btn-sm btn-default",
+              <%= link_to("Edit", edit_group_path(group), class: "btn btn-sm ")%>|
+              <%= link_to("Delete", group_path(group),    class: "btn btn-sm ",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
-<% end %>
+  <% end %>
+        <td><%= group.created_at %></td>
+
           </td>
         </tr>
       <% end %>
