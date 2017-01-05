@@ -1,9 +1,9 @@
 module JobsHelper
   def render_job_status(job)
     if job.is_hidden
-      "(Hidden) "
+      '<i class="fa fa-lock"> </i> '
     else
-      "(Public) "
+      '<i class="fa fa-globe"> </i> '
     end
   end
 end
