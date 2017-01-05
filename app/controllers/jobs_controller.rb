@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @jobs = Job.all
@@ -32,6 +33,12 @@ class JobsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to jobs_path, alert: "Job deleted!"
   end
 
   def job_params
