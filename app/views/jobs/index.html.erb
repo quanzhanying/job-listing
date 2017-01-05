@@ -15,9 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @jobs.each do |job| %>
         <%= render :partial => "job_item", :collection => @jobs, :as => :job %>
-      <% end %>
     </tbody>
   </table>
 </div>

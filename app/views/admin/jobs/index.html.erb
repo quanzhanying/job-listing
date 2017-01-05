@@ -1,21 +1,24 @@
 <div class="col-md-12">
   <h3 style="text-align:center;
   background:#dddddd;
-  border:2px solid #a1a1a1;
+  border:3px solid #a1a1a1;
   padding:10px 40px;
-  border-radius:25px;">管理员面板</h3>
+  border-radius:25px;">📖管理员面板</h3>
 
   <div class="job">
-    <%= link_to("添加招聘信息", new_job_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("📎添加招聘信息", new_job_path, class: "btn btn-primary pull-right") %>
   </div>
 
   <table class="table table-hover">
     <thead>
       <tr>
         <!--<td>#</td>-->
-        <td>岗位(标题)</td>
-        <td>详情(描述)</td>
-        <td>创建时间</td>
+        <td>👤岗位(标题)</td>
+        <td>🔎详情(描述)</td>
+        <td>💰薪资下限</td>
+        <td>💰薪资上限</td>
+        <td>📬联系邮箱</td>
+        <td>🕛创建时间</td>
       </tr>
     </thead>
     <tbody>
@@ -24,11 +27,14 @@
           <!--<td>#</td>-->
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td><%= render_job_description(job) %></td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.wage_upper_bound %></td>
+          <td><%= job.contact_email %></td>
           <td><%= job.created_at %></td>
           <td>
-              <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-primary")%> |
-              <%= link_to("删除", job_path(job),    class: "btn btn-sm btn-danger",
-                          method: :delete, data: { confirm: "您确定删除吗?" } )%>
+            <%= link_to("🗑删除", job_path(job),    class: "btn btn-sm btn-danger pull-right",
+                        method: :delete, data: { confirm: "⚠️您确定删除吗?" } )%>
+            <%= link_to("📝编辑", edit_job_path(job), class: "btn btn-sm btn-primary pull-right")%>
           </td>
         </tr>
       <% end %>

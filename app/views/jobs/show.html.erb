@@ -1,9 +1,5 @@
 <div class="col-md-12">
 
-  <div class="job_edit">
-    <%= link_to("编辑", edit_job_path(@job), class: "btn btn-primary pull-right")%>
-  </div>
-
   <p>👤岗位(标题):</p>
   <h2><%= @job.title %></h2>
 
@@ -14,6 +10,9 @@
 
   <div class="jobs_back">
     <%= link_to("🔙返回", jobs_path, class: "btn btn-success pull-right")%>
+  </div>
+  <div class="job_edit">
+    <%= link_to("📝编辑", edit_job_path(@job), class: "btn btn-primary pull-right")%>
   </div>
 
 </div>
