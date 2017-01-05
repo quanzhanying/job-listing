@@ -8,7 +8,9 @@
   <% @jobs.each do |job| %>
   <tr>
     <td>
-      <%= link_to(job.title, admin_job_path(job)) %>
+      <%= render_job_status(job) %>
+
+  <%= link_to(job.title, admin_job_path(job)) %>
     </td>
     <td>
       <%= link_to("Edit", edit_admin_job_path(job)) %>
