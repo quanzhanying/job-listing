@@ -1,28 +1,36 @@
-<div class="col-md-12">
-  <div class="group">
-    <%= link_to("Add a job",  class: "btn btn-primary pull-right") %>
-  </div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>Title</td>
-        <td>Description</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @groups.each do |group| %>
-        <tr>
-          <td>#</td>
-          <td><%= link_to(group.title, group_path(group)) %></td>
-          <td><%= group.description %></td>
-          <td>
-              <%= link_to("Edit", edit_group_path(group), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", group_path(group),    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "Are you sure?" } )%>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+
+<!--此处是按钮-->
+<div class="pull-right">
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
 </div>
+<!--结束-->
+
+<table class="table table-boldered">
+  <% @jobs.each do |job| %>
+
+<!--此处是横向表格-->
+  <tr>
+    <!--第一个竖向表格-->
+    <td>
+   <%= link_to(job.title, job_path(job)) %>
+    </td>
+
+  <!--第二个竖向表格-->
+<td>
+<%= link_to("Edit", edit_job_path(job)) %> |
+<%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
+</td>
+
+    <!--第三个竖向表格-->
+    <td>
+    <%= job.created_at %>
+    </td>
+  </tr>
+
+
+
+<!--此处是横向表格结束-->
+
+  <% end %>
+</table>
