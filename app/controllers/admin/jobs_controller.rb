@@ -42,13 +42,6 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path, alert: "Job deleted!"
   end
 
-  def require_is_admin
-    unless current_user.admin?
-      flash[:alert] = "You have no permission"
-      redirect_to root_path
-    end
-  end
-
   def job_params
     params.require(:job).permit(:title, :description)
   end
