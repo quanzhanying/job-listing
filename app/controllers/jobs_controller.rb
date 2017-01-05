@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 before_filter :authenticate_user!, only: [:new,:create,:update,:edit,:destroy]
-
+protect_from_forgery with: :exception
   def index
   @jobs= Job.all
   end
@@ -50,6 +50,17 @@ before_filter :authenticate_user!, only: [:new,:create,:update,:edit,:destroy]
   redirect_to jobs_path
 
   end
+
+
+  def require_is_admin
+  #if current_user.email !="1@2"
+  unless current_user.admin?
+    flash[:alert] = "You are not admin"
+    redirect_to root_path
+  end
+  end
+
+
 
 
 private
