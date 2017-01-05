@@ -3,47 +3,58 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    if @job.is_hidden
+      flash[:warning] = 'This Job already archieved!'
+      redirect_to root_path
+    end
   end
 
   def index
-    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
-  end
-
-  def new
-    @job = Job.new
-  end
-
-  def create
-    @job = Job.new(job_params)
-
-    if @job.save
-      redirect_to jobs_path
+    @jobs = case params[:order]
+    when 'by_lower_bound'
+      Job.where(:is_hidden => false).order("wage_lower_bound DESC")
+    when 'by_upper_bound'
+      Job.where(:is_hidden => false).order("wage_upper_bound DESC")
     else
-      render :new
+      Job.where(:is_hidden => false).order("created_at DESC")
     end
   end
 
-  def edit
-    @job = Job.find(params[:id])
-  end
-
-  def update
-    @job = Job.find(params[:id])
-    if @job.update(job_params)
-      # flash[:notice] = "Update Successfully!"
-      redirect_to jobs_path
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @job = Job.find(params[:id])
-
-    @job.destroy
-
-    redirect_to jobs_path
-  end
+  # def new
+  #   @job = Job.new
+  # end
+  #
+  # def create
+  #   @job = Job.new(job_params)
+  #
+  #   if @job.save
+  #     redirect_to jobs_path
+  #   else
+  #     render :new
+  #   end
+  # end
+  #
+  # def edit
+  #   @job = Job.find(params[:id])
+  # end
+  #
+  # def update
+  #   @job = Job.find(params[:id])
+  #   if @job.update(job_params)
+  #     # flash[:notice] = "Update Successfully!"
+  #     redirect_to jobs_path
+  #   else
+  #     render :edit
+  #   end
+  # end
+  #
+  # def destroy
+  #   @job = Job.find(params[:id])
+  #
+  #   @job.destroy
+  #
+  #   redirect_to jobs_path
+  # end
 
   private
 
