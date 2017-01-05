@@ -13,6 +13,10 @@ class JobsController < ApplicationController
     @job = Job.new
   end
 
+  def edit
+    @job = Job.find(params[:id])
+  end
+
   def create
     @job = Job.create(job_params)
 
@@ -20,6 +24,15 @@ class JobsController < ApplicationController
       redirect_to jobs_path
     else
       render :new
+    end
+  end
+
+  def update
+    @job = Job.find(params[:id])
+    if @job.update(job_params)
+      redirect_to jobs_path, notice: "Update success"
+    else
+      render :edit
     end
   end
 
