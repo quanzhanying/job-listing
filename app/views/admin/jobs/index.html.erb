@@ -23,7 +23,7 @@
         <!--  <td> # </td> -->
           <td>
             <%= render_job_status(job) %>
-            <%= job.title%>
+            <%= link_to(job.title,admin_job_path(job))%>
           </td>
           <td><%= job.description%> </td>
           <td><%= job.wage_lower_bound %></td>
