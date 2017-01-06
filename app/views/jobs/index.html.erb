@@ -12,19 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @jobs.each do |job| %>
-        <tr>
-          <td>#</td>
-          <td><%= link_to(job.title,job_path(job)) %></td>
-          <td><%= job.description %></td>
-          <td><%= job.user.email %></td>
-          <td>
-              <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "Are you sure?" } )%>
-          </td>
-        </tr>
-      <% end %>
+      <%= render :partial => "job_item", :collection => @jobs, :as => :job %>
     </tbody>
   </table>
 </div>
