@@ -3,22 +3,4 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+上面的字先不删除，因为我并不能理解这个readme是做什么用的～相当于备忘录？记事板？等待之后的深入理解。
