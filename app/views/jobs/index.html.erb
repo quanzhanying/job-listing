@@ -1,0 +1,36 @@
+
+<!--此处是按钮-->
+<div class="pull-right">
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+</div>
+<!--结束-->
+
+<table class="table table-boldered">
+  <% @jobs.each do |job| %>
+
+<!--此处是横向表格-->
+  <tr>
+    <!--第一个竖向表格-->
+    <td>
+   <%= link_to(job.title, job_path(job)) %>
+    </td>
+
+  <!--第二个竖向表格-->
+<td>
+<%= link_to("Edit", edit_job_path(job)) %> |
+<%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
+</td>
+
+    <!--第三个竖向表格-->
+    <td>
+    <%= job.created_at %>
+    </td>
+  </tr>
+
+
+
+<!--此处是横向表格结束-->
+
+  <% end %>
+</table>
