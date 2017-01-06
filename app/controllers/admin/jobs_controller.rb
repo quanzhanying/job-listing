@@ -46,6 +46,15 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path
   end
 
+  def public
+    @job = Job.find([params[:id]])
+    @job.is_hidden_1 = 0
+  end
+
+  def hide
+    @job = Job.find([params[:id]])
+    @job.is_hidden_1 = 1
+  end
   private
 
   def job_params1

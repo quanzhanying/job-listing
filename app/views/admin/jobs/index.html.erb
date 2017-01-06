@@ -6,21 +6,23 @@
   <table class="table table-hover">
     <thead>
       <tr>
-
+        <td> # </td>
         <td> Title </td>
         <td> Description </td>
-        <td> wage_lower</td>
-        <td> wage_uppwer</td>
-        <td> is_hidden </td>
-        <td> is_hidden_1 </td>
-        <td> Action </td>
+        <td> Wage_lower</td>
+        <td> Wage_uppwer</td>
+      <!--  <td> is_hidden </td>  -->
+      <!--  <td> is_hidden_1 </td> -->
+        <td> Contact_email </td>
         <td> Time_Create</td>
+        <td> Action </td>
+
       </tr>
     </thead>
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-        <!--  <td> # </td> -->
+          <td> # </td>
           <td>
             <%= render_job_status(job) %>
             <%= link_to(job.title,admin_job_path(job))%>
@@ -28,13 +30,17 @@
           <td><%= job.description%> </td>
           <td><%= job.wage_lower_bound %></td>
           <td><%= job.wage_upper_bound%></td>
-          <td><%= job.is_hidden%></td>
-          <td><%= job.is_hidden_1%> </td>
+          <td><%= job.contact_email%></td>
+          <td><%= job.created_at%> </td>
           <td>
-              <%= link_to("Edit",edit_admin_job_path(job),class:"btn btn-sm btn-default")%>
-              <%= link_to("Destroy",admin_job_path(job),class:"btn btn-sm btn-default",method: :delete,data:{confirm:"Are you sure!"} )%>
+              <%= link_to("Edit",edit_admin_job_path(job))%> |
+              <%= link_to("Destroy",admin_job_path(job),method: :delete,data:{confirm:"Are you sure!"} )%> |
+              <% if job.is_hidden_1 == true %>
+              <%= link_to("Public",public_admin_job_path(job),method: :post,data:{confirm:"Are you sure to dispaly this job!"} )%>
+               <% else %>
+              <%= link_to("Hidden",hide_admin_job_path(job),method: :post,data:{confirm:"Are you sure to hide this job"} )%>
+              <% end %>
           </td>
-          <td><%= job.created_at %></td>
         </tr>
       <% end %>
 
