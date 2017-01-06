@@ -1,6 +1,8 @@
 <div class="col-md-12">
   <div class="job">
+    <% if current_user %>
     <%= link_to("Add a job", new_job_path, class: "btn btn-default pull-right") %>
+    <% end %>
     <br>
     <br>
   </div>
@@ -10,10 +12,12 @@
         <tr>
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td>
+            <% if current_user %>
               <%= link_to("編輯", edit_job_path(job) )%>
                |
               <%= link_to("刪除", job_path(job),
                           method: :delete, data: { confirm: "確定要刪除?" } )%>
+            <% end %>
           </td>
           <td> <%= job.created_at %> </td>
         </tr>
