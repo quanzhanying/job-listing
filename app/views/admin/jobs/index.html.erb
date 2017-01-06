@@ -8,6 +8,11 @@
   <% @jobs.each do |job| %>
   <tr>
     <td>
+      <%= render_job_status(job) %>
+
+      <%= link_to(job.title, admin_job_path(job)) %>
+    </td>
+    <td>
       <%= link_to(job.title, admin_job_path(job)) %>
     </td>
     <td>
@@ -17,6 +22,7 @@
     <td>
       <%= job.created_at %>
     </td>
+
   </tr>
   <% end %>
 </table>
