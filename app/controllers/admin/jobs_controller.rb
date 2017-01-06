@@ -21,4 +21,8 @@ class Admin::JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description)
   end
+
+  def show
+    @job = Job.find(params[:id])
+  end
 end
