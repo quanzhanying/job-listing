@@ -1,0 +1,14 @@
+<div class="pull-right">
+  <%= link_to("Add a Job", new_job_path, :class => "btn btn-primary") %>
+</div>
+
+<table class="table table-boldered">
+  <% @jobs.each do |job| %>
+  <tr>
+    <td><%= link_to(job.title, job_path(job)) %></td>
+    <td><%= job.created_at %></td>
+    <td><%= link_to("Edit", edit_job_path(job)) %></td>
+    <td><%= link_to("Delete", job_path(job), :method => :delete, :data => {:confirm => "Are you sure?"}) %></td>
+  </tr>
+  <% end %>
+</table>
