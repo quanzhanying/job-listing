@@ -1,22 +1,21 @@
 <div class="col-md-12">
   <div class="job">
-    <%= link_to("Add a job", new_job_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("Add a job", new_job_path, class: "btn btn-default pull-right") %>
+    <br>
+    <br>
   </div>
   <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>Title</td>
-      </tr>
-    </thead>
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td>
-              <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
+              <%= link_to("編輯", edit_job_path(job) )%>
+               |
+              <%= link_to("刪除", job_path(job),
                           method: :delete, data: { confirm: "確定要刪除?" } )%>
           </td>
+          <td> <%= job.created_at %> </td>
         </tr>
       <% end %>
     </tbody>
