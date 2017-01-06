@@ -3,7 +3,7 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
 
   def index
-    @jobs = Job.all
+    @jobs = Job.where(:is_hidden => false)
   end
 
   def show
