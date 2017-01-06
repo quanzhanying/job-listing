@@ -1,0 +1,10 @@
+<div class='col-md-12'>
+  <h2>添加职位信息</h2>
+  <%= simple_form_for [:admin, @job] do |f| %>
+  <div class='form-group'>
+    <%= f.input :title %>
+    <%= f.input :description %>
+  </div>
+  <%= f.submit 'Submit', data: {disable_with: 'Submitting...'}, class: 'btn btn-primary' %>
+  <% end %>
+</div>
