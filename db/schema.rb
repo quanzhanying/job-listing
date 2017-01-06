@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170105112425) do
     t.datetime "updated_at",       null: false
     t.integer  "wage_upper_bound"
     t.integer  "wage_lower_bound"
-    t.integer  "contact_email"
+    t.string   "contact_email"
   end
 
   create_table "users", force: :cascade do |t|
