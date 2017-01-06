@@ -19,6 +19,25 @@ class Admin::JobsController < ApplicationController
     end
   end
 
+  def edit
+    @job = Job.find(params[:id])
+  end
+
+  def update
+    @job = Job.find(params[:id])
+    if @job.update(job_params)
+      redirect_to admin_jobs_path, notice: "update success"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to admin_jobs_path, alert: "Delete success"
+  end
+
   private
 
   def job_params

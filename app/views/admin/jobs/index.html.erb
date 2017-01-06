@@ -23,7 +23,11 @@
           <td><%= job.wage_lower_bound %></td>
           <td><%= job.contact_email %></td>
           <td><%= job.created_at %></td>
-          <td><%= link_to("Edit", edit_admin_job_path(job))%></td>
+          <td>
+            <%= link_to("Edit", edit_admin_job_path(job))%>
+            |
+            <%= link_to("Delete", admin_job_path(job), method: :delete, data:{confirm: "Are you sure?"}) %>
+          </td>
         </tr>
       <% end %>
     </tbody>
