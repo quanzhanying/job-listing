@@ -12,6 +12,7 @@
         <td>薪资下限</td>
         <td>联系方式</td>
         <td>创建日期</td>
+        <td>是否公开</td>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,13 @@
           <td><%= job.wage_lower_bound %></td>
           <td><%= job.contact_email %></td>
           <td><%= job.created_at %></td>
+          <td>
+            <% if job.is_hidden %>
+              否
+            <% else %>
+              是
+            <% end %>
+          </td>
           <td>
             <%= link_to("Edit", edit_admin_job_path(job))%>
             |
