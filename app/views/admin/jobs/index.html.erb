@@ -35,13 +35,12 @@
           <td>
               <%= link_to("Edit",edit_admin_job_path(job))%> |
               <%= link_to("Destroy",admin_job_path(job),method: :delete,data:{confirm:"Are you sure!"} )%> |
-              <% if job.is_hidden_1 == true %>
-              <%= content_tag(:span,"",:class => "fa fa-globe")%>
-              <%= link_to("Public","#",:method => :post,data:{confirm:"Are you sure to dispaly this job!"} , :class => "btn btn-xs btn-default")%>
-
-               <% else %>
-              <%= content_tag(:span,"",:class => "fa fa-lock") %>
-              <%= link_to("Hidden","#",:method => :post,data:{confirm:"Are you sure to hide this job"}, :class => "btn btn-xs btn-default" )%>
+              <% if job.is_hidden_1  %>
+                <%= content_tag(:span,"",:class => "fa fa-globe")%>
+                <%= link_to("Public",public_admin_job_path(job),:method => :post,data:{confirm:"Are you sure to dispaly this job!"} , :class => "btn btn-xs btn-default")%>
+              <% else %>
+                <%= content_tag(:span,"",:class => "fa fa-lock") %>
+                <%= link_to("Hidden",hide_admin_job_path(job),:method => :post,data:{confirm:"Are you sure to hide this job"}, :class => "btn btn-xs btn-default" )%>
               <% end %>
           </td>
         </tr>

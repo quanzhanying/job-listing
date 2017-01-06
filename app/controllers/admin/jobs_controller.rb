@@ -51,15 +51,20 @@ class Admin::JobsController < ApplicationController
 
   def public
     @job = Job.find([params[:id]])
+    flash[:alert] = "Job public test!"
+
     @job.is_hidden_1 = false
     @job.save
+
     redirect_to admin_jobs_path
   end
 
   def hide
     @job = Job.find([params[:id]])
+    flash[:alert] = "Job hide test!"
     @job.is_hidden_1 = true
     @job.save
+
     redirect_to admin_jobs_path
   end
   private
