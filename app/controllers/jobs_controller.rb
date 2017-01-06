@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-
+before_filter :authenticate_suer!, only: [:new, :create, :update, :edit, :destroy]
   def index
     @jobs = Job.all
   end
