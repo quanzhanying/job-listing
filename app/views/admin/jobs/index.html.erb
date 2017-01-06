@@ -5,18 +5,23 @@
 <br><br>
 
 <table class="table  table-boldered">
+  <tbody>
   <% @jobs.each do |job| %>
   <tr>
     <td>
+     <%= render_job_status(job) %>
+
       <%= link_to(job.title, admin_job_path(job)) %>
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_job_path(job)) %>
-      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => {:confirm => "Are you sure?"})%>
+      <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-default") %> |
+
+      <%= link_to("Destroy", admin_job_path(job), :class => "btn btn-default", :method => :delete, :data => {:confirm => "Are you sure?"})%>
     </td>
     <td>
       <%= job.created_at %>
     </td>
   </tr>
   <% end %>
+</tbody>
 </table>
