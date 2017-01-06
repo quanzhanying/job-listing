@@ -9,6 +9,8 @@
         <th> Title </th>
         <th> Description </th>
         <th> Last Update </th>
+        <th> Edit </th>
+        <th> Delete </th>
       </tr>
     </thead>
 
@@ -19,6 +21,10 @@
           <td> <%= link_to(job.title, job_path(job)) %> </td>
           <td> <%= job.description %> </td>
           <td> <%= job.updated_at %> </td>
+          <td> <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default") %></td>
+          <td> <%= link_to("Delete", admin_job_path(job),
+                            method: :delete, data: { confirm:"Are you sure?"},
+                            class: "btn btn-sm btn-default") %></td>
         </tr>
       <% end %>
     </tbody>
