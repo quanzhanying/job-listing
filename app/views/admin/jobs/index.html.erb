@@ -12,8 +12,10 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td> <%= link_to(job.title, job_path(job)) %> </td>
-          <td> <%= job.created_at %> </td>
+          <% if current_user.admin? %>
+            <td> <%= link_to(job.title, job_path(job)) %> </td>
+            <td> <%= job.created_at %> </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
