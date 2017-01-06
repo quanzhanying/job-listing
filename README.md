@@ -28,3 +28,17 @@ version-1.4
   1.首页应该看不到隐藏的工作
   2.首页的工作应该按照建立时间倒叙排列
   3.后台的 Job List 列表，应该显示哪一些工作是“隐藏”还是“公开”
+
+create at 2017-1-5
+  version-1.4上修改了
+  1.is_hidden显示bug
+  2.增加遗漏的前后台show.html
+
+  create at 2017-1-6
+  在version-1.4上增加功能
+  1.把 admin#jobs ( admin 用）与 jobs （使用者用）做个区分，加上 sidebar 设计
+  2.在 admin 后台的职缺状态，改成图示
+  3.把 render_job_status 改成 “图示”Font Awesome 图示。（使用 fa-lock / fa-globe ）
+  4.把 is_hidden 的操作改成按钮
+  5.jobs#show 在隐藏状态不可以用
+  6.修改了前后台页面样式
