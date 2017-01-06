@@ -8,6 +8,8 @@
       <tr>
         <th>#</th>
         <th>Title</th>
+        <th>Wages</th>
+        <th>Email</th>
         <th>Updated_at</th>
         <th colspan="2"></th>
       </tr>
@@ -16,6 +18,8 @@
         <tr>
           <td>#</td>
           <td><%= link_to(job.title, admin_job_path(job)) %></td>
+          <td><%= job.wage_min %>~<%= job.wage_max %></td>
+          <td><%= job.email %></td>
           <td><%= job.updated_at %></td>
           <% if current_user %>
             <td><%= link_to('Edit', edit_admin_job_path(job), class: 'btn btn-default btn-sm') %></td>
