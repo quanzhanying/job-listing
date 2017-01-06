@@ -8,6 +8,19 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
+  def edit
+    @job = Job.find(params[:id])
+  end
+
+  def update
+    @job = Job.find(params[:id])
+    if @job.update(job_params)
+      redirect_to jobs_path, notice: "Job Updated"
+    else
+      render :edit
+    end
+  end
+
   def new
     @job = Job.new
   end
