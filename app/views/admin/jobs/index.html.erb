@@ -5,7 +5,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th> </th>
+        <th></th>
       </tr>
     </thead>
 
@@ -13,7 +13,7 @@
       <% @jobs.each do |job| %>
         <tr>
           <td> <%= link_to(job.title, job_path(job)) %> </td>
-          <td> <%= job.creaed_at %> </td>
+          <td> <%= job.created_at %> </td>
         </tr>
       <% end %>
     </tbody>
