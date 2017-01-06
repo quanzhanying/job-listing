@@ -3,7 +3,7 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
 
   def index
-    @jobs = Job.where(:is_hidden => false)
+    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
   end
 
   def show
