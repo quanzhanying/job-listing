@@ -1,0 +1,43 @@
+<div class="col-md-12">
+  <h2 class= "text-center"> 职位信息管理 </h2>
+  <div class="job">
+      <%= link_to("Add a job",new_admin_job_path,class: "btn btn-primary pull-right")%>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+
+        <td> Title </td>
+        <td> Description </td>
+        <td> wage_lower</td>
+        <td> wage_uppwer</td>
+        <td> is_hidden </td>
+        <td> is_hidden_1 </td>
+        <td> Action </td>
+        <td> Time_Create</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+        <!--  <td> # </td> -->
+          <td>
+            <%= render_job_status(job) %>
+            <%= link_to(job.title,admin_job_path(job))%>
+          </td>
+          <td><%= job.description%> </td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.wage_upper_bound%></td>
+          <td><%= job.is_hidden%></td>
+          <td><%= job.is_hidden_1%> </td>
+          <td>
+              <%= link_to("Edit",edit_admin_job_path(job),class:"btn btn-sm btn-default")%>
+              <%= link_to("Destroy",admin_job_path(job),class:"btn btn-sm btn-default",method: :delete,data:{confirm:"Are you sure!"} )%>
+          </td>
+          <td><%= job.created_at %></td>
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
