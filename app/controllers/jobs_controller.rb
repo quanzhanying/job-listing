@@ -1,7 +1,9 @@
 class JobsController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_filter :check_user, only: [:new, :edit, :create, :update, :destroy]
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.recent
   end
 
   def new
@@ -24,7 +26,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-     redirect_to jobs_path
+     redirect_to jobs_path, notice: 'Update Success!'
    else
      render :edit
    end
@@ -33,7 +35,7 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     if @job.delete
-      redirect_to jobs_path
+      redirect_to jobs_path, alert: 'Job Deleted!'
     end
   end
 
@@ -45,4 +47,10 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description)
   end
+  def check_user
+    if !current_user
+      redirect_to jobs_path, warning: 'You have no permission!'
+    end
+  end
+
 end

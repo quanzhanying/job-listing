@@ -1,5 +1,5 @@
 <div class='col-md-12'>
-  <h2 class='text-center'>我发布的职位信息</h2>
+  <h2 class='text-center'>ALL JOBS</h2>
   <div class='group'>
     <%= link_to('Add a job', new_job_path, class: 'btn btn-primary pull-right') %>
   </div>
@@ -17,8 +17,10 @@
           <td>#</td>
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td><%= job.updated_at %></td>
-          <td><%= link_to('Edit', edit_job_path(job), class: 'btn btn-default btn-sm') %></td>
-          <td><%= link_to('Delete', job_path(job), class: 'btn btn-default btn-sm', method: :delete, data: {confirm:'Are you sure?'}) %></td>
+          <% if current_user %>
+            <td><%= link_to('Edit', edit_job_path(job), class: 'btn btn-default btn-sm') %></td>
+            <td><%= link_to('Delete', job_path(job), class: 'btn btn-default btn-sm', method: :delete, data: {confirm:'Are you sure?'}) %></td>
+          <% end %>
         </tr>
         <% end %>
       </tbody>
