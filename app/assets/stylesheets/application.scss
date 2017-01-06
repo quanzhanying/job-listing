@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= requie font-awesome
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome"

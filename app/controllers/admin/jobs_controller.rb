@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_filter :authenticate_user!,only: [:new,:create,:update,:edit,:destroy]
   before_filter :require_is_admin
+  layout "admin"
 
   def index
     @jobs = Job.all
@@ -39,21 +40,27 @@ class Admin::JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
+
     @job.destroy
 
     flash[:alert] = "Job deleted!"
 
     redirect_to admin_jobs_path
+
   end
 
   def public
     @job = Job.find([params[:id]])
-    @job.is_hidden_1 = 0
+    @job.is_hidden_1 = false
+    @job.save
+    redirect_to admin_jobs_path
   end
 
   def hide
     @job = Job.find([params[:id]])
-    @job.is_hidden_1 = 1
+    @job.is_hidden_1 = true
+    @job.save
+    redirect_to admin_jobs_path
   end
   private
 
