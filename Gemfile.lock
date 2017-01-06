@@ -39,11 +39,16 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.0)
+    autoprefixer-rails (6.5.4)
+      execjs
     awesome_print (1.7.0)
     awesome_rails_console (0.4.0)
       awesome_print
       pry-rails
       railties
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.5)
     coderay (1.1.1)
@@ -165,6 +170,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_rails_console
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
