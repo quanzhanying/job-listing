@@ -1,5 +1,6 @@
 class Admin::JobsController < ApplicationController
-  before_filter :authenticate_user!,only: [:new,:create,:edit,:destroy]
+  before_filter :authenticate_user!,only: [:new,:create,:update,:edit,:destroy]
+  before_filter :require_is_admin
   def index
     @jobs = Job.all
   end
@@ -12,7 +13,7 @@ class Admin::JobsController < ApplicationController
   def edit
     @job = Job.find(params[:id])
   end
-  
+
   def create
     @job = Job.new(job_params)
     if @job.save
