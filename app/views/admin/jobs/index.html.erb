@@ -1,0 +1,21 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> Admin Panel </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td> <%= link_to(job.title, job_path(job)) %> </td>
+          <td> <%= job.creaed_at %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
