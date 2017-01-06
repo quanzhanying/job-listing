@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :Destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @jobs = Job.where(:is_hidden => false).order("created_at DESC")
