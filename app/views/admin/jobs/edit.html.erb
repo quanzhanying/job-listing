@@ -7,6 +7,7 @@
 <%= f.input :wage_upper_bound %>
 <%= f.input :wage_lower_bound %>
 <%= f.input :contact_email %>
-  <%= f.input :is_hidden %>
+  <%= f.input :is_hidden, :label => "Hide" , as: :radio_buttons %>
+  <br>
   <%= f.submit "Submit" %>
 <% end %>

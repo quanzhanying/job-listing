@@ -6,6 +6,7 @@
     <%= f.input :wage_lower_bound, input_html: {class: "form-control"} %>
     <%= f.input :contact_email, input_html: {class: "form-control"} %>
   </div>
-  <%= f.input :is_hidden %>
+  <%= f.input :is_hidden, :label =>"Hide", as: :radio_buttons %>
+  <br>
   <%= f.submit "Submit", class: "btn btn-primary", data: {disable_with: "Submiting..."}%>
 <% end %>
