@@ -36,6 +36,7 @@ group :development, :test do
 end
 gem 'bootstrap-sass'
 gem 'devise'
+gem "simple_form"
 
 
 group :development do
