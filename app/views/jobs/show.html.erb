@@ -1,0 +1,18 @@
+<div class="pull-right">
+  <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary") %>
+</div>
+
+<h1> <%= @job.title %> </h1>
+<p>
+  招聘需求：
+  <%= simple_format(@job.description) %>
+  <br>
+  薪资下限：
+  <%= @job.wage_lower_bound %>
+  <br>
+  薪资上线：
+  <%= @job.wage_upper_bound %>
+  <br>
+  联系方式：
+  <%= @job.contact_email %>
+</p>
