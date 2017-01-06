@@ -18,7 +18,7 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     @job = Job.new(job_params)
 
     if @job.save
-      redirect_to jobs_path
+      redirect_to admin_jobs_path
     else
       render :new
     end
@@ -30,8 +30,9 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
   def update
     @job = Job.find(params[:id])
+
     if @job.update(job_params)
-      redirect_to jobs_path
+      redirect_to admin_jobs_path
     else
       render :edit
     end
@@ -42,7 +43,7 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
     @job.destroy
 
-    redirect_to jobs_path
+    redirect_to admin_jobs_path
   end
 
 
