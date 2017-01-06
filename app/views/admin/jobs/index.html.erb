@@ -1,23 +1,26 @@
-<div class="col-md-12">
+<div class="pull-right">
 
-  <h2 class="text-center"> Admin Panel </h2>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @jobs.each do |job| %>
-        <tr>
-          <% if current_user.admin? %>
-            <td> <%= link_to(job.title, job_path(job)) %> </td>
-            <td> <%= job.created_at %> </td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default")%>
 </div>
+<br></br>
+<table class="table table-boldered">
+  <% @jobs.each do |job| %>
+  <tr>
+    <td>
+
+      <% if job.is_hidden %>
+        (Hidden)
+      <% else %>
+        (Public)
+      <% end %>
+
+      <%= link_to(job.title, admin_job_path(job)) %>
+
+    </td>
+    <td>
+      <%= link_to("Edit", edit_admin_job_path) %>|
+      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+  </tr>
+  <% end %>
+</table>
