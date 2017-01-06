@@ -3,7 +3,7 @@ class Admin::JobsController < ApplicationController
   before_action :require_is_admin
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.order("created_at DESC")
   end
 
   def show
@@ -31,7 +31,7 @@ class Admin::JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
 
-    if @Job.update(job_params)
+    if @job.update(job_params)
       redirect_to admin_jobs_path, notice: "Update Success"
     else
       render :edit
@@ -48,7 +48,7 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
   end
  
  
