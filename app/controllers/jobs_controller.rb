@@ -29,7 +29,7 @@ class JobsController < ApplicationController
   def update
     @job =Job.find(params[:id])
 
-    if @job.updatge(job_params)
+    if @job.update(job_params)
       redirect_to jobs_path, notice: "資料已更新！"
     else
       render :edit
@@ -47,5 +47,5 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description)
   end
-  
+
 end
