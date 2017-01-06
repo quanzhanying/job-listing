@@ -1,0 +1,11 @@
+<div class="group">
+  <%= link_to("Edit", edit_job_path(@job), :class => "btn btn-default pull-right") %>
+</div>
+
+<h2><%= @job.title %></h2>
+<p>
+  职缺描述：<%= @job.description %> <br />
+  薪资上限：<%= @job.wage_upper_bound %> <br />
+  薪资下限：<%= @job.wage_lower_bound %> <br />
+  联系方式：<%= @job.contact_email %>
+</p>
