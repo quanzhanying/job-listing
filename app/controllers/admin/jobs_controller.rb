@@ -1,5 +1,5 @@
 class Admin::JobsController < ApplicationController
-before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
+before_filter :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
 before_filter :require_is_admin
 
 
@@ -9,7 +9,7 @@ def show
 end
 
 def index
-@job =Job.all
+@jobs =Job.all
 end
 
 def new
