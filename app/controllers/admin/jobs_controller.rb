@@ -31,7 +31,7 @@ class Admin::JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      redirect_to admin_jobs_path, notice: "Update Success"
+      redirect_to admin_jobs_path, notice: "Update Job Success"
     else
       render :edit
     end
@@ -46,8 +46,8 @@ class Admin::JobsController < ApplicationController
 
   private
   def job_params
-    params.require(:job).permist(:title, :description)
+    params.require(:job).permit(:title, :description)
   end
 
-  
+
 end
