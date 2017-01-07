@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  def admin?
-    is_admin
-  end
+ def admin?
+   email == 'a@163.com'
+ end
 
 end

@@ -15,14 +15,10 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
-    if current_user != @job.user
-      redirect_to root_path, alert: "Your have no permission."
-    end
   end
 
   def create
     @job = Job.new(job_params)
-    @job.user = current_user
 
     if @job.save
       redirect_to jobs_path
@@ -33,11 +29,6 @@ class JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-
-    if current_user != @job.user
-      redirect_to root_path, alert: "Your have no permission."
-    end
-
     if @job.update(job_params)
       redirect_to jobs_path, notice: "Update Success"
     else
@@ -47,11 +38,6 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
-
-    if current_user != @job.user
-      redirect_to root_path, alert: "Your have no permission."
-    end
-
     @job.destroy
     redirect_to jobs_path, alert: "Job deleted"
   end
@@ -61,14 +47,5 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description)
   end
-
-
-    def require_is_admin
-      if !current_user.admin?
-        flash[:alert] = 'Your are not admin'
-        redirect_to root_path
-      end
-    end
-
 
 end
