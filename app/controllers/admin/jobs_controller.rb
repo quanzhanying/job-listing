@@ -3,7 +3,7 @@ class Admin::JobsController < ApplicationController
 	before_action :require_is_admin
 
 	def index
-		@jobs = Job.all 
+		@jobs = Job.all.order("created_at DESC")
 	end
 
 	def new
