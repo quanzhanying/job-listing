@@ -5,5 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :jobs
   has_many :job_relationships
-  has_many :applied_jobs, through: :job_relationships, source: :job
+  has_many :released_jobs, through: :job_relationships, source: :job
+
+  def release!(job)
+    released_jobs << job
+  end
 end
