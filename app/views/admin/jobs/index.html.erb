@@ -12,9 +12,16 @@
     </thead>
     <tbody>
       <% @jobs.each do |job| %>
-        <tr>
-          <td><%= link_to(job.title,admin_job_path(job)) %></td>
-          <!-- <td><%= job.description %></td>!-->
+
+        <tr><td>
+          <% if job.is_hidden%>
+            (Hidden)
+            <%else%>
+            (Public)
+            <%end%>
+          <%= link_to(job.title,admin_job_path(job)) %></td>
+
+
           <td>
               <%= link_to("Edit", edit_admin_job_path(job))%> |
               <%= link_to("Delete", admin_job_path(job),
@@ -22,6 +29,7 @@
           </td>
                <td><%= job.created_at%></td>
         </tr>
+
       <% end %>
     </tbody>
   </table>
