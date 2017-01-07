@@ -1,21 +1,6 @@
 <div class="col-md-4 col-md-offset-4">
   <h2>Modify Job</h2>
   <hr>
-  <%=  form_for @job do |f| %>
-  <% if @job.errors.any? %>
-  <ul>
-    <% @job.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-  <% end %>
-  Title
-  <%= f.text_field :title %>
-  <br>
-  Description
-  <br>
-  <%= f.text_area :description %>
-  <br>
-  <%= f.submit "Submit", :disable_with => 'Submiting..' %>
-  <% end %>
+
+  <%= render "form" %>
 </div>

@@ -1,0 +1,17 @@
+<%=  form_for @job do |f| %>
+<% if @job.errors.any? %>
+<ul>
+  <% @job.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+Title
+<%= f.text_field :title %>
+<br>
+Description
+<br>
+<%= f.text_area :description %>
+<br>
+<%= f.submit "Submit", :disable_with => 'Submiting..' %>
+<% end %>
