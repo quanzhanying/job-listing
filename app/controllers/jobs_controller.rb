@@ -14,7 +14,7 @@ class JobsController < ApplicationController
 	end
 
 	def edit
-		@job = Job.find(parmas[:id])
+		@job = Job.find(params[:id])
 	end
 
 	def create
