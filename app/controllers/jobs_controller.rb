@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :edit, :create, :update, :destroy]
   def index
-    @jobs = Job.all
+    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
   end
   def new
     @job = Job.new
@@ -35,6 +35,6 @@ class JobsController < ApplicationController
   end
   private
   def job_params
-    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email)
+    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
   end
 end

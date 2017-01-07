@@ -1,14 +1,16 @@
+<h1><a href="#" class="btn btn-block btn-success">同城招聘网 <span class="glyphicon glyphicon-glass"></span></a></h1>
 <div class="pull-right">
-  <%= link_to("Add a job", new_job_path, :class => "btn btn-default") %>
+  <%= link_to("Add a job", new_job_path, :class => "glyphicon glyphicon-hand-right") %>
 </div>
 
 <table class="table table-boldered">
   <thead>
    <tr>
-     <td>工作列表</td>
-     <td>薪资下限</td>
-     <td>薪资上限</td>
-     <td>联系方式</td>
+     <td><a href="#" class="btn btn-info">工作列表 <span class="glyphicon glyphicon-align-center"></span></a></td>
+     <td><a href="#" class="btn btn-warning">工资下限 <span class="glyphicon glyphicon-arrow-down"></span></a></td>
+     <td><a href="#" class="btn btn-success">工资上限 <span class="glyphicon glyphicon-arrow-up"></span></a></td>
+     <td><a href="#" class="btn btn-primary">联系方式 <span class="glyphicon glyphicon-user"></span></a></td>
+
    </tr>
  </thead>
   <% @jobs.each do |job| %>

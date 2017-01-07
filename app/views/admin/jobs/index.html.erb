@@ -1,28 +1,36 @@
+<h1>   <a href="#" class="btn btn-block btn-info">后台管理<span class="glyphicon glyphicon-wrench"></span></a></h1>
 <div class="pull-right">
-  <%= link_to("Add a job", new_job_path, :class => "btn btn-default") %>
+
+  <%= link_to("Add a job", new_job_path, :class => "glyphicon glyphicon-hand-right") %>
 </div>
 
 <table class="table table-boldered">
   <thead>
    <tr>
-     <td>工作列表</td>
-     <td>薪资下限</td>
-     <td>薪资上限</td>
-     <td>联系方式</td>
+     <td><a href="#" class="btn btn-info">工作列表 <span class="glyphicon glyphicon-align-center"></span></a></td>
+     <td><a href="#" class="btn btn-warning">工资下限 <span class="glyphicon glyphicon-arrow-down"></span></a></td>
+     <td><a href="#" class="btn btn-success">工资上限 <span class="glyphicon glyphicon-arrow-up"></span></a></td>
+     <td><a href="#" class="btn btn-primary">联系方式 <span class="glyphicon glyphicon-user"></span></a></td>
+
    </tr>
  </thead>
   <% @jobs.each do |job| %>
   <tr>
     <td>
+      <%if job.is_hidden%>
+      <a href="#" class="btn btn-default">隐藏 <span class="glyphicon glyphicon-ban-circle"></span></a>
+      <% else %>
+      <a href="#" class="btn btn-default">公开 <span class="glyphicon glyphicon-send"></span></a>
+      <% end %>
     <%= link_to(job.title, job_path(job)) %>
   </td>
   <td><%= job.wage_lower_bound %></td>
   <td><%= job.wage_upper_bound %></td>
   <td><%= job.contact_email %></td>
+
   <td>
-    <%= link_to("Edit", edit_job_path(job)) %> |
-    <%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are yousure?"})%>
-  </td>
+    <%= link_to("Edit", edit_admin_job_path(job)) %> |
+    <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are yousure?"})%>
   <td>
   <%= job.created_at %>
 </td>
