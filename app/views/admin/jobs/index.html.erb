@@ -1,6 +1,9 @@
 <div class="col-md-12">
 
   <h2 class="text-center"> 我创建的职位 </h2>
+  <div class="job">
+    <%= link_to("Add a job", new_admin_job_path, class: "btn btn-primary pull-right") %>
+  </div>
 
   <table class="table">
     <thead>
@@ -8,6 +11,9 @@
         <th> # </th>
         <th> Title </th>
         <th> Description </th>
+        <th> 联系邮箱 </th>
+        <th> 薪资下限 </th>
+        <th> 薪资上限 </th>
         <th> Last Update </th>
         <th> Edit </th>
         <th> Delete </th>
@@ -18,8 +24,11 @@
       <% @jobs.each do |job| %>
         <tr>
           <td> # </td>
-          <td> <%= link_to(job.title, job_path(job)) %> </td>
+          <td> <%= link_to(job.title, admin_job_path(job)) %> </td>
           <td> <%= job.description %> </td>
+          <td> <%= job.contact_mail %> </td>
+          <td> <%= job.wage_lower_bound %> </td>
+          <td> <%= job.wage_upper_bound %> </td>
           <td> <%= job.updated_at %> </td>
           <td> <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default") %></td>
           <td> <%= link_to("Delete", admin_job_path(job),
