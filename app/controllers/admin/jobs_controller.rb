@@ -1,6 +1,8 @@
 class Admin::JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
+
+
     def show
       @job = Job.find(params[:id])
     end
@@ -45,7 +47,7 @@ class Admin::JobsController < ApplicationController
     end
 
 
-    
+
 
     private
 
