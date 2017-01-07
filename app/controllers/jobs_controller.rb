@@ -10,6 +10,10 @@ class JobsController < ApplicationController
   # 查看 R
   def show
     @job = Job.find(params[:id])
+    if @job.is_hidden
+      flash[:warning] = "该条记录属于档案，无法查看！"
+      redirect_to root_path
+    end
   end
 
   # 新建 C
