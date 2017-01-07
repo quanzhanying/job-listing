@@ -17,20 +17,22 @@
   <% @jobs.each do |job| %>
   <tr>
     <td>
-      <%if job.is_hidden%>
-      <a href="#" class="btn btn-default">隐藏 <span class="glyphicon glyphicon-ban-circle"></span></a>
-      <% else %>
-      <a href="#" class="btn btn-default">公开 <span class="glyphicon glyphicon-send"></span></a>
-      <% end %>
-    <%= link_to(job.title, job_path(job)) %>
+     <%= render_job_status(job) %>
+    <%= link_to(job.title, admin_job_path(job)) %>
   </td>
   <td><%= job.wage_lower_bound %></td>
   <td><%= job.wage_upper_bound %></td>
   <td><%= job.contact_email %></td>
 
   <td>
-    <%= link_to("Edit", edit_admin_job_path(job)) %> |
-    <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are yousure?"})%>
+    <%= link_to("Edit", edit_admin_job_path(job), :class => "glyphicon glyphicon-exclamation-sign") %> |
+    <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are yousure?"}, :class => "glyphicon glyphicon-trash")%> |
+    <% if job.is_hidden %>
+
+    <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "glyphicon glyphicon-hand-up") %>
+  <% else %>
+    <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "glyphicon glyphicon-hand-down") %>
+  <% end %>
   <td>
   <%= job.created_at %>
 </td>
