@@ -31,7 +31,7 @@
           </td>
           <td>
             <% if job.is_hidden %>
-              <%= link_to("publish",publish_admin_job_path(job), method: :post, :class => "btn btn-xs btn-default")%>
+              <%= link_to("publish",publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default")%>
             <% else %>
               <%= link_to("hide", hide_admin_job_path(job), method: :post, :class => "btn btn-xs btn-default") %>
 
