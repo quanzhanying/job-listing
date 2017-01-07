@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobListing</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='container-fluid'>
+        <%= render 'common/navbar' %>
+        <%= render 'common/flashes' %>
+        <div class='row'>
+          <div class='col-md-2 sidebar' >
+            <%= render 'common/sidebar' %>
+          </div>
+          <div class='col-md-20 col-md-offset-2 content'>
+            <%= yield %>
+          </div>
+    </div>
+    <%= render 'common/footer' %>
+  </body>
+</html>
