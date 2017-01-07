@@ -6,5 +6,8 @@
     <%= f.input :wage_upper_bound, input_html: { class: "form-control"} %>
     <%= f.input :contact_email, input_html: { class: "form-control"} %>
   </div>
+  <div  class="checkbox">
+    <%= f.input :hidden, label: "is hidden",  as: :boolean %>
+  </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
 <% end %>
