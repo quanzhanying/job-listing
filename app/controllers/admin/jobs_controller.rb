@@ -43,18 +43,12 @@ class Admin::JobsController < ApplicationController
    redirect_to admin_jobs_path, alert: "Job deleted"
   end
 
-  def require_is_admin
-    unless current_user.admin?
-      flash[:alert] = 'You are not admin'
-      redirect_to root_path
-    end
-  end
 
   private
 
   def job_params
     params.require(:job).permit(:title, :description, :wage_lower_bound,
-                                :wage_upper_bound, :contact_mail)
+                                :wage_upper_bound, :contact_mail, :is_hidden)
   end
 
 end

@@ -2,7 +2,7 @@
     <h2>编辑职位</h2>
 
     <hr>
-    <%= form_for @job do |f| %>
+    <%= simple_form_for @job do |f| %>
     <% if @job.errors.any? %>
     <ul>
       <% @job.errors.full_messages.each do |msg| %>
@@ -26,6 +26,9 @@
     <br>
     联系邮箱
     <%= f.text_field :contact_mail %>
+    <br>
+    是否隐藏
+    <%= f.input :is_hidden %>
     <br>
 
     <%= f.submit "Submit", :disable_with => 'Submiting...' %>
