@@ -10,4 +10,7 @@ class User < ApplicationRecord
   def release!(job)
     released_jobs << job
   end
+  def admin?
+    is_admin
+  end
 end
