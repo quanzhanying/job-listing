@@ -14,8 +14,12 @@
 
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_job_path) %>|
-      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      <% if current_user.admin?%>
+        <%= link_to("Edit", edit_admin_job_path(job)) %>|
+        <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      <% else %>
+        redirect_to root_path
+      <% end %>
     </td>
   </tr>
   <% end %>
