@@ -1,0 +1,26 @@
+<div class="pull-right">
+
+  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default")%>
+</div>
+<br></br>
+<table class="table table-boldered">
+  <% @jobs.each do |job| %>
+  <tr>
+    <td>
+
+      <%= render_job_status(job) %>
+
+      <%= link_to(job.title, admin_job_path(job)) %>
+
+    </td>
+    <td>
+      <% if current_user.admin?%>
+        <%= link_to("Edit", edit_admin_job_path(job)) %>|
+        <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      <% else %>
+        redirect_to root_path
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
