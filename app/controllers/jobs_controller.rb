@@ -10,7 +10,7 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
+    check_is_hidden
   end
 
   def create
@@ -23,7 +23,7 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job = Job.find(params[:id])
+    check_is_hidden
     if @job.update(job_params)
      redirect_to jobs_path, notice: 'Update Success!'
    else
@@ -32,22 +32,25 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @job = Job.find(params[:id])
+    check_is_hidden
     if @job.delete
       redirect_to jobs_path, alert: 'Job Deleted!'
     end
   end
 
   def show
-    @job = Job.find(params[:id])
-    if job.is_hidden
-      redirect_to jobs_path, warning: 'This job is already archieved!'
-    end
+    check_is_hidden
   end
 
   private
   def job_params
     params.require(:job).permit(:title, :description, :wage_min, :wage_max, :email, :is_hidden)
+  end
+  def check_is_hidden
+    @job = Job.find(params[:id])
+    if @job.is_hidden
+      redirect_to jobs_path, warning: 'This job is already archieved!'
+    end
   end
 
 end
