@@ -10,6 +10,7 @@
       <tr>
         <th> # </th>
         <th> Title </th>
+        <th> #</th>
         <th> Description </th>
         <th> 联系邮箱 </th>
         <th> 薪资下限 </th>
@@ -27,6 +28,14 @@
           <td>
             <%= render_job_status(job) %>
             <%= link_to(job.title, admin_job_path(job)) %>
+          </td>
+          <td>
+            <% if job.is_hidden %>
+              <%= link_to("publish",publish_admin_job_path(job), method: :post, :class => "btn btn-xs btn-default")%>
+            <% else %>
+              <%= link_to("hide", hide_admin_job_path(job), method: :post, :class => "btn btn-xs btn-default") %>
+
+            <% end %>
           </td>
           <td> <%= job.description %> </td>
           <td> <%= job.contact_mail %> </td>
