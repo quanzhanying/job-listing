@@ -1,9 +1,7 @@
-<h1> Add a job </h1>
+<div class="col-md-4 col-md-offset-4">
+    <h2>Add A Job</h2>
 
-<%= simple_form_for @job do |f| %>
+    <hr>
+  <%= render "form"%>
 
-<%= f.input :title %>
-<%= f.input :description %>
-
-  <%= f.submit "Submit" %>
-<% end %>
+</div>
