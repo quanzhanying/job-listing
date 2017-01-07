@@ -8,6 +8,7 @@
       <tr>
         <th>#</th>
         <th>Title</th>
+        <th>Status</th>
         <th>Wages</th>
         <th>Email</th>
         <th>Updated_at</th>
@@ -18,6 +19,11 @@
         <tr>
           <td>#</td>
           <td><%= link_to(job.title, admin_job_path(job)) %></td>
+          <% if job.is_hidden %>
+          <td>隐藏</td>
+          <% else %>
+          <td>公开</td>
+          <% end %>
           <td><%= job.wage_min %>~<%= job.wage_max %></td>
           <td><%= job.email %></td>
           <td><%= job.updated_at %></td>
