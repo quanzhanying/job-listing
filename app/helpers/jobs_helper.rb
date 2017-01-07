@@ -3,6 +3,7 @@ module JobsHelper
     simple_format(job.description)
   end
 
+  # 暂时不用
   def job_status(job)
     if job.is_hidden
       "(🕶隐藏)"
