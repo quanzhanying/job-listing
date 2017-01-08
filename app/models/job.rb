@@ -6,4 +6,13 @@ class Job < ApplicationRecord
   validates :wage_lower_bound, numericality: {greater_than: 0}
   belongs_to :user
   scope :recent, -> {order("created_at DESC")}
+
+  def publish!
+    self.hidden = false
+    self.save
+  end
+  def hide!
+    self.hidden = true
+    self.save
+  end
 end
