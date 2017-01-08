@@ -1,0 +1,9 @@
+<div class="col-md-4">
+  <div class="job">
+    <%= link_to("Edit a job", edit_job_path(@job), class: "btn btn-primary pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <h2><%= @job.title %></h2>
+    <p><%= @job.description %></p>
+  </table>
+</div>
