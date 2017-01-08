@@ -1,3 +1,3 @@
-class Job < ActiveRecord::Base
+class Job < ApplicationRecord
   validates :title, presence: true
 end

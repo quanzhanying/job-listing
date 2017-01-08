@@ -1,7 +1,9 @@
-<div class="col-md-4 col-md-offset-4">
-    <h2>编辑岗位</h2>
+<h1> Edit a job </h1>
 
-    <hr>
-    <%= render "form" %>
+<%= simple_form_for @job do |f| %>
 
-</div>
+<%= f.input :title %>
+<%= f.input :description %>
+
+  <%= f.submit "Submit" %>
+<% end %>
