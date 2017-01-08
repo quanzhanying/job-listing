@@ -43,6 +43,18 @@ class Admin::JobsController < ApplicationController
     redirect_to jobs_path
   end
 
+  def publish
+    @job = Job.find(params[:id])
+    @job.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @job = Job.find(params[:id])
+    @job.hide!
+    redirect_to :back
+  end
+
   # def require_is_admin
   #   # if current_user.email != 'abc@happy.com'
   #   if current_user.admin?
