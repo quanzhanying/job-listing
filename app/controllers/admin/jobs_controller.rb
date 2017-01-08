@@ -1,10 +1,10 @@
-class JobsController < ApplicationController
+class Admin::JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_filter :require_is_admin
 
   def index
     @jobs = Job.all
   end
-
   def show
     @job = Job.find(params[:id])
   end
@@ -17,12 +17,11 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
-      redirect_to jobs_path
+      redirect_to admin_jobs_path
     else
       render :new
     end
   end
-
 
   def edit
     @job = Job.find(params[:id])
@@ -31,7 +30,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      redirect_to jobs_path
+      redirect_to admin_jobs_path
     else
       render :edit
     end
@@ -39,9 +38,11 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
+
     @job.destroy
-    redirect_to jobs_path
+    redirect_to admin_jobs_path
   end
+
 
 
   private
