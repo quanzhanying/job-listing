@@ -30,7 +30,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      redirect_to jobs_path, notice: "更新成功！"
+      redirect_to jobs_path, notice: "更新职缺成功！"
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     @job.destroy
-    redirect_to jobs_path
+    redirect_to jobs_path, notice: "删除职缺成功!"
   end
 
   private
