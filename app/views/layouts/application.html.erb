@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JobListing</title>
+    <title>Job Listing</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+      <div class="container-fluid">
+        <%= render "common/navbar"%>
+        <%= yield %>
+      </div>
+      <%= render "common/footer" %>
   </body>
 </html>
