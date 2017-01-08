@@ -4,14 +4,9 @@
        <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right") %>
     <% end %>
   </div>
-  <h2><%= "Job title:" %></h2>
   <h2><%= @job.title %></h2>
-   <li class="divider"></li>
   <p><%= @job.description %></p>
-   <li class="divider"></li>
   <p><%= @job.wage_lower_bound %></p>
-   <li class="divider"></li>
   <p><%= @job.wage_upper_bound %></p>
-   <li class="divider"></li>
   <p><%= @job.contact_email %></p>
 </div>

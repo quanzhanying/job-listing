@@ -4,7 +4,7 @@ class JobsController < ApplicationController
  before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
 
   def index
-    @jobs=Job.all
+    @jobs=Job.where(:is_hidden => false).order("created_at DESC")
   end
 
   def show
@@ -12,6 +12,7 @@ class JobsController < ApplicationController
   end
 
   def edit
+    @job=Job.find(params[:id])
   end
 
 
@@ -46,6 +47,13 @@ class JobsController < ApplicationController
     redirect_to jobs_path
   end
 
+  def require_is_admin
+    if !current_user.admin?
+      flash[:alert]="You are not admin!"
+      redirect_to root_path
+    end
+  end
+
 private
 
 def find_job_and_check_permission
@@ -57,7 +65,7 @@ def find_job_and_check_permission
 end
 
 def job_params
-  params.require(:job).permit(:title, :description)
+  params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
 end
 
 end
