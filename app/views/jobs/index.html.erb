@@ -19,9 +19,9 @@
           <td>#</td>
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td><%= job.description %></td>
-          <td><%= job.description %></td>
-          <td><%= job.description %></td>
-          <td><%= job.description %></td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.wage_upper_bound %></td>
+          <td><%= job.contact_email %></td>
           <% if current_user %>
           <td>
               <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
