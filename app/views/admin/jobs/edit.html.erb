@@ -1,6 +1,6 @@
 <h1> Edit a job </h1>
 
-<%= simple_form_for[:admin, @job] do |f|%>
+<%= simple_form_for [:admin, @job ] do |f| %>
 
 <%= f.input :title %>
 <%= f.input :description %>
@@ -12,4 +12,5 @@
 <%= f.input :is_hidden %>
 
 <%= f.submit "Submit" %>
+
 <% end %>
