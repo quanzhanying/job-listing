@@ -6,7 +6,7 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all
+    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
   end
 
   def new
@@ -18,8 +18,8 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job= Job.find(parms[:id])
-    if @job.update
+    @job= Job.find(params[:id])
+    if @job.update(job_params)
       redirect_to jobs_path
     else
       render :edit
@@ -45,7 +45,7 @@ class JobsController < ApplicationController
 private
 
 def job_params
-  params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email)
+  params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
 end
 
 
