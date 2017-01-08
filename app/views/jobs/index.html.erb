@@ -1,0 +1,23 @@
+<div class="col-md-12">
+    <div class="job">
+        <%= link_to("Add a job", new_job_path, class: "btn btn-primary pull-right") %>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% @jobs.each do |job| %>
+                <tr>
+                    <td><%= link_to(job.title, job_path(job)) %></td>
+                    <td>
+                        <%= link_to("Edit", edit_job_path(job)) %> |
+                        <%= link_to("Delete", job_path(job), method: :delete, data: { confirm: "Are you sure?" } )%>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
