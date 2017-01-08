@@ -9,6 +9,15 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
+  def update
+    @job = Job.find(params[:id])
+    if @job.update(job_params)
+      redirect_to admin_jobs_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
@@ -16,6 +25,9 @@ class Admin::JobsController < ApplicationController
   end
 
   private
+  def job_params
+    params.require(:job).permit(:title, :hidden, :wage_lower_bound, :wage_upper_bound,:contact_email)
+  end
   def require_is_admin
     if !current_user.admin?
       flash[:alert] = "You are not admin."
