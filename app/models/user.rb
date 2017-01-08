@@ -7,6 +7,6 @@ class User < ApplicationRecord
              email == 'xdite@growth.school'
         end
         def admin?
-        is_admin
-        end
+         is_admin
+  end
 end
