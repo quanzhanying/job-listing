@@ -37,6 +37,7 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem "simple_form"
+gem "font-awesome-rails"
 
 
 group :development do
