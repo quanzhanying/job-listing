@@ -2,5 +2,9 @@
 
 <p>
   <%= simple_format(@job.description) %>
-
+  薪資下限：<%= @job.wage_lower_bound %><br>
+  薪資上限：<%= @job.wage_upper_bound %><br>
+  聯絡mail:<%= @job.contact_email %>
 </p>
+
+<%= link_to("Back to Admin", admin_jobs_path )%>

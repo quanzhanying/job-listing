@@ -22,7 +22,7 @@ class Admin::JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
-      redirect_to jobs_path
+      redirect_to admin_jobs_path
     else
       render :new
     end
@@ -32,7 +32,7 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     if @job.update(job_params)
-      redirect_to jobs_path
+       redirect_to admin_jobs_path
     else
       render :edit
     end
@@ -41,13 +41,13 @@ class Admin::JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to jobs_path
+    redirect_to admin_jobs_path
   end
 
   private
 
-  def job_parans
-    params.require(:job).permit(:title, :description)
+  def job_params
+    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email)
   end
 
 end
