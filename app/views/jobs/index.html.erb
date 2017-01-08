@@ -1,0 +1,32 @@
+<div class="col-md-12">
+  <div class="pull-right">
+    <% if current_user && current_user.admin? %>
+      <%= link_to("Add a Job", new_job_path, :class => "btn btn-default" ) %>
+    <% end %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>Title</td>
+        <td>Create Date</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td>
+            <%= link_to(job.title, job_path(job)) %>
+          </td>
+          <td><%= job.created_at %></td>
+          <td>
+            <% if current_user && current_user.admin? %>
+              <%= link_to("Edit", edit_job_path(job)) %> |
+              <%= link_to("Delete", job_path(job), :method => :delete, :data => {:confirm => "Are you sure?"}) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
