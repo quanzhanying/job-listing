@@ -21,7 +21,8 @@
                     <% if current_user.admin? %>
                     <li><%= link_to("Admin Panel", admin_jobs_path) %></li>
                     <% end %>
-                    <li><%= link_to("Log out", destroy_user_session_path, metohd: :delete) %></li>
+                    
+                    <li><%= link_to("Log out", destroy_user_session_path, method: :delete) %> </li>
                   </ul>
                 </li>
                 <% end %>
