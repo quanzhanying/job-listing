@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   # before_filter C & D
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  layout "sidebar"
 
   # 首页 R
   def index
@@ -12,7 +13,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     if @job.is_hidden
       flash[:warning] = "该条记录属于档案，无法查看！"
-      redirect_to root_path
+      redirect_to jobs_path
     end
   end
 

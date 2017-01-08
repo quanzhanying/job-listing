@@ -7,4 +7,14 @@ class Job < ActiveRecord::Base
   validates :contact_email, presence: true
 
   scope :recent, -> { order("created_at DESC")}
+
+  def publish!
+    self.is_hidden = false
+    self.save
+  end
+
+  def hide!
+    self.is_hidden = true
+    self.save
+  end
 end

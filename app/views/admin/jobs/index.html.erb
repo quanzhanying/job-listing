@@ -27,7 +27,7 @@
           <!--<td>#</td>-->
           <td>
             <%= render_job_status(job) %>
-            <%= link_to(job.title, job_path(job)) %>
+            <%= link_to(job.title, admin_job_path(job)) %>
           </td>
           <td><%= render_job_description(job) %></td>
           <td><%= job.wage_lower_bound %></td>
@@ -35,9 +35,14 @@
           <td><%= job.contact_email %></td>
           <td><%= job.created_at %></td>
           <td>
-            <%= link_to("🗑删除", job_path(job),    class: "btn btn-sm btn-danger pull-right",
+            <%= link_to("🗑删除", admin_job_path(job),    class: "btn btn-sm btn-danger pull-right",
                         method: :delete, data: { confirm: "⚠️您确定删除吗?" } )%>
-            <%= link_to("📝编辑", edit_job_path(job), class: "btn btn-sm btn-primary pull-right")%>
+            <%= link_to("📝编辑", edit_admin_job_path(job), class: "btn btn-sm btn-primary pull-right")%>
+            <% if job.is_hidden %>
+              <%= link_to("👓显示", publish_admin_job_path(job), :method => :post, class: "btn btn-sm btn-info pull-right")%>
+            <% else %>
+              <%= link_to("🕶隐藏", hide_admin_job_path(job), :method => :post, class: "btn btn-sm btn-info pull-right")%>
+            <% end %>
           </td>
         </tr>
       <% end %>
