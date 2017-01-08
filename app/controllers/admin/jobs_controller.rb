@@ -10,7 +10,10 @@ class Admin::JobsController < ApplicationController
     @jobs = Job.all
   end
   def new
-    @job = Job.new(job-params)
+    @job = Job.new
+  end
+  def create
+    @job = Job.new(job_params)
     if @job.save
       redirect_to admin_jobs_path
     else
@@ -31,7 +34,7 @@ class Admin::JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to admin_jobs_path
+    redirect_to admin_jobs_path, alert: "删除成功"
   end
   def publish
     @job = Job.find(params[:id])

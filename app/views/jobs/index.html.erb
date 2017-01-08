@@ -8,7 +8,9 @@
       <%= link_to(job.title, job_path(job)) %>
     </td>
     <td>
-      <%= link_to("很开森", job_path(job)) %>
+      <%= job.description %>
+    <td>
+      <%= "很开森" %>
     </td>
     <td>
       <%= link_to("Edit", edit_job_path(job)) %> |
