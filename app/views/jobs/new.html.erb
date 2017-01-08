@@ -1,0 +1,12 @@
+<div class="col-md-4 col-md-offset-4">
+<h2> 新增职缺 </h2>
+<%= simple_form_for @job do |f| %>
+<%= f.input :title, :label => "职位" %>
+<%= f.input :description, :label => "职位描述" %>
+<%= f.input :wage_lower_bound, :label => "薪资下限"%>
+<%= f.input :wage_upper_bound, :label => "薪资上限"%>
+<%= f.input :contact_email, :label => "联系邮箱"%>
+<%= f.input :is_hidden %>
+<%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
+</div>
