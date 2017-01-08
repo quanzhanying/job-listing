@@ -38,20 +38,14 @@ class Admin::JobsController < ApplicationController
     def destroy
       @job =Job.find(params[:id])
       @job.destroy
-      redirect_to admin_jobs_path, alert:'工作删除'
+      redirect_to admin_jobs_path, alert:'删除成功'
     end
 
-    def require_is_admin
-      if !current_user.admin?
-        flash[:alert] = 'You are not admin'
-        redirect_to root_path
-      end
-    end
 
     private
 
     def job_params
-      params.require(:job).permit(:title,:description)
+      params.require(:job).permit(:title,:description,:wage_upper_bound,:wage_lower_bound,:contact_email)
     end
 
   end
