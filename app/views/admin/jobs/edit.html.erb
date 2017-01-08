@@ -1,6 +1,11 @@
-<h1> <%= @job.title %> </h1>
+<h1> Edit a job </h1>
 
-<p>
-  <%= simple_format(@job.description) %>
+<%= simple_form_for @job do |f| %>
 
-</p>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :wage_lower_bound, :label => "薪资下限" %>
+<%= f.input :wage_upper_bound, :label => "薪资上限" %>
+<%= f.input :contact_email %>
+<%= f.submit "Submit" %>
+<% end %>
