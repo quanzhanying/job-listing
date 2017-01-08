@@ -1,14 +1,14 @@
 <h1>Edit the job</h1>
 
-<%= simple_form_for [:admin,@job] do |f|%>
+<%= simple_form_for [:admin,@job] do |j|%>
 
-<%= f.input :title%>
-<%= f.input :description%>
+<%= j.input :title%>
+<%= j.input :description%>
 <%= j.input :wage_lower_bound%>
 <%= j.input :wage_upper_bound%>
 <%= j.input :contact_email%>
 <%= j.input :is_hidden%>
 
-<%= f.submit "Submit"%>
+<%= j.submit "Submit"%>
 
 <% end %>
