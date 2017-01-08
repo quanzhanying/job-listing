@@ -1,7 +1,7 @@
 <div class="col-md-12">
-  <div class="pull-right">
-    <%= link_to("新增职缺", new_admin_job_path, :class => "btn btn-primary")%>
-  </div>
+<div class="pull-right">
+  <%= link_to("新增职缺", new_admin_job_path, :class => "btn btn-primary")%>
+</div>
 
   <br><br>
 
@@ -20,7 +20,7 @@
         <td>#</td>
         <td><%= link_to(job.title, admin_job_path(job)) %></td>
         <td>
-          <%= link_to("Edit", edit_admin_job_path(job)%> |
+          <%= link_to("Edit", edit_admin_job_path(job))%> |
           <%= link_to("Delete", admin_job_path(job), :method => :delete, :data => {:confirm => "Are you sure?"})%>
         </td>
         <td>
