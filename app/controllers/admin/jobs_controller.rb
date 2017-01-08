@@ -49,7 +49,7 @@ class Admin::JobsController < ApplicationController
 
   def require_is_admin
 
-    if current_user.emaile != 'nata@growth.school'
+    unless current_user.admin?
       flash[:alert] = "you are not admin"
       redirect_to root_path
     end
