@@ -1,0 +1,11 @@
+<%= simple_form_for [:admin, @job ] do |f| %>
+
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :wage_lower_bound, :label => "薪資下限" %>
+<%= f.input :wage_upper_bound, :label => "薪資上限" %>
+<%= f.input :contact_email, :label => "聯絡email" %>
+<%= f.input :is_hidden, :label => "隱藏" %>
+
+  <%= f.submit "Submit" %>
+<% end %>
