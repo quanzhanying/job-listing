@@ -5,12 +5,12 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     if @job.is_hidden
       flash[:warning] = "This Job already archieved"
       redirect_to root_path
-    end 
+    end
   end
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to jobs_path
+    redirect_to jobs_path, alert: "删除成功！"
   end
   def index
     @jobs = Job.where(:is_hidden => false).order("created_at DESC")
@@ -21,7 +21,7 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
   def create
     @job = Job.new(job_params)
     if @job.save
-      redirect_to jobs_path
+      redirect_to jobs_path, notice: "创建职缺成功"
     else
       render :new
     end

@@ -7,7 +7,7 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
   def index
-    @jobs = Job.all
+    @jobs = Job.all.order("created_at DESC")
   end
   def new
     @job = Job.new
