@@ -8,7 +8,6 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    redirect_to admin_jobs_path
   end
 
   def new
