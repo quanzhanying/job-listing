@@ -186,7 +186,6 @@ DEPENDENCIES
   rails (~> 5.0.0)
   sass-rails (~> 5.0)
   simple_form
-  spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   turbolinks (~> 5)
@@ -195,4 +194,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
