@@ -12,8 +12,9 @@
         <tr>
           <td> # </td>
           <td>
-          <%=  render_job_status(job) %>
-          <%= link_to(job.title, admin_job_path(job)) %>
+          <i class="<%= render_job_status(job) %>" aria-hidden="true">
+              <%= link_to(job.title, admin_job_path(job)) %>
+          </li>
           </td>
           <td> <%= link_to("Edit", edit_admin_job_path(job))%> | <%= link_to("Destroy", admin_job_path(job), method: :delete, data: { confirm: "Are you sure?"}) %> </td>
           <td> <%= job.updated_at %> </td>

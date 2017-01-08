@@ -1,9 +1,9 @@
 module Admin::JobsHelper
   def render_job_status(job)
     if job.hidden
-      return '(Hidden)'
+      'fa fa-lock'
     else
-      return '(Pulibc)'
+      "fa fa-globe"
     end
   end
 end
