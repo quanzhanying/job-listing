@@ -1,0 +1,17 @@
+<div class="col-md-12">
+  <div class="job">
+    <%= link_to("New job", new_job_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= link_to(job.title, job_path(job)) %></td>
+        <td>
+          <%= link_to("Edit", edit_job_path(job))%>
+          <%= link_to("Destroy", job_path(job), data: { confirm: "Are you sure?"} )%>
+        </td>
+        <td><%= created_at %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</div>
