@@ -1,0 +1,31 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我发布的职位 </h2>
+
+  <div class="job">
+    <%= link_to("New job", new_admin_job_path, class: "btn btn-primary pull-right") %>
+  </div>
+
+  <table class="table">
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td> # </td>
+          <td>
+          <i class="<%= render_job_status(job) %>" aria-hidden="true">
+              <%= link_to(job.title, admin_job_path(job)) %>
+          </li>
+          </td>
+          <td>
+            <%= link_to("Edit", edit_admin_job_path(job))%>
+            |
+             <%= link_to("Destroy", admin_job_path(job), method: :delete, data: { confirm: "Are you sure?"}) %>
+             |
+            <%= render_job_status_button(job) %>
+          </td>
+          <td> <%= job.updated_at %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
