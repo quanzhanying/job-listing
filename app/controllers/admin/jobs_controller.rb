@@ -24,7 +24,7 @@ class Admin::JobsController < ApplicationController
     if @job.save
       redirect_to admin_jobs_path
     else
-      rendr :new
+      render :new
     end
   end
 
