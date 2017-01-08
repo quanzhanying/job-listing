@@ -7,6 +7,9 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    if @job.hidden
+      redirect_to jobs_path, alert: "you have no right to see."
+    end
   end
 
   def new
@@ -41,6 +44,20 @@ class Admin::JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
+    redirect_to admin_jobs_path
+  end
+
+  def publish
+    @job = Job.find(params[:id])
+    @job.hidden = false
+    @job.save
+    redirect_to admin_jobs_path
+  end
+
+  def hide
+    @job = Job.find(params[:id])
+    @job.hidden = true
+    @job.save!
     redirect_to admin_jobs_path
   end
 
