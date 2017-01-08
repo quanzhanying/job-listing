@@ -6,10 +6,14 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+
+
   end
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.recent
+    @j=@jobs.paginate(:page => params[:page], :per_page => 5)
+
   end
 
   def new
@@ -34,10 +38,13 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
     if @job.update(job_params)
       redirect_to admin_jobs_path
+      flash[:notice]= "Update success"
+
     else
       render :edit
     end
   end
+
 
   def destroy
     @job = Job.find(params[:id])
