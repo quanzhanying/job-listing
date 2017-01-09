@@ -1,0 +1,25 @@
+
+
+  <% if current_user %>
+    <div class="pull-right">
+      <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+    </div>
+  <% end %>
+<br><br>
+<div>
+  <table class="table table-boldered">
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td width = 35%><%= link_to(job.title, job_path(job)) %></td>
+          <td width = 25%>薪资<%= job.wage_lower_bound %>~<%= job.wage_upper_bound %></td>
+          <td width = 15%>
+            <%= link_to("Edit", edit_admin_job_path(job)) %> |
+            <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          </td>
+          <td width = 25%> <%= job.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

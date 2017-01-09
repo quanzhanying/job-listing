@@ -1,0 +1,11 @@
+<h2> <%= @job.title %> </h2>
+
+<p>
+  岗位要求：<%= simple_format(@job.description) %>
+  <br>
+  薪资 <%= @job.wage_lower_bound %> ～ <%= @job.wage_upper_bound %>
+  <br>
+  联系方式 <%= @job.contact_email %>
+</p>
+<br>
+<a><%= link_to("返回首页",root_path)%></a>
