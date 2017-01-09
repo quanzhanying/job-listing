@@ -19,4 +19,11 @@ module JobsHelper
       content_tag(:span, "", :class => "fa fa-eye")
     end
   end
+
+  def up_order
+    content_tag(:span, "", :class => "fa fa-arrow-up")
+  end
+  def down_order
+    content_tag(:span, "", :class => "fa fa-arrow-down")
+  end
 end
