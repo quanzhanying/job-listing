@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :edit, :create, :update, :destroy]
+  before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
   def index
     @jobs = Job.where(:is_hidden => false).order("created_at DESC")
   end
@@ -40,6 +41,14 @@ end
       redirect_to root_path
   end
   private
+  def find_job_and_check_permission
+    @job = Job.find(params[:id])
+
+    if current_user != @job.user
+      redirect_to root_path, alert: "You have no permission."
+    end
+  end
+
   def job_params
     params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
   end
