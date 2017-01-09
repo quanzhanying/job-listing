@@ -1,0 +1,26 @@
+<div class="col-md-12">
+
+  <table class="table">
+
+    <h2 class="text-center"> 我发表过的职位 </h2>
+
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td>
+              <%= render_job_status(job) %>
+
+              <%= link_to(job.title, admin_job_path(job)) %>
+          </td>
+          <td>
+              <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default")%>
+              <%= link_to("Destroy", admin_job_path(job),   class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?" } )%>
+          </td>
+          <td> <%= job.updated_at %> </td>
+        </tr>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
