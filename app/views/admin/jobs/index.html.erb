@@ -6,8 +6,7 @@
     <thead>
       <tr>
         <td>#</td>
-        <td>Title</td>
-        <td>Description</td>
+        <td>职位</td>
         <td>最近更新时间</td>
       </tr>
     </thead>
@@ -15,13 +14,17 @@
       <% @jobs.each do |job| %>
         <tr>
           <td>#</td>
-          <td><%= link_to(job.title, admin_job_path(job)) %></td>
-          <td><%= job.description %></td>
+          <td>
+            <%= render_job_status(job) %>
+            <%= link_to(job.title, admin_job_path(job)) %>
+          </td>
           <td><%= job.updated_at %></td>
           <td>
+            <% if current_user && current_user.is_admin %>
               <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default")%>
               <%= link_to("Delete", admin_job_path(job),    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
+            <% end %>
           </td>
         </tr>
       <% end %>

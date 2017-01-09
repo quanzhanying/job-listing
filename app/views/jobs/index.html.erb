@@ -19,9 +19,11 @@
           <td><%= job.description %></td>
           <td><%= job.updated_at %></td>
           <td>
-              <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default", 
+              <% if current_user && current_user.is_admin %>
+                <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
+                <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default", 
                           method: :delete, data: { confirm: "Are you sure?" } )%>
+              <% end %>
           </td>
         </tr>
       <% end %>
