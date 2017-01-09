@@ -44,6 +44,11 @@
       <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-sm") %> |
 
       <%= link_to("Destroy", admin_job_path(job), :class => "btn btn-sm", :method => :delete, :data => {:confirm => "Are you sure?"})%>
+      <% if job.is_hidden %>
+      <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
+    <% else %>
+    <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default") %>
+    <% end %>
     </td>
   </tr>
   <% end %>
