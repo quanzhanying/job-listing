@@ -3,25 +3,50 @@
 </div>
 <br />
 <br />
-<table class="table table-boldered">
-  <% @jobs.each do |job| %>
-  <tr>
-    <td>
-      <%= render_job_status(job) %>
-      <%= link_to(job.title, admin_job_path(job)) %>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_admin_job_path(job)) %> |
-      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-      <% if job.is_hidden %>
-        <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
-      <% else %>
-        <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default") %>
-      <% end %>
-    </td>
-    <td>
-      <%= job.created_at %>
-    </td>
-  </tr>
-  <% end %>
+
+<div class="panel panel-default panel-table">
+<table class="table table-striped table-bordered table-list">
+  <thead>
+    <tr >
+      <th><i class="fa fa-cog" aria-hidden="true"></i></th>
+      <th class="hidden-xs">Job</th>
+      <th>Change Job Status</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+    <tr>
+      <td align="center">
+        <%= link_to edit_admin_job_path(job), :class => "btn btn-primary" do %>
+         <i class="fa fa-pencil" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to admin_job_path(job), method: :delete,
+        data:{confirm: "Delete this job?"}, :class => "btn btn-danger" do %>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        <% end %>
+      </td>
+      <td class="hidden-xs">
+        <% if job.is_hidden %>
+          <i class="fa fa-lock" aria-hidden="true"></i>
+        <% else %>
+          <i class="fa fa-globe" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to(job.title, admin_job_path(job)) %>
+      </td>
+      <td>
+
+          <% if job.is_hidden %>
+            <%= link_to("Publish", publish_admin_job_path(job), method: :post, :class => "status btn btn-success btn-circle") %>
+          <% else %>
+            <%= link_to("Hide", hide_admin_job_path(job), method: :post, :class => "status btn btn-success btn-circle") %>
+          <% end %>
+
+      </td>
+      <td> <%= job.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
+</div>
