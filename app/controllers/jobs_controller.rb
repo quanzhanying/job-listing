@@ -20,14 +20,14 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
 
-    if @job.save
-      redirect_to jobs_path
-    else
-      render :new
+     if @job.save!
+       redirect_to jobs_path
+     else
+       render :new
+     end
     end
-
-  end
 
   def update
     @job = Job.find(params[:id])

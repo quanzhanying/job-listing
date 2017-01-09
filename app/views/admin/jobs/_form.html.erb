@@ -1,5 +1,4 @@
-<%= simple_form_for @job do |f| %>
-  <div class="form-job">
+<%= simple_form_for @job, url: admin_job_path(@job) do |f| %>
     <%= f.input :title, input_html: { class: "form-control"} %>
     <%= f.input :description, input_html: { class: "form-control"} %>
     <%= f.input :wage_lower_bound, :label => "薪资下限" %>
