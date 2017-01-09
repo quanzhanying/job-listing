@@ -1,0 +1,25 @@
+<div class="col-md-12">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>职位名称</td>
+        <td>职位描述</td>
+        <td>薪资上限</td>
+        <td>薪资下限</td>
+        <td>联系方式</td>
+        <td>最近更新时间</td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= @job.title %></td>
+          <td><%= @job.description %></td>
+          <td><%= @job.wage_upper_bound %></td>
+          <td><%= @job.wage_lower_bound %></td>
+          <td><%= @job.contact_email %></td>
+          <td><%= @job.updated_at %></td>
+        </tr>
+    </tbody>
+  </table>
+
+<div>
