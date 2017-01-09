@@ -22,6 +22,8 @@
           <td><%= job.wage_upper_bound %></td>
           <td><%= job.wage_lower_bound %></td>
           <td><%= job.contact_email %></td>
+          <td><%= job.created_at %></td>
+          <td><%= job.is_hidden %></td>
           <td>
               <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default")%>
               <%= link_to("Delete", admin_job_path(job),    class: "btn btn-sm btn-default",
