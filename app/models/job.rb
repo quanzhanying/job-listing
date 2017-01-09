@@ -6,6 +6,8 @@ class Job < ActiveRecord::Base
   validates :wage_lower_bound, numericality: { greater_than: 0}
   validates :contact_email, presence: true
 
+  scope :wage_lower_bound, -> { order("wage_lower_bound DESC") }
+  scope :wage_upper_bound, -> { order("wage_upper_bound DESC") }
   scope :recent, -> { order("created_at DESC") }
   scope :published, -> { where(:is_hidden => false) }
 

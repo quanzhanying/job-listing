@@ -5,7 +5,14 @@ class JobsController < ApplicationController
 
   # 首页 R
   def index
-    @jobs = Job.published.recent
+    @jobs = case params[:order]
+        when 'by_lower_bound'
+          Job.published.wage_lower_bound
+        when 'by_upper_bound'
+          Job.published.wage_upper_bound
+        else
+          Job.published.recent
+        end
   end
 
   # 查看 R
