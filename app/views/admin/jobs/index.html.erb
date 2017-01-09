@@ -17,6 +17,12 @@
       <% if current_user.admin?%>
         <%= link_to("Edit", edit_admin_job_path(job)) %>|
         <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
+        <% if job.is_hidden %>
+          <%= link_to("Publish", publish_admin_job_path(job) , :method => :post,  :class => "btn btn-sx btn-default") %>
+        <% else %>
+          <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-sx btn-default") %>
+        <% end %>
       <% else %>
         redirect_to root_path
       <% end %>
