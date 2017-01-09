@@ -1,5 +1,5 @@
 class ResumesController < ApplicationController
-
+  before_filter :authenticate_user!
   def new
     @job = Job.find(params[:job_id])
     @resume = Resume.new
@@ -17,5 +17,5 @@ class ResumesController < ApplicationController
   def resume_params
     params.require(:resume).permit(:job_id, :user_id)
   end
-  
+
 end
