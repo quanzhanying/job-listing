@@ -5,7 +5,7 @@ class JobsController < ApplicationController
 
   # 首页 R
   def index
-    @jobs = Job.where(:is_hidden => false).recent
+    @jobs = Job.published.recent
   end
 
   # 查看 R

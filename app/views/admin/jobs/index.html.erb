@@ -6,7 +6,7 @@
   border-radius:25px;">📖管理员面板</h3>
 
   <div class="job">
-    <%= link_to("📎添加招聘信息", new_job_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("📎添加招聘信息", new_admin_job_path, class: "btn btn-primary pull-right") %>
   </div>
 
   <table class="table table-hover">
@@ -14,10 +14,8 @@
       <tr>
         <!--<td>#</td>-->
         <td>👤岗位(标题)</td>
-        <td>🔎详情(描述)</td>
         <td>💰薪资下限</td>
         <td>💰薪资上限</td>
-        <td>📬联系邮箱</td>
         <td>🕛创建时间</td>
       </tr>
     </thead>
@@ -29,10 +27,8 @@
             <%= render_job_status(job) %>
             <%= link_to(job.title, admin_job_path(job)) %>
           </td>
-          <td><%= render_job_description(job) %></td>
           <td><%= job.wage_lower_bound %></td>
           <td><%= job.wage_upper_bound %></td>
-          <td><%= job.contact_email %></td>
           <td><%= job.created_at %></td>
           <td>
             <%= link_to("🗑删除", admin_job_path(job),    class: "btn btn-sm btn-danger pull-right",
