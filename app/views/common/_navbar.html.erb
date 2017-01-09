@@ -1,8 +1,8 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">职缺列表</a>
+        <div class="navbar-head">
+            <a class="navbar-brand" href="/">招聘列表</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -14,7 +14,7 @@
                 <% else %>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!, <%= current_user.email %>
+                        当前用户：       <%= current_user.email %>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">

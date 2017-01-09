@@ -1,5 +1,5 @@
 <div class="pull-right">
-  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
+  <%= link_to("后台发布工作", new_admin_job_path, :class => "btn btn-default" ) %>
 </div>
 <table class="table table-boldered">
   <% @jobs.each do |job| %>
@@ -12,8 +12,8 @@
       <%= job.description %>
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_job_path(job)) %> |
-      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :contirm => "Are you sure?"}) %> |
+      <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-default") %> |
+      <%= link_to("Destroy", admin_job_path(job), :class => "btn btn-default", :method => :delete, :data => { :contirm => "Are you sure?"}) %> |
       <% if job.is_hidden %>
 
         <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
