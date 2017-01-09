@@ -10,8 +10,10 @@
       <%= link_to(job.title, job_path(job))%>
     </td>
     <td>
+      <% if current_user && current_user == job.user %>
       <%= link_to("Edit", edit_job_path(job)) %>
       <%= link_to("Destroy", job_path(job), :method => :delete, :data => {:confirm =>"Are you sure? "}) %>
+      <% end %>
     </td>
     <td>
       <%= job.created_at %>
