@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Job Listing </a>
+            <a class="navbar-brand" href="/">职缺列表</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,7 +19,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <% if current_user.admin? %>
-                        <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
+                        <li> <%= link_to("管理员界面", admin_jobs_path) %> </li>
                         <% end %>
                         <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
                     </ul>
