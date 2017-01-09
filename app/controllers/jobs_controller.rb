@@ -2,6 +2,10 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :update, :create, :edit, :destroy]
   def show
     @job = Job.find(params[:id])
+    if @job.is_hidden
+      flash[:alert]= "This job is already achieved"
+      redirect_to root_path
+    end
   end
 
   def index
