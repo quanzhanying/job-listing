@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+
+
+body {
+ height: 100%;
+  background: -webkit-linear-gradient(90deg, #99ddFF 10%, #ffffff 90%);
+  background:    -moz-linear-gradient(90deg, #99ddFF 10%, #ffffff 90%);
+  background:     -ms-linear-gradient(90deg, #99ddFF 10%, #ffffff 90%);
+  background:      -o-linear-gradient(90deg, #99ddFF 10%, #ffffff 90%);
+  background:         linear-gradient(90deg, #99ddFF 10%, #ffffff 90%);
+margin:0
+}
+
+h3 {
+  color:rgb(70,130,180);
+}
+.panel-body{
+  padding:0;
+  border-style: none;
+  margin:0;
+  text-align:center;
+
+      line-height: 34px;
+}
+
+table {
+  text-align: center;
+}
+
+th {
+  text-align: center;
+}
+
+.status{
+  width:70px;
+}
+
+.table-bordered{
+  border-style: none;
+  margin:0;
+}
+
+.table-bordered > thead > tr > th:first-of-type {
+    text-align:center;
+    width: 100px;
+}
+
+.table-bordered > thead > tr > th:last-of-type,
+.table-bordered > tbody > tr > td:last-of-type {
+  border-right: 0px;
+}
+
+.table-bordered > thead > tr > th:first-of-type,
+.table-bordered > tbody > tr > td:first-of-type {
+  border-left: 0px;
+}
+
+.table-bordered > tbody > tr:first-of-type > td{
+  border-bottom: 0px;
+}
+
+.table-bordered > thead > tr:first-of-type > th{
+  border-top: 0px;
+}
+
+
+.col{
+ line-height: 34px;
+ height: 34px;
+}
+
+.col h3{
+ line-height: 30px;
+ height: 30px;
+}
+
+.table-bordered > tbody > tr > td{
+  line-height: 34px;
+}
+
+.sidebar-nav {
+
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  list-style: none;
+}
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 50px;
+}
+.sidebar-nav li a {
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+.sidebar-nav li a:hover {
+  background: rgba(255,255,255,0.25);
+  color: white;
+  text-decoration: none;
+}
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+}
