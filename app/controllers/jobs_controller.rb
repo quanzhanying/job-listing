@@ -2,7 +2,14 @@ class JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
+    @jobs = case params[:order]
+      when 'by_lower_bound'
+        Job.where(is_hidden: false).order('wage_lower_bound DESC')
+      when 'by_upper_bound'
+        Job.where(is_hidden: false).order('wage_upper_bound DESC')
+      else
+        Job.where(:is_hidden => false).order("created_at DESC")
+      end
   end
 
   def show
@@ -46,6 +53,11 @@ class JobsController < ApplicationController
     @job.destroy
     #[:alert] = "Job deleted"
     redirect_to jobs_path, alert: "Job deleted"
+  end
+
+  def search
+    q = params[:q]
+    @jobs = Job.search(title: q)
   end
 
   private
