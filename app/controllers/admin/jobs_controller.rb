@@ -2,16 +2,20 @@ class Admin::JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_filter :require_is_admin
 
-  def show
-    @job = Job.find(params[:id])
-  end
-
   def index
     @jobs = Job.all
   end
 
   def new
     @job = Job.new
+  end
+
+  def show
+    @job = Job.find(params[:id])
+  end
+
+  def edit
+    @job = Job.find(params[:id])
   end
 
   def create
@@ -22,10 +26,6 @@ class Admin::JobsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
-    @job = Job.find(params[:id])
   end
 
   def update
@@ -41,7 +41,6 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     @job.destroy
-
     redirect_to admin_jobs_path
   end
 
