@@ -19,7 +19,7 @@
   <h4><%= @job.contact_email %></h4>
 
   <div class="text-center">
-    <%= link_to("[投交简历]", "#", :style => "font-size: 30px; text-decoration:underline;") %>
+    <%= link_to("[投交简历]", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
   </div>
 
   <div class="jobs_back">
