@@ -36,6 +36,23 @@
     <% end %>
   </tbody>
 
+  <div class="dropdown clearfix pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Sort by
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+      <li>
+        <%= link_to("sort by wage lower bound", jobs_path(order: "by_lower_bound"))%>
+      </li>
+      <li>
+        <%= link_to("sort by wage upper bound", jobs_path(order: "by_upper_bound"))%>
+      </li>
+      <li>
+        <%= link_to("sort by post time", jobs_path)%>
+      </li>
+    </ul>
+  </div>
 </table>
 <div class="pull-right">
   <%= link_to("Add a new job", new_job_path, class: "btn btn-default")%>
