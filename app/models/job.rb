@@ -15,3 +15,11 @@ class Job < ApplicationRecord
   end
 
 end
+
+class Job < ApplicationRecord
+  scope :published, -> { where(is_hidden: false) }
+end
+
+class Job < ApplicationRecord
+  scope :recent, -> { order('created_at DESC') }
+end
