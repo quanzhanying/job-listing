@@ -16,7 +16,8 @@ class ResumesController < ApplicationController
     @resume.job = @job
     @resume.user = current_user
     if @resume.save
-      redirect_to job_path(@job), notice: "The resume has been uploaded"
+      flash[:notice] = "成功提交简历"
+      redirect_to job_path(@job)
     else
       render :new
     end

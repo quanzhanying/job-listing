@@ -6,6 +6,8 @@ class Job < ApplicationRecord
   validates :wage_lower_bound, numericality: { greater_than: 0}
   belongs_to :user
   has_many :resumes
+  scope :published, -> {where(is_hidden:false)}
+  scope :recent, -> {order(created_at DESC)}
 
   def hide!
     self.is_hidden = true
