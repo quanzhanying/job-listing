@@ -1,8 +1,9 @@
-<h3>Send a resume to <%= @job.title%></h3>
+<h3>Send a resume to: <%= @job.title%></h3>
 
 <hr />
 
 <%= simple_form_for [@job, @resume] do |f| %>
   <%= f.input :content%>
+  <%= f.input :attachment%>
   <%= f.submit "Submit" %>
 <% end %>
