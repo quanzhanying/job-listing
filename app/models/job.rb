@@ -1,5 +1,7 @@
 class Job < ApplicationRecord
   validates :title, presence: true
+  has_many :resumes
+
   scope :recent, -> { order('created_at DESC') }
   scope :lower, -> { order('wage_lower_bound DESC') }
   scope :upper, -> { order('wage_upper_bound DESC') }
