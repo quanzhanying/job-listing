@@ -11,8 +11,17 @@ layout "admin"
   end
 
   def index
-    @jobs = Job.all.recent
-    @j=@jobs.paginate(:page => params[:page], :per_page => 5)
+#@jobs=Job.all.recent
+   @jobs =case params[:order]
+ when 'by_lower_bound'
+   Job.all.order('wage_lower_bound DESC')
+ when 'by_upper_bound'
+   Job.all.order('wage_upper_bound ').reverse
+when 'by_job.resumes.count'
+  Job.all.order('job.resumes.count' )
+ else
+  Job.all.recent
+ end
 
   end
 

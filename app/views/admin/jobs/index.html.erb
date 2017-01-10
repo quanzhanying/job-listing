@@ -1,18 +1,48 @@
+
 <div class="pull-right">
   <%=link_to("Add a job", new_admin_job_path, :class => "btn btn-primary") %>
 
 </div>
+<div class="dropdown clearfix pull-right">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider"
+  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  排序
+  <span class="caret"></span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+  <li>
+  <%= link_to("按照薪资下限排序", admin_jobs_path(:order => "by_lower_bound")) %>
+  </li>
+  <li>
+  <%= link_to("按照薪资上限排序", admin_jobs_path(:order => "by_upper_bound")) %>
+  </li>
+  <li>
+    <%= link_to("按照发表时间排序", admin_jobs_path ) %>
+  </li>
+  <li>
+    <%= link_to("按照投递简历数量排序", admin_jobs_path ) %>
+  </li>
+</ul>
+</div>
+
+
+
 <br><br>
 <table class="table  table-boldered">
+  <thead>
+    <tr>
 <td> 职位</td>
-<td> 工作内容</td>
+<td>收到简历数量</td>
 <td> 薪资上限</td>
 <td> 薪资下限</td>
-
 <td> 发布时间</td>
-<td> </td>
+<td>管理选项</td>
 
-  <tbody>
+
+</tr>
+</thead>
+
+
   <% @jobs.each do |job| %>
   <tr>
     <td>
@@ -21,13 +51,7 @@
       <%= link_to(job.title, admin_job_path(job)) %>
       <%=render_job_status2(job)%>
     </td>
-
-    <td>
-      <p>
-
-      <%= simple_format(job.description) %>
-    </p>
-    </td>
+    <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
         <td>
 
           <%=job.wage_upper_bound%>
@@ -44,13 +68,15 @@
       <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-sm") %> |
 
       <%= link_to("Destroy", admin_job_path(job), :class => "btn btn-sm", :method => :delete, :data => {:confirm => "Are you sure?"})%>
+      |
       <% if job.is_hidden %>
       <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
     <% else %>
     <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default") %>
     <% end %>
     </td>
+
   </tr>
   <% end %>
-</tbody>
+
 </table>
