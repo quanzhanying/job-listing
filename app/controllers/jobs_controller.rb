@@ -2,7 +2,14 @@ class JobsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :edit, :create, :update, :destroy]
   before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
   def index
-    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+              Job.where(is_hidden: false).order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+              Job.where(is_hidden: false).order('wage_upper_bound DESC')
+            else
+              Job.where(:is_hidden => false).order("created_at DESC")
+            end 
   end
   def new
     @job = Job.new
