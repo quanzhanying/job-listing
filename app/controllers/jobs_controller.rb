@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :desroy]
   def show
     @job = Job.find(params[:id])
   end
@@ -16,7 +17,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(jobs_path)
+    @job = Job.new(job_params)
     if @job.save
       redirect_to jobs_path
     else
@@ -36,7 +37,7 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to jobs_path, alert: "Job deleted."
+    redirect_to jobs_path, alert: "This job is deleted."
   end
 end
 
