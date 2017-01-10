@@ -5,10 +5,25 @@
 
 
 <table class="table table-boldered">
+  <thead>
+    <tr>
+      <th> title</th>
+      <!-- <th> description</th> -->
+      <th> 薪资上限</th>
+      <th> 薪资下限</th>
+      <th> 邮箱</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
   <% @jobs.each do |job| %>
   <tr>
     <td>
       <%= link_to(job.title, job_path(job)) %>
+    </td>
+    <td>
+       <%= job.contact_email %>
     </td>
     <td>
       <%= link_to("Edit", edit_job_path(job)) %> |
@@ -19,4 +34,5 @@
     </td>
   </tr>
   <% end %>
+  </tbody>
 </table>
