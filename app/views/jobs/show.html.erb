@@ -1,0 +1,26 @@
+<div class="col-md-12">
+	<div class="job">
+		<span class="pull-right">
+			<% if current_user.admin? %>
+			<label class="label label-success"> 管理员 </label>
+			<% end %>
+		</span>
+	</div>
+	<table class="table">
+    <thead>
+      <tr>
+        <th>职缺</th>
+        <th>职缺描述</th>
+        <th>发表时间</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= @job.title %></td>
+          <td><%= @job.description %></td>
+          <td><%= @job.created_at %></td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
