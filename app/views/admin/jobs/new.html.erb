@@ -1,7 +1,7 @@
-<h1> 新建职缺 </h1>
+<h2 align="center"> 新建职缺 </h2>
 <%= simple_form_for [:admin,@job] do |f| %>
-<%= f.input :title %>
-<%= f.input :description %>
+<%= f.input :title, :label => "标题" %>
+<%= f.input :description, :label => "正文" %>
 <%= f.input :wage_lower_bound, :label => "薪资下限" %>
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
 <%= f.input :contact_email %>

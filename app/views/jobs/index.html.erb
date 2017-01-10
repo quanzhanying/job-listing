@@ -1,6 +1,9 @@
 <div class="pull-right">
   <%= link_to("发布工作", new_job_path, :class => "btn btn-default" ) %>
 </div>
+<div align="center">
+  <%= "薪资排序" %>
+</div>
 <table class="table table-boldered">
   <% @jobs.each do |job| %>
   <tr>
@@ -9,6 +12,12 @@
     </td>
     <td>
       <%= job.description %>
+    </td>
+    <td>
+      <%= job.wage_lower_bound %>
+    </td>
+    <td>
+      <%= job.wage_upper_bound %>
     </td>
     <td>
       <%= link_to("Edit", edit_job_path(job), :class => "btn btn-default") %> |
