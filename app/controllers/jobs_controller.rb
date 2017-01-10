@@ -39,10 +39,19 @@ class JobsController < ApplicationController
     @job.destroy
     redirect_to jobs_path, alert: "This job is deleted."
   end
-end
 
-private
+  def require_is_admin
+    if current_user.admin?
+      flash[:notice] = 'You are admin.'
+    else
+      flash[:alert] = 'You are not admin.'
+      redirect_to root_path
+    end
+  end
+
+  private
 
   def job_params
     params.require(:job).permit(:title, :description)
   end
+end

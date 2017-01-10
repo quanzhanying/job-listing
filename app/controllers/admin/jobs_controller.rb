@@ -48,7 +48,7 @@ class Admin::JobsController < ApplicationController
   def require_is_admin
     if current_user.admin?
       flash[:notice] = 'You are admin.'
-    else 
+    else
       flash[:alert] = 'You are not admin.'
       redirect_to root_path
     end
