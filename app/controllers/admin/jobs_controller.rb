@@ -18,8 +18,8 @@ class Admin::JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       redirect_to admin_jobs_path,notice: "Create Success"
-    else
-      render :new
+    #else
+      #render :new
     end
   end
 
@@ -52,7 +52,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
   end
 
 end
