@@ -5,6 +5,29 @@
 <br /><br />
 
 <table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>
+          Job
+      </td>
+      <td>
+          Resumes received
+      </td>
+      <td>
+          Wage lower bound
+      </td>
+      <td>
+          Wage upper bound
+      </td>
+      <td>
+          Manage items
+      </td>
+      <td>
+          Post at
+      </td>
+    </tr>
+  </thead>
+  <tbody>
   <% @jobs.each do |job|%>
     <tr>
       <td>
@@ -16,6 +39,15 @@
         <%= render_job_status(job) %>
 
         <%= link_to(job.title, admin_job_path(job))%>
+      </td>
+      <td>
+        <%= link_to(job.resumes.count, admin_job_resumes_path(job))%>
+      </td>
+      <td>
+        <%= job.wage_lower_bound%>
+      </td>
+      <td>
+        <%= job.wage_upper_bound%>
       </td>
       <td>
         <%= link_to("Edit", edit_admin_job_path(job))%>
@@ -32,4 +64,5 @@
       </td>
     </tr>
   <% end %>
+  </tbody>
 </table>
