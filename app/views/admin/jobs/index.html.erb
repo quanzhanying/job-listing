@@ -12,8 +12,8 @@
       <%= job.description %>
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-default") %> |
-      <%= link_to("Destroy", admin_job_path(job), :class => "btn btn-default", :method => :delete, :data => { :contirm => "Are you sure?"}) %> |
+      <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-xs btn-default" ) %> |
+      <%= link_to("Destroy", admin_job_path(job), :class => "btn btn-xs btn-default", :method => :delete, :data => { :contirm => "Are you sure?"}) %> |
       <% if job.is_hidden %>
 
         <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
