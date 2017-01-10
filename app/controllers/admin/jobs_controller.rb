@@ -7,8 +7,7 @@ class Admin::JobsController < ApplicationController
   layout "admin"
 
   def index
-    # @jobs = current_user.jobs
-    @jobs = Job.all
+    @jobs = current_user.jobs
   end
 
   def show
