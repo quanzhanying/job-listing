@@ -1,40 +1,52 @@
+
 <div class="col-md-12">
 
 <!--12是用来调衡div class中的元素的位置-->
   <!-- <#%= link_to("Add a job", new_job_path, :class => "btn btn-primary pull-right")%> -->
 </div>
-<table class="table table-boldered">
-<td>#</td>
-<td>标题</td>
-<td>描述信息</td>
-<td>薪资上限</td>
+<div class="dropdown clearfix pull-right">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider"
+  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  排序
+  <span class="caret"></span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+  <li>
+    <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+  </li>
+  <li>
+    <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound"))%>
+  </li>
+  <li>
+    <%= link_to("按照发表时间排序", jobs_path)%>
+  </li>
+</ul>
+</div>
 
+<table class="table table-boldered">
+  <thead>
+    <tr>
+<td>职缺</td>
 <td>薪资下限</td>
-<td>邮箱</td>
+<td>薪资上限</td>
 <td>发布时间</td>
-<td></td>
+</tr>
+</thead>
 
 <tbody>
   <% @jobs.each do |job| %>
   <tr>
-    <td>#</td>
+
     <th>
       <%= link_to(job.title, job_path(job)) %>
     </th>
-    <p>
-    <td>
-      <%= simple_format(job.description)%>
-    </td>
-  </p>
-    <td>
-      <%= job.wage_upper_bound %>
-    </td>
     <td>
       <%= job.wage_lower_bound %>
     </td>
     <td>
-      <%= job.contact_email %>
+      <%= job.wage_upper_bound %>
     </td>
+
     <td>
       <%= job.created_at %>
     </td>
@@ -51,6 +63,3 @@
 </tbody>
   <% end %>
 </table>
-<div class="text-center">
-  <%= will_paginate @k %>
-</div>

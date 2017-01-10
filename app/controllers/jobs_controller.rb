@@ -1,8 +1,16 @@
 class JobsController < ApplicationController
  before_filter :authenticate_user! , only: [:new, :create, :update, :edit, :destroy]
   def index
-    @jobs=Job.where(:is_hidden => false).recent
-    @k=@jobs.paginate(:page => params[:page], :per_page => 5)
+
+
+    @jobs = case params[:oder]
+    when 'by_lower_bound'
+      Job.publish.order('wage_lower_bound DESC' )
+    when 'by_upper_bound'
+      Job.publish.order('wage_upper_bound DESC')
+    else
+     Job.publish.recent
+    end
   end
 
   def show
