@@ -1,5 +1,5 @@
 <div class="pull-right">
-  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
+  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-primary" ) %>
 </div>
 
 <br><br>
@@ -9,11 +9,20 @@
   <tr>
     <td>
       <%= render_job_status(job) %>
+
       <%= link_to(job.title, admin_job_path(job)) %>
     </td>
     <td>
       <%= link_to("Edit", edit_admin_job_path(job)) %>
       <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
+      <% if job.is_hidden %>
+
+          <%= link_to("Publish", "#", :class => "btn btn-xs btn-default") %>
+        <% else %>
+          <%= link_to("Hide", "#", :class => "btn btn-xs btn-default") %>
+        <% end %>
+        
     </td>
     <td>
       <%= job.created_at %>
