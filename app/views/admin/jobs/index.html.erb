@@ -12,6 +12,11 @@
     <td>
       <%= link_to("Edit", edit_admin_job_path(job))%> |
       <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" })%>
+      <% if job.is_hidden %>
+      <%= link_to("公开", publish_admin_job_path(job), :method => :post)%>
+      <% else %>
+      <%= link_to("隐藏", hide_admin_job_path(job), :method => :post)%>
+      <% end %>
     </td>
     <td>
       <%= job.created_at %>
