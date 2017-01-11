@@ -17,6 +17,7 @@
         <td>💰薪资下限</td>
         <td>💰薪资上限</td>
         <td>🕛创建时间</td>
+        <td>📩简历数量</td>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +31,7 @@
           <td><%= job.wage_lower_bound %></td>
           <td><%= job.wage_upper_bound %></td>
           <td><%= job.created_at %></td>
+          <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
           <td>
             <%= link_to("🗑删除", admin_job_path(job),    class: "btn btn-sm btn-danger pull-right",
                         method: :delete, data: { confirm: "⚠️您确定删除吗?" } )%>
