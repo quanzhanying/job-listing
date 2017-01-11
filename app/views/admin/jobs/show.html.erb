@@ -1,0 +1,27 @@
+
+<table class="table table-boldered">
+
+
+  <tbody>
+    <th> <%= @job.title %> </th>
+    <td>
+<p>
+  <!-- <#%= simple_format(@job.description) %> -->
+  <%=@job.description%>
+</p>
+</td>
+
+
+<td>
+  <%="薪资上限："%>
+<%=@job.wage_upper_bound%>
+</td>
+<td>
+  <%="薪资下限："%>
+<%=@job.wage_lower_bound%>
+</td>
+<td>
+  <%="邮件："%>
+<%=@job.contact_email%>
+</td>
+</table>
