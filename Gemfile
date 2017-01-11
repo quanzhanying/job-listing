@@ -38,6 +38,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'font-awesome-sass'
+gem 'carrierwave'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

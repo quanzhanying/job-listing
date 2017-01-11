@@ -15,6 +15,7 @@ class JobsController < ApplicationController
   end
   def show
     @job = Job.find(params[:id])
+    @job.resumes = Resume.all
     if @job.is_hidden
       flash[:warning] = "you have no permission!"
       redirect_to root_path
