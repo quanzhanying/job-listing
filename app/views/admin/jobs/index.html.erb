@@ -7,15 +7,15 @@
   <tr>
     <td>
       <%= render_job_status(job) %>
-      <%= link_to(job.title, job_path(job)) %>
+      <%= link_to(job.title, admin_job_path(job)) %>
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_job_path(job))%> |
-      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" })%>
+      <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-xs btn-primary")%> |
+      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" },  :class => "btn btn-xs btn-primary")%>
       <% if job.is_hidden %>
-      <%= link_to("公开", publish_admin_job_path(job), :method => :post)%>
+      <%= link_to("公开", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success")%>
       <% else %>
-      <%= link_to("隐藏", hide_admin_job_path(job), :method => :post)%>
+      <%= link_to("隐藏", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning")%>
       <% end %>
     </td>
     <td>
