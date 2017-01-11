@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
   scope :published, -> { where(is_hidden: false) }
   scope :recent, -> { order('created_at DESC') }
 
-  has_many :resume
+  has_many :resumes
 
   validates :title, presence: true
   validates :wage_upper_bound, presence: true
