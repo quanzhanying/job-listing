@@ -4,7 +4,10 @@
 
 <br><br>
 
+
 <table class="table table-boldered">
+
+
   <% @jobs.each do |job| %>
   <tr>
     <td>
@@ -12,6 +15,7 @@
 
       <%= link_to(job.title, admin_job_path(job)) %>
     </td>
+
     <td>
       <%= link_to("Edit", edit_admin_job_path(job)) %>
       <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
