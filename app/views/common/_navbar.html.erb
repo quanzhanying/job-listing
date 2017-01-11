@@ -19,6 +19,9 @@
                 <b class="caret"> </b>
               </a>
               <ul class="dropdown-menu">
+                <% if current_user.admin?%>
+                  <li> <%= link_to("Admin panel",admin_jobs_path) %></li>
+                <% end %>
                 <li> <%= link_to("退出",destroy_user_session_path,method: :delete)%></li>
               </ul>
             </li>
