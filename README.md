@@ -1,3 +1,3 @@
 # README
 
-First week's task
+first week and 2nd time
