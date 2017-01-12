@@ -2,6 +2,10 @@ class JobsController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
   def show
     @job = Job.find(params[:id])
+    if @job.is_hidden
+      flash[:warning] = "This Job already archieved"
+      redirect_to root_path
+    end
   end
   def index
     @jobs = Job.where(:is_hidden => false).order("created_at DESC")
