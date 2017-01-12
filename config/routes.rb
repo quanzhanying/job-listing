@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'jobs#index'
+  root 'welcome#index'
+  resources :welcomes do
+  end
+
   resources :jobs do
     resources :resumes
     member do
