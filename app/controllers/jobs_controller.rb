@@ -3,6 +3,11 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
   def show
     @job = Job.find(params[:id])
+
+    if @job.is_hidden
+      flash[:warning] = "This Job already archieved"
+      redirect_to root_path
+    end
   end
 
   def index
@@ -34,6 +39,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     else
       render :edit
     end
+  end
 
     def destroy
       @job = Job.find(params[:id])
@@ -42,7 +48,6 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
       redirect_to jobs_path
     end
-  end
 
   private
 
@@ -50,4 +55,10 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
   end
 
+  def require_is_admin
+    if !current_user.admin?
+      flash[:alert] = 'You are not admin'
+      redirect_to root_path
+    end
+  end
 end
