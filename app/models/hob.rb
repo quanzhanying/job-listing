@@ -1,0 +1,2 @@
+class Hob < ApplicationRecord
+end
