@@ -13,6 +13,7 @@ namespace :admin do
         post :publish
         post :hide
       end
+      resources :resumes
+      end
    end
-end
 end
