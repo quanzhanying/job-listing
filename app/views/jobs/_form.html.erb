@@ -5,7 +5,8 @@
     <%= f.input :wage_lower_bound, input_html: { class: "form-control"} %>
     <%= f.input :wage_upper_bound, input_html: { class: "form-control"} %>
     <%= f.input :contact_mail, input_html: { class: "form-control"} %>
-
+    <% @categories = Category.all.map{ |c| [c.name, c.id]}%>
+    <%= f.input :category_id, :collection => @categories, as: :radio_buttons, :checked => @categories[1] %>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
 <% end %>
