@@ -1,0 +1,18 @@
+<div class="col-md-4 col-md-offset-4">
+    <h2>Edit a Job</h2>
+
+    <hr>
+    <%= form_for @job do |j| %>
+
+    标题
+    <%= j.text_field :title %>
+    <br>
+    叙述
+    <br>
+    <%= j.text_area :description %>
+    <br>
+
+    <%= j.submit "Submit", :disable_with => 'Submiting...' %>
+    <% end %>
+
+</div>
