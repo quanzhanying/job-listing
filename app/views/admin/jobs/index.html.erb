@@ -5,6 +5,30 @@
 <br><br>
 
 <table class="table table-boldered">
+  <thead>
+      <tr>
+          <td>
+              职缺
+          </td>
+
+          <td>
+            收到履历数量
+          </td>
+          <td>
+              薪资下限
+          </td>
+          <td>
+              薪资上限
+          </td>
+          <td>
+              管理选项
+          </td>
+          <td>
+              刊登时间
+          </td>
+      </tr>
+  </thead>
+
   <% @jobs.each do |job| %>
   <tr>
     <td>
@@ -13,6 +37,9 @@
 
       <%= link_to(job.title, admin_job_path(job)) %>
     </td>
+    <td> <%= job.resumes.count %> </td>
+    <td> <%= job.wage_lower_bound %> </td>
+    <td> <%= job.wage_upper_bound %> </td>
     <td>
       <%= link_to("Edit", edit_admin_job_path(job)) %>
       <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
