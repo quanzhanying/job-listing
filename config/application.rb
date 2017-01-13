@@ -1,6 +1,10 @@
 require_relative 'boot'
 
 require 'rails/all'
+# require 'carrierwave'
+# require 'carrierwave/orm/activerecord'
+# config.autoload_paths += %W(#{config.root}/lib #{config.root}/app/uploaders)
+# config.autoload_paths += "#{Rails.root}/app/uploaders"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
