@@ -50,13 +50,13 @@
         <%= job.wage_upper_bound%>
       </td>
       <td>
-        <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-default btn-info" do %><i class="fa fa-pencil"></i><% end %>
+        <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info" do %><i class="fa fa-pencil"></i><% end %>
         <%= link_to admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-default btn-danger", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
 
         <% if job.is_hidden %>
-          <%= link_to publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default btn-success" do %><i class="fa fa-eye"></i><% end %>
+          <%= link_to publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-success" do %><i class="fa fa-eye"></i><% end %>
         <% else %>
-          <%= link_to hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default btn-warning" do %><i class="fa fa-eye-slash"></i><% end %>
+          <%= link_to hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning" do %><i class="fa fa-eye-slash"></i><% end %>
         <% end %>
       </td>
       <td>
