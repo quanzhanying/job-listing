@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :resumes
   end
-  # root "welcome#index"
-  root 'jobs#index'
+
+  resources :welcome do
+
+  end
+  root "welcome#index"
+  # root 'jobs#index'
 
   namespace :admin do
     resources :jobs do
