@@ -8,10 +8,10 @@ class JobsController < ApplicationController
             when 'by_upper_bound'
               Job.published.order('wage_upper_bound DESC')
             else
-              Job.published.order('created_at DESC')
+              Job.published.recent
             end
   end
-  
+
   def show
     @job = Job.find(params[:id])
 
