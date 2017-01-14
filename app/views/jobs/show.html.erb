@@ -1,4 +1,12 @@
 <div class="col-md-12">
   <h2><%= @job.title %></h2>
+  <br>
+  <h4>职位信息</h4>
   <p><%= @job.description %></p>
+  <br>
+  <h4>预期薪酬</h4>
+  <p><%= @job.wage_lower_bound %> ～ <%= @job.wage_upper_bound %></p>
+  <br>
+  <h4>联系方式</h4>
+  <p><%= mail_to @job.contact_email %>
 </div>
