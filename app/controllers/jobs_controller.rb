@@ -13,6 +13,7 @@ def index
   Job.published.recent
 end
 
+
 end
 
  def show

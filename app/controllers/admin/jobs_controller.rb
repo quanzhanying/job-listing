@@ -34,6 +34,7 @@ class Admin::JobsController < ApplicationController
     else
     Job.all.recent
   end
+  
 
   end
 
