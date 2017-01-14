@@ -1,0 +1,17 @@
+<div class="col-md-12">
+  <h2 class="text-center"> Opening Positions </h2>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>招聘职位</td>
+        <td>薪酬下限</td>
+        <td>薪酬上限</td>
+				<td>创建时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render :partial => "job_item", :collection => @jobs, :as => :job %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,19 @@
+
+<tr>
+		<td>
+			<% if !job.is_hidden %>
+				招聘中
+				<% else %>
+				隐藏
+				<% end%>
+		</td>
+		<td><%= link_to(job.title, job_path(job)) %></td>
+		<td>
+			<% if current_user && current_user == job.user %>
+				<%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
+				<%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
+										method: :delete, data: { confirm: "Are you sure?" } )%>
+			<% end %>
+		</td>
+		<td><%= job.created_at %></td>
+</tr>

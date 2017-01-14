@@ -1,0 +1,22 @@
+<div class="col-md-12">
+  <h2 class="text-center"> Admin Panel </h2>
+  <div class="job">
+    <%= link_to("Add New Job", new_job_path, class: "btn btn-primary pull-right") %>
+  </div>
+
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>状态</td>
+        <td>招聘职位</td>
+        <td>操作</td>
+				<td>创建时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render :partial => "job_item", :collection => @jobs, :as => :job %>
+    </tbody>
+  </table>
+</div>
