@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 	before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
 	before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
+	before_action :require_is_admin, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 		@jobs = Job.all
@@ -21,7 +22,7 @@ class JobsController < ApplicationController
 		@job = Job.new(job_params)
 		@job.user = current_user
 		if @job.save
-			redirect_to jobs_path, notice: "Job Created!"
+			redirect_to admin_jobs_path, notice: "Job Created!"
 		else
 			render :new
 		end
@@ -30,7 +31,7 @@ class JobsController < ApplicationController
 	def update
 
 		if @job.update(job_params)
-			redirect_to jobs_path, notice:"Update Success!"
+			redirect_to admin_jobs_path, notice:"Update Success!"
 		else
 			render :edit
 		end
@@ -40,7 +41,13 @@ class JobsController < ApplicationController
 
 		@job.destroy
 		flash[:alert] = "Job Deleted!"
-		redirect_to jobs_path
+		redirect_to admin_jobs_path
+	end
+
+	def require_is_admin
+		if !current_user.admin?
+			redirect_to root_path, alert: "You are not admin!"
+		end
 	end
 
 	private

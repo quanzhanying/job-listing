@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :jobs
+  has_many :job_relationships
+  has_many :participated_jobs, :through => :job_relationships, :source => :job
+
+  def admin?
+    is_admin
+  end
 end
