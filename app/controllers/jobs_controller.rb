@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :require_is_admin, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @jobs = case params[:order]
             when 'by_lower_bound'
@@ -14,6 +15,11 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+
+    if @job.is_hidden
+      flash[:warning] = "This Job already archieved"
+      redirect_to root_path
+    end
   end
 
   def new
