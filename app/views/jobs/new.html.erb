@@ -2,23 +2,5 @@
     <h2>Add a Job</h2>
 
     <hr>
-    <%= form_for @job do |j| %>
-    <% if @job.errors.any? %>
-    <ul>
-      <% @job.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-    <% end %>
-    标题
-    <%= j.text_field :title %>
-    <br>
-    叙述
-    <br>
-    <%= j.text_area :description %>
-    <br>
-
-    <%= j.submit "Submit", :disable_with => 'Submiting...' %>
-    <% end %>
-
+    <%= render "form" %>
 </div>
