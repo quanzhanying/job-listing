@@ -4,6 +4,10 @@ class JobsController < ApplicationController
   @job = Job.find(params[:id])
   end
 
+  def new
+    @job = Job.new
+  end
+
   def index
     @jobs = case params[:order]
             when 'by_lower_bound'
