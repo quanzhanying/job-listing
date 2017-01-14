@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :require_is_admin
+  layout "admin"
   def show
     @job = Job.find(params[:id])
   end
@@ -44,8 +45,21 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path
   end
 
-  private
+  def publish
+    @job = Job.find(params[:id])
+    @job.publish!
 
+    redirect_to :back
+  end
+
+  def hide
+    @job = Job.find(params[:id])
+    @job.hide!
+
+    redirect_to :back
+  end
+
+  private
 
   def job_params
     params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
