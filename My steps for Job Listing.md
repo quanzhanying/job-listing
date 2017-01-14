@@ -36,3 +36,12 @@
 5. 添加app/views/common文件夹，并加入通用文件
 
 6. 修改全局显示文件app/views/layouts
+
+7. 添加flash功能：
+
+   ```
+   1. assets/javascripts/application.js 中添加：module 2. 在view 中添加 _flash.html.erb
+   3. 在app/helpers/ 添加flash_helper.rbs
+   ```
+
+8. ​
