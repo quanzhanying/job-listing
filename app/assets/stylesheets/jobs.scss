@@ -1,3 +1,10 @@
-// Place all the styles related to the jobs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#photo{
+  position: relative;
+  background-image: url("https://ooo.0o0.ooo/2017/01/14/5879c5f1a6af8.jpg");
+  // background-image: url("http://file06.16sucai.com/2016/0608/e6579a57aff1e4a4dabce4670d9847fd.jpg");
+width: 100%;
+height: 500px;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+}
