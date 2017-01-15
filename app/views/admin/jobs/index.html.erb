@@ -1,20 +1,22 @@
-<div class="pull-right">
-  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
+
+<br>
+
+<div class="pull-left">
+  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-danger" ) %>
 </div>
 
-<br><br>
-<table class="table table-boldered">
+<table class="table table-boldered table-striped custab">
     <thead>
         <tr>
             <td>
-                职缺
+                职位名称
             </td>
 
             <td>
-              收到履历数量
+                简历数量
             </td>
             <td>
-                薪资下限
+                最低薪资
             </td>
             <td>
                 薪资上限
@@ -23,7 +25,7 @@
                 管理选项
             </td>
             <td>
-                刊登时间
+                发布时间
             </td>
         </tr>
     </thead>
@@ -39,18 +41,15 @@
         <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
         <td> <%= job.wage_lower_bound %> </td>
         <td> <%= job.wage_upper_bound %> </td>
+
         <td>
-            <%= link_to("Edit", edit_admin_job_path(job)) %>
-            |
-            <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-
-            |
-            <% if job.is_hidden %>
-
-            <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
-        <% else %>
-            <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default") %>
-            <% end %>
+          <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info" do %><i class="fa fa-pencil"></i><% end %>
+          <%= link_to admin_job_path(job), :method => :delete, :class => "btn btn-xs  btn-danger", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
+          <% if job.is_hidden %>
+          <%= link_to publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-success" do %><i class="fa fa-eye"></i><% end %>
+            <% else %>
+          <%= link_to hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning" do %><i class="fa fa-eye-slash"></i><% end %>
+          <% end %>
         </td>
         <td>
             <%= job.created_at %>

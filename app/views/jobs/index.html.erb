@@ -1,36 +1,49 @@
 
-<div class="pull-right">
-  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+<div class="row">
+  <div class="col-sm-9 col-lg-8 col-lg-offset-2">
+    <form accept-charset="UTF-8" action="/jobs/search" class="jobs-search-form" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+      <div class="input-group">
+        <input type="text" class="form-control" name="q" value="" placeholder="职位搜索">
+
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+</form>
+</div>
 </div>
 
-<br>
-<br>
-<br>
-<div class="dropdown clearfix pull-right">
+<!-- <div class="pull-right">
+  <%#= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+</div> -->
+
+<div class="dropdown clearfix pull-left">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
     <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
         <li>
-          <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+          <%= link_to("按照最低薪资排序", jobs_path(:order => "by_lower_bound")) %>
         </li>
         <li>
             <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
         </li>
         <li>
-          <%= link_to("按照发表时间排序", jobs_path ) %>
+          <%= link_to("按照发布时间排序", jobs_path ) %>
         </li>
     </ul>
 </div>
 
-<table class="table table-boldered">
+<table class="table table-boldered table-striped custab">
     <thead>
         <tr>
-            <td>职缺</td>
-            <td>薪资下限</td>
+            <td>职位名称</td>
+            <td>最低薪资</td>
             <td>薪资上限</td>
-            <td>刊登时间</td>
+            <td>发布时间</td>
         </tr>
 
     </thead>

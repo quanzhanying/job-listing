@@ -55,6 +55,25 @@ class JobsController < ApplicationController
   end
 
 
+
+    # def publish
+    #   @job = Job.find_by_token(params[:id])
+    #
+    #   flash[:notice] = "感謝您刊登此資訊，我們會寄一封信件到您信箱確認您刊登 email 有效，等您驗證過後，職缺會立即刊登"
+    #   PublishJobService.new(@job).send_verfication_email!
+    #
+    #   redirect_to root_path
+    #
+    # end
+
+    def search
+      if @query_string.present?
+        search_result = Job.ransack(@search_criteria).result(:distinct => true)
+        @jobs = search_result.paginate(:page => params[:page], :per_page => 20 )
+        set_page_title "职位搜索 #{@query_string}"
+      end
+    end
+
   private
 
   def job_params

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       member do
         post :publish
         post :hide
+        get :search
       end
       resources :resumes
     end
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :resumes
   end
+  get "/welcome/:action" , :controller => "welcome"
 
   root "welcome#index"
 end

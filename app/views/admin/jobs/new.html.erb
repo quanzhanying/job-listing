@@ -1,14 +1,24 @@
-
 <h1> Add a job </h1>
 
-<%= simple_form_for [:admin,@job] do |f| %>
-
+<%= simple_form_for @job do |f| %>
 <%= f.input :title %>
 <%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
+<div class="form-group integer optional job_lower_bound">
+  <label class="integer optional col-sm-2 control-label" for="job_lower_bound">薪资</label>
+  <div class="col-sm-10">
+    <div class="input-prepend input-append">
+    <input class="string optional" id="job_lower_bound" name="job[lower_bound]" placeholder="下限 (Lower bound)" type="text" /> ~
+    <input class="string optional" id="job_higher_bound" name="job[higher_bound]" placeholder="上限 (Higher bound)" type="text" />
+    </div>
+  </div>
+</div>
+
+<%#= f.input :wage_lower_bound, :label => "最低薪资" %>
+<%#= f.input :wage_upper_bound, :label => "薪资上限" %>
 <%= f.input :contact_email %>
 <%= f.input :is_hidden %>
 
-  <%= f.submit "Submit" %>
+<%= f.submit "Submit", :class => "btn btn-danger" %>
 <% end %>
+
+<br>

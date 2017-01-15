@@ -10,10 +10,11 @@ class Admin::JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
   end
-
+  
   def new
     @job = Job.new
   end
+
 
   def create
     @job = Job.new(job_params)
@@ -45,7 +46,7 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path
   end
 
-  
+
   def publish
     @job = Job.find(params[:id])
     @job.publish!
