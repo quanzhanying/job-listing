@@ -8,6 +8,7 @@
   <thead>
     <tr>
         <td>职缺</td>
+        <td>收到履历数量</td>
         <td>薪资下限</td>
         <td>薪资上限</td>
         <td>管理选项</td>
@@ -25,6 +26,9 @@
           <%= link_to(job.title, job_path(job)) %>
         </td>
         <td>
+          <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %>
+        </td>
+        <td>
           <%= job.wage_lower_bound %>
         </td>
         <td>
@@ -32,7 +36,7 @@
         </td>
         <td>
           <%= link_to("Edit", edit_admin_job_path(job)) %> |
-          <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %> |
 
           <% if job.is_hidden %>
 
