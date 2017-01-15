@@ -1,4 +1,7 @@
 <div class="dropdown clearfix pull-right">
+
+     <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
+
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
         <span class="caret"></span>
@@ -24,8 +27,8 @@
 
   <thead>
           <tr>
-              <td>
-                  职缺</td>
+              <td>职缺</td>
+              <td>操作</td>
               <td>薪资下限</td>
               <td>薪资上限</td>
               <td>刊登时间</td>
@@ -37,9 +40,31 @@
 
   <% @jobs.each do |job| %>
   <tr>
+
+
+
     <td>
-       <%= link_to(job.title, job_path(job)) %>
+      <%= render_job_status(job) %>
+      <%= link_to(job.title, admin_job_path(job)) %>
     </td>
+
+    <td>
+      <%= link_to("Edit", edit_admin_job_path(job)) %> |
+      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
+      <% if job.is_hidden %>
+
+          <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
+        <% else %>
+          <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
+        <% end %>
+
+
+
+    </td>
+
+
+
     <td>
       <%= job.wage_lower_bound %>
     </td>
@@ -51,8 +76,11 @@
     <td>
       <%= job.created_at %>
     </td>
+
+
   </tr>
   <% end %>
    </tbody>
+
 
 </table>
