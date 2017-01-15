@@ -10,6 +10,8 @@ devise_for :users
       post :hide
     end
 
+     resources :resumes
+
    end
 end
 
