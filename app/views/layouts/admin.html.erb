@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Job Listing </title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <%= render "common/navbar" %>
+            <%= render "common/flashes" %>
+            <div class="row">
+              <div class="col-md-2">
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                  <li class="active"><%= link_to("Jobs", admin_jobs_path ) %> </li>
+                </ul>
+              </div>
+
+              <div class="col-md-10">
+                <%= yield %>
+              </div>
+           </div>
+        </div>
+
+        <%= render "common/footer" %>
+
+    </body>
+</html>
