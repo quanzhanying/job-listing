@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="panel-title">
+                    <%= resume.user.email %>
+                </h3>
+            </div>
+
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="trix-content">
+            <p> <%= simple_format(resume.content) %> </p>
+        </div>
+
+        <hr>
+
+        <% if resume.attachment.present? %>
+          <i class="fa fa-paperclip"> </i>
+          <%= link_to("Download Resume", resume.attachment_url) %>
+        <% else %>
+           No Attachment
+        <% end %>
+    </div>
+
+</div>
