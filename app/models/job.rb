@@ -20,4 +20,8 @@ class Job < ApplicationRecord
     self.save
   end
 
+  def self.search(search)
+    where("description LIKE ? OR title LIKE ?", "%#{search}%", "%#{search}%")
+  end
+  
 end
