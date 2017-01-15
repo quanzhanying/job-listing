@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Job Listing</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <!-- <%= link_to("Login", "#")%> -->
+          <% if !current_user %>
+            <li>
+              <%= link_to("Sign up", new_user_registration_path)%>
+            </li>
+            <li>
+              <%= link_to("Login", new_user_session_path)%>
+            </li>
+          <% else %>
+            <Li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Hi!, <%= current_user.email%>
+                  <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <% if current_user.admin? %>
+                  <li>
+                    <%= link_to("Admin Panel", admin_jobs_path)%>
+                  </li>
+                <% end %>
+                  <li>
+                    <%= link_to("Logout", destroy_user_session_path, method: :delete)%>
+                  </li>
+              </ul>
+            </Li>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
