@@ -3,6 +3,23 @@
 </div>
 
 <table class="table table-boldered">
+  <div class="dropdown clearfix pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      排序
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+      <li>
+        <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+      </li>
+      <li>
+        <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+      </li>
+      <li>
+        <%= link_to("按照发表时间排序", jobs_path ) %>
+      </li>
+    </ul>
+  </div>
   <thead>
     <tr>
         <td>职缺</td>
