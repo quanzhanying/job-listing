@@ -18,3 +18,146 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+ .navbar-default {
+    background-color: #424242;//背景颜色
+    border-color: #E0E0E0;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0;//圆角为0
+    }
+}
+
+.navbar-default .navbar-brand {
+   color: #FAFAFA;//字体颜色
+   padding: 10px 15px;//上下10px,左右15px
+   line-height: 30px;//文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #FFA726;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #EF6C00;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FF6F00;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #FF6F00;
+  background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFE0B2;
+    color: #212121;
+}
+
+.container-fluid .jumbotron{
+  background-image:url('https://ooo.0o0.ooo/2017/01/15/587b281665253.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 100px;//内部的底部边距，这样按钮不会很靠近底部了
+  margin: 0 0 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+  border-radius: 0;//圆角为0
+}
+
+.jumbotron h1, .jumbotron .h1 {
+    text-align: center;;//文字左对齐
+    color: #222;	//字体颜色
+    padding: 50px 20px 0;//上50px，左右20px，下0
+}
+
+.jumbotron p {
+    margin: 0;//上下左右margin为0
+    font-size: 26px;//字体大小
+    max-width: 500px;//最大宽度
+    background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+    padding: 20px;//上下左右padding为20px
+    text-align:center;;//文字居中
+    color: #222;//字体颜色
+    border-bottom-right-radius: 3px;//右下角圆边
+    border-bottom-left-radius: 3px;//左下角圆边
+}
+
+
+.title {
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  max-width: 500px;//最大宽度
+  margin-top: 50px;//和顶部拉开距离
+  margin-bottom: 0;//这样就可以紧接息面的描述文字
+  border-top-right-radius: 3px;//右上角圆边
+  border-top-left-radius: 3px;//左上角圆边
+}
+
+.btn-danger {
+    color: #fff;//字体颜色
+    background-color: #FF8F00;//背景颜色
+    border-color: #FF8F00;//边框颜色
+}
+.btn-danger-admin {
+    color: #CFD8DC;//字体颜色
+    background-color: #607D8B;//背景颜色
+    border-color: #607D8B;//边框颜色
+}
+
+.btn-danger:hover {
+    background-color: #EF6C00;//鼠标放置在btn上的背景颜色
+    border-color: #FF9100;//鼠标放置在btn上的边框颜色
+}
+.btn-danger-admin:hover {
+    background-color: #546E7A;//鼠标放置在btn上的背景颜色
+    border-color: #546E7A;//鼠标放置在btn上的边框颜色
+}
+
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 8px 16px;//通过padding来决定btn的大小
+    font-size: 20px;//btn文字大小
+    letter-spacing: 3px;//调整文字间距
+    border-radius: 3px;//btn圆角
+    width: 200px;//这里用指定宽度把btn拉得更长
+}
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 0;
+}
+
+.thumbnail {
+    border: 0 none;
+    margin-top: 60px;
+}
+
+.footer-section {
+  margin: 0 0 20px;
+  display:block;
+  height:150px;
+  background:#E0E0E0;
+}
+
+
+.footer-section .footer-content{
+  display:block;margin-left:auto;
+  margin-right:auto;width:100%;max-width:960px;
+  padding:0;position:relative;color:#333
+}
