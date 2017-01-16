@@ -6,14 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <div class="container-fluid">
-        <%= render "common/navbar" %>
-        <%= render "common/flashes" %>
+    <!--<div class="container-fluid">-->
+        <%#= render "common/navbar" %>
+        <%#= render "common/flashes" %>
         <%= yield %>
-    </div>
-    <%= render "common/footer" %>
+    <!--</div>-->
+    <%#= render "common/footer" %>
   </body>
 </html>

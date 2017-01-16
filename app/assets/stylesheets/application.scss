@@ -13,7 +13,14 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require jquery.fullPage.css
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+#menu { margin: 0; padding: 0; position: fixed; left: 10px; top: 10px; list-style-type: none; z-index: 70;}
+#menu li { float: left; margin:  0 10px 0 0; font-size: 14px;}
+#menu a { float: left; padding: 10px 20px; background-color: #fff; color: #333; text-decoration: none;}
+#menu .active a { color: #fff; background-color: #333;}
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
