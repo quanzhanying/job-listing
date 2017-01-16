@@ -19,7 +19,7 @@
   <%#= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
 </div> -->
 
-<div class="dropdown clearfix pull-left">
+<div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
     <span class="caret"></span>
@@ -36,7 +36,6 @@
         </li>
     </ul>
 </div>
-
 <table class="table table-boldered table-striped custab">
     <thead>
         <tr>
@@ -45,7 +44,6 @@
             <td>薪资上限</td>
             <td>发布时间</td>
         </tr>
-
     </thead>
     <tbody>
         <% @jobs.each do |job| %>

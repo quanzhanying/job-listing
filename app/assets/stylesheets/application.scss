@@ -72,11 +72,25 @@
     color: #FF6F00;
 }
 
-.container-fluid .jumbotron{
+.navbar-right {
+  margin-right: 15px;
+}
+
+.pull-left {
+  margin-left: 10px;
+}
+
+.container .jumbotron{
   background-image:url('https://ooo.0o0.ooo/2017/01/15/587b281665253.png');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 60px;//内部的底部边距，这样按钮不会很靠近底部了
+  margin: 0 0 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+  border-radius: 0;//圆角为0
+}
+.container .jumbotron1{
+  display:block;
+
   margin: 0 0 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
   border-radius: 0;//圆角为0
 }
@@ -91,7 +105,7 @@
     margin: 0;//上下左右margin为0
     font-size: 26px;//字体大小
     max-width: 600px;//最大宽度
-    background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+    background-color: rgba(250, 250, 250, 0.5);//背景颜色含透明度
     padding: 20px;//上下左右padding为20px
     text-align:center;;//文字居中
     color: #222;//字体颜色
@@ -101,7 +115,7 @@
 
 
 .title {
-  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  background-color: rgba(250, 250, 250, 0.5);//背景颜色含透明度
   max-width: 600px;//最大宽度
   margin-top: 50px;//和顶部拉开距离
   margin-bottom: 0;//这样就可以紧接息面的描述文字
@@ -138,20 +152,22 @@
     width: 200px;//这里用指定宽度把btn拉得更长
 }
 .caption {
-  margin: 30px;
+  margin: 10px;
   text-align: center;
   top: 0;
 }
 
 .thumbnail {
     border: 0 none;
-    margin-top: 60px;
+    margin-top: 30px;
+    margin-down: 30px;
+
 }
 
 .footer-section {
-  margin: 0 0 20px;
+  margin: 3% 0 20px;
   display:block;
-  height:150px;
+  height:130px;
   background:#E0E0E0;
 }
 
@@ -170,9 +186,9 @@
 .custab{
   border: 1px solid #9E9E9E;
   padding: 5px;
-  margin: 5% 0;
+  margin: 15px 0 100px;
   box-shadow: 10px 3px 2px #ccc;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .custab:hover{

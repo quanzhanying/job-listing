@@ -1,10 +1,24 @@
+<div class="text-center">
+
+
 <h1> <%= @job.title %> </h1>
-
 <p>
-  <%= simple_format(@job.description) %>
 
+  <%= simple_format(@job.description) %>
+<h3>
+  最低薪资: <%= @job.wage_lower_bound %>
+</h3>
+<h3>
+  薪资上限(可以谈): <%= @job.wage_upper_bound %>
+</h3>
+
+  <%#= @job.created_at %>
 </p>
 
+<br>
+
 <div class="text-center">
-  <%= link_to("投递简历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
+  <%= link_to("投递简历", new_job_resume_path(@job), :style => "font-size: 20px;",class:"btn btn-danger text-center") %>
+
+</div>
 </div>

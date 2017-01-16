@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :resumes
   end
-  get "/welcome/:action" , :controller => "welcome"
 
   root "welcome#index"
 end

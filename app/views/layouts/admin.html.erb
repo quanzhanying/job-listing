@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Job Listing </title>
+        <title>KK职搜</title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +10,7 @@
 
     <body>
 
-        <div class="container-fluid">
+        <div class="container">
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <div class="row">
@@ -19,7 +19,7 @@
                  <li class="active"><%= link_to("Jobs", admin_jobs_path ) %> </li>
 
               </ul>
-              </div>  
+              </div>
               <div class="col-md-10">
                 <%= yield %>
               </div>

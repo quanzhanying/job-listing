@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>'>KK职搜</a>
@@ -14,26 +14,24 @@
             <li><%= link_to("职位搜索", "/jobs") %></li>
             <li><%= link_to("公司", "/") %></li>
             <li><%= link_to("测试功能", "/welcome/signup") %></li>
-            <li><%= link_to("Logdown", "http://rockyjia.logdown.com", :target => "_blank") %></li>
-
-     </ul>
+            <li><%= link_to("帮助文档", "http://rockyjia.logdown.com", :target => "_blank") %></li>
+          </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 <% if !current_user %>
-
                   <li><%= link_to("注册", new_user_registration_path) %> </li>
                   <li><%= link_to("登录", new_user_session_path) %></li>
                 <% else %>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!, <%= current_user.email %>
+                        <%= current_user.email %>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
                       <% if current_user.admin? %>
-                        <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
+                        <li> <%= link_to("管理页面", admin_jobs_path) %> </li>
                       <% end %>
-                        <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+                        <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
                     </ul>
                   </li>
                 <% end %>
