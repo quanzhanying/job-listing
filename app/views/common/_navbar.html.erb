@@ -8,7 +8,6 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li>
                   <% if !current_user %>
                   <li><%= link_to("注册", new_user_registration_path) %> </li>
                   <li><%= link_to("登入", new_user_session_path) %></li>
@@ -23,7 +22,6 @@
                     </ul>
                   </li>
                 <% end %>
-                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
