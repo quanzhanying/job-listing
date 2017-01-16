@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!, only:[:new]
   def index
     @jobs = Job.all
   end
@@ -21,7 +22,7 @@ def create
   redirect_to jobs_path
 else
   render :new
-end 
+end
 end
 
 def update
