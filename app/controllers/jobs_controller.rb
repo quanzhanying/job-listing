@@ -15,7 +15,8 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
-    if @job.save
+    @job.user= current_user
+    if @job.save!
       redirect_to jobs_path, notice: 'Add Success'
     else
       render :new
