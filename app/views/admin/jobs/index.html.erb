@@ -3,6 +3,14 @@
 </div>
 
 <table class="table table-boldered">
+  <thead>
+    <td>职缺</td>
+    <td>管理选项</td>
+    <td>薪资下限</td>
+    <td>薪资上限</td>
+    <td>收到简历数量</td>
+    <td>刊登时间</td>
+  </thead>
   <% @jobs.each do |job| %>
   <tr>
     <td>
@@ -18,6 +26,9 @@
         <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
       <% end %>
     </td>
+    <td><%= job.wage_lower_bound %></td>
+    <td><%= job.wage_upper_bound %></td>
+    <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
     <td><%= job.created_at %></td>
   </tr>
   <% end %>
