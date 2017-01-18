@@ -1,3 +1,47 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bg-grey {
+    background-color: #C5E1A5;
+}
+
+.jumbotron {
+    background-color: #80D8FF; /* Orange */
+    color: #ffffff;
+  }
+
+  .logo {
+    font-size: 200px;
+}
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+}
+
+.logo-small {
+    color: #f4511e;
+    font-size: 50px;
+}
+
+.logo {
+    /*color: #f4511e;*/
+    font-size: 200px;
+}
+
+.jumbotron{
+  background-image:url('https://ww2.sinaimg.cn/large/006tNc79gw1fbuih947ewj31kw11x4qp.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+
+
+
+.container-fluid .jumbotron{
+  padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+  margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+  border-radius: 0;//圆角为0
+}

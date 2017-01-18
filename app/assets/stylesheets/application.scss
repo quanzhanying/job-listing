@@ -18,6 +18,25 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 @import "font-awesome";
+
+
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+}
+.person:hover {
+    border-color: #f1f1f1;
+}
+
+
+
+.container {
+    padding: 80px 120px;
+}
+
  .custab{
    border: 1px solid #ccc;
    padding: 5px;
@@ -31,12 +50,12 @@
    transition: 0.5s;
  }
 
- .jumbotron {
+ /*.jumbotron {
   background-image:url('https://ww3.sinaimg.cn/large/006y8lVajw1fbq06bskr5j30j60cgmyn.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
-}
+}*/
 
 .title {
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
@@ -65,8 +84,54 @@
   top: 20px;
 }
 
-.thumbnail{
-  border: 0 none;
-  box-shadow: none;
-  margin-top: 60px;
+
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+
+.thumbnail p {
+    margin-top: 15px;
+    color: #555;
+}
+
+.carousel-inner img {
+    /*-webkit-filter: grayscale(90%);*/
+    /*filter: grayscale(90%); /* make all photos black and white */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+
+body {
+    font: 400 15px/1.8 Lato, sans-serif;
+     /*color: #777;*/
+}
+
+.navbar {
+    font-family: Montserrat, sans-serif;
+}
+
+.navbar-default {
+    background-color: #212121;//背景颜色
+    border-color: #212121;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
 }
