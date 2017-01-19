@@ -2,3 +2,6 @@
 <p>
 <%= simple_format(@job.description)%>
 </p>
+<div class="text_center">
+  <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;")%>
+</div>
