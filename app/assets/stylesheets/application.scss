@@ -17,3 +17,25 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ .bgimg {
+     background-image: url('https://s-media-cache-ak0.pinimg.com/564x/1a/00/63/1a00631a59fb9d8b6007ad76089fe4a5.jpg');
+     background-size: cover;
+
+     padding-bottom: 110px;
+     padding-left: 10px;
+
+ }
+
+ .features .glyphicon {
+   font-size: 32px;
+   color: gray;
+ }
+
+.footer {
+  background-color: #585858;
+  background-size: cover;
+  color: white;
+  font-size: 12px;
+  padding-left: 30px;
+  margin-bottom: 0;
+}
