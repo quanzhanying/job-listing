@@ -6,9 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts '设置管理员，生成隐藏job和显示job'
-create_account = User.create([email: 'xyy123@gmail.com', password: 'xyy123',
-                 password_confirmation: 'xyy123', is_admin: 'true'])
-puts '管理员设置成果'
+create_account = for i in 1..2 do
+  User.create([email: 'xyy123@gmail.com', password: 'xyy123',
+                   password_confirmation: 'xyy123', is_admin: 'true'])
+  User.create([email: 'xyy@gmail.com', password: 'xyy123',
+     password_confirmation: 'xyy123', is_admin: 'true'])
+end
+
+
+puts '管理员设置成功'
 
 job_info = ['developer',
             'teacher',
