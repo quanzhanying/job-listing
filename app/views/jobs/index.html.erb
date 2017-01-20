@@ -1,0 +1,84 @@
+<div class="banner1">
+
+<h1 class="bannerfont1">未来等你来</h1>
+<h3 class="bannerfont1">让我们一起成就更好的自己</h3>
+</div>
+
+
+
+
+
+
+<div class="pull-right">
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+</div>
+
+<div class="dropdown clearfix pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      排序
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li>
+          <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+        </li>
+        <li>
+            <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+
+        </li>
+        <li>
+          <%= link_to("按照发表时间排序", jobs_path ) %>
+
+        </li>
+    </ul>
+</div>
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>职缺</td>
+      <td>Edit|Destroy</td>
+      <td>薪资下限</td>
+      <td>薪资上限</td>
+      <td>刊登时间</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
+    <tr>
+      <td>
+        <%= render_job_status(job) %>
+
+        <%= link_to(job.title, job_path(job)) %>
+      </td>
+        <td>
+        <%= link_to("Edit", edit_job_path(job), :class => "btn btn-xs btn-info") %> |
+        <%= link_to("Destroy", job_path(job), :method => :delete,  :class => "btn btn-xs btn-danger",:data => { :confirm => "Are you sure?" }) %>
+        <% if job.is_hidden %>
+         <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default ") %>
+        <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-success") %>
+        <% else %>
+           <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default") %>
+        <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning") %>
+        <% end %>
+
+
+      </td>
+
+      <td>
+          <%= job.wage_lower_bound %>
+
+      </td>
+
+      <td>
+          <%= job.wage_upper_bound %>
+      </td>
+      <td>
+        <%= job.created_at %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+
+
+</table>
