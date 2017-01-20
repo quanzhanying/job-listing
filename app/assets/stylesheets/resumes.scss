@@ -1,3 +1,20 @@
 // Place all the styles related to the resumes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.background-image{
+
+  height: 550px;
+}
+
+#background-image{
+  position: relative;
+  background-image: url("http://images.ccoo.cn/store/20110507/20110507140846859.jpg");
+  // background-image: url("http://file06.16sucai.com/2016/0608/e6579a57aff1e4a4dabce4670d9847fd.jpg");
+width: 100%;
+height: 550px;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+margin-bottom: -85px;
+}

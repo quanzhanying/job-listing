@@ -27,9 +27,32 @@
   </ul>
 </div>
 
-<table class="table table-boldered table-striped custab" >
+
+<table class="table table-boldered table-striped custab">
+
   <thead>
+
     <tr>
+      <ul id="myTab" class="nav nav-tabs" role="tablist">
+          <li class="">
+            <a data-toggle="tab" href="#category-0">产品</a>
+          </li>
+          <li class="active">
+            <a data-toggle="tab" href="#category-1">技术</a>
+          </li>
+          <li class="">
+            <a data-toggle="tab" href="#category-3">设计</a>
+          </li>
+          <li class="">
+            <a data-toggle="tab" href="#category-4">运营</a>
+          </li>
+          <li class="">
+            <a data-toggle="tab" href="#category-5">市场与销售</a>
+          </li>
+          <li class="">
+            <a data-toggle="tab" href="#category-7">职能</a>
+          </li>
+        </ul>
       <th> 职位</th>
       <th> 薪资下限</th>
       <th> 薪资上限</th>
@@ -58,5 +81,5 @@
   </tbody>
 </table>
 <div class="text-center">
-  <%= will_paginate @posts %>
+  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
 </div>

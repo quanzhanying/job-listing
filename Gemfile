@@ -34,6 +34,9 @@ gem "bootstrap-sass"
 gem "devise"
 gem  "simple_form"
 gem  "carrierwave"
+gem "will_paginate"
+gem 'will_paginate-bootstrap'
+
 
 group :development, :test do
 
