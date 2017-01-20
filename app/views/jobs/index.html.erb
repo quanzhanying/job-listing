@@ -1,8 +1,17 @@
 
-  <div class="background" id="photo">
+  <!-- <div class="background" id="photo">
     <h1 class="text-center">魔改大赛</h1>
-  </div>
+  </div> -->
+  <%= form_tag jobs_path, :method => "get" do %>
 
+      <div class="searchform">
+         <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+         <span>
+             <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
+             <!-- <input type="submit" value="点 击" class="mike"> -->
+          </span>
+      </div>
+   <% end %>
 
 
 <div class="dropdown clearfix pull-right">
@@ -18,7 +27,7 @@
   </ul>
 </div>
 
-<table class="table table-hover" style="hover">
+<table class="table table-boldered table-striped custab" >
   <thead>
     <tr>
       <th> 职位</th>
@@ -48,3 +57,6 @@
   <% end %>
   </tbody>
 </table>
+<div class="text-center">
+  <%= will_paginate @posts %>
+</div>
