@@ -18,13 +18,18 @@
  @import "bootstrap";
  @import "font-awesome";
  .bgimg {
-     background-image: url('https://s-media-cache-ak0.pinimg.com/564x/1a/00/63/1a00631a59fb9d8b6007ad76089fe4a5.jpg');
+     background-image: url('http://www.1stcredit.com/wp-content/uploads/2012/03/Featured_WorkForUs.jpg');
      background-size: cover;
 
-     padding-bottom: 110px;
-     padding-left: 10px;
+     margin-left: -40px;
+     margin-right: -40px;
+     color: white;
+     padding-bottom: 250px;
 
  }
+.img-thhumbnail {
+  height: 80px;
+}
 
  .features .glyphicon {
    font-size: 32px;
@@ -37,11 +42,13 @@
   color: white;
   font-size: 12px;
   padding-left: 30px;
+
   margin-bottom: 0;
 }
 
 body {
    overflow-x: hidden;
+   font-family: "SimHei"，"Microsoft JhengHei", sans-serif;
 }
 
 /* Toggle Styles */
