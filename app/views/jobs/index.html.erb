@@ -1,6 +1,7 @@
 <div class="banner1">
-<h3 class="bannerfont1">让我们一起成就更好的自己</h3>
+
 <h1 class="bannerfont1">未来等你来</h1>
+<h3 class="bannerfont1">让我们一起成就更好的自己</h3>
 </div>
 
 
@@ -51,8 +52,17 @@
         <%= link_to(job.title, job_path(job)) %>
       </td>
         <td>
-        <%= link_to("Edit", edit_job_path(job)) %> |
-        <%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+        <%= link_to("Edit", edit_job_path(job), :class => "btn btn-xs btn-info") %> |
+        <%= link_to("Destroy", job_path(job), :method => :delete,  :class => "btn btn-xs btn-danger",:data => { :confirm => "Are you sure?" }) %>
+        <% if job.is_hidden %>
+         <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default ") %>
+        <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-success") %>
+        <% else %>
+           <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default") %>
+        <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning") %>
+        <% end %>
+
+
       </td>
 
       <td>
