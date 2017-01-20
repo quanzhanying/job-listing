@@ -6,6 +6,9 @@ class JobsController < ApplicationController
       flash[:warning] = "This Job already archieved"
       redirect_to root_path
     end
+
+    #  @posts = Job.published.rencent.paginate(page: params[:page], per_page: 5)
+
   end
 
   def index

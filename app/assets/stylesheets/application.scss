@@ -31,6 +31,19 @@
   height: 80px;
 }
 
+.custab{
+  border-top: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  // box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab:hover{
+  // box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+
  .features .glyphicon {
    font-size: 32px;
    color: gray;
@@ -69,7 +82,7 @@ body {
    z-index: 1000;
    position: fixed;
 
-   right: 250px;
+   right: 150px;
    width: 0;
    height: 100%;
    margin-right: -250px;

@@ -5,6 +5,7 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    #  @posts = Job.published.rencent.paginate(page: params[:page], per_page: 5)
   end
 
   def index
