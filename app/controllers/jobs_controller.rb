@@ -18,9 +18,7 @@ class JobsController < ApplicationController
             else
               Job.published.recent
             end
-  end
 
-  def search
     @jobs = Job.search(params[:search])
   end
 
@@ -58,13 +56,6 @@ class JobsController < ApplicationController
     redirect_to jobs_path
   end
 
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-    else
-      find(:all)
-    end
-  end
 
   private
 

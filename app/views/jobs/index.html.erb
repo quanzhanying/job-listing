@@ -2,11 +2,15 @@
   <%# link_to("Add a job",new_job_path, :class => "btn btn-default" ) %>
 </div>
 
-<%= form_tag jobs_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search]%>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
+<%= form_tag jobs_path, :method => "get" do %>
+
+      <div class="searchform">
+          <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+          <span>
+             <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
+             <!-- <input type="submit" value="点 击" class="mike"> -->
+          </span>
+      </div>
 <% end %>
 
 <hr />
