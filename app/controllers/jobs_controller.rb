@@ -20,6 +20,10 @@ class JobsController < ApplicationController
             end
   end
 
+  def search
+    @jobs = Job.search(params[:search])
+  end
+
   def new
     @job = Job.new
   end
@@ -52,6 +56,14 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @job.destroy
     redirect_to jobs_path
+  end
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
   end
 
   private

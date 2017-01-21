@@ -2,7 +2,17 @@
   <%# link_to("Add a job",new_job_path, :class => "btn btn-default" ) %>
 </div>
 
+<%= form_tag jobs_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search]%>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<hr />
+
 <table class="table table-boldered">
+
   <div class="dropdown clearfix pull-right">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
