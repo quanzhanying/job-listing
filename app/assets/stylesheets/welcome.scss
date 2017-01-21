@@ -1,0 +1,65 @@
+.jumbotron {
+  background-image:url('http://wadhefty.com/wp-content/uploads/2016/06/bigstock-Professional-Entrepreneur-Job-75832270-Large-1030x579.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: left;
+  margin-top: 150px;
+  margin-bottom: 80px;
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  max-width: 500px;//最大宽度
+  margin-top: 200px;//和顶部拉开距离
+  margin-bottom: 0;//这样就可以紧接息面的描述文字
+  border-top-right-radius: 3px;//右上角圆边
+  border-top-left-radius: 3px;//左上角圆边
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: left;
+  color: #484848;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: left;
+  color: white;
+}
+
+
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
+}
+
+.btn-danger {
+    color: black;//字体颜色
+    background-color: black;//背景颜色
+    border-color: #EF6C00;//边框颜色
+    width: 200px;//这里用指定宽度把btn拉得更长
+}
+
+.btn-danger:hover {
+    background-color: #E65100;//鼠标放置在btn上的背景颜色
+    border-color: #E65100;//鼠标放置在btn上的边框颜色
+}
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 8px 16px;//通过padding来决定btn的大小
+    font-size: 20px;//btn文字大小
+    letter-spacing: 3px;//调整文字间距
+    border-radius: 3px;//btn圆角
+}

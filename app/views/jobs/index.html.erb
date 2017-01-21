@@ -1,0 +1,85 @@
+
+  <!-- <div class="background" id="photo">
+    <h1 class="text-center">魔改大赛</h1>
+  </div> -->
+  <%= form_tag jobs_path, :method => "get" do %>
+
+      <div class="searchform">
+         <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+         <span>
+             <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
+             <!-- <input type="submit" value="点 击" class="mike"> -->
+          </span>
+      </div>
+   <% end %>
+
+
+<div class="dropdown clearfix pull-right">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+ 排序
+ <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+     <li><%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound"))%></li>
+     <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound"))%></li>
+     <li><%= link_to("按照发表时间排序", jobs_path)%></li>
+  </ul>
+</div>
+
+
+<table class="table table-boldered table-striped custab">
+
+  <thead>
+
+    <tr>
+      <ul id="myTab" class="nav nav-tabs" role="tablist">
+          <li class="">
+            <a data-toggle="tab" href="#category-0">产品</a>
+          </li>
+          <li class="active">
+            <a data-toggle="tab" href="#category-1">技术</a>
+          </li>
+          <li class="">
+            <a data-toggle="tab" href="#category-3">设计</a>
+          </li>
+          <li class="">
+            <a data-toggle="tab" href="#category-4">运营</a>
+          </li>
+          <li class="">
+            <a data-toggle="tab" href="#category-5">市场与销售</a>
+          </li>
+          <li class="">
+            <a data-toggle="tab" href="#category-7">职能</a>
+          </li>
+        </ul>
+      <th> 职位</th>
+      <th> 薪资下限</th>
+      <th> 薪资上限</th>
+      <th> 创建时间</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+  <% @jobs.each do |job| %>
+  <tr>
+    <td>
+      <%= link_to(job.title, job_path(job)) %>
+    </td>
+    <td>
+       <%= job.wage_lower_bound %>
+    </td>
+    <td>
+       <%= job.wage_upper_bound %>
+    </td>
+    <td>
+      <%= job.created_at.strftime("%Y年%m月%d日") %>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+<div class="text-center">
+  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+</div>

@@ -9,6 +9,14 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="container-fluid">
+      <div class="row">
+        <%= render "common/navbar"%>
+      </div>
+      <%= render "common/flashes" %>
+      <%= yield %>
+    </div>
+    <%= render "common/footer"%>
   </body>
 </html>
