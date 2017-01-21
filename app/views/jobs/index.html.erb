@@ -1,54 +1,33 @@
 <!DOCTYPE html>
 
 <html lang='zh'>
-<body class='body'>
-  <div id="wrapper">
+  <body class='body'>
+  <div id="wrapper ">
   <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
+
           <li class="sidebar-brand">
+            Order
+          </li>
+              <li><%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound"))%></li>
+              <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound"))%></li>
+              <li><%= link_to("按照发表时间排序", jobs_path)%></li>
 
-          </li>
-          <li>
-              <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound"))%>
-          </li>
-          <li>
-              <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound"))%>
-          </li>
-          <li>
-              <%= link_to("按照发表时间排序", jobs_path)%>
-          </li>
-
-      </ul>
+</ul>
   </div>
 </div>
 
-<br /><br /><br /><br />
+<!-- Sidebar -->
 
 
 
-    <!-- <div class="dropdown clearfix pull-right">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspupup="true" aria-expanded="true">
-    排序
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-    <li>
-      <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound"))%>
-    </li>
-    <li>
-      <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound"))%>
-    </li>
-    <li>
-      <%= link_to("按照发表时间排序", jobs_path)%>
-    </li>
-  </ul>
-</div> -->
-<div class="pull-left">
 
-  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-</div>
 
-    <table class="table table-boldered fixed" >
+
+
+
+
+    <!-- <table class="table table-boldered fixed" >
 
       <thead>
         <tr>
@@ -72,15 +51,76 @@
       </tr>
       <% end %>
     </tbody>
-    </table>
+    </table> -->
 
+
+  <!--for demo wrap-->
+
+  <div class="tbl-header col-sm-9 pull-left">
+
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>职位名称</th>
+          <th>公司</th>
+          <th>薪资下限</th>
+          <th>薪资上限</th>
+          <th>发布时间</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content col-sm-9 pull-left">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr>
+          <td></td>
+          <td>AUSTRALIAN COMPANY </td>
+          <td>$1.38</td>
+          <td>+2.01</td>
+          <td>-0.36%</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>AUSTRALIAN COMPANY </td>
+          <td>$1.38</td>
+          <td>+2.01</td>
+          <td>-0.36%</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>AUSTRALIAN COMPANY </td>
+          <td>$1.38</td>
+          <td>+2.01</td>
+          <td>-0.36%</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>AUSTRALIAN COMPANY </td>
+          <td>$1.38</td>
+          <td>+2.01</td>
+          <td>-0.36%</td>
+        </tr>
+        <% @jobs.each do |job| %>
+          <tr>
+          <td></td>
+          <td>
+            <%= link_to(job.title, job_path(job)) %>
+          </td>
+          <td>
+            <%= job.wage_lower_bound %>
+          </td>
+          <td><%= job.wage_upper_bound %></td>
+          <td><%= job.created_at %></td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
   </div>
 
 
-
-
-
-
+</div>
 <script>
 $("#menu-toggle").click(function(e) {
     e.preventDefault();
@@ -88,5 +128,7 @@ $("#menu-toggle").click(function(e) {
 });
 </script>
 
-</body>
+
+
+  </body>
 </html>

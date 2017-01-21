@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :resumes
   end
-  root 'welcome#index'
+  root 'welcome#index2'
   resources :welcome do
   end
 

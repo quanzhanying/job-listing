@@ -31,18 +31,9 @@
   height: 80px;
 }
 
-.custab{
-  border-top: 1px solid #ccc;
-  padding: 5px;
-  margin: 5% 0;
-  // box-shadow: 3px 3px 2px #ccc;
-  transition: 0.5s;
-}
 
-.custab:hover{
-  // box-shadow: 3px 3px 0px transparent;
-  transition: 0.5s;
-}
+
+
 
  .features .glyphicon {
    font-size: 32px;
@@ -50,7 +41,7 @@
  }
 
 .footer {
-  background-color: #585858;
+  background-color: #000000;
   background-size: cover;
   color: white;
   font-size: 12px;
@@ -60,6 +51,7 @@
 }
 
 body {
+  padding-top: 50px;
    overflow-x: hidden;
    font-family: "SimHei"，"Microsoft JhengHei", sans-serif;
 }
@@ -67,6 +59,7 @@ body {
 /* Toggle Styles */
 
 #wrapper {
+
    padding-left: 0;
    -webkit-transition: all 0.5s ease;
    -moz-transition: all 0.5s ease;
@@ -82,7 +75,24 @@ body {
    z-index: 1000;
    position: fixed;
 
-   right: 150px;
+   right: 250px;
+   width: 0;
+   height: 100%;
+   margin-right: -250px;
+
+   overflow-y: auto;
+   background: #000000;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+#sidebar0-wrapper {
+   z-index: 1000;
+   position: fixed;
+
+   right: 250px;
    width: 0;
    height: 100%;
    margin-right: -250px;
@@ -94,7 +104,6 @@ body {
    -o-transition: all 0.5s ease;
    transition: all 0.5s ease;
 }
-
 #wrapper.toggled #sidebar-wrapper {
    width: 250px;
 }
@@ -142,11 +151,13 @@ body {
 .sidebar-nav li a:focus {
    text-decoration: none;
 }
-
+// sidebar标题
 .sidebar-nav > .sidebar-brand {
-   height: 65px;
+   height: 50px;
    font-size: 18px;
    line-height: 60px;
+   color: #999999
+
 
 }
 
@@ -186,3 +197,98 @@ body {
        margin-right: 0;
    }
 }
+
+
+h1{
+  font-size: 30px;
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(0,0,0,1);
+ }
+.tbl-content{
+  height:450px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.8);
+}
+th{
+  padding: 5px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #000000;
+  border-bottom: solid 1px rgba(0,0,0,0.6);
+}
+
+
+/* demo styles */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #fff, #fff);
+  background: linear-gradient(to right, #fff, #fff);
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 50px;
+}
+
+
+/* follow me template */
+.made-with-love {
+  margin-top: 40px;
+  padding: 10px;
+  clear: left;
+  text-align: center;
+  font-size: 10px;
+  font-family: arial;
+  color: #fff;
+}
+.made-with-love i {
+  font-style: normal;
+  color: #F50057;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #fff;
+  text-decoration: none;
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+
+/* sidebar */
