@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
     if !current_user.admin?
       flash[:alert] = 'You are not admin'
       redirect_to jobs_path
+
     end
   end
 

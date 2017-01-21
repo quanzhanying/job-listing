@@ -5,11 +5,18 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    #  @posts = Job.published.rencent.paginate(page: params[:page], per_page: 5)
+
   end
 
   def index
-    @jobs = Job.all
+    @jobs = case params[:order]
+    when 'by_lower_bound'
+      Job.published.order('wage_lower_bound DESC')
+    when 'by_upper_bound'
+      Job.published.order('wage_upper_bound DESC')
+    else
+      Job.published.recent
+    end
   end
 
   def new

@@ -1,5 +1,6 @@
-<h1> Edit a job </h1>
-
+<div class='container col-sm-8 col-offset-2'>
+<h1> 编辑职位信息 </h1>
+<br />
 <%= simple_form_for @job do |f| %>
 <%= f.input :title %>
 <%= f.input :description %>
@@ -10,3 +11,4 @@
 
 <%= f.submit "Submit" %>
 <% end %>
+</div>

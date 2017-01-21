@@ -73,40 +73,14 @@
   <div class="tbl-content col-sm-9 pull-left">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-        <tr>
-          <td></td>
-          <td>AUSTRALIAN COMPANY </td>
-          <td>$1.38</td>
-          <td>+2.01</td>
-          <td>-0.36%</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>AUSTRALIAN COMPANY </td>
-          <td>$1.38</td>
-          <td>+2.01</td>
-          <td>-0.36%</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>AUSTRALIAN COMPANY </td>
-          <td>$1.38</td>
-          <td>+2.01</td>
-          <td>-0.36%</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>AUSTRALIAN COMPANY </td>
-          <td>$1.38</td>
-          <td>+2.01</td>
-          <td>-0.36%</td>
-        </tr>
+
         <% @jobs.each do |job| %>
           <tr>
-          <td></td>
+
           <td>
             <%= link_to(job.title, job_path(job)) %>
           </td>
+            <td></td>
           <td>
             <%= job.wage_lower_bound %>
           </td>
