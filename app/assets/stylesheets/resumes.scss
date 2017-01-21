@@ -11,10 +11,16 @@
   position: relative;
   background-image: url("http://images.ccoo.cn/store/20110507/20110507140846859.jpg");
   // background-image: url("http://file06.16sucai.com/2016/0608/e6579a57aff1e4a4dabce4670d9847fd.jpg");
-width: 100%;
+width: 103%;
 height: 550px;
 background-repeat: no-repeat;
 background-position: center;
 background-size: cover;
 margin-bottom: -85px;
+margin-left: -15px;
+}
+
+.weizhi {
+  position: absolute;
+  margin-top: 100px;
 }
