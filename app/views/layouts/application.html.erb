@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <div class="container-fluid">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
     <%= yield %>
+  </div>
+  <% if @footer_variable %>
+    <%= render "common/footer2" %>
+  <% else %>
+  <%= render 'common/footer' %>
+  <% end %>
   </body>
 </html>

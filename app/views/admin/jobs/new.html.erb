@@ -1,0 +1,15 @@
+<div class='container col-sm-8 col-sm-offset-2'>
+
+<h1>发布职位需求</h1>
+<br />
+<%= simple_form_for [:admin, @job] do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :wage_upper_bound, :label => "薪资上限" %>
+<%= f.input :wage_lower_bound, :label => "薪资下限" %>
+<%= f.input :contact_email %>
+<%= f.input :is_hidden %>
+<%= f.submit "Submit" %>
+<% end %>
+
+</div>

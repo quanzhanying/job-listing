@@ -1,0 +1,9 @@
+<div class='container col-sm-8 col-sm-offset-2'>
+<h2>提交简历到<strong><%= @job.title %></strong></h2>
+<hr>
+<%= simple_form_for [@job, @resume] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :attachment %>
+  <%= f.submit "送出"%>
+<% end %>
+</div>
