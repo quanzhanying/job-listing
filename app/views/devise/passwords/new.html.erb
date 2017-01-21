@@ -1,15 +1,17 @@
-<h2>Forgot your password?</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="background" id="image">
+    <br />
+    <h2 class="text-center login-title">忘记密码了?</h2>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-signin">
+            <%= f.input :email, labe:'邮箱地址', required: true, autofocus: true %>
+        </div>
+        <div class="text-center form-signin">
+            <button class="btn btn-danger" type="submit">发送密码重置教程</button>
+            <!-- <%#= f.button :submit, "Send me reset password instructions" class: "btn btn-danger"%> -->
+        </div>
+    <% end %>
+    <div class="text-center new-account">
+        <%= render "devise/shared/links" %>
+    </div>
+</div>

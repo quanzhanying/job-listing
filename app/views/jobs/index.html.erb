@@ -1,4 +1,4 @@
-
+<!--
 <div class="row">
   <div class="col-sm-9 col-lg-8 col-lg-offset-2">
     <form accept-charset="UTF-8" action="/jobs/search" class="jobs-search-form" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
@@ -13,26 +13,33 @@
       </div>
 </form>
 </div>
-</div>
-
+</div> -->
+<%= form_tag jobs_path, :method => "get" do %>
+    <div class="searchform">
+        <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+        <span>
+            <%= submit_tag "搜索", :title => nil, :description => nil, class: "searchbutton" %>
+            <!-- <input type="submit" value="点 击" class="mike"> -->
+        </span>
+    </div>
+<% end %>
 <!-- <div class="pull-right">
   <%#= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
 </div> -->
-
 <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      排序
+        排序
     <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
         <li>
-          <%= link_to("按照最低薪资排序", jobs_path(:order => "by_lower_bound")) %>
+            <%= link_to("按照最低薪资排序", jobs_path(:order => "by_lower_bound")) %>
         </li>
         <li>
             <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
         </li>
         <li>
-          <%= link_to("按照发布时间排序", jobs_path ) %>
+            <%= link_to("按照发布时间排序", jobs_path ) %>
         </li>
     </ul>
 </div>
@@ -47,21 +54,20 @@
     </thead>
     <tbody>
         <% @jobs.each do |job| %>
-        <tr>
-            <td>
-                <%= link_to(job.title, job_path(job)) %>
-            </td>
-            <td>
-                <%= job.wage_lower_bound %>
-            </td>
-            <td>
-                <%= job.wage_upper_bound %>
-            </td>
-            <td>
-                <%= job.created_at %>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <%= link_to(job.title, job_path(job)) %>
+                </td>
+                <td>
+                    <%= job.wage_lower_bound %>
+                </td>
+                <td>
+                    <%= job.wage_upper_bound %>
+                </td>
+                <td>
+                    <%= job.created_at %>
+                </td>
+            </tr>
         <% end %>
     </tbody>
-
 </table>
