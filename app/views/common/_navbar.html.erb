@@ -3,16 +3,20 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
         <a class="navbar-brand" href="/jobs" >薪手</a>
-    </div>
+      </div>
 
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <% if !current_user %>
-        <li><%= link_to("注册", new_user_registration_path) %></li>
-        <li><%= link_to("登入", new_user_session_path) %></li>
+
+
+        <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+          <% if !current_user %>
+          <li><%= link_to("注册", new_user_registration_path) %></li>
+          <li><%= link_to("登入", new_user_session_path) %></li>
+        </ul>
+        <li class="dropdown navbar-toggle" data-toggle='collapse' data-target='.navbar-collapse' >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">注册</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">登入</a>
         <% else %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi!, <%= current_user.email %>
@@ -28,7 +32,7 @@
         <% end %>
 
       </ul>
-    </div>
+
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->

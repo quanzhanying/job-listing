@@ -3431,11 +3431,13 @@
 /* Banner */
 
 	#banner {
-		background-image:  url('http://www.1stcredit.com/wp-content/uploads/2012/03/Featured_WorkForUs.jpg');
+		background:  url('http://www.1stcredit.com/wp-content/uploads/2012/03/Featured_WorkForUs.jpg') no-repeat right center;
 		background-size: cover;
 		color: #ffffff;
 		padding: 0 0 0 0;
 		text-align: center;
+		margin-left: 0px;
+		margin-right: 0px;
 	}
 
 		#banner input, #banner select, #banner textarea {
