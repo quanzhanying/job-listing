@@ -17,3 +17,29 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+  color: #EEEEEE;
+
+}
+.container-nil{
+      background: #757575;
+}
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
+    background: white;
+    margin-top: -0.15em;
+    background: #757575;
+}
+.img-thhumbnail{
+  height: 300px;
+  width: 300px;
+}
+body {
+    padding-top: 65px;
+}
