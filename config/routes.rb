@@ -16,5 +16,5 @@ end
   end
 
   
-  root 'welcome#index'
+  root 'job#index'
 end
