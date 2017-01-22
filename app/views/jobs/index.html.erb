@@ -1,31 +1,11 @@
-<!--
-<div class="row">
-  <div class="col-sm-9 col-lg-8 col-lg-offset-2">
-    <form accept-charset="UTF-8" action="/jobs/search" class="jobs-search-form" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-      <div class="input-group">
-        <input type="text" class="form-control" name="q" value="" placeholder="职位搜索">
-
-        <span class="input-group-btn">
-          <button type="submit" class="btn btn-default">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </span>
-      </div>
-</form>
-</div>
-</div> -->
 <%= form_tag jobs_path, :method => "get" do %>
     <div class="searchform">
         <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
         <span>
             <%= submit_tag "搜索", :title => nil, :description => nil, class: "searchbutton" %>
-            <!-- <input type="submit" value="点 击" class="mike"> -->
         </span>
     </div>
 <% end %>
-<!-- <div class="pull-right">
-  <%#= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
-</div> -->
 <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         排序

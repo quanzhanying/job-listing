@@ -4,7 +4,7 @@
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
         <div class="form-signin">
-            <%= f.input :email, labe:'邮箱地址', required: true, autofocus: true %>
+            <%= f.input :email, label:'邮箱地址', required: true, autofocus: true %>
         </div>
         <div class="text-center form-signin">
             <button class="btn btn-danger" type="submit">发送密码重置教程</button>

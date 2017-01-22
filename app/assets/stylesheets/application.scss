@@ -17,16 +17,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@media (min-width: 768px) {
+    .body {
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .navbar {
+        border-radius: 0; //圆角为0
+        position: relative;
+        min-height: 50px;
+        margin-bottom: 20px;
+        border: 0 solid transparent;
+    }
+}
+
+.container-fluid {
+    border: 0 solid transparent;
+    // width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
 
 .navbar-default {
     background-color: #424242; //背景颜色
     border-color: #E0E0E0; //边框色
     margin-bottom: 0; //底部 margin 不撑开距离
-}
-@media (min-width: 768px) {
-    .navbar {
-        border-radius: 0; //圆角为0
-    }
+    border-bottom-width: 0;
 }
 
 .navbar-default .navbar-brand {
@@ -73,55 +92,53 @@
 }
 
 .navbar-right {
-    margin-right: 15px;
+    margin-right: 0;
 }
 
-.pull-left {
-    margin-left: 10px;
-}
-
-.container .jumbotron {
-    background-image: url('https://ooo.0o0.ooo/2017/01/15/587b281665253.png');
-    background-repeat: no-repeat;
+.jumbotron2 {
+    // background-image: url('https://ooo.0o0.ooo/2017/01/15/587b281665253.png');
+    background-image: url('https://ooo.0o0.ooo/2017/01/22/58841ff3b9084.png');
+    // background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 50px; //内部的底部边距，这样按钮不会很靠近底部了
+    padding-top: 250px; //内部的底部边距，这样按钮不会很靠近底部了
+    padding-bottom: 100px; //内部的底部边距，这样按钮不会很靠近底部了
     margin-top: 0; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，
-    border-radius: 0; //圆角为0
+    border-radius: 0;
 }
 
-.container .jumbotron1 {
+.jumbotron1 {
     display: block;
-    background-size: cover;
-    margin: -10px 0 0 20px; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+    background: #CFD8DC;
+    // margin: 0 -15px -15px 0; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
     border-radius: 0; //圆角为0
 }
 
-.jumbotron .h1,
-.jumbotron h1 {
+.jumbotron2 .h1,
+.jumbotron2 h1 {
     text-align: center; //文字左对齐
-    color: #222; //字体颜色
-    padding: 50px 20px 0; //上50px，左右20px，下0
+    color: #FB8C00; //字体颜色
+    padding: 20px; //上50px，左右20px，下0
 }
 
-.jumbotron p {
+.jumbotron2 p {
     margin: 0; //上下左右margin为0
     font-size: 26px; //字体大小
-    max-width: 600px; //最大宽度
+    // max-width: 600px; //最大宽度
     background-color: rgba(250, 250, 250, 0.5); //背景颜色含透明度
     padding: 20px; //上下左右padding为20px
     text-align: center; //文字居中
-    color: #222; //字体颜色
-    border-bottom-right-radius: 3px; //右下角圆边
-    border-bottom-left-radius: 3px; //左下角圆边
+    color: #212121; //字体颜色
+    // border-bottom-right-radius: 3px; //右下角圆边
+    // border-bottom-left-radius: 3px; //左下角圆边
 }
 
 .title {
-    background-color: rgba(250, 250, 250, 0.5); //背景颜色含透明度
-    max-width: 600px; //最大宽度
+    background-color: rgba(250, 250, 250, 0.7); //背景颜色含透明度
+    // max-width: 600px; //最大宽度
     margin-top: 50px; //和顶部拉开距离
     margin-bottom: 0; //这样就可以紧接息面的描述文字
-    border-top-right-radius: 3px; //右上角圆边
-    border-top-left-radius: 3px; //左上角圆边
+    // border-top-right-radius: 3px; //右上角圆边
+    // border-top-left-radius: 3px; //左上角圆边
 }
 
 .btn-danger {
@@ -159,30 +176,14 @@
     margin: 10px;
     text-align: center;
     top: 0;
+    background-color: transparent;
 }
 
 .thumbnail {
     border: 0 none;
     margin-top: 30px;
     margin-down: 30px;
-}
-
-.footer-section {
-    margin: 0 0 20px;
-    display: block;
-    height: 130px;
-    background: #E0E0E0;
-}
-
-.footer-section .footer-content {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 768px;
-    padding: 0;
-    position: relative;
-    color: #333;
+    background-color: transparent;
 }
 
 .custab {
@@ -196,4 +197,104 @@
 .custab:hover {
     box-shadow: 3px 3px 0 transparent;
     transition: 0.5s;
+}
+
+#qz-footer {
+    height: 200px;
+    box-sizing: border-box;
+    // position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-section {
+    display: block;
+    width: 100%;
+    height: 200px;
+    background: #E0E0E0;
+    margin-top: 0;
+}
+
+.contact-line-block {
+    float: right;
+    width: 40%;
+    padding: 50px 0 0;
+}
+
+.des-block {
+    float: right;
+    width: 60%;
+    padding: 50px 0 0;
+}
+
+.column-block {
+    text-align: center;
+}
+
+.column-left {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+.column-center {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+.column-right {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+.footer-section .footer-content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    color: #333;
+}
+
+.img-block {
+    float: left;
+    width: 58px;
+}
+
+.introduce {
+    // width: 380px;
+    padding-bottom: 50px;
+    // padding-left: 50px;
+}
+
+.right-block {
+    // width: 380px;
+    margin: 0 20px;
+}
+
+.introduce-block {
+    color: #666;
+    text-align: left;
+    margin: 0;
+    float: left;
+    padding: 10px 0 0 8px;
+    width: 328px;
+}
+
+.fline {
+    padding-top: 30px;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid rgba(151,151,151,0.6);
+    clear: both;
+}
+
+.footer-content .copyright-block {
+    width: 100%;
+    padding: 0;
+    display: block;
+    float: bottom;
 }

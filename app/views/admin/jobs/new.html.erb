@@ -1,16 +1,11 @@
-
 <br>
-<legend>发布offer</legend>
-
+<legend>发布新职位</legend>
 <%= simple_form_for @job do |f| %>
-
-<%= f.input :title, type:"text",placeholder:"职位名称,如移动互联网产品经理" %>
-<%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email%>
-<%= f.input :is_hidden%>
-
-<%= f.submit "Submit", class:"text-center btn btn-danger"%>
-
+    <%= f.input :title, type:"text",placeholder:"职位名称,如移动互联网产品经理" %>
+    <%= f.input :description %>
+    <%= f.input :wage_lower_bound, :label => "薪资下限" %>
+    <%= f.input :wage_upper_bound, :label => "薪资上限" %>
+    <%= f.input :contact_email%>
+    <%= f.input :is_hidden%>
+    <%= f.submit "发布", class:"text-center btn btn-danger"%>
 <% end %>

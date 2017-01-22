@@ -5,7 +5,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="deviseposition">
                 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                    <div class="form-inputs">
+                    <div class="form-signin">
                         <%= f.input :email, label: '邮箱地址',required: false, autofocus: true %>
                         <%= f.input :password, label: '密码',required: false %>
                         <%= f.input :remember_me, label: '记住我',as: :boolean if devise_mapping.rememberable? %>

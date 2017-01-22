@@ -4,9 +4,9 @@ class JobsController < ApplicationController
     def index
         @jobs = case params[:order]
                 when 'by_lower_bound'
-                    Job.published.order('wage_lower_bound DESC')
+                    Job.published.order('wage_lower_bound DESC').search(params[:search])
                 when 'by_upper_bound'
-                    Job.published.order('wage_upper_bound DESC')
+                    Job.published.order('wage_upper_bound DESC').search(params[:search])
                 else
                     Job.published.recent.search(params[:search])
                 end
@@ -52,16 +52,6 @@ class JobsController < ApplicationController
         @job.destroy
         redirect_to jobs_path
     end
-
-    # def publish
-    #   @job = Job.find_by_token(params[:id])
-    #
-    #   flash[:notice] = "感謝您刊登此資訊，我們會寄一封信件到您信箱確認您刊登 email 有效，等您驗證過後，職缺會立即刊登"
-    #   PublishJobService.new(@job).send_verfication_email!
-    #
-    #   redirect_to root_path
-    #
-    # end
 
     private
 
