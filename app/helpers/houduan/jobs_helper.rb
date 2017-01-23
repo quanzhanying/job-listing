@@ -1,0 +1,2 @@
+module Houduan::JobsHelper
+end

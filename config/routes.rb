@@ -3,6 +3,24 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :resumes
   end
+  namespace :qianduan do
+    resources :jobs
+  end
+  namespace :houduan do
+    resources :jobs
+  end
+  namespace :quanzhan do
+    resources :jobs
+  end
+  namespace :chanpin do
+    resources :jobs
+  end
+  namespace :mishu do
+    resources :jobs
+  end
+  namespace :shouhou do
+    resources :jobs
+  end
   root 'welcome#index'
   namespace :admin do
     resources :jobs do

@@ -10,17 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111113216) do
+ActiveRecord::Schema.define(version: 20170123082555) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.integer  "wage_upper_bound", limit: 8
     t.integer  "wage_lower_bound", limit: 8
     t.string   "contact_email"
     t.boolean  "is_hidden",                  default: true
+    t.boolean  "is_qianduan",                default: false
+    t.boolean  "is_houduan",                 default: false
+    t.boolean  "is_quanzhan",                default: false
+    t.boolean  "is_chanpin",                 default: false
+    t.boolean  "is_mishu",                   default: false
+    t.boolean  "is_shouhou",                 default: false
   end
 
   create_table "resumes", force: :cascade do |t|

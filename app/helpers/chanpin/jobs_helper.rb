@@ -1,0 +1,2 @@
+module Chanpin::JobsHelper
+end
