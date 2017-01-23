@@ -10,7 +10,6 @@ class JobsController < ApplicationController
     #   else
     #     Job.published.recent
     #   end
-    # @categories = Category.all
     @jobs = Job.all
     if params[:search]
       @jobs = Job.search(params[:search]).order("created_at DESC")
