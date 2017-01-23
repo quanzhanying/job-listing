@@ -35,7 +35,15 @@
 //   box-shadow: 3px 3px 0px transparent;
 //   transition: 0.5s;
 // }
-
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  position: relative;
+  box-sizing: border-box;;
+  padding-bottom: 50px;
+}
 
 .container-fluid .jumbotron {
   // background-image: url('https://ooo.0o0.ooo/2017/01/20/5881df36087a0.jpg');
@@ -181,6 +189,24 @@ button.btn span {
 
 .container {//job首页的div
   margin-top: 60px;
+}
+
+//footer
+footer.container-fluid {
+  margin: 0 -15px;
+}
+.container-fluid .index-footer {
+  position: absolute;
+  text-align: center;
+  background-color: #A9A9A9;
+  height: 50px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.container-fluid .index-footer {
+  text-align: center;
+  padding: 17px;
 }
 //
 // .navbar-default .navbar-brand {   //更改logo字体颜色和对齐方式
