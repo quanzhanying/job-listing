@@ -15,6 +15,6 @@ end
     resources :resumes
   end
 
-  
-  root 'job#index'
+
+  root 'jobs#index'
 end
