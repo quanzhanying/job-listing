@@ -7,16 +7,22 @@
       <br>
       凭借自己的女里和天分也会变 Winner
     </p> -->
+    <div class="index-word" align="center">
+      <p class="p1">Find the right job.</p>
+      <p class="p2">Right now.</p>
+    </div>
     <div class="index-search" align="center">
     <%= form_tag( jobs_path, :method => "get", class: "navbar-form", role: "search") do%>
       <div class="form-group">
 
-        <%= text_field_tag :search, params[:search], placeholder: "Search Job", class: "form-control-self" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control-self" %>
         <button type="submit" class="btn btn-default">
-          <span class="glyphicon glyphicon-search"></span>
+          <span class="search-button">Find Jobs</span>
         </button>
         <!-- <%= submit_tag "Search", :name => nil, class: "btn btn-default" %> -->
       </div>
+
+
     <% end %>
   </div>
 

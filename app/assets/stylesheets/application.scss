@@ -78,21 +78,68 @@
 //
 // }
 .index-search {
-  padding-top: 100px;
+  padding-top: 20px;
 }
 .form-control-self {
 
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
+  height: 44px;
+  padding: 6px 0px;
+  font-size: 16px;
+  line-height: 20px;
   color: #555555;
   background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 500px;
+  text-align:center;
+  width: 680px;
+  vertical-align: middle;
+  border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
+.jumbotron .form-group {
+  width: 880px;
+}
+.jumbotron .form-group .btn {
 
+  border-color: #51AC51;
+  line-height: 30px;
+  margin-left: -5px;
+  font-size: 16px;
+  padding-left: 26px;
+  padding-right: 26px;
+  border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+button.btn {
+  vertical-align: middle;
+  background-color: #51AC51;
+}
+button.btn span {
+  color: #FFFFFF;
+}
+//首页图片上文字
+.index-word {
+  padding-top: 100px;
+  width: 790px;
+  margin: 0 auto;
+  text-align: left;
+}
+.index-word p{
+  display: inline-block;
+  font-size: 4rem;
+  color: #FFFFFF;
+  font-family: Lato,Helvetica,Arial,sans-serif;
+}
+.index-word p.p2 {
+  font-weight: bolder;
+}
+.index-word p.p1 {
+  font-weight: lighter;
+}
+//
 .title{
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
   text-align: center;
@@ -130,6 +177,10 @@
   // height: 50px;//高度
   margin-top: 0;//顶部 margin 不撑开距离
   margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+.container {//job首页的div
+  margin-top: 60px;
 }
 //
 // .navbar-default .navbar-brand {   //更改logo字体颜色和对齐方式
