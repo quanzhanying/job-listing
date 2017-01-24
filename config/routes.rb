@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   namespace :shouhou do
     resources :jobs
   end
+  namespace :yunxing do
+    resources :jobs
+  end
+  namespace :ceshi do
+    resources :jobs
+  end
   root 'welcome#index'
   namespace :admin do
     resources :jobs do

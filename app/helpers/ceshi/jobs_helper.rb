@@ -1,0 +1,2 @@
+module Ceshi::JobsHelper
+end
