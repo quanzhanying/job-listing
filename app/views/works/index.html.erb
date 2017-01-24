@@ -1,0 +1,15 @@
+<div>
+  <%= link_to("new work", new_work_path, class: "btn btn-default") %>
+</div>
+
+
+<table class="table table-boldered">
+  <% @works.each do |w| %>
+  <tr>
+    <td><%= link_to(w.title, work_path(w)) %></td>
+    <td><%= link_to("edit", edit_work_path(w)) %></td>
+    <td><%= link_to("delete", work_path(w), method: :delete, :data => {:confirm => "sure"}) %></td>
+    <td><%= w.created_at %></td>
+  </tr>
+  <% end %>
+</table>
