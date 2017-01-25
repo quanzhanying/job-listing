@@ -7,7 +7,17 @@ class Admin::JobsController < ApplicationController
   layout "admin"
 
   def index
-    @jobs = current_user.jobs
+    # @jobs = current_user.jobs
+    @jobs = case params[:order]
+    when '1'
+        Job.where(:category_id => ['1'])
+      when '2'
+        Job.where(:category_id => ['2'])
+      when '3'
+        Job.where(:category_id => ['3'])
+      else
+        Job.all
+      end
   end
 
   def show

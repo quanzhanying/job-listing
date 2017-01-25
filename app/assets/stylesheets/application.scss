@@ -44,6 +44,9 @@ body {
   box-sizing: border-box;;
   padding-bottom: 50px;
 }
+.col-md-12 {
+  margin-top: 50px; //后台首页与顶端拉开距离
+}
 
 .container-fluid .jumbotron {
   // background-image: url('https://ooo.0o0.ooo/2017/01/20/5881df36087a0.jpg');
