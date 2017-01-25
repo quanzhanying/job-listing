@@ -236,54 +236,96 @@ Image credits: unsplash.com
 }
 
 
-.cuadro_intro_hover{
-        padding: 0px -15px 0px -15px;
-		position: relative;
-		overflow: hidden;
-		height: 200px;
-	}
-	.cuadro_intro_hover:hover .caption{
-		opacity: 1;
-		transform: translateY(-150px);
-		-webkit-transform:translateY(-150px);
-		-moz-transform:translateY(-150px);
-		-ms-transform:translateY(-150px);
-		-o-transform:translateY(-150px);
-	}
-	.cuadro_intro_hover img{
-		z-index: 4;
-	}
-	.cuadro_intro_hover .caption{
-		position: absolute;
-		top:150px;
-		-webkit-transition:all 0.3s ease-in-out;
-		-moz-transition:all 0.3s ease-in-out;
-		-o-transition:all 0.3s ease-in-out;
-		-ms-transition:all 0.3s ease-in-out;
-		transition:all 0.3s ease-in-out;
-		width: 100%;
-	}
-	.cuadro_intro_hover .blur{
-		background-color: rgba(0,0,0,0.7);
-		height: 300px;
-		z-index: 5;
-		position: absolute;
-		width: 100%;
-	}
-	.cuadro_intro_hover .caption-text{
-		z-index: 10;
-		color: #fff;
-		position: absolute;
-		height: 300px;
-		text-align: center;
-		top:-20px;
-		width: 100%;
-	}
-.beijing{
-  background-color: #C0C0C0;
-  margin-top: -4em;
+
+.promos {
+    border-bottom: 2px solid #fff;
 }
-.qiye{
-  color: black;
-  text-align: center;
+.row {
+    position: relative;
+    z-index: 1;
+}
+article, aside, footer, header, nav, main, section, summary, details, hgroup, figure, figcaption {
+    display: block;
+}
+.promos ul {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    margin-left: 1.17647em;
+}
+ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, form, fieldset, input, legend, pre, abbr, button {
+    margin: 0;
+    padding: 0;
+}
+.promos .promo-position {
+    border-right: none;
+}
+
+.promos .promo-position {
+    list-style-type: none;
+    box-sizing: border-box;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+.large-3 {
+    width: 25%;
+}
+.column {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    float: left;
+    min-height: 2px;
+}
+ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, form, fieldset, input, legend, pre, abbr, button {
+    margin: 0;
+    padding: 0;
+}
+
+.promos .promo {
+    display: block;
+    background-position: center center;
+    height: 200px;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+.promo-accessories {
+    background-size: 736px 200px;
+    background-repeat: no-repeat;
+    background-image: url(http://i1.hexunimg.cn/2013-08-16/157153352.jpg);
+}
+a {
+    color: #0070c9;
+}
+.promos .promo-label {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+.promo-ipad-pro {
+    background-size: 736px 200px;
+    background-repeat: no-repeat;
+    background-image: url(http://www.vancitybuzz.com/wp-content/uploads/2016/02/shutterstock_213638911-1-984x500.jpg);
+}
+.promo-airpods {
+    background-size: 736px 200px;
+    background-repeat: no-repeat;
+    background-image: url(http://www.theonlinecitizen.com/wp-content/uploads/2015/02/apple.jpg?w=640);
+}
+.promo-apple-tv {
+    background-size: 736px 200px;
+    background-repeat: no-repeat;
+    background-image: url(http://d.ibtimes.co.uk/en/full/1468375/yahoo-hires-mckinsey-help-company-reorganise.jpg);
 }
