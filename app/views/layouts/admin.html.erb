@@ -14,9 +14,12 @@
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-2" style="margin-top: 100px;">
                 <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-                  <li class="active"><%= link_to("Jobs", admin_jobs_path ) %> </li>
+                  <li class="admin-sider"><%= link_to("职位列表", admin_jobs_path ) %> </li>
+                  <li class="admin-sider"><%= link_to("新增职位", new_admin_job_path ) %> </li>
+                  <li class="admin-sider"><%= link_to("职位分类", admin_jobs_path ) %> </li>
+                  <li class="admin-sider"><%= link_to("隐藏的职位", admin_jobs_path ) %> </li>
                 </ul>
               </div>
 

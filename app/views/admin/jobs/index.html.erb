@@ -9,14 +9,14 @@
         <li><%= link_to("3", admin_jobs_path(:order => "3")) %></li>
     </ul>
   </div> -->
-  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group btn-group-justified button-a" role="group" aria-label="...">
     <div class="btn-group" role="group">
       <button type="button" class="btn btn-default">
         <%= link_to("全部职位", admin_jobs_path) %>
       </button>
     </div>
     <div class="btn-group" role="group">
-      <button type="button" class="btn btn-default">
+      <button type="button" class="btn btn-default" >
         <%= link_to("开发工程师", admin_jobs_path(:order => "1")) %>
       </button>
     </div>
@@ -31,9 +31,9 @@
       </button>
     </div>
   </div>
-  <div class="pull-right">
+  <!-- <div class="pull-right">
     <%= link_to("Add a job", new_admin_job_path, class: "btn pull-right") %>
-  </div>
+  </div> -->
 
   <table class="table talbe-boldered table-striped custab">
     <thead>

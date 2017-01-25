@@ -29,16 +29,15 @@
               </ul>
             </li>
           </ul> -->
-          <%= form_tag( jobs_path, :method => "get", class: "navbar-form navbar-left", role: "search") do%>
+          <!-- <%= form_tag( jobs_path, :method => "get", class: "navbar-form navbar-left", role: "search") do%>
             <div class="form-group">
               <%= text_field_tag :search, params[:search], placeholder: "Search Job", class: "form-control" %>
             </div>
-            <button type="submit" class="btn btn-default nav-search">
+            <button type="submit" class="btn btn-default">
               <span class="glyphicon glyphicon-search"></span>
-            </button>
+            </button> -->
               <!-- <%= submit_tag "Search", :name => nil, class: "btn btn-default" %> -->
-          <% end %>
-
+          <!-- <% end %> -->
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">How does it work?</a></li>
             <% if !current_user %>

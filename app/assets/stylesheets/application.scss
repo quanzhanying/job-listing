@@ -54,13 +54,13 @@ body {
   background-color: #D4C063;
   background-size: cover;
   padding: 0px;
-  height:300px;
+  height:400px;
   position: relative;
   //   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
   margin: 51px -15px 0px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
   border-radius: 0;//圆角为0
-
 }
+
 //  .container-fluid .jumbotron:after{
 //   content: 'fdsf';
 //   color: red;
@@ -79,6 +79,8 @@ body {
 .index-search {
   width: 1000px;
   margin:auto;
+  z-index: 3;
+  padding-top: 20px;
 }
 // .form-control {
 //   min-width: 400px;
@@ -88,9 +90,6 @@ body {
 //   margin: auto;
 //
 // }
-.index-search {
-  padding-top: 20px;
-}
 .form-control-self {
 
   height: 44px;
@@ -124,7 +123,7 @@ body {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
 }
-button.btn {
+.jumbotron button.btn {
   vertical-align: middle;
   background-color: #51AC51;
 }
@@ -172,6 +171,9 @@ button.btn span {
   color: white;
 }
 
+#company {
+  padding-top: 40px;
+}
 .caption {
   margin: 30px;
   text-align: center;
@@ -184,15 +186,37 @@ button.btn span {
   margin-top: 60px;
 }
 
+//nav
 .navbar-default {           //更改导航栏背景相关
   // height: 50px;//高度
   margin-top: 0;//顶部 margin 不撑开距离
   margin-bottom: 0;//底部 margin 不撑开距离
 }
+.navbar-brand {
+  padding-left: 100px;
+  padding-right: 30px;
+}
+.e-job {
+  font-family: "Trebuchet MS";
+  font-size: 30px;
+  font-style: italic;
+  color: #D4C063;
+  padding: 5px;
+}
+.navbar-right {
+  padding-right: 100px;
+}
 
 .container {//job首页的div
   margin-top: 60px;
 }
+.form-control { //搜索中字体位置，中间
+  text-align: center;
+}
+.nav-search {
+  background-color: #51AC51;
+}
+
 
 //footer
 footer.container-fluid {
@@ -200,9 +224,8 @@ footer.container-fluid {
 }
 .container-fluid .index-footer {
   position: absolute;
-  text-align: center;
   background-color: #A9A9A9;
-  height: 50px;
+  height: 150px;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -211,8 +234,75 @@ footer.container-fluid {
   text-align: center;
   padding: 17px;
 }
+.index-footer li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.index-footer li.first-li {
+  padding-left:300px;
+}
+.index-footer li a{
+  display: block;
+  padding: 8px 30px;
+  color: #787916;
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  font-size: 15px;
+}
+
+.index-footer .footer-top {
+  padding-top: 20px;
+  text-align: center;
+}
+.index-footer .footer-bottom {
+  padding-bottom: 30px;
+  margin-bottom:0px;
+}
+
+//admin-sider
+.admin-sider {
+  background-color: #D2F096;
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  font-size: 15px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 4px;
+}
+.job-sider {
+  background-color: #FFF79F;
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  font-size: 15px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 4px;
+}
+.job-sider-1 {
+  background-color: #A8CC61;
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  font-size: 20px;
+
+  margin:  20px 0;
+  text-align: center;
+  border-radius: 4px;
+}
+.job-sider-1 a {
+  color: #FFF;
+}
+
+.button-a {
+  padding: auto;
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  font-size: 20px;
+}
+.text-center {
+  margin: 30px 0;
+}
+.btn-group-justified {
+  margin: 20px 0;
+}
 //
-// .navbar-default .navbar-brand {   //更改logo字体颜色和对齐方式
+// .navbar-defbault .navbar-brand {   //更改logo字体颜色和对齐方式
 //    color: #EF6C00;//字体颜色
 //    padding: 10px 15px;//上下10px,左右15px
 //    line-height: 30px;//文字行高

@@ -2,6 +2,17 @@ class JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
+    @categories = Category.all
+    @jobs = case params[:cate]
+     when '1'
+        Job.all.where(:category_id => ['1'])
+      when '2'
+        Job.all.where(:category_id => ['2'])
+      when '3'
+        Job.all.where(:category_id => ['3'])
+      else
+        Job.all
+      end
     # @jobs = case params[:order]
     #   when 'by_lower_bound'
     #     Job.published.order('wage_lower_bound DESC')
@@ -10,12 +21,13 @@ class JobsController < ApplicationController
     #   else
     #     Job.published.recent
     #   end
-    @jobs = Job.all
-    if params[:search]
-      @jobs = Job.search(params[:search]).order("created_at DESC")
-    else
-      @jobs = Job.all.order("created_at DESC")
-    end
+
+    # @jobs = Job.all
+    # if params[:search]
+    #   @jobs = Job.search(params[:search]).order("created_at DESC")
+    # else
+    #   @jobs = Job.all.order("created_at DESC")
+    # end
   end
 
   def show
