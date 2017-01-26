@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cities
   devise_for :users
   resources :jobs do
     resources :resumes

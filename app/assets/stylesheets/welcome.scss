@@ -244,20 +244,12 @@ Image credits: unsplash.com
     position: relative;
     z-index: 1;
 }
-article, aside, footer, header, nav, main, section, summary, details, hgroup, figure, figcaption {
-    display: block;
-}
+
 .promos ul {
     margin: 0;
     padding: 0;
 }
-ul, ol {
-    margin-left: 1.17647em;
-}
-ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, form, fieldset, input, legend, pre, abbr, button {
-    margin: 0;
-    padding: 0;
-}
+
 .promos .promo-position {
     border-right: none;
 }
@@ -272,7 +264,7 @@ ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, f
 .large-3 {
     width: 25%;
 }
-.column {
+.column-1 {
     box-sizing: border-box;
     position: relative;
     z-index: 1;
@@ -281,27 +273,20 @@ ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, f
     float: left;
     min-height: 2px;
 }
-ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, form, fieldset, input, legend, pre, abbr, button {
-    margin: 0;
-    padding: 0;
-}
+
 
 .promos .promo {
     display: block;
     background-position: center center;
     height: 200px;
 }
-a:link, a:visited {
-    text-decoration: none;
-}
+
 .promo-accessories {
     background-size: 736px 400px;
     background-repeat: no-repeat;
     background-image: url(http://i1.hexunimg.cn/2013-08-16/157153352.jpg);
 }
-a {
-    color: #0070c9;
-}
+
 .promos .promo-label {
     position: absolute;
     clip: rect(1px 1px 1px 1px);

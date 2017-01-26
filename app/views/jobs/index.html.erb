@@ -22,6 +22,7 @@
           职缺</td>
       <td>薪资下限</td>
       <td>薪资上限</td>
+      <td>城市</td>
       <td>刊登时间</td>
     </tr>
   </thead>
@@ -37,6 +38,9 @@
     <td>
       <%= job.wage_upper_bound %>
     </td>
+            <td>
+              <%= job.cities.map(&:name).sort.join(", ") %>
+            </td>
     <td>
       <%= job.created_at %>
     </td>

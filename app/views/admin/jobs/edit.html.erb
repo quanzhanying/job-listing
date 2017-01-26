@@ -16,5 +16,13 @@
 <%= f.input :is_shouhou, :label => "售后"%>
 <%= f.input :is_ceshi, :label => "测试专员"%>
 <%= f.input :is_yunxing, :label => "运行维护"%>
+<div class="field">
+  <%= f.label "Area of City" %><br />
+  <%= f.collection_check_boxes :city_ids, City.all, :id, :name do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
   <%= f.submit "Submit" %>
   <% end %>

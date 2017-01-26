@@ -48,6 +48,6 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :is_qianduan, :is_houduan, :is_quanzhan, :is_chanpin, :is_mishu, :is_shouhou, :is_yunxing, :is_ceshi)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :is_qianduan, :is_houduan, :is_quanzhan, :is_chanpin, :is_mishu, :is_shouhou, :is_yunxing, :is_ceshi, :name, city_ids:[])
   end
 end
