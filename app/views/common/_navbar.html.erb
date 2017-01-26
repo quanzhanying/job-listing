@@ -2,8 +2,25 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Job Listing </a>
+      <a class="navbar-brand" href="/"><img src='<%= image_url 'orange.png' %>' ></a>
+      <a class="navbar-brand" href="/jobs"></a>
     </div>
+    <ul class="nav navbar-nav">
+  <li class="active"><a href="/jobs">全部工作</a></li>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">工作分类
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="/qianduan/jobs">前端工程师</a></li>
+      <li><a href="/houduan/jobs">后端工程师</a></li>
+      <li><a href="/quanzhan/jobs">全栈工程师</a></li>
+      <li><a href="/yunxing/jobs">运行维护</a></li>
+      <li><a href="/chanpin/jobs">产品经理</a></li>
+      <li><a href="/mishu/jobs">秘书</a></li>
+      <li><a href="/shouhou/jobs">售后专员</a></li>
+      <li><a href="/ceshi/jobs">测试专员</a></li>
+    </ul>
+</ul>
     <!-- Collext the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
