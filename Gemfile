@@ -28,6 +28,9 @@ gem 'simple_form'
 gem 'awesome_rails_console'
 gem 'font-awesome-rails'
 gem 'carrierwave'
+gem "will_paginate"
+gem 'ransack'
+gem 'seo_helper'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

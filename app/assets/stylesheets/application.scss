@@ -18,3 +18,256 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body {
+    //background: #e2dede;
+    background-image: linear-gradient(45deg, rgba(194, 233, 221, 0.5) 1%, rgba(104, 119, 132, 0.5) 100%), linear-gradient(-45deg, #494d71 0%, rgba(217, 230, 185, 0.5) 80%);
+}
+
+.navbar {
+  margin-bottom: 0px;
+  background-color: #212121;
+  border-color: #212121;
+  border-radius: 0px;
+  //background-color: black;
+  //border: 0px black;
+}
+
+.navbar-default .navbar-brand {
+   color: #ffffff;
+   padding: 10px 15px;
+   line-height: 30px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+  background-color: #66BB6A;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: #66BB6A;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #66BB6A;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #66BB6A;
+    color: #212121;
+}
+
+.navbar-brand > img {
+    display: inline-block;
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+}
+
+.jumbotron {
+  background-image: url('workspace-desk-from-above-picjumbo-com.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+  border-radius: 0px !important;
+//  border: 1px solid red;
+}
+
+.po {
+  //border: 1px solid red;
+  margin-top: 200px;
+  margin-left: -100px;
+  margin-right: -100px;
+  width: 100%;
+  height: 220px;
+  overflow: auto;
+  background: rgba(0,0,0,0.5);
+  padding-right: 20px;
+}
+
+.title {
+  //font-family: "Helvetica Neue";
+  font-weight: 400;
+  color: white !important;
+  text-align: right;
+  margin-top: 20px;
+  //margin-bottom: 80px;
+  z-index: 10000;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 60px;
+  text-align: right;
+  color: white;
+  top: 12px;
+  font-weight: 400;
+}
+
+.lead {
+  margin-bottom: 60px;
+  margin-top: -45px;
+  text-align: right;
+  color: white;
+}
+
+.caption {
+  margin: 10px;
+  text-align: center;
+  top: 15px;
+}
+
+.thumbnail {
+  border: 0 none;
+  //border: 1px solid red;
+  box-shadow: none;
+  margin-top: 60px;
+}
+
+.img-thhumbnail {
+  margin-top: 15px;
+}
+
+.social-icons {
+  margin-top: 60px;
+  width: 120px;
+  margin-left: 46%;
+  margin-bottom: 20px;
+}
+
+.information-sec {
+  background: #f9f9f9;
+}
+
+.custab{
+  border: 1px solid #ccc;
+
+  padding: 5px;
+  margin: 7% 0;
+  box-shadow: 3px 3px 2px #ccc;
+
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #EF6C00;
+    border-color: #EF6C00;
+}
+
+.btn-danger:hover {
+    background-color: #E65100;
+    border-color: #E65100;
+}

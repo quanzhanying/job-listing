@@ -1,10 +1,15 @@
-<h1>投简历到 <%= @job.title %></h1>
+<div class="col-md-4 col-md-offset-4" style="margin: auto;">
+  <div class="form-group" style="width: 500px;">
+    <h3>Sumibt resume to <%= @job.title %></h3>
+  </div>
+  <hr>
+  <div class="form-group" style="width: 1000px; ">
+    <%= simple_form_for [@job, @resume] do |f| %>
+      <%= f.input :content, input_html: { class: "form-control"} %>
+      <%= f.input :attachment %>
 
-<hr>
-
-<%= simple_form_for [@job, @resume] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :attachment %>
-  
-  <%= f.submit "Submit" %>
-<% end %>
+      <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary" %>
+      <%= link_to "Cancel", job_path(@job), class: "btn btn-primary"%>
+    <% end %>
+  </div>
+</div>
