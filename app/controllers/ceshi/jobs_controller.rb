@@ -1,13 +1,12 @@
 class Ceshi::JobsController < ApplicationController
   def index
-    @jobs = Job.where(is_ceshi: true, is_hidden: false)
-    case params[:order]
-            when 'by_lower_bound'
-              Job.where(is_hidden: false).order('wage_lower_bound DESC')
+    @jobs = case params[:order]
+             when 'by_lower_bound'
+              Job.where(is_ceshi: true).published.order('wage_lower_bound DESC')
             when 'by_upper_bound'
-              Job.where(is_hidden: false).order('wage_upper_bound DESC')
+              Job.where(is_ceshi: true).published.order('wage_upper_bound DESC')
             else
-              Job.where(is_hidden: false).order("created_at DESC")
+              Job.where(is_ceshi: true).published.order("created_at DESC")
             end
   end
   def show

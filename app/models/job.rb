@@ -15,4 +15,5 @@ class Job < ApplicationRecord
     self.save
   end
   has_and_belongs_to_many :cities
+    scope :published, -> { where(is_hidden: false) }
 end
