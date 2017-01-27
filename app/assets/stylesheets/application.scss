@@ -21,10 +21,12 @@
  .jumbotron {
   // background-image:url('http://y.photo.qq.com/img?s=n0m7YMg0L&l=y.jpg');
 
-  background-image:url('http://benharperdigital.com/wp-content/uploads/2016/07/student_success.jpg');
+  background-image:url('https://ww4.sinaimg.cn/large/006tKfTcjw1fc0809s7rdj31jk0u6jw2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 110px;
+  padding-bottom: 100px;
+  margin-bottom: 0;
+
 }
 
 .title {
@@ -32,11 +34,14 @@
   text-align: left;
   margin-top: 200px;
   margin-bottom: 80px;
+  margin-left: 60px;
+  color: #333333;
 }
 
 .slogan {
   margin-top: 10px;
   margin-bottom: 50px;
+  margin-left: 60px;
   text-align: left;
   color: white;
   top: 12px;
@@ -44,11 +49,13 @@
 
 .lead {
   margin-bottom: 60px;
+  margin-left: 60px;
   text-align: left;
   color: white;
 }
 .caption {
   margin: 30px;
+  margin-left: 60px;
   text-align: center;
   top: 20px;
 }
@@ -57,6 +64,7 @@
     border: 0 none;
     box-shadow: none;
     margin-top: 60px;
+    margin-left: 60px;
 }
 
 
@@ -80,17 +88,37 @@
 .footer {
   width: 20px;
   height: 20px;
+  margin-bottom: 20px;
 }
 
 
 
 
 .navbar-default {
-  background-color: #f6f6f6;
+  background-color: #d9534f;//背景颜色
+  border-color: #d9534f;//边框色
+  margin-bottom: 0px;
+  margin-left:-15px;
+  margin-right:-15px;
+  padding-left:40px;
+  padding-right:40px;
+  border-radius:0;
+}
+.navbar-default .navbar-brand{
+  color: white;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #333333;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+.navbar-default .navbar-nav > li > a{
+  color: white;
 }
 
+
 .logo-small {
-    color: #3ceda5;
+    color: #d9534f;
     font-size: 50px;
 }
 
@@ -107,15 +135,15 @@
 //旋转木马
 .carousel-control.right, .carousel-control.left {
     background-image: none;
-    color: #f4511e;
+    color: #d9534f;
 }
 
 .carousel-indicators li {
-    border-color: #f4511e;
+    border-color: #d9534f;
 }
 
 .carousel-indicators li.active {
-    background-color: #f4511e;
+    background-color: #d9534f;
 }
 
 .item h4 {
