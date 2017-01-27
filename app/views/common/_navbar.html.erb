@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">2017最新招聘</a>
+            <a class="navbar-brand" href="/">待修改li table bgp 内容栏目</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,7 +20,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <% if current_user.admin? %>
-                            <li> <%= link_to("🛠管理员面板", admin_jobs_path) %></li>
+                            <li> <%= link_to("🛠播主面板", admin_jobs_path) %></li>
                             <li class="divider"></li>
                             <% end %>
                             <li> <%= link_to("📴退出", destroy_user_session_path, method: :delete) %> </li>

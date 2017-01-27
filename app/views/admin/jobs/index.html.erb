@@ -3,21 +3,21 @@
   background:#dddddd;
   border:3px solid #a1a1a1;
   padding:10px 40px;
-  border-radius:25px;">📖管理员面板</h3>
+  border-radius:25px;">📖播主面板</h3>
 
   <div class="job">
-    <%= link_to("📎添加招聘信息", new_admin_job_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("📎添加视听活动信息", new_admin_job_path, class: "btn btn-primary pull-right") %>
   </div>
 
   <table class="table table-hover">
     <thead>
       <tr>
         <!--<td>#</td>-->
-        <td>👤岗位(标题)</td>
-        <td>💰薪资下限</td>
-        <td>💰薪资上限</td>
+        <td>👤项目(标题)</td>
+        <td>💰观众下限</td>
+        <td>💰观众上限</td>
         <td>🕛创建时间</td>
-        <td>📩简历数量</td>
+        <td>📩参加者数量</td>
       </tr>
     </thead>
     <tbody>

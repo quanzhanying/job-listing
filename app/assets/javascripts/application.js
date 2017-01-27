@@ -22,20 +22,20 @@
 $(function(){
   $('#dowebok').fullpage({
     sectionsColor: ['#000000', '#000000', '#000000'],
-    anchors: ['home', 'joblist', 'about'],
-    navigationTooltips: ['[Home]', '[JobList]', '[About]'],
+    anchors: ['home', 'list', 'about'],
+    navigationTooltips: ['[Home]', '[List]', '[About]'],
     'navigation': true,
     loopBottom: true,
-    //slidesNavigation: true, //是否显示左右滑块的项目导航
+    slidesNavigation: true, //是否显示左右滑块的项目导航
     menu: '#menu'
   });
 
-  //setInterval(function(){
-  //    $.fn.fullpage.moveSlideRight();
-  //}, 3000);
+  setInterval(function(){
+      $.fn.fullpage.moveSlideRight();
+  }, 3000);
 
-  //setInterval(function(){
-  //    $.fn.fullpage.moveSectionDown();
-  //}, 10000);
+  setInterval(function(){
+      $.fn.fullpage.moveSectionDown();
+  }, 10000);
 
 });

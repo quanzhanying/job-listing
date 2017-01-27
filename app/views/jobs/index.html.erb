@@ -7,10 +7,10 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
         <li>
-          <%= link_to("按薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+          <%= link_to("按观众上限排序", jobs_path(:order => "by_upper_bound")) %>
         </li>
         <li>
-          <%= link_to("按薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+          <%= link_to("按观众下限排序", jobs_path(:order => "by_lower_bound")) %>
         </li>
         <li>
           <%= link_to("按发表时间排序", jobs_path ) %>
@@ -21,9 +21,9 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>👤岗位(标题)</td>
-        <td>💰薪资下限</td>
-        <td>💰薪资上限</td>
+        <td>👤项目(标题)</td>
+        <td>💰观众下限</td>
+        <td>💰观众上限</td>
         <td>🕛创建时间</td>
       </tr>
     </thead>
