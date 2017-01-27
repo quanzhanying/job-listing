@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#index'
   resources :jobs do
+    collection do
+      get :search
+    end
     resources :resumes
   end
 
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
       resources :resumes
     end
   end
+
   #root 'welcome#index'
 
 end
