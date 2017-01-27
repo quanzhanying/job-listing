@@ -17,10 +17,11 @@
 //= require bootstrap/dropdown
 //= require jquery-1.8.3.min.js
 //= require jquery.fullPage.min.js
+//= require BMap.js
 //= require_tree .
 $(function(){
   $('#dowebok').fullpage({
-    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+    sectionsColor: ['#000000', '#000000', '#000000'],
     anchors: ['home', 'joblist', 'about'],
     navigationTooltips: ['[Home]', '[JobList]', '[About]'],
     'navigation': true,
@@ -29,7 +30,12 @@ $(function(){
     menu: '#menu'
   });
 
-  setInterval(function(){
-      $.fn.fullpage.moveSlideRight();
-  }, 3000);
+  //setInterval(function(){
+  //    $.fn.fullpage.moveSlideRight();
+  //}, 3000);
+
+  //setInterval(function(){
+  //    $.fn.fullpage.moveSectionDown();
+  //}, 10000);
+
 });
