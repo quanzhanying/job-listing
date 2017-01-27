@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121091752) do
+ActiveRecord::Schema.define(version: 20170127161607) do
 
   create_table "job_relationships", force: :cascade do |t|
     t.integer  "job_id"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20170121091752) do
     t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "job_id"
   end
 
   create_table "users", force: :cascade do |t|

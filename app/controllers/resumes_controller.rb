@@ -9,8 +9,10 @@ class ResumesController < ApplicationController
   def create
     @job = Job.find(params[:job_id])
 		@resume = Resume.new(resume_params)
+    @resume.job = @job
+    @resume.user = current_user
 
-		if @post.save
+		if @resume.save
 			redirect_to job_path(@job), notice: "The resume #{@resume.name} has been uploaded."
 		else
 			render :new
@@ -20,7 +22,7 @@ class ResumesController < ApplicationController
   private
 
   def resume_params
-    params.require(:resume).permit(:name, :attachment)
+    params.require(:resume).permit(:name, :attachment, :job_id, :user_id)
   end
 
 end
