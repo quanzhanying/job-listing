@@ -1,6 +1,11 @@
 <div class="col-md-12">
   <h2><%= @job.title %></h2>
-  <br>
+</br>
+  <div id="button">
+      <%= link_to("简历投递", new_job_resume_path(@job), class: "btn btn-info")%>
+  </div>
+</br>
+ <div id="Job INFO">
   <h4>职位信息</h4>
   <p><%= @job.description %></p>
   <br>
@@ -9,4 +14,7 @@
   <br>
   <h4>联系方式</h4>
   <p><%= mail_to @job.contact_email %>
+ </div>
+
+
 </div>
