@@ -16,5 +16,5 @@ Rails.application.routes.draw do
     resources :resumes
   end
 
-  root 'welcome#index'
+  root 'creatives#index'
 end
