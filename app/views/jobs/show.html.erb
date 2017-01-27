@@ -15,6 +15,30 @@
   <h4>联系方式</h4>
   <p><%= mail_to @job.contact_email %>
  </div>
+<br/>
+<br/>
+ <div id="CV_check">
+<% if current_user %>
+   <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Download Link</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.name %></td>
+        <td><%= link_to "Download Resume", resume.attachment_url %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+</div>
 
 
 </div>

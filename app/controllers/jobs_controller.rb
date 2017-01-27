@@ -17,6 +17,12 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.find(params[:id])
+		if current_user&&current_user.admin?
+			@resumes = @job.resumes.order("created_at DESC")
+		elsif current_user
+			@resumes = current_user.resumes.where(:job_id => @job)
+		end
+
 	end
 
 	def eidt
