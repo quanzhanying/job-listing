@@ -17,8 +17,12 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     if @job.is_hidden
-      flash[:warning] = "This Job already archieved"
-      redirect_to root_path
+      flash[:warning] = "This Job already archieved!"
+      redirect_to jobs_path
+    end
+
+    if current_user.has_applied_for?(@job)
+      flash[:notice] = "You have applied the Job!"
     end
   end
 

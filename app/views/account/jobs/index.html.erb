@@ -1,0 +1,30 @@
+<div class="col-md-12">
+  <div class="form-group" style="margin-bottom: -20px;">
+    <h2 class="text-center"> My Applied Jobs </h2>
+  </div>
+  <table class="table table-boldered table-striped custab">
+    <thead>
+      <tr style="font-size: 15px;">
+        <td>Job Title</td>
+        <td>Wage From</td>
+        <td>Wage To</td>
+        <td>Creation Date</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td>
+            <%= job.wage_lower_bound %>
+          </td>
+          <td>
+            <%= job.wage_upper_bound %>
+          </td>
+          <td><%= job.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
