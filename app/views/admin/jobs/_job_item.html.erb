@@ -1,11 +1,7 @@
 
 <tr>
 		<td>
-			<% if !job.is_hidden %>
-				招聘中
-				<% else %>
-				隐藏
-				<% end%>
+			<%= render_job_status(job) %>
 		</td>
 		<td><%= link_to(job.title, admin_job_path(job)) %></td>
 		<td><%= job.resumes.count %></td>
