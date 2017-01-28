@@ -20,6 +20,8 @@ class JobsController < ApplicationController
             end
 
     @jobs = Job.search(params[:search])
+
+    @jobs = @jobs.paginate(:page => params[:page], :per_page => 5)
   end
 
   def new

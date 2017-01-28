@@ -15,7 +15,7 @@
 
 <hr/>
 
-<table class="table table-boldered">
+<table class="table table-boldered table-hover">
 
     <div class="dropdown clearfix pull-right">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -48,19 +48,25 @@
         <% @jobs.each do |job| %>
         <tr>
             <td>
-                <%= link_to(job.title, job_path(job)) %>
+                <%= link_to(job.title, job_path(job), :target => "_blank") %>
             </td>
-            <td>
-                <%= job.wage_lower_bound %>
+            <td width="30%">
+                <span class="badge badge-info">
+                    <span class="fa fa-rmb"></span><%= job.wage_lower_bound%>
+                    -
+                    <%= job.wage_upper_bound%>元
+                </span>
             </td>
+
             <td>
-                <%= job.wage_upper_bound %>
-            </td>
-            <td>
-                <%= job.created_at %>
+                <%= local_time(job.created_at, '%B %e, %Y %l:%M%p') %>
             </td>
         </tr>
         <% end %>
     </tbody>
 
+
 </table>
+<div class="text-center">
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+</div>
