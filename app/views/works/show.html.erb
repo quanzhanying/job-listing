@@ -1,3 +1,6 @@
-<h1><%= @work.title %></h1>
+<h1>工作：<%= @work.title %></h1>
+<h4>职位描述：<%= simple_format(@work.description) %></h4>
 
-<p><%= simple_format(@work.description) %></p>
+<h2>最低收入：<%= @work.wage_lower_bound %></h2>
+<h2>最高收入：<%= @work.wage_upper_bound %></h2>
+<h3>邮箱：<%= @work.contact_email %></h3>
