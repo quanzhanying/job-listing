@@ -21,7 +21,7 @@ class Admin::JobsController < ApplicationController
 			@resumes = @job.resumes.order("created_at DESC")
 	end
 
-	def eidt
+	def edit
 	end
 
 	def new
@@ -58,6 +58,21 @@ class Admin::JobsController < ApplicationController
 		if !current_user.admin?
 			redirect_to root_path, alert: "Sorry, you are not admin!"
 		end
+	end
+
+	def publish
+		@job = Job.find(params[:id])
+    @job.is_hidden = false
+    @job.save
+    redirect_to :back
+	end
+
+	def hide
+		@job = Job.find(params[:id])
+    @job.is_hidden = true
+    @job.save
+    redirect_to :back
+
 	end
 
 	private

@@ -17,15 +17,14 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.find(params[:id])
-		if current_user&&current_user.admin?
-			@resumes = @job.resumes.order("created_at DESC")
-		elsif current_user
-			@resumes = current_user.resumes.where(:job_id => @job)
+		if @job.is_hidden
+			flash[:warning] = "This Job already archieved"
+			redirect_to root_path
 		end
 
 	end
 
-	def eidt
+	def edit
 	end
 
 	def new
