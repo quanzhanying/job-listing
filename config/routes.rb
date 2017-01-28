@@ -22,5 +22,5 @@ resources :jobs do
 end
 
 
-root 'jobs#index'
+root 'welcome#index'
 end
