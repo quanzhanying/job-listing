@@ -1,19 +1,24 @@
 <div class="col-md-12">
   <h2 class="text-center"> Admin Panel </h2>
-  <div class="job">
-    <%= link_to("Add New Job", new_admin_job_path, class: "btn btn-primary pull-right") %>
+  <div class="col-md-10"></div>
+
+  <div class="col-md-1">
+    <div class="job">
+      <%= link_to("Add New Job", new_admin_job_path, class: "btn btn-primary pull-right") %>
+    </div>
   </div>
-  <br>
-  <br>
-  <div class="dropdown", align="right">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+  <div class="col-md-1">
+    <div class="dropdown", align="right">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         排序
-            <b class="caret"></b>
-    </button>
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDivider">
-      <li><%= link_to("按照薪酬下限排序", admin_jobs_path(:order => "by_lower_bound")) %> </li>
-      <li><%= link_to("按照薪酬上限排序", admin_jobs_path(:order => "by_upper_bound")) %> </li>
-      <li><%= link_to("按照创建时间排序", admin_jobs_path) %> </li>
+       <b class="caret"></b>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDivider">
+        <li><%= link_to("按照薪酬下限排序", admin_jobs_path(:order => "by_lower_bound")) %> </li>
+        <li><%= link_to("按照薪酬上限排序", admin_jobs_path(:order => "by_upper_bound")) %> </li>
+        <li><%= link_to("按照创建时间排序", admin_jobs_path) %> </li>
+      </div>
     </div>
   </div>
 

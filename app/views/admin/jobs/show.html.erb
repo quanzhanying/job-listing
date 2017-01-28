@@ -1,7 +1,11 @@
-<div class="col-md-12">
+<div class="col-md-10">
   <h2><%= @job.title %></h2>
-</br>
-</br>
+<br/>
+
+<div id="button">
+    <%= link_to("Edit", edit_admin_job_path(@job), class: "btn btn-info")%>
+</div>
+<br/>
  <div id="Job INFO">
   <h4>职位信息</h4>
   <p><%= @job.description %></p>
@@ -34,6 +38,4 @@
    </table>
 
 </div>
-
-
 </div>
