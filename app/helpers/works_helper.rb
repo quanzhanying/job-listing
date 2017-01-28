@@ -2,9 +2,9 @@ module WorksHelper
 
   def render_work_status(w)
     if w.is_hidden
-      "(隐藏)"
+      content_tag(:span, "", class: "fa fa-lock")
     else
-      "(公开)"
+      content_tag(:span, "", class: "fa fa-globe")
     end
   end
 end

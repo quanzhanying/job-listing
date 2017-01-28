@@ -3,6 +3,11 @@ class WorksController < ApplicationController
 
   def show
     @work = Work.find(params[:id])
+
+    if @work.is_hidden
+      flash[:notice] = "get out"
+      redirect_to root_path
+    end
   end
 
   def index

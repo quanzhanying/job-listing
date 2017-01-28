@@ -15,6 +15,15 @@
       <td>
         <%= link_to("bian", edit_admin_work_path(w)) %>
         <%= link_to("shan", admin_work_path(w), method: :delete, :data => {  :confirm => "sure"}) %>
+
+        <% if w.is_hidden %>
+          <%= link_to("公开", publish_admin_work_path(w), method: :post,
+          class: "btn btn-xs btn-default") %>
+        <% else %>
+          <%= link_to("隐藏", hide_admin_work_path(w), method: :post,
+          class: "btn btn-xs btn-default") %>
+        <% end %>
+
       </td>
       <td><%= w.created_at %></td>
     </tr>

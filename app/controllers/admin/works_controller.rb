@@ -1,6 +1,7 @@
 class Admin::WorksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :update, :create, :edit, :destroy]
   before_action :require_is_admin
+  layout "admin"
 
   def show
     @work = Work.find(params[:id])
@@ -40,6 +41,20 @@ class Admin::WorksController < ApplicationController
     @work = Work.find(params[:id])
     @work.destroy
     redirect_to admin_works_path
+  end
+
+  def publish
+    @work = Work.find(params[:id])
+    @work.publish!
+    @work.save
+    redirect_to :back
+  end
+
+  def hide
+    @work = Work.find(params[:id])
+    @work.hide!
+    @work.save
+    redirect_to :back
   end
 
 

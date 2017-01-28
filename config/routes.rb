@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   resources :works
 
   namespace :admin do
-    resources :works
+    resources :works do
+    member do
+      post :publish
+      post :hide
+     end
+    end
   end
   root 'works#index'
 end
