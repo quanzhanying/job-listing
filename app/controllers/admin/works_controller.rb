@@ -46,7 +46,7 @@ class Admin::WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email)
+    params.require(:work).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
   end
 
 end
