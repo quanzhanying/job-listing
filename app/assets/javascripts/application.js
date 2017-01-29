@@ -30,12 +30,12 @@ $(function(){
     menu: '#menu'
   });
 
-  setInterval(function(){
-      $.fn.fullpage.moveSlideRight();
-  }, 15000);
+  //setInterval(function(){
+  //    $.fn.fullpage.moveSlideRight();
+  //}, 15000);
 
-  setInterval(function(){
-      $.fn.fullpage.moveSectionDown();
-  }, 20000);
+  //setInterval(function(){
+  //    $.fn.fullpage.moveSectionDown();
+  //}, 20000);
 
 });
