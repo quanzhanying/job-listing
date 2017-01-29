@@ -2,7 +2,8 @@ class Account::JobsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @jobs = current_user.applied_jobs
+    @resumes = Resume.select('resumes.content, resumes.created_at, jobs.title').joins(:job)
+                .where(user_id: current_user.id)
   end
 
 end
