@@ -1,9 +1,27 @@
-<h1> <%= @job.title %> </h1>
+<br>
+<br>
+<style>
+ h2 {
+   text-align: center;
+ }
+ p {
+   font-size: 16px;
+ }
+</style>
+
+<h2> <%= @job.title %> </h2>
+
 
 <p>
+  <div class="jobs-container">
   <%= simple_format(@job.description) %>
-
+</div>
 </p>
-<div class="text-center">
+</div>
+<!-- <div class="text-center">
   <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
+</div> -->
+<br>
+<div class="text-center btn-lg">
+<a href="https://auth.logdown.in/users/sign_in">我要 ORID</a>
 </div>

@@ -1,8 +1,10 @@
-<!-- <div class="pull-right">
-  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
-</div> -->
 
-<!-- <div class="dropdown clearfix pull-right">
+<!--
+<div class="pull-right">
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+</div>
+
+<div class="dropdown clearfix pull-right">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
         <span class="caret"></span>
@@ -20,12 +22,12 @@
 
         </li>
     </ul>
-</div> -->
+</div>
 
 <br>
 <br>
-<br>
-<style>
+<br> -->
+<!-- /*<style>
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -41,20 +43,44 @@ th {background-color: #FFCA28}
 tr:nth-child(even) {
     background-color: #FFF8E1;
 }
+</style>*/ -->
+
+<div class="jobs-container">
+  <!-- <div class="content"> -->
+
+
+
+    <ul class="nav nav-tabs">
+      <li class="<%= 'active' if !params[:order] %>">
+        <%= link_to("按照发布时间排序", jobs_path) %>
+      </li>
+      <li <li class="<%= 'active' if params[:order] == 'by_lower_bound' %>">
+        <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+      </li>
+      <li <li class="<%= 'active' if params[:order] == 'by_upper_bound' %>">
+        <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+      </li>
+    </ul>
+
+
+<style>
+
+th {
+  background-color: #d9534f;
+  color: white;
+}
 </style>
+<!-- <div class="container-fluid"> -->
+<table class="table table-boldered table-striped custab">
+    <!-- <thead> -->
+        <!-- <tr> -->
+            <th> Gems</th>
+            <th>薪资下限</th>
+            <th>薪资上限</th>
+            <th>发布时间</th>
+        <!-- </tr> -->
 
-<table class="table table-boldered">
-
-<caption>我的额外加分</caption>
-    <thead>
-        <tr>
-            <td> Gems</td>
-            <td>薪资下限</td>
-            <td>薪资上限</td>
-            <td>时间</td>
-        </tr>
-
-    </thead>
+    <!-- </thead> -->
     <tbody>
         <% @jobs.each do |job| %>
         <tr>
@@ -75,3 +101,8 @@ tr:nth-child(even) {
     </tbody>
 
 </table>
+<br>
+<br>
+<br>
+
+<!-- </div> -->

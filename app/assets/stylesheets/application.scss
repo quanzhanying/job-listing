@@ -73,8 +73,8 @@
   border: 1px solid #ccc;
 
   padding: 5px;
-  margin: 5% 0;
-  box-shadow: 3px 3px 2px #ccc;
+  margin: 0% 0;//nav-tabs不能跟Gems那个table贴在一起的原因就是因为这行之前被设为5%吖
+  box-shadow: 5px 5px 4px #ccc;
 
   transition: 0.5s;
 }
@@ -164,4 +164,16 @@
 //
 .bg-grey {
       background-color: #f6f6f6;
+  }
+
+
+.table {
+  font-size: 16px;
+
+
+  }
+  .jobs-container {
+    padding-top: 40px;
+    width: 75%;
+    margin: auto;
   }
