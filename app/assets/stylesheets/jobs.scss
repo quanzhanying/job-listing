@@ -1,0 +1,54 @@
+// Place all the styles related to the jobs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jobs-search-form {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    align-self: center;
+}
+
+.searchform {
+    position: relative;
+    height: 100%;
+    width: 540px;
+    min-height: 100px;
+    margin: 80px auto 0;
+    text-align: left;
+}
+
+.searchbox {
+    float: left;
+    width: 421px;
+    height: 38px;
+    padding: 9px 7px;
+    font: 16px arial;
+    border: 1px solid #b8b8b8;
+}
+
+.searchbutton {
+    float: auto;
+    background-color: #f0ad4e;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    width: 86px;
+    height: 38px;
+    border: 1px solid #eea236;
+    // border-color: #eea236;
+    font-size: 14px;
+    font-family: simsun;
+}
+
+#image {
+    position: relative;
+    background-image: url("https://ww2.sinaimg.cn/large/006y8lValy1fbycf2fczoj311y0lcjsd.jpg");
+    height: 500px;
+    background-size: cover;
+    margin-top: -1px;
+    margin-bottom: 0;
+}
+
+.deviseposition {
+    margin-top: 20px;
+}

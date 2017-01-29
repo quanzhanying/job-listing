@@ -1,0 +1,53 @@
+<%= form_tag jobs_path, :method => "get" do %>
+    <div class="searchform">
+        <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+        <span>
+            <%= submit_tag "搜索", :title => nil, :description => nil, class: "searchbutton" %>
+        </span>
+    </div>
+<% end %>
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        排序
+    <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li>
+            <%= link_to("按照最低薪资排序", jobs_path(:order => "by_lower_bound")) %>
+        </li>
+        <li>
+            <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+        </li>
+        <li>
+            <%= link_to("按照发布时间排序", jobs_path ) %>
+        </li>
+    </ul>
+</div>
+<table class="table table-boldered table-striped custab">
+    <thead>
+        <tr>
+            <td>职位名称</td>
+            <td>最低薪资</td>
+            <td>薪资上限</td>
+            <td>发布时间</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @jobs.each do |job| %>
+            <tr>
+                <td>
+                    <%= link_to(job.title, job_path(job)) %>
+                </td>
+                <td>
+                    <%= job.wage_lower_bound %>
+                </td>
+                <td>
+                    <%= job.wage_upper_bound %>
+                </td>
+                <td>
+                    <%= job.created_at %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

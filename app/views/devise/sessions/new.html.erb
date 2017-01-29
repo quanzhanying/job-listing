@@ -1,0 +1,24 @@
+<div class="background" id="image">
+    <br />
+    <h2 class="text-center login-title">请使用邮箱登录</h2>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="deviseposition">
+                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <div class="form-signin">
+                        <%= f.input :email, label: '邮箱地址',required: false, autofocus: true %>
+                        <%= f.input :password, label: '密码',required: false %>
+                        <%= f.input :remember_me, label: '记住我',as: :boolean if devise_mapping.rememberable? %>
+                    </div>
+                    <div class="text-center form-signin">
+                        <button class="btn btn-danger" type="submit">登录<i class="fa fa-sign-in"></i></button>
+                        <%#= f.button :submit, "Log in" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="text-center new-account">
+        <%= render "devise/shared/links" %>
+    </div>
+</div>
