@@ -32,10 +32,10 @@ $(function(){
 
   setInterval(function(){
       $.fn.fullpage.moveSlideRight();
-  }, 3000);
+  }, 15000);
 
   setInterval(function(){
       $.fn.fullpage.moveSectionDown();
-  }, 10000);
+  }, 20000);
 
 });
