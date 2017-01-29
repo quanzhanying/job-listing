@@ -24,18 +24,13 @@ class Admin::JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     @job.update(job_params)
-    redirect_to jobs_path, notice: '职位修改成功！'
-#   if @job.update(job_params)
-#       redirect_to jobs_path, notice: '职位修改成功'
-#   else
-#       render :edit
-#   end
+    redirect_to admin_jobs_path, notice: '职位修改成功(admin)！'
   end
 
   def create
     @job = Job.new(job_params)
     if @job.save
-      redirect_to jobs_path
+      redirect_to admin_jobs_path, notice: '职位建立成功（admin）'
     else
       render :new
     end
@@ -44,8 +39,8 @@ class Admin::JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    flash[:alert] = "职位成功删除"
-    redirect_to jobs_path
+    flash[:alert] = "职位成功删除（admin）"
+    redirect_to admin_jobs_path
   end
 
   def publish

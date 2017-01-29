@@ -11,6 +11,8 @@ Rails.application.routes.draw do
         resources :resumes
     end
   end
+# 新增admin路由
+
 
   resources :jobs do
       resources :resumes

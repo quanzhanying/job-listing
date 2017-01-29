@@ -30,14 +30,15 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job = Job.find(params[:id])
-    @job.update(job_params)
-    redirect_to jobs_path, notice: '职位修改成功！'
+     @job = Job.find(params[:id])
+     @job.update(job_params)
+     redirect_to jobs_path, notice: '职位修改成功！'
 #   if @job.update(job_params)
 #       redirect_to jobs_path, notice: '职位修改成功'
 #   else
 #       render :edit
 #   end
+#  the same expression
   end
 
   def create
@@ -49,12 +50,12 @@ class JobsController < ApplicationController
     end
   end
 
-  def destroy
-    @job = Job.find(params[:id])
-    @job.destroy
-    flash[:alert] = "职位成功删除"
-    redirect_to jobs_path
-  end
+#  def destroy
+#    @job = Job.find(params[:id])
+#    @job.destroy
+#    flash[:alert] = "职位成功删除"
+#    redirect_to jobs_path
+#  end
 
 
 
