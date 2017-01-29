@@ -14,11 +14,17 @@
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <div class="row">
-              <div class="col-md-1">
-                <ul class="nav nav-pills nav-stacked" style="max-width: 100px; padding-top:20px;padding-left:20px;">
-                    <li class="active"><%= link_to("一览表", admin_jobs_path ) %> </li>
+              <!-- <div class="col-md-1">
+                <ul class="nav nav-pills nav-stacked" style=" font-size:18px;max-width: 90px;max-hight:80px; padding-top:20px;padding-left:20px;">
+                    <li class="active"><%= link_to("一览", admin_jobs_path ) %> </li>
 
                 </ul>
+              </div> -->
+              <div class="pull-left" style="padding-top:20px;padding-left:40px;">
+                <%= link_to("一览", admin_jobs_path, :class => "btn btn-primary btn-lg" ) %>
+              </div>
+              <div class="pull-right" style="padding-top:20px;padding-right:40px;">
+                <%= link_to("新增", new_admin_job_path, :class => "btn btn-danger btn-lg" ) %>
               </div>
 
               <div class="col-md-10">

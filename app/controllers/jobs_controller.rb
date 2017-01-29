@@ -16,11 +16,11 @@ class JobsController < ApplicationController
   def index
     @jobs = case params[:order]
             when 'by_author'
-              Job.where(is_hidden: false).order('author DESC')
+              Job.where(is_hidden: false).order('author DESC').paginate(:page => params[:page], :per_page => 9)
             # when 'by_upper_bound'
             #   Job.where(is_hidden: false).order('wage_upper_bound DESC')
             else
-              Job.where(is_hidden: false).order('created_at DESC')
+              Job.where(is_hidden: false).order('created_at DESC').paginate(:page => params[:page], :per_page => 9)
             end
   end
 
@@ -56,7 +56,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :author, :wage_upper_bound, :wage_lower_bound, :contact_email,:is_hidden)
+    params.require(:job).permit(:title, :description, :author, :contact_email,:is_hidden)
   end
 
 end

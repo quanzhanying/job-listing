@@ -2,8 +2,8 @@
 <!--
 <div class="pull-right">
   <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
-</div>
-
+</div> -->
+<!--
 <div class="dropdown clearfix pull-right">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
@@ -74,7 +74,7 @@ th {
 <table class="table table-boldered table-striped custab">
     <!-- <thead> -->
         <!-- <tr> -->
-            <th> Gems</th>
+            <th> 鸡汤  鸡血 鸡精  ......</th>
             <th>作者</th>
             <!-- <th>薪资下限</th> -->
             <!-- <th>薪资上限</th> -->
@@ -102,8 +102,8 @@ th {
     </tbody>
 
 </table>
-<br>
-<br>
-<br>
 
+<div class="text-center">
+  <%= will_paginate @jobs %>
+</div>
 <!-- </div> -->

@@ -26,16 +26,17 @@
   background-size: cover;
   padding-bottom: 100px;
   margin-bottom: 0;
+  color: #d9534f;//反复看别人的代码才发现钥匙在这里，干林老母！
 
 }
 
 .title {
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  // font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
   text-align: left;
   margin-top: 200px;
   margin-bottom: 80px;
   margin-left: 60px;
-  color: #333333;
+  // color: white;//搞好几天才发现钥匙在别的地方，干！
 }
 
 .slogan {
@@ -45,7 +46,7 @@
   text-align: left;
   color: white;
   top: 12px;
-}
+  }
 
 .lead {
   margin-bottom: 60px;
