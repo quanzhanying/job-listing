@@ -54,12 +54,12 @@ tr:nth-child(even) {
       <li class="<%= 'active' if !params[:order] %>">
         <%= link_to("按照发布时间排序", jobs_path) %>
       </li>
-      <li <li class="<%= 'active' if params[:order] == 'by_lower_bound' %>">
-        <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+      <li <li class="<%= 'active' if params[:order] == 'by_author' %>">
+        <%= link_to("按照作者排序", jobs_path(:order => "by_author")) %>
       </li>
-      <li <li class="<%= 'active' if params[:order] == 'by_upper_bound' %>">
+      <!-- <li <li class="<%= 'active' if params[:order] == 'by_upper_bound' %>">
         <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-      </li>
+      </li> -->
     </ul>
 
 
@@ -75,8 +75,9 @@ th {
     <!-- <thead> -->
         <!-- <tr> -->
             <th> Gems</th>
-            <th>薪资下限</th>
-            <th>薪资上限</th>
+            <th>作者</th>
+            <!-- <th>薪资下限</th> -->
+            <!-- <th>薪资上限</th> -->
             <th>发布时间</th>
         <!-- </tr> -->
 
@@ -88,11 +89,11 @@ th {
                 <%= link_to(job.title, job_path(job)) %>
             </td>
             <td>
-                <%= job.wage_lower_bound %>
+                <%= job.author %>
             </td>
-            <td>
+            <!-- <td>
                 <%= job.wage_upper_bound %>
-            </td>
+            </td> -->
             <td>
                 <%= job.created_at %>
             </td>

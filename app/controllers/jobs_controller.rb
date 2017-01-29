@@ -15,10 +15,10 @@ class JobsController < ApplicationController
 
   def index
     @jobs = case params[:order]
-            when 'by_lower_bound'
-              Job.where(is_hidden: false).order('wage_lower_bound DESC')
-            when 'by_upper_bound'
-              Job.where(is_hidden: false).order('wage_upper_bound DESC')
+            when 'by_author'
+              Job.where(is_hidden: false).order('author DESC')
+            # when 'by_upper_bound'
+            #   Job.where(is_hidden: false).order('wage_upper_bound DESC')
             else
               Job.where(is_hidden: false).order('created_at DESC')
             end
@@ -56,7 +56,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email,:is_hidden)
+    params.require(:job).permit(:title, :description, :author, :wage_upper_bound, :wage_lower_bound, :contact_email,:is_hidden)
   end
 
 end
