@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def require_is_admin
     if !current_user.admin?
-      flash[:alert] = you are fired
+      flash[:alert] = "you are fired"
       redirect_to root_path
     end
   end
