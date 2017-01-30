@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     resources :jianlis
     end
   end
-  root 'works#index'
+  root 'welcome#index'
 end
