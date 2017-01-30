@@ -21,15 +21,20 @@
  @import "font-awesome";
 
  .jumbotron {
-   background-image:url('http://y.photo.qq.com/img?s=n0m7YMg0L&l=y.jpg');
+   background-image:url('http://www.5qdd.com/files/sucai/02-19/dd121102191153-3.jpg');
    background-repeat: no-repeat;
    background-size: cover;
    padding-bottom: 110px;
  }
 
+ .jumbotron .title {
+   color: red;
+   text-align: left;
+ }
+
  .title {
    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-   text-align: center;
+  //  text-align: center;
    margin-top: 200px;
    margin-bottom: 80px;
  }
@@ -37,26 +42,48 @@
  .slogan {
    margin-top: 10px;
    margin-bottom: 50px;
-   text-align: center;
-   color: white;
+  //  text-align: center;
+   color: #d86c6c;
    top: 12px;
  }
 
  .lead {
    margin-bottom: 60px;
-   text-align: center;
+  //  text-align: center;
    color: white;
  }
 
- .bg-2 {
-     background-color: #474e5d; /* Dark Blue */
-     color: #ffffff;
- }
- .bg-3 {
-     background-color: #ffffff; /* White */
-     color: #555555;
+ .container-fluid1 {
+   padding-top: 100px;
+   padding-bottom: 100px;
+   }
+
+ .container-fluid2 {
+   padding-top: 100px;
+   padding-bottom: 430px;
+  }
+
+ .scene {
+   border: 10px solid transparent;
+   margin-bottom: 25px;
+   width: 100%;
+   height: 100%;
+   opacity: 0.8;
  }
 
+ .scene:hover {
+     border-color: rgba(255,255,255,0.1);
+ }
+
+ .bg-2 {
+     background-color: #415b93; /* Dark Blue */
+     color: #ffffff;
+ }
+
+ .bg-3 {
+     background-color: #d86c6c; /* White */
+     color: #555555;
+ }
 
  .caption {
    margin: 30px;
