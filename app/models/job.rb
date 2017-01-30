@@ -19,4 +19,8 @@ class Job < ApplicationRecord
   scope :published, -> {where(is_hidden: false)}
   scope :recent, ->{order("created_at DESC")}
 
+  def self.search(search)
+     where("title LIKE ?", "%#{search}%").or(where("description LIKE ?", "%#{search}%"))
+   end
+
 end

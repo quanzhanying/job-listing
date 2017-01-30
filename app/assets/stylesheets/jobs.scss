@@ -1,3 +1,46 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.searchform{
+  position: relative;
+  height: 100%;
+  width: 540px;
+  min-height: 100px;
+  margin: 80px auto 0 auto;
+  text-align: left;
+}
+.searchbox{
+  float: left;
+  width: 421px;
+  height: 38px;
+  padding: 9px 7px;
+  font: 16px arial;
+  border: 1px solid #b8b8b8;
+}
+
+.mike{
+  float: auto;
+  color: black;//按钮字体颜色
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #90CAF9;//按钮背景色
+  width: 86px;//按钮长度
+  height: 38px;//按钮宽度
+  border: 1px solid #9FA8DA;//按钮边框颜色
+  font-size: 15px;
+  font-family: simsun;//字体格式
+}
+
+
+.searchbotton {
+    float: auto;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #60af00;
+    width: 86px;
+    height: 38px;
+    border: 1px solid #5d9b4d;
+    font-size: 14px;
+    font-family: simsun;
+}

@@ -3,14 +3,21 @@ before_action :authenticate_user!, only: [:new,:create, :update, :edit, :destroy
 
 
 
+
 def index
+
+
   @jobs=  case params[:order]
   when 'by_lower_bound'
-    Job.published.order('wage_lower_bound DESC')
+    Job.published.order('wage_lower_bound DESC').paginate(page: params[:page], per_page: 5)
+    # 该行代码表示按照“薪资下限排列”，每页显示5条信息，超过5条自动分页
   when 'by_upper_bound'
-    Job.published.order('wage_upper_bound DESC')
-  else
-  Job.published.recent
+    Job.published.order('wage_upper_bound DESC').paginate(page: params[:page], per_page: 5)
+
+  when
+  Job.published.recent.paginate(page: params[:page], per_page: 5)
+else
+  Job.published.recent.search(params[:search]).paginate(page: params[:page], per_page: 5)
 end
 
 

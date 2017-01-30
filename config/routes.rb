@@ -8,6 +8,7 @@ root 'welcome#index'
 
 
   resources :jobs do
+    
     resources :resumes
   end
 

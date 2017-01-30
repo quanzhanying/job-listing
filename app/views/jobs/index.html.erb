@@ -1,6 +1,19 @@
 
 <!-- <#%= link_to("About",about_path, :class =>"btn btn-primary") %> -->
 
+<%= form_tag jobs_path, :method => "get" do %>
+
+      <div class="searchform">
+          <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+       <span>
+             <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
+              <!-- <input type="submit" value="点 击" class="mike"> -->
+          </span>
+      </div>
+   <% end %>
+
+
+
 
 <div class="dropdown clearfix pull-right" >
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider"
@@ -20,6 +33,8 @@
   </li>
 </ul>
 </div>
+
+
 
 <table class="table table-boldered">
   <thead>
@@ -51,3 +66,7 @@
 <% end %>
 </tbody>
 </table>
+<div class="text-center">
+  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+
+</div>
