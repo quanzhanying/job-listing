@@ -5,13 +5,27 @@
   <br><br>
 
   <table class="table table-boldered">
+    <thead>
+      <tr>
+        <td>职位</td>
+        <td>简历数量</td>
+        <td>收入下限</td>
+        <td>收入上限</td>
+        <td>选项</td>
+        <td>发表时间</td>
+      </tr>
+    </thead>
+
+    <tbody>
     <% @works.each do |w| %>
     <tr>
       <td>
         <%= render_work_status(w) %>
         <%= link_to(w.title, admin_work_path(w)) %>
       </td>
-
+      <td><%= link_to(w.jianlis.count, admin_work_jianlis_path(w)) %></td>
+      <td><%= w.wage_lower_bound %></td>
+      <td><%= w.wage_upper_bound %></td>
       <td>
         <%= link_to("bian", edit_admin_work_path(w)) %>
         <%= link_to("shan", admin_work_path(w), method: :delete, :data => {  :confirm => "sure"}) %>
@@ -28,4 +42,5 @@
       <td><%= w.created_at %></td>
     </tr>
     <% end %>
+    </tbody>
   </table>

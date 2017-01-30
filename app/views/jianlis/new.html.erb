@@ -1,0 +1,12 @@
+<h3>投简历到 <%= @work.title %></h3>
+
+<hr>
+
+<%= simple_form_for [@work, @jianli] do |f|%>
+
+<%= f.input :content %>
+<%= f.input :attachment %>
+
+<%= f.submit "fly" %>
+
+<% end %>

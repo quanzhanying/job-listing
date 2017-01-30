@@ -24,7 +24,7 @@
   <tbody>
     <% @works.each do |w| %>
       <tr>
-        <td><%= link_to(w.title, works_path(w)) %></td>
+        <td><%= link_to(w.title, work_path(w)) %></td>
         <td><%= w.wage_lower_bound %></td>
         <td><%= w.wage_upper_bound %></td>
         <td><%= w.created_at %></td>
