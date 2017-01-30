@@ -20,33 +20,45 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+
 .jumbotron {
-  background-image:url('http://assets.gig.com/blog/wp-content/uploads/2014/12/How-can-you-achieve-success-in-a-new-job-medium.jpg');
+  background-image:url('http://cdn.business2community.com/wp-content/uploads/2015/08/shutterstock_270599354.jpg-900x450.jpg');
+
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
+  color: white;
 }
 
 .title {
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: left;
-  margin-top: 200px;
+  text-align: right;
+  margin-top: 100px;
   margin-bottom: 80px;
 }
 
 .slogan {
   margin-top: 10px;
   margin-bottom: 50px;
-  text-align: left;
-  color: back;
-  top: 12px;
+  text-align: right;
+  color: white;
+  text-top: 12px;
 }
 
 .lead {
   margin-bottom: 60px;
-  text-align: left;
-  color: white;
+  text-align: right;
+  color: #4dbfd9;
 }
+
+.bt1 {
+  background: white;
+}
+
+h3 {color: #4dbfd9;}
+
+
 .caption {
   margin: 30px;
   text-align: center;

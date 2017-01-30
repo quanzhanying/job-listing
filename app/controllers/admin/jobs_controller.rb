@@ -57,7 +57,7 @@ class Admin::JobsController < ApplicationController
     @job.hide!
     redirect_to :back
   end
-   
+
   private
 
   def job_params
