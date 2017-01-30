@@ -1,0 +1,34 @@
+<table class="table table-boldered">
+  <div class="dropdown clearfix">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    排序
+    <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+      <li><%= link_to("收入下限排序", works_path(:order => 'by_lower_bound')) %></li>
+      <li><%= link_to("收入上限排序", works_path(:order => 'by_upper_bound')) %></li>
+      <li><%= link_to("发表时间排序", works_path) %></li>
+    </ul>
+  </div>
+
+  <thead>
+    <tr>
+      <td>职位</td>
+      <td>工资上限</td>
+      <td>工资下限</td>
+      <td>发表时间</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @works.each do |w| %>
+      <tr>
+        <td><%= link_to(w.title, work_path(w)) %></td>
+        <td><%= w.wage_lower_bound %></td>
+        <td><%= w.wage_upper_bound %></td>
+        <td><%= w.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
