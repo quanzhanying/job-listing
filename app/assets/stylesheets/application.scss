@@ -20,30 +20,33 @@
 @import "font-awesome";
 
 .jumbotron {
-  background-image: url('https://ww4.sinaimg.cn/large/006tNc79gy1fc7cgkxlyfj31kw11y7wl.jpg');
+  background-image: url('https://ww2.sinaimg.cn/large/006tNc79gy1fc8i7qgh8aj31kw11yx6s.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 100px;
+  padding-bottom: 430px;
+  color: honeydew;
+  font-family: cursive;
+  margin: 0px;
 }
 
 .title {
-  font-family: "Helvetica Neue", "Microsoft Yahei",微软雅黑;
-  text-align: center;
-  margin-top: 200px;
+  font-family: cursive;
+  text-align: right;
+  margin-top: 10px;
   margin-bottom: 80px;
 }
 
 .slogan {
   margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: center;
-  color: grey;
+  margin-bottom: 30px;
+  text-align: right;;
+  color: cornsilk;
   top:12px;
 }
 
 .lead {
-  margin-bottom: 60px;
-  text-align: center;
+  margin-bottom: 200px;
+  text-align: right;
   color: white;
 }
 
@@ -57,6 +60,7 @@
   border: 0 none;
   box-shadow:  none;
   margin-top: 60px;
+  background-color: darkcyan;
 }
 
 .custab {
