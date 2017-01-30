@@ -50,13 +50,18 @@
         <% else %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Hi, <%=current_user.email %>
-            <b class="caret"></b>
+            <span class="btn btn-info" style="padding:5px 20px;margin-top:-5px;">
+                          <i class="fa fa-user-circle" aria-hidden="true">  </i>
+                          <b class="caret"></b>
+                        </span>
           </a>
           <ul class="dropdown-menu">
             <% if current_user.admin? %>
 
-            <li> <%=link_to("Admin Panel", admin_jobs_path) %></li>
+            <li>
+              <a href="/admin/jobs">
+                           <span class="glyphicon glyphicon-ok-sign">Admin Panel</span>
+                         </a>
             <% end %>
             <li> <%= link_to("登出", destroy_user_session_path ,method: :delete)%></li>
           </ul>
