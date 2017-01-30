@@ -8,6 +8,7 @@
   <thead>
     <tr>
         <td>职缺</td>
+        <td>行业类别</td>
         <td>收到履历数量</td>
         <td>薪资下限</td>
         <td>薪资上限</td>
@@ -24,6 +25,9 @@
           <%= render_job_status(job) %>
 
           <%= link_to(job.title, job_path(job)) %>
+        </td>
+        <td>
+          <%= job.category.name %>
         </td>
         <td>
           <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %>

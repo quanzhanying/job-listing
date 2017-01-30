@@ -37,6 +37,7 @@
     <thead>
         <tr>
             <td>职缺</td>
+            <td>行业类别</td>
             <td>薪资下限</td>
             <td>薪资上限</td>
             <td>刊登时间</td>
@@ -49,6 +50,9 @@
         <tr>
             <td>
                 <%= link_to(job.title, job_path(job), :target => "_blank") %>
+            </td>
+            <td>
+              <%= job.category.name %>
             </td>
             <td width="30%">
                 <span class="badge badge-info">
