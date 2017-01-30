@@ -9,15 +9,19 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <% if !current_user %>
-                <!-- <li><a href="/#">HOME</a></li>
-                <li><a href="/#">BAND</a></li>
-                <li><a href="/#">TOUR</a></li>
-                <li><a href="/#">CONTACT</a></li> -->
-                <!-- <li><%= link_to("注册", new_user_registration_path) %> </li>
-                <li><%= link_to("登入", new_user_session_path) %></li> -->
-                <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/">BAND</a></li>
+                <li><a href="/">TOUR</a></li>
+                <li><a href="/">CONTACT</a></li>
+                <li><%= link_to("注册", new_user_registration_path) %> </li>
+                <li><%= link_to("登入", new_user_session_path) %></li>
+                <!-- <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li> -->
               <% else %>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/">BAND</a></li>
+                <li><a href="/">TOUR</a></li>
+                <li><a href="/">CONTACT</a></li>                      
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       Hi!, <%= current_user.email %>
@@ -38,7 +42,7 @@
     <!-- /.container-fluid -->
 
     <!-- 以下代码添加在最后 -->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <!-- <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
       <div class="modal-dialog" role="document">
         <div class="loginmodal-container">
            <h2>Log in</h2>
@@ -54,9 +58,9 @@
            <% end %>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <!-- <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
       <div class="modal-dialog">
         <div class="loginmodal-container">
           <h2>Sign up</h2>
@@ -73,6 +77,6 @@
           <% end %>
         </div>
       </div>
-    </div>
+    </div> -->
 
 </nav>
