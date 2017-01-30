@@ -116,100 +116,161 @@
    transition: 1.5s;
  }
 
-
- @import url(http://fonts.googleapis.com/css?family=Roboto);
-
- /****** LOGIN MODAL ******/
- .loginmodal-container {
-   padding: 30px;
-   max-width: 350px;
-   width: 100% !important;
-   background-color: #F7F7F7;
-   margin: 0 auto;
-   border-radius: 2px;
-   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-   overflow: hidden;
-   font-family: roboto;
+ /* Add a dark background color with a little bit see-through */
+.navbar {
+     margin-bottom: 0;
+     background-color: #2d2d30;
+     border: 0;
+     font-size: 14px !important;
+     letter-spacing: 4px;
+     opacity:0.9;
  }
 
- .loginmodal-container h1 {
-   text-align: center;
-   font-size: 1.8em;
-   font-family: roboto;
+ /* Add a gray color to all navbar links */
+ .navbar li a, .navbar .navbar-brand {
+     color: #f4511e !important;
  }
 
- .loginmodal-container input[type=submit] {
-   width: 100%;
-   display: block;
-   margin-bottom: 10px;
-   position: relative;
+ /* On hover, the links will turn white */
+ .navbar-nav li a:hover {
+     color: #fff !important;
  }
 
- .loginmodal-container input[type=text], input[type=password] {
-   height: 44px;
-   font-size: 16px;
-   width: 100%;
-   margin-bottom: 10px;
-   -webkit-appearance: none;
-   background: #fff;
-   border: 1px solid #d9d9d9;
-   border-top: 1px solid #c0c0c0;
-   /* border-radius: 2px; */
-   padding: 0 8px;
-   box-sizing: border-box;
-   -moz-box-sizing: border-box;
+ /* The active link */
+ .navbar-nav li.active a {
+     color: #fff !important;
+     background-color:#29292c !important;
  }
 
- .loginmodal-container input[type=text]:hover, input[type=password]:hover {
-   border: 1px solid #b9b9b9;
-   border-top: 1px solid #a0a0a0;
-   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+ /* Remove border color from the collapsible button */
+ .navbar-inverse .navbar-toggle {
+     border-color: transparent;
  }
 
- .loginmodal {
-   text-align: center;
-   font-size: 14px;
-   font-family: 'Arial', sans-serif;
-   font-weight: 700;
-   height: 36px;
-   padding: 0 8px;
- /* border-radius: 3px; */
- /* -webkit-user-select: none;
-   user-select: none; */
+ /* Dropdown */
+ .open .dropdown-toggle {
+     color: #fff ;
+     background-color: #555 !important;
  }
 
- .loginmodal-submit {
-   /* border: 1px solid #3079ed; */
-   border: 0px;
-   color: #fff;
-   text-shadow: 0 1px rgba(0,0,0,0.1);
-   background-color: #4d90fe;
-   padding: 17px 0px;
-   font-family: roboto;
-   font-size: 14px;
-   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+ /* Dropdown links */
+ .dropdown-menu li a {
+     color: #000 !important;
  }
 
- .loginmodal-submit:hover {
-   /* border: 1px solid #2f5bb7; */
-   border: 0px;
-   text-shadow: 0 1px rgba(0,0,0,0.3);
-   background-color: #357ae8;
-   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+ /* On hover, the dropdown links will turn red */
+ .dropdown-menu li a:hover {
+     background-color: #1e93f4 !important;
  }
 
- .loginmodal-container a {
-   text-decoration: none;
-   color: #666;
-   font-weight: 400;
-   text-align: center;
-   display: inline-block;
-   opacity: 0.6;
-   transition: opacity ease 0.5s;
+ footer {
+     background-color: #2d2d30;
+     color: #f5f5f5;
+     padding: 32px;
  }
 
- .login-help{
-   font-size: 12px;
+ footer a {
+     color: #f5f5f5;
  }
+
+ footer a:hover {
+     color: #777;
+     text-decoration: none;
+ }
+
+ // @import url(http://fonts.googleapis.com/css?family=Roboto);
+ //
+ // /****** LOGIN MODAL ******/
+ // .loginmodal-container {
+ //   padding: 30px;
+ //   max-width: 350px;
+ //   width: 100% !important;
+ //   background-color: #F7F7F7;
+ //   margin: 0 auto;
+ //   border-radius: 2px;
+ //   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+ //   overflow: hidden;
+ //   font-family: roboto;
+ // }
+ //
+ // .loginmodal-container h1 {
+ //   text-align: center;
+ //   font-size: 1.8em;
+ //   font-family: roboto;
+ // }
+ //
+ // .loginmodal-container input[type=submit] {
+ //   width: 100%;
+ //   display: block;
+ //   margin-bottom: 10px;
+ //   position: relative;
+ // }
+ //
+ // .loginmodal-container input[type=text], input[type=password] {
+ //   height: 44px;
+ //   font-size: 16px;
+ //   width: 100%;
+ //   margin-bottom: 10px;
+ //   -webkit-appearance: none;
+ //   background: #fff;
+ //   border: 1px solid #d9d9d9;
+ //   border-top: 1px solid #c0c0c0;
+ //   /* border-radius: 2px; */
+ //   padding: 0 8px;
+ //   box-sizing: border-box;
+ //   -moz-box-sizing: border-box;
+ // }
+ //
+ // .loginmodal-container input[type=text]:hover, input[type=password]:hover {
+ //   border: 1px solid #b9b9b9;
+ //   border-top: 1px solid #a0a0a0;
+ //   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+ //   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+ //   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+ // }
+ //
+ // .loginmodal {
+ //   text-align: center;
+ //   font-size: 14px;
+ //   font-family: 'Arial', sans-serif;
+ //   font-weight: 700;
+ //   height: 36px;
+ //   padding: 0 8px;
+ // /* border-radius: 3px; */
+ // /* -webkit-user-select: none;
+ //   user-select: none; */
+ // }
+ //
+ // .loginmodal-submit {
+ //   /* border: 1px solid #3079ed; */
+ //   border: 0px;
+ //   color: #fff;
+ //   text-shadow: 0 1px rgba(0,0,0,0.1);
+ //   background-color: #4d90fe;
+ //   padding: 17px 0px;
+ //   font-family: roboto;
+ //   font-size: 14px;
+ //   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+ // }
+ //
+ // .loginmodal-submit:hover {
+ //   /* border: 1px solid #2f5bb7; */
+ //   border: 0px;
+ //   text-shadow: 0 1px rgba(0,0,0,0.3);
+ //   background-color: #357ae8;
+ //   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+ // }
+ //
+ // .loginmodal-container a {
+ //   text-decoration: none;
+ //   color: #666;
+ //   font-weight: 400;
+ //   text-align: center;
+ //   display: inline-block;
+ //   opacity: 0.6;
+ //   transition: opacity ease 0.5s;
+ // }
+ //
+ // .login-help{
+ //   font-size: 12px;
+ // }

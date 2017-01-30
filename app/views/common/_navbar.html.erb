@@ -1,8 +1,8 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Job Listing </a>
+            <a class="navbar-brand" href="/">鲸 擎 </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,7 +21,7 @@
                 <li><a href="/">HOME</a></li>
                 <li><a href="/">BAND</a></li>
                 <li><a href="/">TOUR</a></li>
-                <li><a href="/">CONTACT</a></li>                      
+                <li><a href="/">CONTACT</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       Hi!, <%= current_user.email %>
@@ -36,6 +36,17 @@
                 </li>
               <% end %>
             </ul>
+            <form class="navbar-form navbar-left">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-btn">
+                  <button class="btn btn-danger" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
