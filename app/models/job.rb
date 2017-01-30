@@ -11,6 +11,7 @@ class Job < ApplicationRecord
     self.save
   end
 
+  belongs_to :apps
   has_many :resumes
 
   validates :title, presence: true
