@@ -1,0 +1,277 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+    padding: 30px;
+    max-width: 350px;
+    width: 100% !important;
+    background-color: #F7F7F7;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: roboto;
+
+}
+
+.loginmodal-container h1 {
+    text-align: center;
+    font-size: 1.8em;
+    font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.loginmodal-container input[type=text],
+input[type=password] {
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    /* border-radius: 2px; */
+    padding: 0 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover,
+input[type=password]:hover {
+    border: 1px solid #b9b9b9;
+    border-top: 1px solid #a0a0a0;
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    height: 36px;
+    padding: 0 8px;
+    /* border-radius: 3px; */
+    /* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+    /* border: 1px solid #3079ed; */
+    border: 0;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+    background-color: #4d90fe;
+    padding: 17px 0;
+    font-family: roboto;
+    font-size: 14px;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+    /* border: 1px solid #2f5bb7; */
+    border: 0;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    background-color: #357ae8;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    opacity: 0.6;
+    transition: opacity ease 0.5s;
+}
+
+.login-help {
+    font-size: 12px;
+}
+
+.custab {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+}
+
+.custab:hover {
+    box-shadow: 3px 3px 0 transprent;
+    transition: 0.5s;
+}
+
+.jumbotron {
+    background-image: url('https://ww3.sinaimg.cn/large/006tNc79ly1fc3d5r4ptej31kw0tkdtu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 110px;
+}
+
+.title {
+    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 80px;
+}
+
+.slogan {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: white;
+    top: 12px;
+}
+
+.lead {
+    margin-bottom: 60px;
+    text-align: center;
+    color: white;
+}
+
+.caption {
+    margin: 30px;
+    text-align: center;
+    top: 20px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
+}
+
+.navbar-default {
+    background-color: #212121; //背景颜色
+    border-color: #212121; //边框色
+    margin-bottom: 0; //底部 margin 不撑开距离
+}
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0; //圆角为0
+    }
+}
+
+.navbar-default .navbar-brand {
+    color: #F8A852; //字体颜色
+    padding: 10px 15px; //上下10px,左右15px
+    line-height: 30px; //文字行高
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+    color: #FF6F00; //鼠标放置在链接上的文字颜色
+    background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #F8A852;
+}
+.navbar-brand > img {
+    display: inline-block; //图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+//修改导航栏链接颜色
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+    color: #FF6F00;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+    color: #FF6F00;
+    background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFE0B2;
+    color: #212121;
+}
+//...
+.container-fluid .jumbotron {
+    padding-bottom: 110px; //内部的底部边距，这样按钮不会很靠近底部了
+    margin: 0 -15px 0px; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+    border-radius: 0; //圆角为0
+}
+.title {
+    background-color: rgba(250, 250, 250, 0.39); //背景颜色含透明度
+    max-width: 500px; //最大宽度
+    margin-top: 200px; //和顶部拉开距离
+    margin-bottom: 0; //这样就可以紧接息面的描述文字
+    border-top-right-radius: 3px; //右上角圆边
+    border-top-left-radius: 3px; //左上角圆边
+}
+
+.jumbotron .h1,
+.jumbotron h1 {
+    text-align: left; //文字左对齐
+    color: #2b3a55; //字体颜色
+    padding: 50px 20px 0; //上50px，左右20px，下0
+}
+
+.jumbotron p {
+    margin: 0; //上下左右margin为0
+    font-size: 23px; //字体大小
+    max-width: 500px; //最大宽度
+    background-color: rgba(250, 250, 250, 0.39); //背景颜色含透明度
+    padding: 20px; //上下左右padding为20px
+    text-align: left; //文字左对齐
+    color: #2b3a55; //字体颜色
+    border-bottom-right-radius: 3px; //右下角圆边
+    border-bottom-left-radius: 3px; //左下角圆边
+}
+//按钮修改
+
+.btn-danger {
+    color: #fff; //字体颜色
+    background-color: #F8A852; //背景颜色
+    border-color: #F8A852; //边框颜色
+}
+
+.btn-danger:hover {
+    background-color: #E65100; //鼠标放置在btn上的背景颜色
+    border-color: #E65100; //鼠标放置在btn上的边框颜色
+}
+.btn-group-lg > .btn,
+.btn-lg {
+    padding: 8px 16px; //通过padding来决定btn的大小
+    font-size: 20px; //btn文字大小
+    letter-spacing: 3px; //调整文字间距
+    border-radius: 3px; //btn圆角
+    width: 200px; //这里用指定宽度把btn拉得更长
+}
+//...

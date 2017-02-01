@@ -6,9 +6,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="container-fluid">
+      <div class="row">
+        <%= render "common/navbar" %>
+      </div>
+      <%= render "common/flashes" %>
+      <%= yield %>
+    </div>
+
+    <%= render "common/footer" %>
+
   </body>
 </html>
