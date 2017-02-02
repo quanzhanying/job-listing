@@ -1,0 +1,21 @@
+
+<tr>
+		<td>
+			<%= render_job_status(job) %>
+		</td>
+		<td><%= link_to(job.title, admin_job_path(job)) %></td>
+		<td><%= job.resumes.count %></td>
+		<td><%= job.wage_lower_bound %></td>
+		<td><%= job.wage_upper_bound %></td>
+		<td>
+				<%= link_to("", edit_admin_job_path(job), :class => "fa fa-lg fa-edit", :style => "color:black")%>
+				<%= link_to("", admin_job_path(job), :class => "fa fa-lg fa-trash", :style => "color:black",
+										method: :delete, data: { confirm: "Are you sure?" } )%>
+				<% if job.is_hidden %>
+					<%= link_to("", publish_admin_job_path(job), :method=> :post, :class => "fa fa-lg fa-unlock-alt", :style => "color:black") %>
+				<% else %>
+					<%= link_to("", hide_admin_job_path(job), :method=> :post, :class => "fa fa-lg fa-lock", :style => "color:black") %>
+				<% end %>
+		</td>
+		<td><%= job.created_at %></td>
+</tr>

@@ -10,9 +10,18 @@
 
   <body>
     <div class="container-fluid">
-      <%= render "common/navbar" %>
+      <%= render "common/adminNavbar" %>
       <%= render "common/flashes" %>
-      <%= yield %>
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><%= link_to("Admin Panel", admin_jobs_path ) %> </li>
+            <li><%= link_to("User Panel", jobs_path ) %> </li>
+          </ul>
+        </div>
+        <div class="col-md-10">
+          <%= yield %>
+        </div>
     </div>
     <%= render "common/footer" %>
   </body>
