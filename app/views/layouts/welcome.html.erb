@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Job</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico"> <!-- 给网站加图标 -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+            <%= render "common/navbar1" %>
+            <%= render "common/flashes" %>
+            <%= yield %>
+    </div>
+
+    <%= render "common/footer" %>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-2" style="margin-top: 100px;">
+    <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+      <li class="job-sider-1"><a>职 位 类 别</a></li>
+      <li class="job-sider"><%= link_to("全部职位", jobs_path) %> </li>
+      <li class="job-sider"><%= link_to("开发工程师", jobs_path(:cate => "1") ) %> </li>
+      <li class="job-sider"><%= link_to("硬件工程师", jobs_path(:cate => "2") ) %> </li>
+      <li class="job-sider"><%= link_to("运维工程师", jobs_path(:cate => "3")) %> </li>
+    </ul>
+  </div>
+  <div class="col-md-10">
+    <div class="container">
+  <!-- <div class="job">
+    <%= link_to("Add a job", new_job_path, class: "btn btn-primary pull-right") %>
+  </div> -->
+      <div class="dropdown clearfix pull-right">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          排序
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+          <li><%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %></li>
+          <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
+          <li><%= link_to("按照发表时间排序", jobs_path) %></li>
+        </ul>
+      </div>
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+        <td>职位</td>
+        <td>薪资下限</td>
+        <td>薪资上限</td>
+        <td>刊登时间</td>
+        <td>分类</td>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render :partial => "job_item", :collection => @jobs, :as => :job %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>

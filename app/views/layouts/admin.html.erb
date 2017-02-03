@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Job Listing </title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <%= render "common/navbar" %>
+            <%= render "common/flashes" %>
+            <div class="row">
+              <div class="col-md-2" style="margin-top: 100px;">
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                  <li class="admin-sider"><%= link_to("职位列表", admin_jobs_path ) %> </li>
+                  <li class="admin-sider"><%= link_to("新增职位", new_admin_job_path ) %> </li>
+                  <li class="admin-sider"><%= link_to("职位分类", admin_jobs_path ) %> </li>
+                  <li class="admin-sider"><%= link_to("隐藏的职位", admin_jobs_path ) %> </li>
+                </ul>
+              </div>
+
+              <div class="col-md-10">
+                <%= yield %>
+              </div>
+              <!-- 新增的 -->
+            </div>
+        </div>
+
+        <%= render "common/footer" %>
+
+    </body>
+</html>

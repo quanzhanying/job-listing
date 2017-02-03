@@ -1,0 +1,65 @@
+
+<div class="jumbotron">
+    <!-- <p class="title">18K Offer</p>
+    <p clas"slogan">18K Offer 是一个提供18K高薪工作机会的求职网站。
+      <br>
+      我们希望藉由这个网站，能让大家找到且应征上高薪且优质的工作。
+      <br>
+      凭借自己的女里和天分也会变 Winner
+    </p> -->
+    <div class="index-word" align="center">
+      <p class="p1">Find the right job.</p>
+      <p class="p2">Right now.</p>
+    </div>
+    <div class="index-search" align="center">
+      <%= form_tag( jobs_path, :method => "get", class: "navbar-form", role: "search") do%>
+        <div class="form-group">
+          <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control-self" %>
+          <button type="submit" class="btn btn-default">
+            <span class="search-button">Find Jobs</span>
+          </button>
+          <!-- <%= submit_tag "Search", :name => nil, class: "btn btn-default" %> -->
+        </div>
+    <% end %>
+    </div>
+    <!-- <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">马上应征</a></p> -->
+</div>
+
+<section id="company">
+  <div class = "container-fluid">
+    <div class="row">
+      <div class="col-sm-3 ">
+        <div class="thumbnail">
+          <img src="https://ooo.0o0.ooo/2017/01/25/588865fef0d90.png" alt="search" class = "img-thhumbnail">
+          <div class="caption">
+            <h5>吉林省长春市SOHO</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 ">
+        <div class="thumbnail">
+          <img src="https://ooo.0o0.ooo/2017/01/25/5888648994cdd.png" alt="bid" class = "img-thhumbnail">
+          <div class="caption">
+            <h5>lisuji1986@gmail.com</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 ">
+        <div class="thumbnail">
+          <img src="https://ooo.0o0.ooo/2017/01/25/58886529a84dc.png" alt="heart" class = "img-thhumbnail">
+          <div class="caption">
+            <h5>0431-88888888</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 ">
+        <div class="thumbnail">
+          <img src="https://ooo.0o0.ooo/2017/01/25/5888668be18eb.png" alt="heart" class = "img-thhumbnail">
+          <div class="caption">
+            <h5>88888888</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

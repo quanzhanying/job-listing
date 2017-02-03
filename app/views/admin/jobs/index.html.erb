@@ -1,0 +1,78 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我创建的职位 </h2>
+  <!-- <div class="category">
+    <ul>
+      <li><%= link_to("全部职位", admin_jobs_path) %></li>
+        <li><%= link_to("1序", admin_jobs_path(:order => "1")) %></li>
+        <li><%= link_to("2", admin_jobs_path(:order => "2")) %></li>
+        <li><%= link_to("3", admin_jobs_path(:order => "3")) %></li>
+    </ul>
+  </div> -->
+  <div class="btn-group btn-group-justified button-a" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">
+        <%= link_to("全部职位", admin_jobs_path) %>
+      </button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" >
+        <%= link_to("开发工程师", admin_jobs_path(:order => "1")) %>
+      </button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">
+        <%= link_to("硬件工程师", admin_jobs_path(:order => "2")) %>
+      </button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">
+        <%= link_to("运维工程师", admin_jobs_path(:order => "3")) %>
+      </button>
+    </div>
+  </div>
+  <!-- <div class="pull-right">
+    <%= link_to("Add a job", new_admin_job_path, class: "btn pull-right") %>
+  </div> -->
+
+  <table class="table talbe-boldered table-striped custab">
+    <thead>
+      <tr>
+        <th> 职位 </th>
+        <td> 收到简历数 </th>
+        <th> 薪资下限 </th>
+        <th> 薪资上限 </th>
+        <th> 管理选项 </th>
+        <th> 刊登时间 </th>
+        <th> 分类 </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td>
+            <%= render_job_status(job) %>
+            <%= link_to(job.title, admin_job_path(job)) %>
+          </td>
+          <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
+          <td> <%= job.wage_lower_bound %> </td>
+          <td> <%= job.wage_upper_bound %> </td>
+          <td>
+                <%= link_to edit_admin_job_path(job), :class => "btn btn-xs btn-defalut btn-info" do %><i class="fa fa-pencil"></i><% end %>
+                <%= link_to admin_job_path(job),
+                            method: :delete, :class => "btn btn-xs btn-default btn-danger",data: { confirm:"Are you sure?"} do
+                             %><i class="fa fa-trash-o"></i><% end %>
+                <% if job.is_hidden %>
+                  <%= link_to publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default btn-success" do%><i class="fa fa-eye"></i><% end %>
+                <% else %>
+                  <%= link_to hide_admin_job_path(job), method: :post, :class => "btn btn-xs btn-default btn-warning" do%><i class="fa fa-eye-slash"></i><% end %>
+                <% end %>
+            </td>
+            <td> <%= job.updated_at %> </td>
+            <td> <%= job.category.name %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
