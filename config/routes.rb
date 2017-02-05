@@ -7,6 +7,10 @@ Rails.application.routes.draw do
       get :search
     end
     resources :resumes
+    member do
+      post :follow
+      post :unfollow
+    end
   end
 
   namespace :admin do
@@ -22,6 +26,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :jobs
+    resources :favor
   end
   #root 'welcome#index'
 

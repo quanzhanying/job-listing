@@ -5,7 +5,10 @@ class Job < ApplicationRecord
 
   has_many :resumes
   has_many :candidates, through: :resumes, source: :user
-  
+
+  has_many :favor_job_relationships
+  has_many :followers, through: :favor_job_relationships, source: :user
+
   def publish!
     self.is_hidden = false
     self.save

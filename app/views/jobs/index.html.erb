@@ -19,6 +19,9 @@
   <table class="table table-boldered">
     <thead>
       <tr style="font-size: 15px;">
+        <% if current_user && !current_user.is_admin? %>
+          <td></td>
+        <% end %>
         <td>Job Title</td>
         <td>Wage From</td>
         <td>Wage To</td>
@@ -28,6 +31,19 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
+          <% if current_user && !current_user.is_admin? %>
+          <td>
+            <% if current_user.has_follow?(job) %>
+              <%= link_to unfollow_job_path(job), :method => :post do %>
+                <i class="fa fa-heart"></i>
+              <% end %>
+            <% else %>
+              <%= link_to follow_job_path(job), :method => :post do %>
+                <i class="fa fa-heart-o"></i>
+              <% end %>
+            <% end %>
+          </td>
+          <% end %>
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td>
             <%= job.wage_lower_bound %>

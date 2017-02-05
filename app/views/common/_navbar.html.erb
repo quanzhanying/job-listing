@@ -30,6 +30,7 @@
                 <li><%= link_to("Admin Panel", admin_jobs_path) %></li>
               <% else %>
                 <li><%= link_to("My Applied Jobs", account_jobs_path) %></li>
+                <li><%= link_to("My Followed Jobs", account_favor_index_path) %></li>
               <% end %>
               <li><%= link_to("Logout", destroy_user_session_path, method: :delete) %></li>
             </ul>

@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :follow, :unfollow]
   before_action :validate_search_key, only: [:search]
   def index
     jobs_ordered = case params[:order]
@@ -59,6 +59,21 @@ class JobsController < ApplicationController
     @job.destroy
 
     redirect_to jobs_path, alert: 'Job deleted'
+  end
+
+  def follow
+    @job = Job.find(params[:id])
+    current_user.follow!(@job)
+
+    redirect_to :back, notice: "Follow the job!"
+  end
+
+  def unfollow
+    @job = Job.find(params[:id])
+    current_user.unfollow!(@job)
+
+    flash[:warning] = "Stop follow the job!"
+    redirect_to :back
   end
 
   def search
