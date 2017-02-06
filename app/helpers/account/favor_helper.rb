@@ -1,0 +1,2 @@
+module Account::FavorHelper
+end

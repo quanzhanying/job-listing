@@ -1,0 +1,63 @@
+<div class="col-md-12">
+  <div class="dropdown clearfix pull-right" style="margin-top: 10px; margin-bottom: 10px;">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Sort
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+      <li>
+        <%= link_to("Sort by Wage From", jobs_path(:order => "by_lower_bound")) %>
+      </li>
+      <li>
+        <%= link_to("Sort by Wage To", jobs_path(:order => "by_upper_bound")) %>
+      </li>
+      <li>
+        <%= link_to("Sort by Creation Date", jobs_path) %>
+      </li>
+    </ul>
+  </div>
+  <table class="table table-boldered">
+    <thead>
+      <tr style="font-size: 15px;">
+        <% if current_user && !current_user.is_admin? %>
+          <td></td>
+        <% end %>
+        <td>Job Title</td>
+        <td>Wage From</td>
+        <td>Wage To</td>
+        <td>Creation Date</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <% if current_user && !current_user.is_admin? %>
+          <td>
+            <% if current_user.has_follow?(job) %>
+              <%= link_to unfollow_job_path(job), :method => :post do %>
+                <i class="fa fa-heart"></i>
+              <% end %>
+            <% else %>
+              <%= link_to follow_job_path(job), :method => :post do %>
+                <i class="fa fa-heart-o"></i>
+              <% end %>
+            <% end %>
+          </td>
+          <% end %>
+          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td>
+            <%= job.wage_lower_bound %>
+          </td>
+          <td>
+            <%= job.wage_upper_bound %>
+          </td>
+          <td><%= job.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="text-center">
+    <%= will_paginate @jobs %>
+  </div>
+</div>

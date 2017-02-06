@@ -1,0 +1,19 @@
+<div style="width: 95%; margin-top: 20px; margin-right: 10px; margin-left: 10px;">
+  <div class="col-md-12 panel" style="background-color: #efefef;  ">
+    <h2><%= @job.title %></h2>
+    <p style="height: 30px;">
+      <%= simple_format(@job.description) %>
+    </p>
+
+    <!-- <div class="text-center">
+      <%#= link_to("Apply", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
+    </div> -->
+  </div>
+
+  <div class="pull-right" style="margin-top: 10px; margin-bottom:10px;">
+    <% if !current_user.admin? &&  !current_user.has_applied_for?(@job) %>
+        <%= link_to("Apply", new_job_resume_path(@job), class: "btn btn-primary") %>
+    <% end %>
+    <%= link_to "Back", jobs_path, class: "btn btn-primary"%>
+  </div>
+</div>

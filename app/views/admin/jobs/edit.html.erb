@@ -1,0 +1,17 @@
+<div class="col-md-4 col-md-offset-4" style="margin: auto;">
+  <div class="form-group" style="width: 500px;">
+    <h2> Edit Job </h2>
+  </div>
+  <div class="form-group" style="width: 800px; ">
+    <%= simple_form_for [:admin, @job] do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :wage_lower_bound, :label => "Wage From" %>
+      <%= f.input :wage_upper_bound, :label => "Wage To"%>
+      <%= f.input :contact_email %>
+      <%= f.input :is_hidden %>
+
+      <%= f.submit "Submit" , disable_with: "Submiting...", class: "btn btn-primary" %>
+      <%= link_to "Cancel", admin_jobs_path, class: "btn btn-primary"%>
+  </div>
+<% end %>

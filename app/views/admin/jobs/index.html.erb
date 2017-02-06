@@ -1,0 +1,38 @@
+<div class="pull-right" style="margin-top: 20px; margin-bottom: 10px;">
+  <%= link_to("Add New Job", new_admin_job_path, :class => "btn btn-default btn-info") %>
+</div>
+
+<table class="table table-boldered table-striped custab">
+  <thead>
+    <td>Job Title</td>
+    <td>Admin Options</td>
+    <td>Wage From</td>
+    <td>Wage To</td>
+    <td>Resume Count</td>
+    <td>Followers Count</td>
+    <td>Creation Date</td>
+  </thead>
+  <% @jobs.each do |job| %>
+  <tr>
+    <td>
+      <%= render_job_status(job) %>
+      <%= link_to(job.title, admin_job_path(job)) %></td>
+    <td>
+      <%= link_to edit_admin_job_path(job), class: 'btn btn-info btn-xs' do %><i class="fa fa-pencil"></i><% end %>
+      <%= link_to admin_job_path(job), :method => :delete, :data => {:confirm => "Are your sure?" }, class: 'btn btn-danger btn-xs' do %>
+        <i class="fa fa-trash-o"></i>
+      <% end %>
+      <% if job.is_hidden %>
+        <%= link_to publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success" do %><i class="fa fa-eye"></i><% end %>
+      <% else %>
+        <%= link_to hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning" do %><i class="fa fa-eye-slash"></i><% end %>
+      <% end %>
+    </td>
+    <td><%= job.wage_lower_bound %></td>
+    <td><%= job.wage_upper_bound %></td>
+    <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
+    <td><%= job.followers.count %></td>
+    <td><%= job.created_at %></td>
+  </tr>
+  <% end %>
+</table>

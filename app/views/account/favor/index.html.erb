@@ -1,0 +1,24 @@
+<div class="col-md-12">
+  <div class="form-group" style="margin-bottom: -20px;">
+    <h2 class="text-center"> My Followed Jobs </h2>
+  </div>
+  <table class="table table-boldered table-striped custab">
+    <thead>
+      <tr style="font-size: 15px;">
+        <td>Job Title</td>
+        <td>Job Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td>
+            <%= job.description %>
+          </td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

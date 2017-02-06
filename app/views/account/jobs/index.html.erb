@@ -1,0 +1,28 @@
+<div class="col-md-12">
+  <div class="form-group" style="margin-bottom: -20px;">
+    <h2 class="text-center"> My Applied Jobs </h2>
+  </div>
+  <table class="table table-boldered table-striped custab">
+    <thead>
+      <tr style="font-size: 15px;">
+        <td>Job Title</td>
+        <td>Apply Content</td>
+        <td>Apply Date</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @resumes.each do |resume| %>
+        <tr>
+          <!-- <td><%#= link_to(job.title, job_path(job)) %></td> -->
+          <td>
+            <%= resume.title %>
+          </td>
+          <td>
+            <%= resume.content %>
+          </td>
+          <td><%= resume.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
