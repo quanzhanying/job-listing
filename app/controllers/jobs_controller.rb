@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @jobs = Job.all
+    @jobs = Job.where(:is_hidden => false)
   end
 
   def new
