@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<!--
+ _______________________________________
+/  This page is designed by Dali, coded \
+\  by Xujia, and modified by An Old Man /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+-->
+
+<html lang="zh-cn">
+<head>
+<title>登录 | 新浪办公网接入认证系统</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/media/images/vdun/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="/media/css/vdun/d-reset.css">
+<link rel="stylesheet" type="text/css" href="/media/css/vdun/login.css">
+
+<script type="text/javascript" src="/media/js/vdun/jquery.min.js"></script>
+<script type="text/javascript" src="/media/js/vdun/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/media/js/vdun/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="/media/js/vdun/vdun_qrcode.min.js"></script>
+
+<script type="text/javascript" src="/media/js/vdun/login.js"></script>
+
+<script>
+    $.vdun_qrcode({
+        // 分配的APPID
+        appid: 1020,
+        // 二维码大小
+        size: 215,
+        // 是否显示鼠标放置二维码上后的帮助图片
+        help: true,
+        // 是否显示二维码下面的推送
+        push: true,
+
+        scanned_callback: function (sid) {
+            $("#vdun-push").hide();
+            $(".num-succ").css("visibility","visible").show();
+        },
+
+        // 点击确认验证后回调的函数，sid会在回调时自动提供
+        authed_callback: function (sid) {
+            //请求本地服务器进行验证
+            $.get('/vdun_login', {sid: sid}).done(function(r) {
+                if(r.status == 0){
+                   location.href="http://10.210.12.253/loading/";
+                }else{
+                   console.log(JSON.stringify(r));
+                }
+            });
+        }
+    });
+</script>
+
+</head>
+
+<body>
+<div id="top-tip"></div>
+<div class="login-main">
+    <!--top-->
+    <div class="login-top">
+        <p class="top-tit">Network Access System</p>
+        <p class="tit-con">新浪办公网认证系统</p>
+    </div>
+
+    <div class="login-content clearfix">
+        <div class="two-num">
+            <p class="num-txt">扫描二维码登录</p>
+            <div id="vdun-qrcode"></div>
+            <p class="num-succ">扫描成功，请用手机确认登录</p>
+        </div>
+
+        <div class="line"><img src="../media/images/vdun/login-line.png"/></div>
+
+        <div class="con-login">
+            <form action='/' method="post" id="login-form">
+                <p class="input-tit">
+                    <input type="hidden" id="login-type" name="login_type" value="radius"/>
+                    <!-- 加类login-cur字体为蓝色-->
+                    <span id="opt-radius">动态口令登录</span>
+                    <span id="opt-divider">|</span>
+                    <span id="opt-ldap">邮箱帐号登录</span>
+                </p>
+                <input type="text" id="username" name="name" placeholder="用户名"/>
+                <input type="password" id="password" name="password" placeholder="动态口令"/>
+                <button id="submit" class="login-btn">登&nbsp;&nbsp;&nbsp;录</button>
+                <div id="input-extra">
+                    <p class="login-way">
+                        <span id="submit-guest">来宾登录</span>
+                        <span id="help" class="no-marg">帮助说明</span>
+                    </p>
+                </div>
+                <div id="error-tip">
+                    <span id="error-msg"></span>
+                </div>
+            </form>
+        </div>
+    </div> 
+
+    <div class="login-bot">
+        <p>Copyright &copy; 2010-2015 SINA.&nbsp;All Rights Reserved.&nbsp;&nbsp;&nbsp;支持电话：5666</p>
+    </div>
+</div>
+
+<div class="custom" id="help-content">
+    <div id="help-title">办公网认证系统帮助</div>
+    <hr/>
+    <div id="help-main">
+     登录账号为邮箱前缀，来宾登陆无需账号密码:
+     <ol>
+         <li>使用<strong>动态口令登录</strong>，将获得自己部门已申请过的权限</li>
+         <li>使用<strong>邮箱密码登录</strong>，只有公共办公权限，供临时使用</li>
+         <li>使用<strong>来宾登录</strong>，只能访问公共互联网</li>
+     </ol>
+     <strong>*注意事项*:</strong>
+     <ol>
+         <li><strong>邮箱登录</strong>与<strong>来宾登录</strong>不能使用以下应用：</li>
+         <ul>
+             <li>网络P2P下载，P2P视频，网络电视等应用</li>
+             <li>所有网络游戏</li>
+             <li>所有股票软件</li>
+         </ul>
+         <li>请尽量使用动态口令登录，如丢失或忘带卡，可用手机认证（账号为邮箱全称）</li>
+         <li>以来宾权限登录后，想切换回部门办公权限，请回到<a href="http://10.210.12.253">本页面</a>重新登录。</li>
+     </ol>
+    </div>
+    <hr/>
+    <div id="help-foot">By SinaSec</div>
+</div>
+<div id="layer"> </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+<h2> <%= @job.title %> - 简历列表 </h2>
+<hr>
+<%= render :partial => "resume", :collection => @resumes, :as => :resume %>

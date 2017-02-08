@@ -1,0 +1,175 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+@import "font-awesome";
+
+.form-inputs {
+  background-color: rgba(147, 213, 250, 0.25);//transparent;//背景颜色含透明度
+  max-width: 500px;//最大宽度
+  margin-top: 50px;//和顶部拉开距离
+  margin-bottom: 0px;//这样就可以紧接息面的描述文字
+  border-top-right-radius: 3px;//右上角圆边
+  border-top-left-radius: 3px;//左上角圆边
+  padding-bottom: 10px;
+}
+
+.form-actions{
+  margin-top:0px;
+  background-color: rgba(147, 213, 250, 0.25);//transparent;//背景颜色含透明度
+  margin-bottom: 0px;
+
+}
+.restfont{
+  padding-top: 10px;
+  margin-top: 0px;
+  background-color: rgba(147, 213, 250, 0.25);//transparent;//背景颜色含透明度
+
+
+}
+
+#image {
+  position:relative;
+  background-image: url('https://ww4.sinaimg.cn/large/006y8lVajw1fbz5f4eh2fj31kw11ynkw.jpg');
+  height:1000px;  //加入适合的高度
+  background-size: cover;
+  margin: -20px -15px;
+}
+
+.position{
+  margin-top: 100px;
+}
+
+
+
+
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+}
+.person:hover {
+    border-color: #f1f1f1;
+}
+
+
+
+.container {
+    padding: 80px 120px;
+}
+
+ .custab{
+   border: 1px solid #ccc;
+   padding: 5px;
+   margin: 5% 0;
+   box-shadow: 3px 3px 2px #ccc ;
+   transition: 0.5s;
+ }
+
+ .custab:hover{
+   box-shadow: 3px 3px 0px transparent;
+   transition: 0.5s;
+ }
+
+ /*.jumbotron {
+  background-image:url('https://ww3.sinaimg.cn/large/006y8lVajw1fbq06bskr5j30j60cgmyn.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}*/
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
+
+.caption{
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+
+.thumbnail p {
+    margin-top: 15px;
+    color: #555;
+}
+
+.carousel-inner img {
+    /*-webkit-filter: grayscale(90%);*/
+    /*filter: grayscale(90%); /* make all photos black and white */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+
+body {
+    font: 400 15px/1.8 Lato, sans-serif;
+     /*color: #777;*/
+}
+
+.navbar {
+    font-family: Montserrat, sans-serif;
+}
+
+.navbar-default {
+    background-color: #212121;//背景颜色
+    border-color: #212121;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
