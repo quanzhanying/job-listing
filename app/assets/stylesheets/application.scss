@@ -1,0 +1,165 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+ @media (min-width: 768px) {
+    .navbar {
+        border-radius: 0;//圆角为0
+    }
+}
+
+ .custab{
+   border:1px solid #ccc;
+   padding: 5px;
+   margin: 5% 0;
+   box-shadow: 3px 3px 2px #ccc;
+   transition: 0.5s;
+ }
+
+ .custab:hover{
+   box-shadow: 3px 3px 0px transparent;
+   transition: 0.5s;
+ }
+
+ .jumbotron {
+   background-image:url('http://www.ottawariverkeeper.ca/wp-content/uploads/2015/11/hiker-984083_1920-e1447170747212.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding-bottom: 110px;
+ }
+
+ .title {
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  max-width: 500px;//最大宽度
+  margin-top: 200px;//和顶部拉开距离
+  margin-bottom: 0;//这样就可以紧接息面的描述文字
+  border-top-right-radius: 3px;//右上角圆边
+  border-top-left-radius: 3px;//左上角圆边
+}
+
+.jumbotron h1, .jumbotron .h1 {
+    text-align: left;//文字左对齐
+    color: #222;	//字体颜色
+    padding: 50px 20px 0;//上50px，左右20px，下0
+}
+
+.jumbotron p {
+    margin: 0;//上下左右margin为0
+    font-size: 26px;//字体大小
+    max-width: 500px;//最大宽度
+    background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+    padding: 20px;//上下左右padding为20px
+    text-align:left;//文字左对齐
+    color: #222;//字体颜色
+    border-bottom-right-radius: 3px;//右下角圆边
+    border-bottom-left-radius: 3px;//左下角圆边
+}
+
+
+ .slogan {
+   margin-top: 10px;
+   margin-bottom: 50px;
+   text-align: center;
+   color: white;
+   top: 12px;
+ }
+
+ .lead {
+   margin-bottom: 60px;
+   text-align: center;
+   color: white;
+ }
+
+ .caption {
+   margin: 30px;
+   text-align: center;
+   top: 20px;
+ }
+
+ .thumbnail {
+     border: 0 none;
+     box-shadow: none;
+     margin-top: 60px;
+ }
+
+ .navbar-default{
+   background-color: #212121;//背景颜色
+   border-color: #212121;//边框色
+   margin-bottom: 0;//底部 margin 不撑开距离
+ }
+
+ .navbar-default .navbar-brand {
+    color: #FFFDE7;//字体颜色
+    padding: 10px 15px;//上下10px,左右15px
+    line-height: 30px;//文字行高
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #FFC107;//鼠标放置在链接上的文字颜色
+   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+ }
+
+ .navbar-default .navbar-nav > li > a{
+  color: #FFFDE7;//"登入"&“注册”的文字颜色
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FFC107;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #FFFDE7;
+  background-color: #607D8B;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFC107;
+    color: #FFFDE7;
+}
+
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+
+.container-fluid .jumbotron{
+  padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+  margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+  border-radius: 0;//圆角为0
+}
+
+
+.btn-danger {
+    color: #fff;//字体颜色
+    background-color: #EF6C00;//背景颜色
+    border-color: #EF6C00;//边框颜色
+}
+
+.btn-danger:hover {
+    background-color: #E65100;//鼠标放置在btn上的背景颜色
+    border-color: #E65100;//鼠标放置在btn上的边框颜色
+}
