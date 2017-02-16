@@ -10,17 +10,27 @@
       <li><%= link_to("按照发表时间排序", "#") %></li>
     </ul>
   </div>
-  <table class="table table-hover">
+  <table class="table table-boldered">
+    <thead>
+      <tr>
+        <td>职位</td>
+        <td>薪资下限</td>
+        <td>薪资上限</td>
+        <td>刊登时间</td>
+      </tr>
+      </thead>
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
           <td><%= link_to(job.title, job_path(job)) %></td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.wage_upper_bound %></td>
+          <td><%= job.created_at %></td>
           <td>
               <% if current_user %>
               <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
               <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
-          <td><%= job.created_at %></td>
               <% end %>
           </td>
         </tr>
