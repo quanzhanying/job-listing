@@ -2,5 +2,7 @@
 <hr>
 <%= simple_form_for [@job, @resume] do |f| %>
 	<%= f.input :content %>
-	<%= f.submit "送出" %>
+	<%= f.input :attachment %>
+
+	<%= f.submit 'Send' %>
 <% end %>

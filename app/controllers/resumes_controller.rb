@@ -13,7 +13,7 @@ class ResumesController < ApplicationController
 		@resume.user = current_user
 
 		if @resume.save
-			lash[:notice] = "成功提交履历"
+			flash[:notice] = "成功提交履历"
 			redirect_to job_path(@job)
 		else
 			render :new
