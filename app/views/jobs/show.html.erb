@@ -1,0 +1,9 @@
+<div class="col-md-12">
+  <div class="job">
+    <% if current_user %>
+    <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right")%>
+    <% end %>
+  </div>
+  <h1><%= @job.title %></h1>
+  <p><%= @job.description %></p>
+</div>
