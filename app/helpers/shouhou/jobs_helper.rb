@@ -1,0 +1,2 @@
+module Shouhou::JobsHelper
+end

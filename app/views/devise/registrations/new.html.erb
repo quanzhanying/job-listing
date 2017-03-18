@@ -1,0 +1,27 @@
+<head>
+<link rel="stylesheet" type="text/css" href="login.scss">
+</head>
+<body class="a">
+<div class="container-1">
+  <div class="col-md-6">
+  <div id="logbox">
+      <h1>新建账户</h1>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+         <input name="user[email]" type="email" placeholder="Email address" class="input pass"/>
+         <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass"/>
+         <input name="user[password2]" type="password" placeholder="Confirm password" required="required" class="input pass"/>
+         <input type="submit" value="注册" class="inputButton"/>
+  </div>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+</form>
+</div>
+</div>
+</div>
+</body>

@@ -1,0 +1,2 @@
+module Quanzhan::JobsHelper
+end

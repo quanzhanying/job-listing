@@ -1,0 +1,373 @@
+/*
+Fade content bs-carousel with hero headers
+Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
+Image credits: unsplash.com
+*/
+
+.ziti:hover{
+  color: white;
+}
+.link:hover, .link:active {
+    text-decoration: none;
+}
+/********************************/
+/*       Fade Bs-carousel       */
+/********************************/
+.fade-carousel {
+    position: relative;
+    height: 85vh;
+    margin-top: -20px;
+}
+.fade-carousel .carousel-inner .item {
+    height: 85vh;
+}
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #dcef09;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+}
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(https://jobs.mak.ac.ug/sites/default/files/slides/Job-Careers-01.jpg);
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(https://c.fastcompany.net/multisite_files/fastcompany/imagecache/inline-large/inline/2015/12/3054756-inline-s-1-1-how-youll-search-for-a-job-in-2016-copy.jpg);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(http://onlineathens.com/sites/default/files/images/article/lead/job_application.jpg);
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }
+}
+
+.container-qiye{
+  background-color: #616161;
+  margin-top: -0.5em;
+  height: 30%
+}
+/* carousel */
+#quote-carousel
+{
+  padding: 0 10px 30px 10px;
+  margin-top: 30px 0px 0px;
+}
+
+/* Control buttons  */
+#quote-carousel .carousel-control
+{
+  background: none;
+  color: #222;
+  font-size: 2.3em;
+  text-shadow: none;
+  margin-top: 30px;
+}
+/* Previous button  */
+#quote-carousel .carousel-control.left
+{
+  left: -12px;
+}
+/* Next button  */
+#quote-carousel .carousel-control.right
+{
+  right: -12px !important;
+}
+/* Changes the position of the indicators */
+#quote-carousel .carousel-indicators
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the color of the indicators */
+#quote-carousel .carousel-indicators li
+{
+  background: #c0c0c0;
+}
+#quote-carousel .carousel-indicators .active
+{
+  background: #333333;
+}
+#quote-carousel img
+{
+  width: 250px;
+  height: 100px
+}
+/* End carousel */
+
+.item blockquote {
+    border-left: none;
+    margin: 0;
+}
+
+.item blockquote img {
+    margin-bottom: 10px;
+}
+
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+/**
+  MEDIA QUERIES
+*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #quote-carousel
+    {
+      margin-bottom: 0;
+      padding: 0 40px 30px 40px;
+      margin-top: 30px;
+    }
+
+}
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) {
+
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+
+    #quote-carousel .carousel-indicators {
+        bottom: -20px !important;
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 15px;
+        height: 15px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+
+.promos {
+    border-bottom: 2px solid #fff;
+}
+.row {
+    position: relative;
+    z-index: 1;
+}
+
+.promos ul {
+    margin: 0;
+    padding: 0;
+}
+
+.promos .promo-position {
+    border-right: none;
+}
+
+.promos .promo-position {
+    list-style-type: none;
+    box-sizing: border-box;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+.large-3 {
+    width: 25%;
+}
+.column-1 {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    float: left;
+    min-height: 2px;
+}
+
+
+.promos .promo {
+    display: block;
+    background-position: center center;
+    height: 200px;
+}
+
+.promo-accessories {
+    background-size: 736px 400px;
+    background-repeat: no-repeat;
+    background-image: url(http://i1.hexunimg.cn/2013-08-16/157153352.jpg);
+}
+
+.promos .promo-label {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+.promo-ipad-pro {
+    background-size: 736px 400px;
+    background-repeat: no-repeat;
+    background-image: url(http://techstory.in/wp-content/uploads/2016/03/google.jpg);
+}
+.promo-airpods {
+    background-size: 736px 400px;
+    background-repeat: no-repeat;
+    background-image: url(http://www.theonlinecitizen.com/wp-content/uploads/2015/02/apple.jpg?w=640);
+}
+.promo-apple-tv {
+    background-size: 736px 400px;
+    background-repeat: no-repeat;
+    background-image: url(http://marketingland.com/wp-content/ml-loads/2015/08/yahoo-building-headquarters-sunnyvale-1920-800x450.jpg);
+}
+
+.promo-1{
+  background-size: 736px 400px;
+  background-repeat: no-repeat;
+  background-image: url(http://cashbackindustry.news/wp-content/uploads/2016/04/Alibaba.jpg);
+
+}
+
+.promo-2{
+  background-size: 736px 400px;
+  background-repeat: no-repeat;
+  background-image: url(http://n.sinaimg.cn/tech/20160919/XYKy-fxvyqvy6749782.jpg);
+}
+
+.promo-3{
+  background-size: 736px 400px;
+  background-repeat: no-repeat;
+  background-image: url(http://www.0759h.com/cc/qianshang/images/al/r8.jpg);
+
+}
+.promo-4{
+  background-size: 736px 400px;
+  background-repeat: no-repeat;
+  background-image: url(http://sugikingdom.com/wp-content/uploads/2014/12/dezeen_YouTube-Space-Tokyo-by-Klein-Dytham-Architecture_ss_3.jpg);
+
+}
+
+.promo-5{
+  background-size: 736px 400px;
+  background-repeat: no-repeat;
+  background-image: url(http://ostadcomputer.ir/wp-content/uploads/2016/04/%D8%A2%DB%8C%D8%A7-%D9%85%DB%8C-%D8%AF%D8%A7%D9%86%DB%8C%D8%AF-%D9%85%D8%A7%DB%8C%DA%A9%D8%B1%D9%88%D8%B3%D8%A7%D9%81%D8%AA-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D9%88-%D8%AA%D9%88%D8%B3%D8%B7-%DA%86%D9%87-%DA%A9%D8%B3%D8%A7%D9%86%DB%8C-%D8%AA%D8%A7%D8%B3%DB%8C%D8%B3-%D8%B4%D8%AF%D8%9F.jpg);
+
+}
+.promo-6{
+  background-size: 736px 400px;
+  background-repeat: no-repeat;
+  background-image: url(http://www.servershp.co.uk/wp-content/uploads/2014/07/HP-Servers-Banner-620x300.png);
+
+}
+.promo-7{
+  background-size: 736px 400px;
+  background-repeat: no-repeat;
+  background-image: url(http://images.bidnessetc.com/img/960-intelaltera-merger-to-strengthen-data-center-and-iot-efforts-needham.jpg);
+
+}
+.promo-8{
+  background-size: 736px 400px;
+  background-repeat: no-repeat;
+  background-image: url(https://si.wsj.net/public/resources/images/BN-QI641_1019EB_GR_20161019011534.jpg);
+
+}

@@ -1,0 +1,28 @@
+<h1> Add a job </h1>
+
+<%= simple_form_for [:admin,@job] do |f| %>
+
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :wage_lower_bound, :label => "薪资下限"%>
+<%= f.input :wage_upper_bound, :label => "薪资上限"%>
+<%= f.input :contact_email, :label => "联系方式"%>
+<%= f.input :is_hidden, :label => "隐藏"%>
+<%= f.input :is_qianduan, :label => "前端工程师"%>
+<%= f.input :is_houduan, :label => "后端工程师"%>
+<%= f.input :is_quanzhan, :label => "全栈工程师"%>
+<%= f.input :is_chanpin, :label => "产品经理"%>
+<%= f.input :is_mishu, :label => "秘书"%>
+<%= f.input :is_shouhou, :label => "售后"%>
+<%= f.input :is_ceshi, :label => "测试专员"%>
+<%= f.input :is_yunxing, :label => "运行维护"%>
+<div class="field">
+  <%= f.label "Area of City" %><br />
+  <%= f.collection_check_boxes :city_ids, City.all, :id, :name do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+  <%= f.submit "Submit" %>
+  <% end %>

@@ -1,0 +1,2 @@
+module Mishu::JobsHelper
+end

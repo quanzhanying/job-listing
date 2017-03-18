@@ -1,0 +1,26 @@
+<head>
+<link rel="stylesheet" type="text/css" href="login.scss">
+</head>
+<body class="a">
+  <div class="container-1">
+      <div class="col-md-6">
+            <div id="logbox">
+<h1>登录</h1>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <input name="user[email]" type="email" placeholder="enter your email" class="input pass"/>
+     <input name="user[password]" type="password" placeholder="enter your password" required="required" class="input pass"/>
+      <input type="submit" value="登录" class="inputButton"/>
+
+
+<% end %>
+
+<div class="text-center">
+            <a href="/users/sign_up" id="">创建账户</a> - <a href="#" id="">忘记密码</a>
+        </div>
+              </form>
+</div>
+</div>
+</div>
+</body>

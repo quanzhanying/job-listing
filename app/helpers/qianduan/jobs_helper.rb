@@ -1,0 +1,2 @@
+module Qianduan::JobsHelper
+end

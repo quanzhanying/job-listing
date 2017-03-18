@@ -1,0 +1,2 @@
+module Yunxing::JobsHelper
+end
