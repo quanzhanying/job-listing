@@ -9,6 +9,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/flashes' %>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
