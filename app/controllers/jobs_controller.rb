@@ -14,9 +14,11 @@ class JobsController < ApplicationController
       redirect_to jobs_path
     else
       render :new
+    end
   end
-end
+
 private
 def job_params
   params.require(:job).permit(:title,:description)
+end
 end
