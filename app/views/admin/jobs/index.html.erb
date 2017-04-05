@@ -1,0 +1,38 @@
+<div class="col-md-12">
+  <div class="job">
+    <%= link_to("新增职缺", new_admin_job_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>职缺</td>
+        <td>简介</td>
+        <td>薪资</td>
+        <td>联络方式</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td>
+            <% if job.is_hidden == false %>
+              (Public)
+            <% else %>
+              (Hidden)
+            <% end %>
+          </td>
+          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td><%= job.description %></td>
+          <td><%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %></td>
+          <td><%= job.contact_email %></td>
+          <td>
+              <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default")%>
+              <%= link_to("Delete", admin_job_path(job),    class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "确定删除此职缺?" } )%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
