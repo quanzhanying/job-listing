@@ -1,5 +1,5 @@
-      <% flash.each do |msg_type, msg| %>
-        <div class="alert alert-dismissable alert-<%= msg_type %>">
+      <% user_facing_flashes.each do |msg_type, msg| %>
+        <div class="alert alert-dismissable alert-<%= flash_class msg_type %>">
           <button class="close" data-dismiss="alert">&times;</button>
           <%= msg %>
         </div>
