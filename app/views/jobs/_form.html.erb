@@ -5,6 +5,7 @@
     <%= job.input :wage_lower_bound, input_html: {class: "from-control"} %>
     <%= job.input :wage_upper_bound, input_html: {class: "from-control"} %>
     <%= job.input :contact_email, input_html: {class: "from-control"} %>
+    <%= job.input :is_hidden %>
   </div>
   <%= job.submit "Submit", class: "btn btn-primary", data: {disable_with: "Submiting..."} %>
 <% end %>
