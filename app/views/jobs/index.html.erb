@@ -1,2 +1,19 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+<div class="pull-right">
+  <%= link_to 'Add a job', new_job_path, class: 'btn btn-default' %>
+</div>
+<table class="table">
+  <thead>
+    <th>
+    </th>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= link_to job.title, job_path(job) %></td>
+        <td><%= link_to "Edit", edit_job_path(job) %> |
+            <%= link_to "Destroy", job_path(job), method: :delete %></td>
+        <td><%= job.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

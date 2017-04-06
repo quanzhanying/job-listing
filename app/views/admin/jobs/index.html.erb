@@ -1,0 +1,19 @@
+<div class="pull-right">
+  <%= link_to 'Add a job', new_admin_job_path, class: 'btn btn-default' %>
+</div>
+<table class="table">
+  <thead>
+    <th>
+    </th>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= visible?(job) %><%= link_to job.title, admin_job_path(job) %></td>
+        <td><%= link_to "Edit", edit_admin_job_path(job) %> |
+            <%= link_to "Destroy", admin_job_path(job), method: :delete %></td>
+        <td><%= job.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
