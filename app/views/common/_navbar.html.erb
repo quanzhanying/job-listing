@@ -1,13 +1,13 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">Job-Listing</a>
+      <%= link_to("Job-Listing", jobs_path, :class => ":navbar, :navbar-default") %>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
-          <li><%= link_to("sign up", new_user_regisstration_path) %></li>
+          <li><%= link_to("sign up", new_user_registration_path) %></li>
           <li><%= link_to("login", new_user_session_path) %></li>
           <% else %>
           <li class="dropdown">
@@ -16,6 +16,9 @@
            <b class="caret"></b>
          </a>
          <ul class="dropdown-menu">
+           <% if current_user.admin? %>
+           <li><%= link_to("Admin Panel", admin_jobs_path(@job))  %></li>
+           <li class="divider"></li>
            <li><%= link_to("logout",destroy_user_session_path, method: :delete) %></li>
          </ul>
           </li>
