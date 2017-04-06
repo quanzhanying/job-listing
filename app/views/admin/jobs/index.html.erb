@@ -1,0 +1,31 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> My Jobs </h2>
+  <div class="job">
+    <%= link_to("Add a job", new_job_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Job </th>
+        <th> Description </th>
+        <th> Last Update </th>
+        <th> Creator </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td> <%= job.title %> </td>
+          <td> <%= simple_format(job.description) %> </td>
+          <td> <%= job.updated_at %> </td>
+          <td> <%= job.user.email%></td>
+          <td> <%= link_to('Edit', edit_job_path(job), class: "btn btn-default btn-xs") %></td>
+          <td> <%= link_to('Delete', job_path(job), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
