@@ -1,0 +1,10 @@
+    <%= simple_form_for @job, url: admin_job_path do |f| %>
+      <%= f.input :title, class: "form-action" %> 
+      <%= f.input :description, class: "form-action" %>
+      <%= f.input :wage_lower_bound, class: "form-action" %>
+      <%= f.input :wage_upper_bound, class: "form-action" %>
+      <%= f.input :contact_email, class: "form-action" %>
+      <%= f.input :is_hidden, as: :boolean, class: "form-action" %>
+
+      <%= f.submit 'submit', disable_with: 'submiting' %>
+    <% end %>
