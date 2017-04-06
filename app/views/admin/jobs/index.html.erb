@@ -9,8 +9,7 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td><%= job.title%></td>
-          <td><%= job.description %></td>
+          <td><%= link_to(job.title, admin_job_path(job))%></td>
           <td><%= link_to("Edit", edit_admin_job_path(job))%> | <%= link_to "Destroy", admin_job_path(job), method: :delete, data:{confirm: "Are you sure?"} %></td>
           <td><%= job.created_at %></td>
         </tr>

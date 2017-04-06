@@ -9,6 +9,10 @@ class Admin::JobsController < ApplicationController
     @job = Job.new
   end
 
+  def show
+    @job = Job.find(params[:id])
+  end
+
   def create
     @job = Job.new(job_params)
     @job.user = current_user
@@ -41,6 +45,6 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email)
   end
 end
