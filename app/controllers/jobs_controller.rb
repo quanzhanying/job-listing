@@ -15,6 +15,7 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
     if @job.save
       redirect_to jobs_path
     else
@@ -32,7 +33,7 @@ class JobsController < ApplicationController
       redirect_to jobs_path, notice: "Update Success"
     else
       render :edit
-    end    
+    end
   end
 
   def destroy
