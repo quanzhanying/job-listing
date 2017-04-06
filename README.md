@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+第一周作业好神奇。
 
-Things you may want to cover:
+Objective 客观：
+学会了如何拆解任务。
+如何克隆git专案
 
-* Ruby version
+Reflective 感受
+跟着教材感觉棒棒哒
 
-* System dependencies
+Interpretive 解释反思
+教材内容第一遍看，印象不深刻。在看一遍。
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Decisional 决定行动
+找个整段时间联系joblisting。
