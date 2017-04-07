@@ -1,19 +1,9 @@
 <div class="col-md-4 col-md-offset-4">
-  <h2>新增工作</h2>
+  <h2>编辑工作</h2>
 
   <hr>
 
-  <%= simple_form_for @job do |f| %>
-    <div class="form-group">
-      <%= f.input :title, input_html: {class: "form-control"} %>
-      <%= f.input :description, input_html: {class: "form-control"} %>
-      <%= f.input :wage_lower_bound, input_html: {class: "form-control"} %>
-      <%= f.input :wage_upper_bound, input_html: {class: "form-control"} %>
-      <%= f.input :contact_email, input_html: {class: "form-control"} %>
-      <%= f.input :is_hidden, input_html: {class: "form-control"} %>
-    </div>
-    <%= f.submit "Submit", class: "btn btn-primary", data: {disable_with: "Submiting..."} %>
-  <% end %>
+  <%= render "form" %>
 
 
 </div>
