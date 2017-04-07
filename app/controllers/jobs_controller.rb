@@ -18,7 +18,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
 
-  if @group.save
+  if @job.save
     redirect_to jobs_path
   else
     render:new
