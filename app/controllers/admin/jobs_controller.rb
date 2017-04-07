@@ -10,11 +10,11 @@ def index
 end
 
 def new
-  @job = Job.new(job_params)
+  @job = Job.new
 end
 
 def create
-  @job = Job.new(params[:id])
+  @job = Job.new(job_params)
 
   if @job.save
     redirect_to admin_jobs_path
@@ -25,13 +25,14 @@ end
 
 def edit
   @job = Job.find(params[:id])
+
 end
 
 def update
   @job = Job.find(params[:id])
 
   if @job.update(job_params)
-    redirect_to admin_jobs_path
+    redirect_to admin_job_path
   else
     render :edit
   end
@@ -46,11 +47,11 @@ def destroy
 
 end
 
-  
+
 private
 
 def job_params
-  params.require(:job).permit(:title, :description)
+  params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_under_bound, :contact_email)
 end
 
 end
