@@ -1,3 +1,22 @@
 <div class="container-fluid">
-<h2>job list</h2>
+<table class="table">
+<thead>
+  <th>#</th>
+  <th>job</th>
+  <th>description</th>
+  <th>salary</th>
+  <th>contact</th>
+</thead>
+<tbody>
+  <% @jobs.each do |job| %>
+  <tr>
+  <td>#</td>
+  <td><%= job.title %></td>
+  <td><%= job.description %></td>
+  <td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
+  <td><%= job.contact %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
 </div>
