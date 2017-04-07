@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resource  :jobs
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'helloworld#index'
+  root 'jobs#index'
 end
