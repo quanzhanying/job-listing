@@ -4,11 +4,16 @@
   </div>
 
   <table class="table table-hover">
-
+    <thead>
+      <td>Title</td>
+    </thead>
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td>
+          <%= render_job_status(job) %>
+          <%= link_to(job.title, job_path(job)) %>
+          </td>
           <td>
             <% if current_user && current_user == job.user %>
                 <%= link_to("Edit", edit_job_path(job))%> |
