@@ -1,1 +1,28 @@
-<h2>hi</h2>
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("Add a Job",new_job_path,class: "btn btn-primary pull-right")%>
+  </div>
+  <h2 class="text-center">职位列表</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>标题</th>
+        <th>内容</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job|%>
+      <tr>
+        <td>#</td>
+        <td><%= link_to(job.title,job_path(job))%></td>
+        <td><%= job.description%></td>
+        <td>
+          <%= link_to("Edit",edit_job_path(job),class:"btn btn-default")%>
+          <%= link_to("Delete",job_path(job),method: :delete,class:"btn btn-default")%>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
