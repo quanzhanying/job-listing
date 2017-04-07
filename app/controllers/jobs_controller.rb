@@ -9,13 +9,17 @@ class JobsController < ApplicationController
   end
 
   def create
+    #
+    # render plain: params.inspect
+    # return
+
     @job = Job.new(job_params)
     if @job.save
       flash[:notice] = "Create job successful."
-      redirect_to jobs_path
+      redirect_to root_path
     else
       flash[:error] = "Failed to create job."
-      render :new
+      redirect_to root_path
     end
   end
 
@@ -28,6 +32,7 @@ class JobsController < ApplicationController
   end
 
   def update
+
     @job = Job.find(params[:id])
     if @job
        if @job.update(job_params)
@@ -35,15 +40,16 @@ class JobsController < ApplicationController
          redirect_to jobs_path
        else
          flash[:error] = "Failed to update job."
-         redirect_to edit_job_path
+          redirect_to jobs_path
        end
     else
-
     end
   end
 
   def show
-    @job = Job.find(params[:id])
+    render plain: params.inspect
+
+    # @job = Job.find(params[:id])
   end
 
 

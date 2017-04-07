@@ -5,7 +5,7 @@
     <%= f.input :salaryMin, input_html: {class: "from-control"} , label: 'Min Salary' %>
     <%= f.input :salaryMax, input_html: {class: "from-control"}, label: "Max Salary" %>
     <%= f.input :contact, input_html: {class: "from-control"}, label: 'Email'%>
-    <%= f.input :hide, input_html: {class: "from-control"}%>
+    <%= f.input :hide, input_html: {class: "from-control"}, as: :boolean%>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: {disable_width: "Submitting..."} %>
 <% end %>
