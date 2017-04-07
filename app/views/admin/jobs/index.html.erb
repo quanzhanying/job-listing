@@ -1,0 +1,35 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("New job", new_admin_job_path, class: "btn-primary pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>是否公开</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(job.title, admin_job_path(job)) %></td>
+          <td>
+            <% if job.is_hidden %>
+              未公开
+            <% else %>
+              公开
+            <% end %>
+          </td>
+          <td>
+            <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default") %>
+            <%= link_to("Delete", admin_job_path(job), class: "btn btn-sm btn-default", method: :delete, data: {confirm: "Are you sure?"})%>
+          </td>
+          <td><%= job.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
