@@ -1,6 +1,8 @@
 <div class="container">
   <div class="group">
+    <% if current_user && current_user == job.user %>
       <%= link_to("编辑", edit_job_path(@job), class: "btn btn-default pull-right") %>
+    <% end %>
   </div>
 
   <h2><%= @job.title %></h2>

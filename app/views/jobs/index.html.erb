@@ -1,13 +1,13 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("新建职位", new_job_path, class: "btn btn-default pull-right") %>
+    <%= link_to("新增职位", new_job_path, class: "btn btn-default pull-right") %>
   </div>
 
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>工作名称</td>
-        <td>简介</td>
+        <td>职位名称</td>
+        <td>发布者</td>
         <td>创建时间</td>
       </tr>
     </thead>
@@ -15,11 +15,13 @@
       <% @jobs.each do |job| %>
         <tr>
           <td><%= link_to(job.title, job_path(job)) %></td>
-          <td><%= job.description %></td>
+          <td><%= job.user.email %></td>
           <td><%= job.created_at %></td>
           <td>
-            <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-default" )%>
-            <%= link_to("删除", job_path(job), class: "btn btn-sm btn-default", method: :delete, data:{ confirm: "你确定删除吗？"}) %>
+            <% if current_user && current_user == job.user %>
+              <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-default" )%>
+              <%= link_to("删除", job_path(job), class: "btn btn-sm btn-default", method: :delete, data:{ confirm: "你确定删除吗？"}) %>
+            <% end %>
           </td>
         </tr>
       <% end %>

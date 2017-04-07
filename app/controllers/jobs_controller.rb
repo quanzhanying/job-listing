@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  # before_action :require_is_admin
+  before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
 
 
   def index
@@ -17,6 +17,7 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
     if @job.save
       redirect_to jobs_path, notice: "新建工作成功！"
     else
@@ -25,11 +26,9 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
   end
 
   def update
-    @job = Job.find(params[:id])
     if @job.update(job_params)
       redirect_to jobs_path, notice: "更新工作成功！"
     else
@@ -38,10 +37,8 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @job = Job.find(params[:id])
-    if @job.destroy
-      redirect_to jobs_path, notice: "删除工作成功！"
-    end
+    @job.destroy
+    redirect_to jobs_path, notice: "删除工作成功！"
   end
 
   def admin
@@ -55,6 +52,14 @@ class JobsController < ApplicationController
   end
 
   private
+
+  def find_job_and_check_permission
+    @job = Job.find(params[:id])
+
+    if current_user != @job.user
+      redirect_to root_path, alert: "你没有权限修改！"
+    end
+  end
 
   def job_params
     params.require(:job).permit(:title, :description)
