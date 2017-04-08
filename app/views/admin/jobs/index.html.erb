@@ -11,7 +11,12 @@
    <tbody>
      <% @jobs.each do |job| %>
        <tr>
-         <td><%= link_to(job.title, admin_job_path(job)) %></td>
+         <td>
+           <label class="label label-<%= job.is_hidden ? "danger" : "success" %>">
+             <%= job.is_hidden ? "Private" : "Public" %>
+           </label>
+           <%= job.title %>
+         </td>
          <td><%= job.created_at %></td>
          <td><%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-primary btn-sm") %></td>
          <td><%= link_to("Delete", admin_job_path(job), class: "btn btn-default btn-sm", method: :delete, data: {confirm: "Are you sure?"}) %></td>
