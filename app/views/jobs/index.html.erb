@@ -2,20 +2,24 @@
 <table class="table">
 <thead>
   <th>#</th>
+
   <th>job</th>
   <th>description</th>
   <th>salary</th>
   <th>contact</th>
+  <th>created at</th>
   <th colspan="2"></th>
 </thead>
 <tbody>
   <% @jobs.each do |job| %>
+  <% if !job.hide  %>
   <tr>
   <td>#</td>
   <td><%= job.title %></td>
   <td><%= job.description %></td>
   <td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
   <td><%= job.contact %></td>
+  <td><%= job.created_at %></td>
   <td>
     <% if !current_user.blank? && current_user.isAdmin %>
     <%= link_to("Edit", edit_job_path(job), class: "btn btn-default") %>
@@ -23,6 +27,7 @@
     <% end %>
   </td>
   </tr>
+  <% end %>
   <% end %>
 </tbody>
 </table>
