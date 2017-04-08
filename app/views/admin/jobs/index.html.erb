@@ -1,7 +1,4 @@
 <div class="container-fluid">
-<div class="group">
-  <%= link_to("New job", new_job_path, class:"btn btn-primary pull-right")%>
-</div>
 <table class="table">
 <thead>
   <th>#</th>
@@ -11,13 +8,7 @@
   <th>salary</th>
   <th>contact</th>
   <th>created at</th>
-  <% if !params[:admin_id].blank?%>
-  <% if current_user && current_user.isAdmin %>
-  <th>
-    hide
-  </th>
-  <% end %>
-  <% end %>
+  <th>hide</th>
   <th colspan="2"></th>
 </thead>
 <tbody>
@@ -30,28 +21,20 @@
   <td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
   <td><%= job.contact %></td>
   <td><%= job.created_at %></td>
-
-  <% if !params[:admin_id].blank?%>
-  <% if current_user && current_user.isAdmin %>
   <td>
-    <%  if job.hide %>
-    YES
+    <% if job.hide %>
+      Yes
     <% else %>
-    NO
+      No
     <% end %>
   </td>
-  <% end %>
   <td>
-
-    <% if !current_user.blank? && current_user.isAdmin && !job.hide %>
+    <% if !current_user.blank? && current_user.isAdmin %>
     <%= link_to("Edit", edit_job_path(job), class: "btn btn-default") %>
     <%= link_to("Delete",job_path(job), method: :delete, class: "btn btn-default") %>
     <% end %>
-
   </td>
-  <% end %>
   </tr>
-
   <% end %>
   <% end %>
 </tbody>

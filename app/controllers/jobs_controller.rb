@@ -15,6 +15,17 @@ class JobsController < ApplicationController
     # return
 
     @job = Job.new(job_params)
+    if @job.salaryMin.to_i <= 0
+      flash[:warning] = "Salary can't less than 0."
+      render :new
+      return
+    elsif @job.salaryMax.to_i < @job.salaryMin.to_i
+      flash[:warning] = "Salary Max must be greater than Salary Min"
+      render :new
+      return
+    end
+
+    @job.user = current_user
     if @job.save
       flash[:notice] = "Create job successful."
       redirect_to root_path
@@ -35,13 +46,18 @@ class JobsController < ApplicationController
   def update
 
     @job = Job.find(params[:id])
-    if @job
-      if @job.salaryMin <= 0
+    if !@job.blank?
+      maxSalary =  job_params[:salaryMax].to_i
+      minSalary = job_params[:salaryMin].to_i
+      if   minSalary <= 0
         flash[:warning] = "Salary can't less than 0."
         redirect_to edit_job_path(@job)
         return
+      elsif minSalary > maxSalary
+        flash[:warning] = "Salary Max must be greater than Salary Min"
+        render :new
+        return
       end
-
        if @job.update(job_params)
          flash[:notice] = "Update Job successful."
          redirect_to jobs_path
@@ -75,6 +91,7 @@ class JobsController < ApplicationController
   end
 
   private
+
 
   def job_params
     params.require(:job).permit( :title, :description, :salaryMax, :salaryMin, :contact, :hide)
