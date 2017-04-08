@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="group">
+    <%= link_to("编辑", edit_admin_job_path(@job), class: "btn btn-default pull-right") %>
+  </div>
+
+  <h2><%= @job.title %></h2>
+  <p style="font-size:10px; margin-bottom:30px;">创建时间:<%= @job.created_at%></p>
+  <p>职位描述：<%= simple_format(@job.description) %></p>
+  <p>薪资上限：<%= @job.wage_upper_bound %>元</p>
+  <p>薪资下限：<%= @job.wage_lower_bound %>元</p>
+  <p>联系方式：<%= @job.contact_email %></p>
+</div>

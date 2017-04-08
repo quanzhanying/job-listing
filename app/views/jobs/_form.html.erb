@@ -1,0 +1,11 @@
+<%= simple_form_for @job do |f| %>
+  <div class="form-group">
+    <%= f.input :title, :label => "职位" %>
+    <%= f.input :description, :label => "职位描述" %>
+    <%= f.input :wage_upper_bound, :label => "薪资上限" %>
+    <%= f.input :wage_lower_bound, :label => "薪资下限" %>
+    <%= f.input :contact_email, :label => "联系Email" %>
+    <%= f.input :is_hidden, :label => "隐藏" %>
+  </div>
+  <%= f.submit "提交", class: "btn btn-default", data: {disable_with: "Submiting..."} %>
+<% end %>
