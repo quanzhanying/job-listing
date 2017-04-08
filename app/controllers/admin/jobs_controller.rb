@@ -41,11 +41,9 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path, alert:"Job deleted!"
   end
 
-
-
   private
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
   end
 end
