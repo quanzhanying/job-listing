@@ -1,4 +1,4 @@
 class Job < ApplicationRecord
-  validates :title, :description, :salaryMin, :salaryMax, :contact , presence:true
+  validates :title, :description, presence:true
   belongs_to :user
 end

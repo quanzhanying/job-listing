@@ -39,15 +39,15 @@ class JobsController < ApplicationController
       flash[:notice] = "Create job successful."
       redirect_to root_path
     else
-      flash[:error] = "Failed to create job."
-      redirect_to root_path
+      flash[:alert] = "Failed to create job."
+      redirect_to new_job_path()
     end
   end
 
   def edit
     @job = Job.find(params[:id])
     if @job.blank?
-      flash[:error] = "Job don't exist"
+      flash[:alert] = "Job don't exist"
       redirect_to jobs_path
     end
   end
@@ -79,7 +79,7 @@ class JobsController < ApplicationController
   end
 
   def show
-    render plain: params.inspect
+    # render plain: params.inspect
 
     # @job = Job.find(params[:id])
   end
