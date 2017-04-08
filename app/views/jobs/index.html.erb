@@ -1,7 +1,9 @@
 <div class="container-fluid">
+<% if current_user && current_user.isAdmin %>
 <div class="group">
   <%= link_to("New job", new_job_path, class:"btn btn-primary pull-right")%>
 </div>
+<% end %>
 <table class="table">
 <thead>
   <th>#</th>

@@ -17,9 +17,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi!,<%= current_user.email %><b class="caret"></b></a>
           <ul class="dropdown-menu">
+            <% if current_user && current_user.isAdmin %>
             <li>
               <%= link_to("Admin", admin_jobs_path(current_user))%>
             </li>
+            <% end %>
             <li>
               <%= link_to("Exit", destroy_user_session_path, method: :delete)%>
             </li>

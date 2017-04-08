@@ -2,7 +2,16 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :edit, :upate, :destory]
   before_action :isAdmin
   def index
-    @jobs = Job.all.order("created_at DESC")
+    if !params[:admin_id].blank?
+      if current_user.isAdmin
+        @jobs = Job.where(user_id: current_user.id).order("created_at DESC")
+      else
+        redirect_to jobs_path
+      end
+    else
+      @jobs = Job.all.order("created_at DESC")
+    end
+
   end
 
   def new
