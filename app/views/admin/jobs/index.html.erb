@@ -1,0 +1,32 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("新增职位", new_admin_job_path, class: "btn btn-default pull-right") %>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>职位名称</td>
+        <td>创建者</td>
+        <td>创建时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td>
+            <%= render_job_status(job) %> |
+            <%= link_to(job.title, admin_job_path(job)) %>
+          </td>
+          <td><%= job.user.email %></td>
+          <td><%= job.created_at %></td>
+          <td>
+            <%= link_to("编辑", edit_admin_job_path(job), class: "btn btn-sm btn-default" )%>
+            <%= link_to("删除", admin_job_path(job), class: "btn btn-sm btn-default", method: :delete, data:{ confirm: "你确定删除吗？"}) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse row" role="navgation">
   <div class="container">
     <div class="navbar-header">
-      <a href="/" class="navbar-brand">Job-Listing</a>
+      <a href="/" class="navbar-brand">Job Listing</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -16,6 +16,9 @@
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
+                <% if current_user.admin? %>
+                  <li><%= link_to("Admin Panel", admin_jobs_path) %></li>
+                <% end %>
                 <li><%= link_to("退出", destroy_user_session_path, method: :delete) %></li>
               </ul>
             </li>

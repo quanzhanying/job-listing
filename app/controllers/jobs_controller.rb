@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
 
   def index
-    @jobs = Job.all
+    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
   end
 
   def new
@@ -19,7 +19,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = current_user
     if @job.save
-      redirect_to jobs_path, notice: "新建工作成功！"
+      redirect_to jobs_path, notice: "新建职位成功！待管理员审核！"
     else
       render :new
     end
@@ -30,7 +30,7 @@ class JobsController < ApplicationController
 
   def update
     if @job.update(job_params)
-      redirect_to jobs_path, notice: "更新工作成功！"
+      redirect_to jobs_path, notice: "更新职位成功！"
     else
       render :edit
     end
@@ -38,18 +38,12 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-    redirect_to jobs_path, notice: "删除工作成功！"
+    redirect_to jobs_path, notice: "删除职位成功！"
   end
 
   def admin
   end
 
-  def require_is_admin
-    if !current_user.admin?
-      flash[:alert] = "你不是管理员"
-      redirect_to root_path
-    end
-  end
 
   private
 
@@ -62,7 +56,7 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email)
   end
 
 

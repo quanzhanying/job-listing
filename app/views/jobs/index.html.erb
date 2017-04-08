@@ -18,10 +18,8 @@
           <td><%= job.user.email %></td>
           <td><%= job.created_at %></td>
           <td>
-            <% if current_user && current_user == job.user %>
-              <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-default" )%>
-              <%= link_to("删除", job_path(job), class: "btn btn-sm btn-default", method: :delete, data:{ confirm: "你确定删除吗？"}) %>
-            <% end %>
+            <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-default" )%>
+            <%= link_to("删除", job_path(job), class: "btn btn-sm btn-default", method: :delete, data:{ confirm: "你确定删除吗？"}) %>
           </td>
         </tr>
       <% end %>
