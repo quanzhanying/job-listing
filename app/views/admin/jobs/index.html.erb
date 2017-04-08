@@ -12,9 +12,7 @@
      <% @jobs.each do |job| %>
        <tr>
          <td>
-           <label class="label label-<%= job.is_hidden ? "danger" : "success" %>">
-             <%= job.is_hidden ? "Private" : "Public" %>
-           </label>
+           <%= render_job_status(job) %>
            <%= job.title %>
          </td>
          <td><%= job.created_at %></td>
