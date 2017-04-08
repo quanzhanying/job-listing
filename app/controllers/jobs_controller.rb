@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-
+  before_action :authenticate_user!, only:[:new, :edit, :upate, :destory]
+  before_action :isAdmin
   def index
     @jobs = Job.all
   end
@@ -71,6 +72,9 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit( :title, :description, :salaryMax, :salaryMin, :contact, :hide)
+  end
+
+  def isAdmin
   end
 
 
