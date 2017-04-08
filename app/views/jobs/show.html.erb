@@ -5,5 +5,7 @@
     <% end %>
   </div>
   <h2><%= @job.title %></h2>
-  <p><%= @job.description %></p>
+  <p>岗位描述：<%= @job.description %></p>
+  <p>最低薪资：<%= @job.wage_lower_bound %></p>
+  <p>最高薪资：<%= @job.wage_upper_bound %></p>
 </div>
