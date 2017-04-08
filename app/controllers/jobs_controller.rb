@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destory]
+  before_action :find_job_and_check_permission, only: [:edit, :update, :destory]
 
   def index
     @jobs = Job.all
@@ -24,11 +25,11 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
+
   end
 
   def update
-    @job = Job.find(params[:id])
+
     if @job.update(job_params)
       redirect_to jobs_path, notice: "Update Success"
     else
@@ -37,7 +38,7 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @job = Job.find(params[:id])
+    
     @job.destroy
     redirect_to jobs_path, alert: "Job deleted"
   end
@@ -45,6 +46,13 @@ class JobsController < ApplicationController
   private
   def job_params
     params.require(:job).permit(:title, :description)
+  end
+
+  def find_job_and_check_permission
+    @job = Job.find(params[:id])
+    if current_user != @job.user
+      redirect_to root_path, alert: "You have no permission."
+    end
   end
 
 end
