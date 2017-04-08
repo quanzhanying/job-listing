@@ -1,7 +1,4 @@
 <div class="col-md-12">
-  <div class="group">
-    <%= link_to("Add a Job",new_job_path,class: "btn btn-primary pull-right")%>
-  </div>
   <h2 class="text-center">职位列表</h2>
   <table class="table table-hover">
     <thead>
@@ -17,12 +14,6 @@
         <td>#</td>
         <td><%= link_to(job.title,job_path(job))%></td>
         <td><%= job.description%></td>
-        <td>
-          <% if current_user%>
-          <%= link_to("Edit",edit_job_path(job),class:"btn btn-default")%>
-          <%= link_to("Delete",job_path(job),method: :delete,class:"btn btn-default",data:{confirm:"Are you sure?"})%>
-          <% end %>
-        </td>
       </tr>
       <% end %>
     </tbody>
