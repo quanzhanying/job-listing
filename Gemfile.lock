@@ -41,8 +41,6 @@ GEM
     arel (7.1.0)
     autoprefixer-rails (6.7.7.1)
       execjs
-    boostrap-sass (0.0.2)
-      bootstrap-sass
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -162,7 +160,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  boostrap-sass
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
