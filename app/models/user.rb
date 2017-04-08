@@ -7,4 +7,12 @@ class User < ApplicationRecord
   has_many :jobs
   has_many :job_relationships
   has_many :participated_jobs, :through => :job_relationships, :source => :job
+
+  def join!(job)
+    participated_jobs << job
+  end
+
+  def admin?
+    is_admin
+  end
 end
