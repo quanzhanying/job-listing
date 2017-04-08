@@ -1,0 +1,9 @@
+<%= simple_form_for @job do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title, input_html: { class: "form-control" } %>
+    <%= f.input :description, input_html: { class: "form-control"} %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Submit", data: { disable_with: "Submiting..." }, class: "btn btn-primary" %>
+  </div>
+<% end %>
