@@ -36,6 +36,12 @@ class JobsController < ApplicationController
 
     @job = Job.find(params[:id])
     if @job
+      if @job.salaryMin <= 0
+        flash[:warning] = "Salary can't less than 0."
+        redirect_to edit_job_path(@job)
+        return
+      end
+
        if @job.update(job_params)
          flash[:notice] = "Update Job successful."
          redirect_to jobs_path
