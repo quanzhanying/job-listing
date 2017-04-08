@@ -6,6 +6,7 @@
   <th>description</th>
   <th>salary</th>
   <th>contact</th>
+  <th colspan="2"></th>
 </thead>
 <tbody>
   <% @jobs.each do |job| %>
@@ -15,6 +16,10 @@
   <td><%= job.description %></td>
   <td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
   <td><%= job.contact %></td>
+  <td>
+    <%= link_to("Edit", edit_job_path(job), class: "btn btn-default") %>
+    <%= link_to("Delete",job_path(job), method: :delete, class: "btn btn-default") %>
+  </td>
   </tr>
   <% end %>
 </tbody>

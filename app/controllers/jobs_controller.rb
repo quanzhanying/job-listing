@@ -56,9 +56,11 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     if @job.blank?
+
       flash[:warning] = "Failed to remove job, can't find job."
       redirect_to jobs_path
     else
+      @job.delete
       flash[:notice] = "Delete job successful."
       redirect_to jobs_path
     end
@@ -68,7 +70,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :salaryMax, :salaryMin, :contact, :hide)
+    params.require(:job).permit( :title, :description, :salaryMax, :salaryMin, :contact, :hide)
   end
 
 
