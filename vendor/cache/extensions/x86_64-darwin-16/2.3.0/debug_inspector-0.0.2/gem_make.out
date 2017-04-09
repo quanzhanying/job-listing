@@ -1,0 +1,15 @@
+current directory: /Users/zhangruilan/job-listing/vendor/cache/gems/debug_inspector-0.0.2/ext/debug_inspector
+/Users/zhangruilan/.rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20170409-9372-1kyc1sj.rb extconf.rb
+creating Makefile
+
+current directory: /Users/zhangruilan/job-listing/vendor/cache/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/zhangruilan/job-listing/vendor/cache/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/zhangruilan/job-listing/vendor/cache/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20170409-9372-1v59py0
