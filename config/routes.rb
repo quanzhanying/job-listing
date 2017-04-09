@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources  :jobs
+  resources  :jobs do
+    post :hide
+    post :publish
+  end
 
   resources :admin do
     resources :jobs

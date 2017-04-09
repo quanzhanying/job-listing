@@ -13,20 +13,20 @@
   <th>salary</th>
   <th>contact</th>
   <th>created at</th>
-  <% if !params[:admin_id].blank?%>
-  <% if current_user && current_user.isAdmin %>
-  <th>
-    hide
-  </th>
-  <% end %>
-  <% end %>
-  <th colspan="2"></th>
+  <th colspan="3"></th>
 </thead>
 <tbody>
   <% @jobs.each do |job| %>
   <% if !job.hide || !params[:admin_id].blank?  %>
   <tr>
-  <td>#</td>
+
+  <td>
+    <% if !job.hide %>
+    <i class="fa fa-globe" aria-hidden="true"></i>
+    <% else %>
+    <i class="fa fa-lock" aria-hidden="true"></i>
+    <% end %>
+  </td>
   <td><%= job.title %></td>
   <td><%= job.description %></td>
   <td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
@@ -34,20 +34,17 @@
   <td><%= job.created_at %></td>
 
   <% if !params[:admin_id].blank?%>
-  <% if current_user && current_user.isAdmin %>
-  <td>
-    <%  if job.hide %>
-    YES
-    <% else %>
-    NO
-    <% end %>
-  </td>
-  <% end %>
+
   <td>
 
     <% if !current_user.blank? && current_user.isAdmin && (!job.hide || !params[:admin_id].blank?) %>
     <%= link_to("Edit", edit_job_path(job), class: "btn btn-default") %>
     <%= link_to("Delete",job_path(job), method: :delete, class: "btn btn-default") %>
+    <%  if job.hide %>
+    <%= link_to("Publish",job_publish_path(job), method: :post, class: "btn btn-primary") %>
+    <% else %>
+    <%= link_to("Hide", job_hide_path(job), method: :post, class: "btn btn-primary") %>
+    <% end %>
     <% end %>
 
   </td>

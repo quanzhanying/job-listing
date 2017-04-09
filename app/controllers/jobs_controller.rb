@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only:[:new, :edit, :upate, :destory]
+  before_action :authenticate_user!, only:[:new, :edit, :upate, :destory,:publish, :hide]
   before_action :isAdmin
   def index
     if !params[:admin_id].blank?
@@ -99,14 +99,47 @@ class JobsController < ApplicationController
 
   end
 
+  def publish
+    if current_user && current_user.isAdmin
+      show_job(true)
+    else
+      flash[:warning] = "You dont have right to do this action"
+      redirect_to jobs_path
+    end
+  end
+
+  def hide
+    if current_user && current_user.isAdmin
+      show_job(false)
+    else
+      flash[:warning] = "You dont have right to do this action"
+      redirect_to jobs_path
+    end
+
+  end
+
+
+
   private
 
+
+  def show_job(bshow)
+    @job = Job.find(params[:job_id])
+    @job.hide = !bshow
+    if @job.save
+      flash[:notice] = "Publish job successful."
+    else
+      flash[:warning] = "Failed to save job."
+    end
+    redirect_to admin_jobs_path(current_user)
+  end
 
   def job_params
     params.require(:job).permit( :title, :description, :salaryMax, :salaryMin, :contact, :hide)
   end
 
   def isAdmin
+
   end
 
 
