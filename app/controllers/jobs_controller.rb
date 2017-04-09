@@ -1,12 +1,12 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create, :update, :edit, :destroy]
   before_action :find_job, only: [:edit, :update, :destroy, :show]
-  before_action :require_is_admin, only: [:create, :update]
+  before_action :require_is_admin, only: [:new, :create, :edit, :update, :destroy]
   def index
     @jobs = Job.where(:is_hidden => false).order("created_at DESC")
   end
 
-=begin
+
   def new
     @job = Job.new
   end
@@ -29,7 +29,7 @@ class JobsController < ApplicationController
   def edit
 
   end
-=end
+
 
   def create
     @job = Job.new(job_params)
