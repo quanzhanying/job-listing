@@ -6,6 +6,7 @@
         <th>#</th>
         <th>职位名称</th>
         <th>职位要求</th>
+        <th>发布时间</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
         <td>#</td>
         <td><%= link_to(job.title,job_path(job))%></td>
         <td><%= job.description%></td>
+        <td><%= job.created_at%></td>
       </tr>
       <% end %>
     </tbody>

@@ -9,6 +9,8 @@
         <th>#</th>
         <th>职位名称</th>
         <th>职位要求</th>
+        <th>创建时间</th>
+        <th>发布状态</th>
       </tr>
     </thead>
     <tbody>
@@ -17,8 +19,16 @@
         <td>#</td>
         <td><%= link_to(job.title,admin_job_path(job))%></td>
         <td><%= job.description%></td>
+        <td><%= job.created_at%></td>
         <td>
-          <% if current_user%>
+           <%if job.is_hidden%>
+              <label class="label label-warning">未发布</label>
+           <% else %>
+              <label class="label label-success">已发布</label>
+           <% end %>
+        </td>
+        <td>
+          <% if current_user.admin?%>
           <%= link_to("Edit",edit_admin_job_path(job),class:"btn btn-default")%>
           <%= link_to("Delete",admin_job_path(job),method: :delete,class:"btn btn-default",data:{confirm:"Are you sure?"})%>
           <% end %>
