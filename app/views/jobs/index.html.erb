@@ -27,7 +27,7 @@
     <i class="fa fa-lock" aria-hidden="true"></i>
     <% end %>
   </td>
-  <td><%= job.title %></td>
+  <td><%=  link_to(job.title, job_path(job))%></td>
   <td><%= job.description %></td>
   <td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
   <td><%= job.contact %></td>

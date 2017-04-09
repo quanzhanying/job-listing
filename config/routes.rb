@@ -6,8 +6,16 @@ Rails.application.routes.draw do
     post :publish
   end
 
+  # namespace :admin do
+  #   resources :jobs
+  # end
+  #
+  # namespace :account do
+  #   resources :jobs
+  # end
+
   resources :admin do
-    resources :jobs
+   resources :jobs
   end
 
 
