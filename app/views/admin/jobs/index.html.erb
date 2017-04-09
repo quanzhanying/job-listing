@@ -13,7 +13,11 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td><%= link_to(job.title, job_path(job))%></td>
+          <% if job.is_hidden == true %>
+          <td> (Hidden) <%= link_to(job.title, job_path(job))%></td>
+          <% else %>
+          <td> (Public) <%= link_to(job.title, job_path(job))%></td>
+          <% end %>
           <td><%= job.description %></td>
           <td><%= job.updated_at %></td>
         </tr>
