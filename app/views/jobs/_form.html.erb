@@ -1,0 +1,11 @@
+<%= simple_form_for @job do |f| %>
+  <div class="form-group">
+    <%= f.input :title, input_html: {class: "form-control"}, label: 'Job Name', error:'Job name cant be empty' %>
+    <%= f.input :description, input_html: {class: "from-control"}, label: 'Job description' %>
+    <%= f.input :salaryMin, input_html: {class: "from-control"} , label: 'Min Salary' %>
+    <%= f.input :salaryMax, input_html: {class: "from-control"}, label: "Max Salary" %>
+    <%= f.input :contact, input_html: {class: "from-control"}, label: 'Email'%>
+    <%= f.input :hide, input_html: {class: "from-control"}, as: :boolean%>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-primary", data: {disable_width: "Submitting..."} %>
+<% end %>
