@@ -24,24 +24,26 @@ class JobsController < ApplicationController
     # return
 
     @job = Job.new(job_params)
-    if @job.salaryMin.to_i <= 0
-      flash[:warning] = "Salary can't less than 0."
-      render :new
-      return
-    elsif @job.salaryMax.to_i < @job.salaryMin.to_i
-      flash[:warning] = "Salary Max must be greater than Salary Min"
-      render :new
-      return
-    end
+    # if @job.salaryMin.to_i <= 0
+    #   flash[:warning] = "Salary can't less than 0."
+    #   render :new
+    #   return
+    # elsif @job.salaryMax.to_i < @job.salaryMin.to_i
+    #   flash[:warning] = "Salary Max must be greater than Salary Min"
+    #   render :new
+    #   return
+    # end
 
     @job.user = current_user
-    if @job.save
-      flash[:notice] = "Create job successful."
-      redirect_to root_path
-    else
-      flash[:alert] = "Failed to create job."
-      redirect_to new_job_path()
-    end
+    @job.save
+    # if @job.save
+    #   flash[:notice] = "Create job successful."
+    #   redirect_to root_path
+    # else
+    #   flash[:alert] = "Failed to create job."
+    #   redirect_to new_job_path()
+    # end
+    render :new
   end
 
   def edit
