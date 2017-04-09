@@ -83,6 +83,9 @@ class JobsController < ApplicationController
   def show
     # render plain: params.inspect
     @job = Job.find(params[:id])
+    if @job.hide
+      redirect_to jobs_path
+    end
   end
 
 
