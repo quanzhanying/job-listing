@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :index]
   before_action :require_is_admin
+  layout "admin"
 
 
   def index
@@ -17,7 +18,6 @@ class Admin::JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
-    @job.user = current_user
     if @job.save
       redirect_to admin_jobs_path, notice: "新建职位成功！"
     else
@@ -44,6 +44,17 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path, notice: "删除职位成功！"
   end
 
+  def publish
+    @job = Job.find(params[:id])
+    @job.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @job = Job.find(params[:id])
+    @job.hide!
+    redirect_to :back
+  end
 
 
 

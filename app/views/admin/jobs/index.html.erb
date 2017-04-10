@@ -15,7 +15,7 @@
       <% @jobs.each do |job| %>
         <tr>
           <td>
-            <%= render_job_status(job) %> |
+            <%= render_job_status(job) %>
             <%= link_to(job.title, admin_job_path(job)) %>
           </td>
           <td><%= job.user.email %></td>
@@ -23,6 +23,11 @@
           <td>
             <%= link_to("编辑", edit_admin_job_path(job), class: "btn btn-sm btn-default" )%>
             <%= link_to("删除", admin_job_path(job), class: "btn btn-sm btn-default", method: :delete, data:{ confirm: "你确定删除吗？"}) %>
+            <% if job.is_hidden %>
+              <%= link_to("公开", publish_admin_job_path(job), method: :post, class: "btn btn-xs btn-default") %>
+            <% else %>
+              <%= link_to("隐藏", hide_admin_job_path(job), method: :post, class: "btn btn-xs btn-default") %>
+            <% end %>
           </td>
         </tr>
       <% end %>
