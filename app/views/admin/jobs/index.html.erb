@@ -1,25 +1,23 @@
 <div class="col-md-12">
- <%= link_to("New Job", new_admin_job_path, class: "btn btn-primary pull-right") %>
- <table class="table">
-   <thead>
-     <tr>
-       <th>Title</th>
-       <th>Create Time</th>
-       <th colspan="2"></th>
-     </tr>
-   </thead>
-   <tbody>
-     <% @jobs.each do |job| %>
-       <tr>
-         <td>
-           <%= render_job_status(job) %>
-           <%= job.title %>
-         </td>
-         <td><%= job.created_at %></td>
-         <td><%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-primary btn-sm") %></td>
-         <td><%= link_to("Delete", admin_job_path(job), class: "btn btn-default btn-sm", method: :delete, data: {confirm: "Are you sure?"}) %></td>
-       </tr>
-     <% end %>
-   </tbody>
- </table>
+  <%= link_to("New Job", new_admin_job_path, class: "btn btn-primary pull-right") %>
+  <table class="table" style="margin-top: 50px;">
+    <% @jobs.each do |job| %>
+      <tr>
+        <td>
+          <%= render_job_status(job) %>
+          <%= job.title %>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-primary btn-sm") %>
+          <%= link_to("Delete", admin_job_path(job), class: "btn btn-default btn-sm", method: :delete, data: {confirm: "Are you sure?"}) %>
+          <% if job.is_hidden %>
+            <%= link_to("Publish", publish_admin_job_path(job), class: "btn btn-default btn-sm", style: "color: green;", method: :post) %>
+          <% else %>
+            <%= link_to("Hide", hide_admin_job_path(job), class: "btn btn-default btn-sm", style: "color: red;", method: :post) %>
+          <% end %>
+        </td>
+        <td><%= job.created_at %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>
