@@ -15,9 +15,9 @@
           <td>#</td>
           <td>
             <% if job.is_hidden %>
-                (Hidden)
+                <i class="fa fa-lock" aria-hidden="true"></i>
               <% else %>
-                (Public)
+                <i class="fa fa-globe" aria-hidden="true"></i>
               <% end %>
               <%= link_to(job.title, admin_job_path(job))%></td>
           <td><%= job.description%></td>
@@ -25,6 +25,12 @@
           <td>
               <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-default")%>
               <%= link_to("删除", admin_job_path(job), class: "btn btn-sm btn-default", method: :delete, data: { confirm: "你确定删除该职位吗？"})%>
+              <% if job.is_hidden %>
+                <%= link_to("公开", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default")%>
+              <% else %>
+                <%= link_to("隐藏", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default")%>
+              <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
