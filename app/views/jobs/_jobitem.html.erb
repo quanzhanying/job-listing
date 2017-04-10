@@ -1,0 +1,13 @@
+
+<tr>
+<td>
+<%= render_job_state(job) %>
+<%= link_to(job.title,  job_path(job))%>
+</td>
+
+<td><%= job.description %></td>
+<td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
+<td><%= job.contact %></td>
+<td><%= job.created_at %></td>
+
+</tr>

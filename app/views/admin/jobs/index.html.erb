@@ -1,42 +1,21 @@
 <div class="container-fluid">
+<% if current_user && current_user.isAdmin %>
+<div class="group">
+  <%= link_to("New job", new_admin_job_path, class:"btn btn-primary pull-right")%>
+</div>
+<% end %>
 <table class="table">
 <thead>
-  <th>#</th>
 
   <th>job</th>
   <th>description</th>
   <th>salary</th>
   <th>contact</th>
   <th>created at</th>
-  <th>hide</th>
-  <th colspan="2"></th>
+  <th colspan="3"></th>
 </thead>
 <tbody>
-  <% @jobs.each do |job| %>
-  <% if !job.hide  %>
-  <tr>
-  <td>#</td>
-  <td><%= job.title %></td>
-  <td><%= job.description %></td>
-  <td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
-  <td><%= job.contact %></td>
-  <td><%= job.created_at %></td>
-  <td>
-    <% if job.hide %>
-      Yes
-    <% else %>
-      No
-    <% end %>
-  </td>
-  <td>
-    <% if !current_user.blank? && current_user.isAdmin %>
-    <%= link_to("Edit", edit_job_path(job), class: "btn btn-default") %>
-    <%= link_to("Delete",job_path(job), method: :delete, class: "btn btn-default") %>
-    <% end %>
-  </td>
-  </tr>
-  <% end %>
-  <% end %>
+  <%= render :partial => "jobitem", :collection => @jobs , :as => :job  %>
 </tbody>
 </table>
 </div>
