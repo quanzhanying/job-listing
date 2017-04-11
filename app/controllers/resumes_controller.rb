@@ -2,7 +2,7 @@ class ResumesController < ApplicationController
   before_action :authenticate_user!, only:[:index, :new, :create, :destory]
 
   def index
-    if !current_user.isAdmin
+    if !current_user.is_admin?
       @resumes = Resume.where(:user_id => current_user.id).order("created_at DESC")
     else
       @resumes = Resume.all.order("created_at DESC")

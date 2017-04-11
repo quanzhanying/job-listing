@@ -3,7 +3,7 @@ class Admin::JobsController < ApplicationController
   before_action :require_is_admin
   layout  "admin"
   def index
-    @jobs = Job.where(user_id: current_user.id).order("created_at DESC")
+    @jobs = Job.all.order("created_at DESC")
     isUserDashBoard = params[:isUserDashBoard]
     if !isUserDashBoard.blank? && isUserDashBoard
         @isUserDashBoard = true
@@ -85,7 +85,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def publish
-    if current_user && current_user.isAdmin
+    if current_user && current_user.is_admin?
       show_job(true)
     else
       flash[:warning] = "You dont have right to do this action"
@@ -94,7 +94,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def hide
-    if current_user && current_user.isAdmin
+    if current_user && current_user.is_admin?
       show_job(false)
     else
       flash[:warning] = "You dont have right to do this action"

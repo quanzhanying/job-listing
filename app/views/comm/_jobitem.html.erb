@@ -3,7 +3,7 @@
 <tr>
 <td>
 <%= render_job_state(job) %>
-<% unless current_user.isAdmin %>
+<% unless current_user.is_admin? %>
 <%= link_to(job.title,  job_path(job))%>
 <% else %>
 <%= link_to(job.title,  admin_job_path(job))%>
@@ -18,7 +18,7 @@
 
 <td>
 
-  <% if !current_user.blank? && current_user.isAdmin %>
+  <% if !current_user.blank? && current_user.is_admin? %>
   <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-default") %>
   <%= link_to("Delete",admin_job_path(job), method: :delete, class: "btn btn-default", data: {confirm: "Are you sure?"}) %>
   <%  if job.hide %>
