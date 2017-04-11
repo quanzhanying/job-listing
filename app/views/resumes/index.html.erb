@@ -18,7 +18,7 @@
         </td>
         <td>
           <%= link_to("Download", resume.attatchment_url,  class: "btn btn-primary")%>
-          <%= link_to("Delete", job_resume_path(resume.job, resume), method: :delete, data:{confrim:"Are you sure to delete your resume?"},  class: "btn btn-primary")%>
+          <%= link_to("Delete", job_resume_path(@job, resume), method: :delete, data:{confrim:"Are you sure to delete your resume?"},  class: "btn btn-primary")%>
         </td>
       </tr>
       <% end %>

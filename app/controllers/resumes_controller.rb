@@ -1,13 +1,19 @@
 class ResumesController < ApplicationController
-  before_action :authenticate_user!, only:[:index, :index, :create, :destory]
+  before_action :authenticate_user!, only:[:index, :new, :create, :destory]
 
   def index
-    @resumes = Resume.where(:user_id => current_user.id).order("created_at DESC")
+    if !current_user.isAdmin
+      @resumes = Resume.where(:user_id => current_user.id).order("created_at DESC")
+    else
+      @resumes = Resume.all.order("created_at DESC")
+    end
+    @job = Job.find(params[:job_id])
   end
 
   def new
     @resume = Resume.new
     @job = Job.find(params[:job_id])
+
   end
 
   def show
@@ -19,12 +25,19 @@ class ResumesController < ApplicationController
     @resume = Resume.new(resume_params)
     @resume.user = current_user;
     @resume.job = Job.find(params[:job_id])
+
+    if @resume.content.blank?
+      flash[:warning] = "Content cant be empty."
+      redirect_to new_job_resume_path(params[:job_id])
+      return
+    end
+
     if @resume.save
       flash[:notice] = "Upload resume success."
       redirect_to job_resumes_path
     else
       flash[:warning] = "Failed to upload resume."
-      render :new
+      redirect_to new_job_resume_path(params[:job_id])
     end
   end
 
@@ -48,6 +61,6 @@ class ResumesController < ApplicationController
 
   private
   def resume_params
-    params.require(:resume).permit(:name, :attatchment, :id)
+    params.require(:resume).permit(:content, :attatchment, :id)
   end
 end
