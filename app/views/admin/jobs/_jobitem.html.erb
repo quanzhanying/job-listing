@@ -8,7 +8,7 @@
 <% end %>
 </td>
 
-<td><%= job.description %></td>
+<td><%= simple_format(job.description) %></td>
 <td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
 <td><%= job.contact %></td>
 <td><%= job.created_at %></td>

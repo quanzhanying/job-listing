@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :jobs do
       post :hide
       post :publish
+      get :resumes
     end
   end
 

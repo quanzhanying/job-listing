@@ -103,6 +103,10 @@ class Admin::JobsController < ApplicationController
 
   end
 
+  def resumes
+    job_id = Job.find(params[:job_id])
+    @resumes = Resume.where(:job_id => job_id).order("created_at DESC")
+  end
 
 
   private

@@ -40,5 +40,4 @@ class JobsController < ApplicationController
     redirect_to jobs_path
   end
 
-
 end
