@@ -1,13 +1,32 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("新增职位", new_job_path, class: "btn btn-default pull-right") %>
+    <!-- <%= link_to("新增职位", new_job_path, class: "btn btn-default pull-right") %> -->
+    <div class="dropdown pull-right">
+      <a class="dropdown dropdown-toggle btn btn-default pull-right" data-toggle="dropdown">
+        排序
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivder">
+        <li>
+          <%= link_to("按薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+        </li>
+        <li>
+          <%= link_to("按薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+        </li>
+        <li>
+          <%= link_to("按发表时间排序", jobs_path) %>
+        </li>
+      </ul>
+    </div>
+
   </div>
 
   <table class="table table-hover">
     <thead>
       <tr>
         <td>职位名称</td>
-        <td>发布者</td>
+        <td>薪资下限</td>
+        <td>薪资上限</td>
         <td>创建时间</td>
       </tr>
     </thead>
@@ -15,7 +34,8 @@
       <% @jobs.each do |job| %>
         <tr>
           <td><%= link_to(job.title, job_path(job)) %></td>
-          <td><%= job.user.email %></td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.wage_upper_bound %></td>
           <td><%= job.created_at %></td>
           <td>
             <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-default" )%>
