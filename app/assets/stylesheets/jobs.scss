@@ -1,13 +1,9 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.verticalLine{
-  border-left: thick solid #ff0000;
+.vline{
+  padding-right:2px;
+  border-right: 1px;
+  width:0px;
+  solid:#ccc;
 }
-vertical-line{
-      width: 0px; /* Use only border style */
-      height: 100%;
-      float: left;
-      border: 2px inset; /* This is default border style for <hr> tag */
-      background-color: black
-    }
