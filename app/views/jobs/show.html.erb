@@ -1,6 +1,10 @@
 <div class="container">
   <div class="group">
-    <%= link_to("编辑", edit_job_path(@job), class: "btn btn-default pull-right") %>
+    <% if current_user && current_user == @job.user.email %>
+      <%= link_to("编辑", edit_job_path(@job), class: "btn btn-default pull-right") %>
+    <% end %>
+      <%= link_to("投递简历", new_job_resume_path(@job), class: "btn btn-default pull-right") %>
+
   </div>
 
   <h2><%= @job.title %></h2>

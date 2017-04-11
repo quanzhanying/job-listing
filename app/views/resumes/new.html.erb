@@ -1,0 +1,6 @@
+<%= simple_form_for [@job, @resume] do |f| %>
+  <%= f.input :content, :label => "个人简介" %>
+  <%= f.input :attachment, :label => "上传简历 .PDF格式" %>
+
+  <%= f.submit "提交", class: "btn btn-default", data: {disable_with: "Submiting..."} %>
+<% end %>
