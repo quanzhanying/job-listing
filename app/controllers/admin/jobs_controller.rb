@@ -52,26 +52,12 @@ class Admin::JobsController < ApplicationController
   def update
 
     @job = Job.find(params[:id])
-    if !@job.blank?
-      maxSalary =  job_params[:salaryMax].to_i
-      minSalary = job_params[:salaryMin].to_i
-      if   minSalary <= 0
-        flash[:warning] = "Salary can't less than 0."
-        redirect_to edit_admin_job_path(@job)
-        return
-      elsif minSalary > maxSalary
-        flash[:warning] = "Salary Max must be greater than Salary Min"
-        render :new
-        return
-      end
-       if @job.update(job_params)
-         flash[:notice] = "Update Job successful."
-         redirect_to admin_jobs_path
-       else
-         flash[:error] = "Failed to update job."
-          redirect_to admin_jobs_path
-       end
+    if @job.update(job_params)
+      flash[:notice] = "Update Job successful."
+      redirect_to admin_jobs_path
     else
+      flash[:error] = "Failed to update job."
+       render :edit
     end
   end
 
