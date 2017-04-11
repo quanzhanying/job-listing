@@ -1,0 +1,28 @@
+<div class="container-fluid">
+<div >
+  <table class="table">
+    <thead>
+      <td>#</td>
+      <td>content</td>
+      <td>resume</td>
+    </thead>
+    <tbody>
+
+      <% @resumes.each do |resume| %>
+      <tr>
+        <td>
+          #
+        </td>
+        <td>
+          <%= simple_format(resume.content) %>
+        </td>
+        <td>
+          <%= link_to("Download", resume.attatchment_url,  class: "btn btn-primary")%>
+          <%= link_to("Delete", job_resume_path(resume.job, resume), method: :delete, data:{confrim:"Are you sure to delete your resume?"},  class: "btn btn-primary")%>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

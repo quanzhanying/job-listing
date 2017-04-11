@@ -1,0 +1,27 @@
+<% content_for(:sidebar) do %>
+  <%= render :partial => "sidebar" %>
+<% end %>
+
+<div class="container-fluid">
+<% if current_user && current_user.isAdmin && !isUserDashBoard %>
+<div class="group">
+  <%= link_to("New job", new_admin_job_path, class:"btn btn-primary pull-right")%>
+</div>
+<% end %>
+<table class="table">
+<thead>
+
+  <th>job</th>
+  <th>description</th>
+  <th>salary</th>
+  <th>contact</th>
+  <th>date</th>
+  <% if !isUserDashBoard %>
+  <th colspan="4">Edit</th>
+  <% end %>
+</thead>
+<tbody>
+  <%= render :partial => "jobitem", :collection => @jobs , :as => :job  %>
+</tbody>
+</table>
+</div>
