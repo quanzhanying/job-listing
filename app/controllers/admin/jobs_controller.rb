@@ -1,8 +1,13 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :edit, :upate, :destory,:publish, :hide]
   before_action :require_is_admin
+  layout  "admin"
   def index
     @jobs = Job.where(user_id: current_user.id).order("created_at DESC")
+    isUserDashBoard = params[:isUserDashBoard]
+    if !isUserDashBoard.blank? && isUserDashBoard
+        @isUserDashBoard = true
+    end
   end
 
   def new

@@ -10,6 +10,7 @@
 <td><%= job.created_at %></td>
 
 <td>
+  <% if !isUserDashBoard %>
   <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-default") %>
   <%= link_to("Delete",admin_job_path(job), method: :delete, class: "btn btn-default", data: {confirm: "Are you sure?"}) %>
   <%  if job.hide %>
@@ -17,6 +18,9 @@
   <% else %>
   <%= link_to("Hide", admin_job_hide_path(job), method: :post, class: "btn btn-primary") %>
   <% end %>
+  <% end %>
+
+
 </td>
 
 </tr>

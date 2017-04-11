@@ -1,3 +1,7 @@
+<% content_for(:sidebar) do %>
+  <%= render :partial => "sidebar" %>
+<% end %>
+
 <div class="container-fluid">
 <% if current_user && current_user.isAdmin %>
 <div class="group">
