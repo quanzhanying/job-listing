@@ -15,6 +15,7 @@
 
 <td>
   <% if !isUserDashBoard %>
+  <%= link_to("View Resumes (" + job.resumes.length.to_s + ")", admin_job_resumes_path(job), class:"btn btn-default")%>
   <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-default") %>
   <%= link_to("Delete",admin_job_path(job), method: :delete, class: "btn btn-default", data: {confirm: "Are you sure?"}) %>
   <%  if job.hide %>
