@@ -31,15 +31,14 @@ class Admin::JobsController < ApplicationController
     # end
 
     @job.user = current_user
-    @job.save
-    # if @job.save
-    #   flash[:notice] = "Create job successful."
-    #   redirect_to root_path
-    # else
-    #   flash[:alert] = "Failed to create job."
-    #   redirect_to new_job_path()
-    # end
-    redirect_to admin_jobs_path
+    if @job.save
+      flash[:notice] = "Create job successful."
+      redirect_to root_path
+    else
+      flash[:alert] = "Failed to create job."
+      render :new
+    end
+    # redirect_to admin_jobs_path
   end
 
   def edit
