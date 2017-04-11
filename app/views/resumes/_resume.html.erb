@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-12">
+        <span class="panel-title">
+          <%= resume.user.email %>
+        </span>
+        <%= link_to("Delete", job_resume_path(resume.job, resume), class: "btn btn-default btn-sm pull-right", method: :delete, data: {confirm: "Are you sure?"}) %>
+        <%= link_to("Edit", edit_job_resume_path(resume.job, resume), class: "btn btn-default btn-sm pull-right") %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="trix-content">
+      <p><%= simple_format(resume.content) %></p>
+    </div>
+    <hr>
+    <% if resume.attachment.present? %>
+      <i class="fa fa-paperclip"></i>
+      <%= link_to("Download Resume", resume.attachment_url) %>
+    <% else %>
+      No Attachment
+    <% end %>
+  </div>
+</div>

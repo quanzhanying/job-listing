@@ -1,0 +1,7 @@
+<div class="col-md-12">
+  <h2><%= @job.title %></h2>
+  <p><%= @job.description %></p>
+  <p>简历数量 <%= @job.resumes.count %></p>
+  <hr>
+  <%= render partial: "resumes/resume", collection: @job.resumes, as: :resume %>
+</div>

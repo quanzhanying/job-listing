@@ -1,0 +1,5 @@
+<%= simple_form_for [@job, @resume] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :attachment%>
+  <%= f.submit "提交简历", data: {disable_with: "正在提交..."}, class: "btn btn-primary" %>
+<% end %>

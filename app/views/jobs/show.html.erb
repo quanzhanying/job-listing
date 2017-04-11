@@ -1,0 +1,14 @@
+<div class="col-md-12">
+  <%= link_to("申请职位", new_job_resume_path(@job), class: "btn btn-primary pull-right") %>
+  <h2><%= @job.title %></h2>
+  <p><%= render_job_description(@job) %></p>
+  <p>
+    <span>薪资下限</span>
+    <%= @job.wage_lower_bound %>
+  </p>
+  <p>
+    <span>薪资上限</span>
+    <%= @job.wage_upper_bound %>
+  </p>
+  <p><%= @job.contact_email %></p>
+</div>
