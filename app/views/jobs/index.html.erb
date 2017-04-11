@@ -1,0 +1,16 @@
+<div class="container-fluid">
+
+<table class="table">
+<thead>
+
+  <th>job</th>
+  <th>description</th>
+  <th>salary</th>
+  <th>contact</th>
+  <th>created at</th>
+</thead>
+<tbody>
+  <%= render :partial => "jobitem", :collection => @jobs , :as => :job  %>
+</tbody>
+</table>
+</div>

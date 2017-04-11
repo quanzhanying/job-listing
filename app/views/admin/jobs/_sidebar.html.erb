@@ -1,0 +1,20 @@
+<div class="col-sm-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <% if isUserDashBoard %>
+    <li>
+    <%= link_to("Admin Dashboard", admin_jobs_path, class: "btn ")%>
+    </li>
+    <li>
+      <%= link_to("User Dashboard", admin_jobs_path({isUserDashBoard:true}), class: "btn btn-primary")%>
+    </li>
+    <% else %>
+
+    <li>
+    <%= link_to("Admin Dashboard", admin_jobs_path, class: "btn btn-primary")%>
+    </li>
+    <li>
+      <%= link_to("User Dashboard", admin_jobs_path({isUserDashBoard:true}), class: "btn")%>
+    </li>
+    <% end %>
+  </ul>
+</div>
