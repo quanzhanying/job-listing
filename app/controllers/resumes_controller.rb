@@ -10,6 +10,11 @@ class ResumesController < ApplicationController
     @job = Job.find(params[:job_id])
   end
 
+  def show
+
+  end
+
+
   def create
     @resume = Resume.new(resume_params)
     @resume.user = current_user;
@@ -24,7 +29,9 @@ class ResumesController < ApplicationController
   end
 
   def destroy
+
     @resume = Resume.find(params[:id])
+
     if @resume.user.id == current_user.id
       if @resume.delete
         flash[:notice] = "remove resume success."
@@ -41,6 +48,6 @@ class ResumesController < ApplicationController
 
   private
   def resume_params
-    params.require(:resume).permit(:name, :attatchment, :job_id)
+    params.require(:resume).permit(:name, :attatchment, :id)
   end
 end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
    resources  :jobs do
-     resources :resumes, only:[:index, :new, :create, :destory]
+     resources :resumes
    end
 
 
