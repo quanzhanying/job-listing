@@ -13,6 +13,7 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @resumes = @job.resumes.order("created_at DESC").paginate( page: params[:page], per_page: 10)
   end
 
   def edit
