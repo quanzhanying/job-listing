@@ -16,7 +16,9 @@
   <th>salary</th>
   <th>contact</th>
   <th>date</th>
+  <% if !isUserDashBoard %>
   <th colspan="4">Edit</th>
+  <% end %>
 </thead>
 <tbody>
   <%= render :partial => "jobitem", :collection => @jobs , :as => :job  %>
