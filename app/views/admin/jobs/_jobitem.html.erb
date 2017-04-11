@@ -1,7 +1,11 @@
 <tr>
 <td>
 <%= render_job_state(job) %>
+<% if isUserDashBoard %>
+<%= link_to(job.title,  admin_job_path(job, {isUserDashBoard:true}))%>
+<% else %>
 <%= link_to(job.title,  admin_job_path(job))%>
+<% end %>
 </td>
 
 <td><%= job.description %></td>

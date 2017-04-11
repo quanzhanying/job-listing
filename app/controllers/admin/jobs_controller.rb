@@ -33,7 +33,7 @@ class Admin::JobsController < ApplicationController
     @job.user = current_user
     if @job.save
       flash[:notice] = "Create job successful."
-      redirect_to root_path
+      redirect_to admin_jobs_path
     else
       flash[:alert] = "Failed to create job."
       render :new
