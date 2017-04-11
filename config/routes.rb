@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-   resources  :jobs
+   resources  :jobs do
+     resources :resumes, only:[:index, :new, :create, :destory]
+   end
+
+
 
   # namespace :admin do
   #   resources :jobs

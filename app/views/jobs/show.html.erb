@@ -4,5 +4,10 @@
   <p>
   <%= simple_format(@job.description) %>
   </p>
-
+  <div >
+    <%= link_to("New Resume", new_job_resume_path(@job), class:"btn btn-primary") %>
+    <br />
+    <br />
+    <br />
+  </div>
 </div>
