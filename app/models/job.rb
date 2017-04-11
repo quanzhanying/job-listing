@@ -4,4 +4,5 @@ class Job < ApplicationRecord
   validates :salaryMin, presence:true , numericality:{greater_than:0}
   validates :salaryMax, presence:true , numericality:{greater_than:0}
   belongs_to :user
+ 
 end

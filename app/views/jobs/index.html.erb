@@ -1,5 +1,25 @@
-<div class="container-fluid">
 
+<div class="container-fluid">
+  <div class="collapse navbar-collapse" id="bs-exmaple-nav">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to("by date", jobs_path)%>
+          </li>
+          <li>
+            <%= link_to("by max salary", jobs_path(:order => 'by_max_salary'))%>
+          </li>
+            <li>
+              <%= link_to("by min salary", jobs_path(:order => 'by_min_salary'))%>
+            </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container-fluid">
 <table class="table">
 <thead>
 

@@ -1,7 +1,15 @@
 class JobsController < ApplicationController
 
   def index
-    @jobs = Job.where(hide:false).order("created_at DESC")
+
+    @jobs = case params[:order]
+    when 'by_min_salary'
+      Job.where(hide:false).order("salaryMin DESC")
+    when 'by_max_salary'
+      Job.where(hide:false).order("salaryMax DESC")
+    else
+      Job.where(hide:false).order("created_at DESC")
+    end
   end
 
   def show
@@ -30,7 +38,7 @@ class JobsController < ApplicationController
   def destroy
     flash[:warning] = "You can delete job!"
     redirect_to jobs_path
-  end 
+  end
 
 
 end
