@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :resumes
 
   def isAdmin?
-   email == 'hi@hi.com'
+   email == 'h@h.com'
  end
 end
