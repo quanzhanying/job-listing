@@ -9,11 +9,11 @@ class ResumesController < ApplicationController
 
   def create
     @resume = Resume.new(resume_params)
-    @resume.user = current_user
     @resume.job = @job
+    @resume.user = current_user
 
-    if @resume.save!
-      redirect_to :back, notice: "Resume hes been uploaded."
+    if @resume.save
+      redirect_to jobs_path(@job), notice: "Resume hes been uploaded."
     else
       render :new
     end
@@ -21,7 +21,7 @@ class ResumesController < ApplicationController
 
   def update
     if @resume.update(resume_params)
-      redirect_to :back, notice: "Resume successfully updated."
+      redirect_to admin_job_path(@job), notice: "Resume successfully updated."
     else
       render :edit
     end
@@ -29,7 +29,7 @@ class ResumesController < ApplicationController
 
   def destroy
     @resume.destroy
-    redirect_to :back, aler: "Resume has been deleted."
+    redirect_to admin_job_path(@job), alert: "Resume has been deleted."
   end
 
   private
@@ -43,6 +43,6 @@ class ResumesController < ApplicationController
   end
 
   def resume_params
-    params.require(:resume).permit(:attachment)
+    params.require(:resume).permit(:content, :attachment)
   end
 end

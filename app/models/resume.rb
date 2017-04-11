@@ -1,5 +1,5 @@
 class Resume < ApplicationRecord
-  validates :attachment, presence: true
+  validates :content, presence: true
   mount_uploader :attachment, AttachmentUploader
 
   belongs_to :job
