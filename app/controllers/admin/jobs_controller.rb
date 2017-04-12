@@ -6,15 +6,15 @@ class Admin::JobsController < ApplicationController
   end
 
   def index
-    @jobs = Jobs.all
+    @jobs = Job.all
   end
 
   def new
-    @job.new
+    @job = Job.new
   end
 
   def create
-    @job.new(job_params)
+    @job = Job.new(job_params)
 
     if @job.save
       redirect_to admin_jobs_path
@@ -32,10 +32,10 @@ class Admin::JobsController < ApplicationController
     @job.update(job_params)
     redirect_to admin_jobs_path
   end
-end
 
   def destroy
-    @job = Job.find(params)
+    @job = Job.find(params[:id])
+    
     @job.destroy
 
     redirect_to admin_jobs_path
@@ -46,4 +46,5 @@ end
   def job_params
     params.require(:job).permit(:title, :description)
   end
+
 end
