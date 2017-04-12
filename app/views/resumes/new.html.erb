@@ -1,23 +1,14 @@
-<% if !@resume.errors.empty? %>
-  <div class="alert alert-error">
-    <ul>
-      <% @resume.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+
 <h1>上传简历</h1>
-<p>应聘者姓名不得为空，必须上传简历才能提交，仅支持PDF格式简历上传</p>
-<div class="well">
-  <%= form_for [@job,@resume], html: { multipart: true } do |f| %>
-    <%= f.label "应聘人" %>
-    <br>
-    <%= f.text_field :title %>
-    <br>
-    <%= f.label "简历" %>
-    <br>
-    <%= f.file_field :attachment %>
-    <%= f.submit "Save", class: "btn btn-primary" %>
+
+<hr>
+  <%= simple_form_for [@job,@resume] do |f| %>
+
+
+    <%= f.input :title %>
+
+
+
+    <%= f.input :attachment %>
+    <%= f.submit "Send" %>
   <% end %>
-</div>
