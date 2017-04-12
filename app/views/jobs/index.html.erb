@@ -9,6 +9,7 @@
         <td>Title</td>
         <td>Description</td>
         <td>Creator</td>
+        <td>createTime</td>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +18,7 @@
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td><%= job.description %></td>
           <td><%= job.user.email %></td>
+          <td><%= job.created_at %></td>
           <td>
             <% if current_user && current_user == job.user %>
             <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default") %>
