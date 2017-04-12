@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def show
     @jobs = Jon.find(params[:id])
