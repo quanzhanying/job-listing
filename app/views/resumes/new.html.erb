@@ -1,0 +1,14 @@
+<div class="container-fluid">
+<h2 class="text-center"></h2>
+
+<%= simple_form_for [@job, @resume] do |f|%>
+
+<div class="group">
+<%= f.input :content %>
+<%= f.input :attatchment%>
+<%= f.submit "save", class:"btn btn-primary" %>
+</div>
+
+<% end %>
+
+</div>
