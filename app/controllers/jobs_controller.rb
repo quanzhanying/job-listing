@@ -3,11 +3,11 @@ class JobsController < ApplicationController
   def index
     @jobs = case params[:order]
       when 'by_min_salary'
-         Job.all.order("salaryMin DESC")
+         Job.all.order(salaryMin: :DESC)
       when 'by_max_salary'
-         Job.where(hide:false).order("salaryMax DESC")
+         Job.where(hide:false).order(salaryMax: :DESC)
       else
-        Job.where(hide:false).order("created_at DESC")
+        Job.where(hide:false).order(created_at: :DESC)
     end
 
 
