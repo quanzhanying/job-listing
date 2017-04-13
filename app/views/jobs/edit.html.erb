@@ -2,18 +2,5 @@
   <h1>Edit a job</h1>
 
   <hr>
-
-  <%= form_for @job do |f| %>
-
-  Title
-  <%= f.text_field :title %>
-  <br>
-  Description
-  <br>
-  <%= f.text_area :description %>
-  <br>
-
-  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
-  <% end %>
-
+  <%= render "form"%>
 </div>
