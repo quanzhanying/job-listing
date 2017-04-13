@@ -3,7 +3,7 @@ class JobsController < ApplicationController
   def index
     @jobs = case params[:order]
       when 'by_min_salary'
-         Job.where(hide:false).order("salaryMin DESC")
+         Job.all.order("salaryMin DESC")
       when 'by_max_salary'
          Job.where(hide:false).order("salaryMax DESC")
       else
