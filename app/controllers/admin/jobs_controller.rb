@@ -1,5 +1,5 @@
 class Admin::JobsController < ApplicationController
-	before_action :authenticate_user!,  only: [:new, :create, :edit, :update, :destroy, :index]
+	before_action :authenticate_user!,  only: [:new, :create, :edit, :update, :destroy]
 	before_action :require_is_admin
 
 	def index
@@ -12,12 +12,16 @@ class Admin::JobsController < ApplicationController
 
 	def create
 		@job = Job.new(job_params)
-		@job.save()
+		@job.save
 
 		redirect_to admin_jobs_path      
 	end
 
 	def show
+		@job = Job.find(params[:id])
+	end
+
+	def edit
 		@job = Job.find(params[:id])
 	end
 

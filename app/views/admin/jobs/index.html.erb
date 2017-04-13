@@ -17,7 +17,7 @@
 		<tbody>
 			<% @jobs.each do |job|%>
 				<tr>
-					<td> <%= link_to(job.title, job_path(job)) %>  </td>
+					<td> <%= link_to(job.title, admin_job_path(job)) %>  </td>
 					<td> <%= job.description %> </td>
 					<td> <%= job.updated_at %> </td>
 				</tr>
