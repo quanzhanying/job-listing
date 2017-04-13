@@ -9,6 +9,7 @@
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td>
             <%= link_to("Edit", edit_job_path(job), class: "btn btn-link")%>
+            |
             <%= link_to("Delete", job_path(job), class: "btn btn-link", method: :delete, data: {confirm: "Are you sure?"})%>
           </td>
           <td><%= job.created_at %></td>
