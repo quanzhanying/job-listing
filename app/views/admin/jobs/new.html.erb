@@ -1,0 +1,37 @@
+<div class="col-md-4 col-md-offset-4">
+    <h2>新增职位</h2>
+
+    <hr>
+    <%= simple_form_for [:admin,@job] do |f| %>
+    <% if @job.errors.any? %>
+    <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
+    标题
+    <%= f.text_field :title %>
+    <br>
+    叙述
+    <br>
+    <%= f.text_area :description %>
+    <br>
+    薪资下限
+    <%= f.text_field :wage_lower_bound %>
+    <br>
+    薪资上限
+    <%= f.text_field :wage_upper_bound %>
+    <br>
+    联系邮箱
+    <%= f.text_field :contact_mail %>
+    <br>
+    是否隐藏
+    <%= f.input :is_hidden %>
+    <br>
+
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+    <% end %>
+
+</div>
