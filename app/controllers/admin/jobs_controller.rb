@@ -14,7 +14,11 @@ class Admin::JobsController < ApplicationController
 		@job = Job.new(job_params)
 		@job.save()
 
-		redirect_to admin_jobs_path
+		redirect_to admin_jobs_path      
+	end
+
+	def show
+		@job = Job.find(params[:id])
 	end
 
 	def require_is_admin
