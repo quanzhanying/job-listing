@@ -9,8 +9,6 @@ class JobsController < ApplicationController
       else
         Job.where(hide:false).order(created_at: :DESC)
     end
-
-
   end
 
   def show
