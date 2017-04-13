@@ -1,7 +1,6 @@
 class JobsController < ApplicationController
 
   def index
-
     @jobs = case params[:order]
       when 'by_min_salary'
          Job.where(hide:false).order("salaryMin DESC")
@@ -11,8 +10,7 @@ class JobsController < ApplicationController
         Job.where(hide:false).order("created_at DESC")
     end
 
-    render plain: @jobs.inspect
-    
+
   end
 
   def show
