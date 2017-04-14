@@ -1,9 +1,10 @@
 class Admin::JobsController < ApplicationController
-	before_action :authenticate_user!,  only: [:new, :create, :edit, :update, :destroy]
+	before_action :authenticate_user!,  only: [:new, :create, :edit, :update, :destroy, :index]
 	before_action :require_is_admin
+	before_action :find_job, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@jobs = Job.all	
+		@jobs = Job.where(:is_hidden => false).recent
 	end
 
 	def new
@@ -11,31 +12,52 @@ class Admin::JobsController < ApplicationController
 	end
 
 	def create
-		@job = Job.new(job_params)
-		@job.save
+    	@job = Job.new(job_params)
+    	@job.user = current_user
 
-		redirect_to admin_jobs_path      
-	end
+    	if @job.save
+      		redirect_to admin_jobs_path
+    	else
+      		render :new
+    	end
+  	end
+
 
 	def show
-		@job = Job.find(params[:id])
 	end
 
 	def edit
-		@job = Job.find(params[:id])
 	end
 
-	def require_is_admin
-		if current_user.email != 'wqy@163.com'
-			flash[:alert] = 'You are not admin'
-			redirect_to root_path
-		end	
+	def update
+
+		if @job.update(job_params)
+			redirect_to admin_jobs_path
+		else
+			render :edit
+		end		
 	end
+
+	def destroy
+		if @job.destroy
+
+			redirect_to admin_jobs_path
+		else
+			# 如果删除时候还是回到index界面
+			render :index
+		end
+	end
+
+
 
 
 	private
 
 	def job_params
 		params.require(:job).permit(:title,:description,:wage_upper_bound,:wage_lower_bound,:contact_email,:is_hidden)
+	end
+
+	def find_job
+		@job = Job.find(params[:id])
 	end
 end

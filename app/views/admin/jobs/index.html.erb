@@ -2,7 +2,7 @@
 	<h2 class="text-center">我发布的工作</h2>
 
 	<div class="job">
-    	<%= link_to("New Job", new_admin_job_path, class: "btn btn-primary pull-right") %>
+    	<%= link_to("New a Job", new_admin_job_path, class: "btn btn-primary pull-right") %>
   	</div>
 
 	<table class="table">
@@ -10,6 +10,9 @@
 			<tr>
 				<th>Title</th>
 				<th>Description</th>
+				<th>薪资上限</th>
+				<th>薪资下限</th>
+				<th>联系邮箱</th>
 				<th>Last Update</th>
 			</tr>
 		</thead>
@@ -19,7 +22,16 @@
 				<tr>
 					<td> <%= link_to(job.title, admin_job_path(job)) %>  </td>
 					<td> <%= job.description %> </td>
+					<td> <%= job.wage_upper_bound %> </td>
+					<td> <%= job.wage_lower_bound %></td>
+					<td> <%= job.contact_email %></td>
 					<td> <%= job.updated_at %> </td>
+					<td>
+		            <% if current_user && current_user == job.user %>
+		            <%= link_to("Edit", edit_admin_job_path(job)) %>
+		            <%= link_to("Destroy", admin_job_path(job), method: :delete, data: { confirm: "Are you sure? " } ) %>
+		            <% end %>
+		            </td>
 				</tr>
 			<% end %>
 		</tbody>
