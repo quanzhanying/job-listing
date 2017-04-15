@@ -3,7 +3,7 @@ class JobsController < ApplicationController
   before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
 
   def index
-    @jobs = Job.recent.all
+    @jobs = Job.where(:is_hidden=>false).recent.all
   end
 
   def show
@@ -50,7 +50,8 @@ class JobsController < ApplicationController
   end
 
   def params_job
-    params.require(:job).permit(:title,:description,:wage_upper_bound,:wage_lower_bound,:contact_email)
+    params.require(:job).permit(:title,:description,:wage_upper_bound,
+                                :wage_lower_bound,:contact_email,:is_hidden)
   end
 
 end
