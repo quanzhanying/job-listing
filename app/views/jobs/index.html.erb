@@ -1,49 +1,113 @@
-<div class="col-md-12">
-  <div class="group">
-    <!-- <%= link_to("新增职位", new_job_path, class: "btn btn-default pull-right") %> -->
-    <div class="dropdown clearfix pull-right">
-      <button class="dropdown-toggle btn btn-default" type="button" data-toggle="dropdown" id="dropdownMenuDivider" aria-haspopup="true" aria-expanded="true">
-        排序
-        <b class="caret"></b>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li>
-          <%= link_to("按薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-        </li>
-        <li>
-          <%= link_to("按薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-        </li>
-        <li>
-          <%= link_to("按发表时间排序", jobs_path) %>
-        </li>
-      </ul>
+<header class="business-header row">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="tagline">工匠精神</h1>
+                <p class="tagp">精品，源于对完美和极致的坚持与追求</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>我们寻找匠师</h2>
+            <p>工匠以极致的态度对自己的产品精雕细琢，精益求精、追求更完美的精神理念。工匠们喜欢不断雕琢自己的产品，不断改善自己的工艺，享受着产品在双手中升华的过程。</p>
+            <p>工匠们对细节有很高要求，追求完美和极致，对精品有着执着的坚持和追求，把品质从0提高到1，其利虽微，却长久造福于世。您就是那位我们要寻找的匠师！</p>
+            <p>
+                <a class="btn btn-default btn-lg" href="#">Call to Action &raquo;</a>
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <h2>联系我们</h2>
+            <address>
+                <strong>EmileSu</strong>
+                <br>Look For Craftsman
+                <br>Naning Guangxi Xixiangtang Stree
+                <br>
+            </address>
+            <address>
+                <br>WeChat: bigdasu（韵儿爸爸）
+                <br>Blog:
+                <a href="mailto:#">emilesu.logdown.com</a>
+            </address>
+        </div>
     </div>
 
-  </div>
+    <!-- /.row -->
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-4"><img class="img-circle img-responsive img-center" <%= image_tag("steel.jpg")%> <h2 class="text-center">铁匠</h2>
+        <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+    </div>
+    <div class="col-sm-4"><img class="img-circle img-responsive img-center" <%= image_tag("wood.jpg")%> <h2 class="text-center">木匠</h2>
+    <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+</div>
+<div class="col-sm-4">
+    <!-- <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt=""> -->
+<img class="img-circle img-responsive img-center" <%= image_tag("niba.jpg")%> <h2 class="text-center">泥匠</h2>
+<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+</div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<div class="col-md-12">
+<div class="group">
+<!-- <%= link_to("新增职位", new_job_path, class: "btn btn-default pull-right") %> -->
+<div class="dropdown clearfix pull-right">
+    <button class="dropdown-toggle btn btn-default" type="button" data-toggle="dropdown" id="dropdownMenuDivider" aria-haspopup="true" aria-expanded="true">
+        排序
+        <b class="caret"></b>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li>
+            <%= link_to("按薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+        </li>
+        <li>
+            <%= link_to("按薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+        </li>
+        <li>
+            <%= link_to("按发表时间排序", jobs_path) %>
+        </li>
+    </ul>
+</div>
+
+</div>
+
+<table class="table table-hover">
+<thead>
+    <tr>
         <td>职位名称</td>
         <td>薪资下限</td>
         <td>薪资上限</td>
         <td>创建时间</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @jobs.each do |job| %>
-        <tr>
-          <td><%= link_to(job.title, job_path(job)) %></td>
-          <td><%= job.wage_lower_bound %></td>
-          <td><%= job.wage_upper_bound %></td>
-          <td><%= job.created_at %></td>
-          <td>
+    </tr>
+</thead>
+<tbody>
+    <% @jobs.each do |job| %>
+    <tr>
+        <td><%= link_to(job.title, job_path(job)) %></td>
+        <td><%= job.wage_lower_bound %></td>
+        <td><%= job.wage_upper_bound %></td>
+        <td><%= job.created_at %></td>
+        <!-- <td>
             <%= link_to("编辑", edit_job_path(job), class: "btn btn-sm btn-default" )%>
             <%= link_to("删除", job_path(job), class: "btn btn-sm btn-default", method: :delete, data:{ confirm: "你确定删除吗？"}) %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
+          </td> -->
+    </tr>
+    <% end %>
+</tbody>
 
-  </table>
+</table>
 </div>
+</div>
+
+<script src="app/assets/javascripts/jquery.js"></script>
