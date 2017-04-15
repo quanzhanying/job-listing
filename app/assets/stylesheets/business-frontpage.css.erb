@@ -24,7 +24,7 @@ body {
 .tagline {
     text-align: center;
     margin-top: 230px;
-    font-size: 5em;
+    font-size: 5.5em;
     text-shadow: 0 0 5px #666;
     color: #fff;
 }
@@ -32,6 +32,7 @@ body {
 .tagp {
     text-align: center;
     font-size: 2em;
+    letter-spacing: 0.1em;
     text-shadow: 0 0 5px #666;
     color: #fff;
 }
@@ -42,4 +43,32 @@ body {
 
 footer {
     margin: 50px 0;
+}
+
+.login_bg{
+  height: 750px;
+  background: url('<%= asset_path("login_bg.jpg") %>') center center no-repeat scroll;
+}
+
+.login_inter{
+  background-color: #fff;
+  padding: 18px;
+  border-radius: 5px;
+}
+
+.show_bg{
+  height: 250px;
+  background: url('<%= asset_path("show_bg.jpg") %>') center center no-repeat scroll;
+}
+
+.show_title{
+  text-align:left;
+  padding: 130px 0;
+  font-size: 5em;
+  text-shadow: 0 0 5px #000;
+}
+
+.show_title h1{
+  font-size: 0.6em;
+  color: #fff;
 }

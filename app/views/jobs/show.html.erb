@@ -1,4 +1,11 @@
+<div class="show_bg row">
+    <div class="show_title container">
+        <h1><%= @job.title %></h2>
+    </div>
+</div>
 <div class="container">
+    <hr>
+
     <div class="group">
         <% if current_user && current_user == @job.user.email %>
         <%= link_to("编辑", edit_job_path(@job), class: "btn btn-default pull-right") %>
