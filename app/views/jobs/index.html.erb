@@ -6,10 +6,10 @@
     <!--<%= link_to("Add a Job", new_job_path, class: "btn btn-primary pull-right") %>-->
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
         <li>
-          <%= link_to("按照薪资下限排序",jobs_path)%>
+          <%= link_to("按照薪资下限排序",jobs_path(:order => "by_lower_bound"))%>
         </li>
         <li>
-          <%= link_to("按照薪资上限排序",jobs_path)%>
+          <%= link_to("按照薪资上限排序",jobs_path(:order => "by_upper_bound"))%>
         </li>
         <li>
           <%= link_to("按照发表时间排序",jobs_path)%>
