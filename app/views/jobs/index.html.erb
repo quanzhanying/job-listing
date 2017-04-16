@@ -8,6 +8,7 @@
           <td>#</td>
           <td>Title</td>
           <td>Description</td>
+          <td>Created_at</td>
        </tr>
     </thead>
   <tbody>
@@ -16,10 +17,10 @@
           <td>#</td>
           <td><%= link_to(job.title, job_path(job)) %></td>
           <td><%= job.description %></td>
+          <td><%= job.created_at %></td>
           <td>
-             <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
-             <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
-                  method: :delete, data: { confirm: "Are you sure?" } )%>
+            <%= link_to("Edit", edit_job_path(job)) %> |
+            <%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
           </td>
       </tr>
       <% end %>
