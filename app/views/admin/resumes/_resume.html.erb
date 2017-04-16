@@ -16,9 +16,9 @@
 
     <hr>
 
-    <% if resume.attchment.present? %>
+    <% if resume.attachment.present? %>
     <i class="fa fa-paperclip"> </i>
-    <%= link_to("Download Resume", resume.attchment_url) %>
+    <%= link_to("Download Resume", resume.attachment_url) %>
     <% else %>
     No Attachment
     <% end %>

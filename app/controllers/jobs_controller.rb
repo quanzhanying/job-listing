@@ -8,13 +8,19 @@ class JobsController < ApplicationController
     when 'by_upper_bound'
       Job.published.order('wage_upper_bound DESC')
     else
-      Job.published.order('created_at DESC')
+      Job.published.recent
     end
   end
 
   def show
     @job = Job.find(params[:id])
+
+    if @job.is_hidden
+      flash[:warning] = "This Job already archieved"
+      redirect_to root_path
+    end
   end
+
   def new
     @job = Job.new
   end
@@ -48,6 +54,20 @@ class JobsController < ApplicationController
     @job.destroy
     redirect_to jobs_path
 
+  end
+
+  def publish
+    @job = Job.find(params[:id])
+    @job.is_hidden = false
+    @job.save
+    redirect_to :back
+  end
+
+  def hide
+    @job = Job.find(params[:id])
+    @job.is_hidden = true
+    @job.save
+    redirect_to :back
   end
 
 
