@@ -18,6 +18,7 @@ class Admin::JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
     if @job.save
       redirect_to admin_jobs_path, notice: "新建职位成功！"
     else
