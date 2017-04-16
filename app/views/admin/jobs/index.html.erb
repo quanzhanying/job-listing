@@ -15,31 +15,32 @@
 				<th>联系邮箱</th>
 				<th>Last Update</th>
 				<th></th>
-				<th>是否隐藏</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<% @jobs.each do |job|%>
 				<tr>
-					<td> <%= link_to(job.title, admin_job_path(job)) %>  </td>
+					<td> 
+						<%= render_job_status(job) %>
+						<%= link_to(job.title, admin_job_path(job)) %>  
+					</td>
 					<td> <%= job.description %> </td>
 					<td> <%= job.wage_upper_bound %> </td>
 					<td> <%= job.wage_lower_bound %></td>
 					<td> <%= job.contact_email %></td>
 					<td> <%= job.updated_at %> </td>
 					<td>
-		            <% if current_user && current_user == job.user %>
-		            <%= link_to("Edit", edit_admin_job_path(job)) %>
-		            <%= link_to("Destroy", admin_job_path(job), method: :delete, data: { confirm: "Are you sure? " } ) %>
-		            <% end %>
-		            </td>
-		            <td>
-		            	<% if job.is_hidden %>
-		            		Y
-		            	<% else %>
-		            		N
-		            	<% end %>
+			            <% if current_user && current_user == job.user %>
+			            <%= link_to("Edit", edit_admin_job_path(job)) %>
+			            <%= link_to("Destroy", admin_job_path(job), method: :delete, data: { confirm: "Are you sure? " } ) %>
+			            <% end %>
+
+			            <% if job.is_hidden %>
+			            	<%= link_to("Public", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
+			            <% else %>
+			            	<%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
+			            <% end %>
 		            </td>
 				</tr>
 			<% end %>

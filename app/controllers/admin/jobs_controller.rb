@@ -2,6 +2,7 @@ class Admin::JobsController < ApplicationController
 	before_action :authenticate_user!,  only: [:new, :create, :edit, :update, :destroy, :index]
 	before_action :require_is_admin
 	before_action :find_job, only: [:show, :edit, :update, :destroy]
+	layout "admin"
 
 	def index
 		# @jobs = Job.where(:is_hidden => false).recent
@@ -46,6 +47,18 @@ class Admin::JobsController < ApplicationController
 			# 如果删除时候还是回到index界面
 			render :index
 		end
+	end
+
+	def publish
+		@job = Job.find(params[:id])
+		@job.publish!
+		redirect_to :back
+	end
+
+	def hide
+		@job = Job.find(params[:id])
+		@job.hide!
+		redirect_to :back
 	end
 
 	private
