@@ -10,19 +10,23 @@
         <% if current_user && current_user == @job.user.email %>
         <%= link_to("编辑", edit_job_path(@job), class: "btn btn-default pull-right") %>
         <% end %>
-        <%= link_to("投递简历", new_job_resume_path(@job), class: "btn btn-default pull-right") %>
+        <%= link_to("我要接活", new_job_resume_path(@job), class: "btn btn-default pull-right") %>
 
     </div>
 
     <h2><%= @job.title %></h2>
     <p style="font-size:10px; margin-bottom:30px;">创建时间:<%= @job.created_at%></p>
-    <br>
-    <p>职位描述：
+    <p>
+        <strong>薪俸上限：</strong><%= @job.wage_upper_bound %>元</p>
+    <p>
+        <strong>薪俸下限：</strong><%= @job.wage_lower_bound %>元</p>
+    <p>
+        <strong>联系方式：</strong><%= @job.contact_email %></p>
+    <hr>
+    <p>
+        <h4>需求描述：</h4>
         <blockquote id="description">
             <%= simple_format(@job.description) %>
         </blockquote>
     </p>
-    <p>薪资上限：<%= @job.wage_upper_bound %>元</p>
-    <p>薪资下限：<%= @job.wage_lower_bound %>元</p>
-    <p>联系方式：<%= @job.contact_email %></p>
 </div>
