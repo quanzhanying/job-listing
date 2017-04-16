@@ -45,7 +45,7 @@
       <% if job.is_hidden %>
       <%= link_to("发布", publish_admin_job_path(job), :method => :post, :class => "btn btn-default") %>
       <% else %>
-      <%= link_to("隐藏", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
+      <%= link_to("隐藏", hide_admin_job_path(job), :method => :post, :class => "btn btn-default") %>
       <% end %>
     </td>
     <td>
