@@ -4,7 +4,8 @@ class Admin::JobsController < ApplicationController
 	before_action :find_job, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@jobs = Job.where(:is_hidden => false).recent
+		# @jobs = Job.where(:is_hidden => false).recent
+		@jobs = Job.all
 	end
 
 	def new
@@ -21,7 +22,6 @@ class Admin::JobsController < ApplicationController
       		render :new
     	end
   	end
-
 
 	def show
 	end
@@ -48,11 +48,7 @@ class Admin::JobsController < ApplicationController
 		end
 	end
 
-
-
-
 	private
-
 	def job_params
 		params.require(:job).permit(:title,:description,:wage_upper_bound,:wage_lower_bound,:contact_email,:is_hidden)
 	end

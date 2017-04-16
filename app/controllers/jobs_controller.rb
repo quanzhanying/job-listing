@@ -31,7 +31,6 @@ class JobsController < ApplicationController
 	end
 
 	def update
-
 		if @job.update(job_params)
 			redirect_to jobs_path, notice: "Update Success"
 		else
@@ -41,7 +40,6 @@ class JobsController < ApplicationController
 	end
 
 	def destroy
-
 		@job.destroy
 		flash[:alert] = "Group deleted"
 		redirect_to jobs_path
