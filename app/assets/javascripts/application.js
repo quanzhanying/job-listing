@@ -16,5 +16,3 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
-@import "bootstrap-sprockets";
-@import "bootstrap";
