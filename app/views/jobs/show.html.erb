@@ -10,7 +10,7 @@
         <% if current_user && current_user == @job.user.email %>
         <%= link_to("编辑", edit_job_path(@job), class: "btn btn-default pull-right") %>
         <% end %>
-        <%= link_to("我要接活", new_job_resume_path(@job), class: "btn btn-default pull-right") %>
+        <%= link_to("应征", new_job_resume_path(@job), class: "btn btn-default pull-right") %>
 
     </div>
 

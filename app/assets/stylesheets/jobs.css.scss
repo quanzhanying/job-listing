@@ -1,0 +1,26 @@
+// Place all the styles related to the jobs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#description {
+  font-size: 1em;
+}
+
+// row  ---  job.index
+
+.all_image {
+  margin: 3em;
+  padding: 0 5em;
+}
+
+.all_image_css {
+  transition: 0.8s;
+}
+
+
+.all_image_css:hover {
+  filter:alpha(Opacity=100);
+  -moz-opacity:0.4;
+  opacity: 0.7;
+  transition: 0.8s;
+}

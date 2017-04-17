@@ -1,1 +1,131 @@
-<h1>Job Listing</h1>
+<header class="business-header row">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="tagline">匠心精神</h1>
+                <p class="tagp">我不是为了输赢 我就是认真
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>我们寻找匠师</h2>
+            <p>工匠以极致的态度对自己的产品精雕细琢，精益求精、追求更完美的精神理念。工匠们喜欢不断雕琢自己的产品，不断改善自己的工艺，享受着产品在双手中升华的过程。</p>
+            <p>工匠们对细节有很高要求，追求完美和极致，对精品有着执着的坚持和追求，把品质从0提高到1，其利虽微，却长久造福于世。您就是那位我们要寻找的匠师！</p>
+            <p>
+                <a class="btn btn-default btn-lg" href="/jobs">匠职大全 &raquo;</a>
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <h2>联系我们</h2>
+            <address>
+                <strong>
+                    <a href="about/index">Emile Su</a>
+                </strong>
+                <br>Look For Craftsman
+                <br>
+                <strong>Add:
+                </strong>Naning Guangxi Xixiangtang Stree
+                <br>
+            </address>
+            <address>
+                <br>
+                <strong>WeChat:</strong>
+                bigdasu（韵儿爸爸）
+                <br>
+                <strong>Blog:</strong>
+                <a href="mailto:#">
+                    emilesu.logdown.com</a>
+            </address>
+        </div>
+    </div>
+
+    <!-- /.row -->
+
+    <hr>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <%= image_tag("steel.jpg", class: "img-circle img-responsive img-center frontpage-img")%>
+            <h2 class="text-center">铁匠</h2>
+            <p>铁匠是一门古老的职业，他们以铁为原料。铁匠一般都有一个自己的铁匠铺，有一座用来煅烧铁坯的火炉。铁匠用来打铁的工具有：小铁锤、大铁锤、铁夹（用来夹烧热了的铁坯）、砧子（铁匠打铁的平台）等。</p>
+        </div>
+        <div class="col-sm-4">
+            <%= image_tag("wood.jpg", class: "img-circle img-responsive img-center frontpage-img")%>
+            <h2 class="text-center">木匠</h2>
+            <p>木匠古代称为木工、梓匠、梓人。鲁班就是有名的巧木工。木工在现代的状况变成了分工很细的工种，大略分为修建寺庙的“大木工”、作室内空间装修的“装潢木工”、作家具的“家具木工”这三个比较大的方向。</p>
+        </div>
+        <div class="col-sm-4">
+            <%= image_tag("stone.jpg", class: "img-circle img-responsive img-center frontpage-img")%>
+            <h2 class="text-center">石匠</h2>
+            <p>石匠在这个世界的各个职业划分中，不是很抢眼，但是石匠却是历史传承时间最长最久的职业。从古石器时代的简单打磨石头，到现代的石雕工艺和艺术的完美结合，离不开石匠们默默的贡献。</p>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <div class="col-md-12">
+        <div class="group">
+            <!-- <%= link_to("新增职位", new_job_path, class: "btn btn-default pull-right") %> -->
+            <div class="dropdown clearfix pull-right">
+                <button class="dropdown-toggle btn btn-default" type="button" data-toggle="dropdown" id="dropdownMenuDivider" aria-haspopup="true" aria-expanded="true">
+                    排序
+                    <b class="caret"></b>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+                    <li>
+                        <%= link_to("按薪俸下限排序", jobs_path(:order => "by_lower_bound")) %>
+                    </li>
+                    <li>
+                        <%= link_to("按薪俸上限排序", jobs_path(:order => "by_upper_bound")) %>
+                    </li>
+                    <li>
+                        <%= link_to("按创建时间排序", jobs_path) %>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="table-responsive row">
+            <table class="table table-boldered table-striped">
+                <thead>
+                    <tr>
+                        <td>匠职</td>
+                        <td>工种</td>
+                        <td>薪俸范围</td>
+                        <td>创建时间</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @jobs.each do |job| %>
+                    <tr>
+                        <td><%= link_to(job.title, job_path(job)) %></td>
+                        <td>木工</td>
+                        <td>
+                            <span class="badge badge-info">
+                                <span class="fa fa-rmb"></span><%= job.wage_lower_bound%>
+                                -
+                                <%= job.wage_upper_bound%>
+                            </span>
+                        </td>
+                        <td><%= job.created_at %></td>
+                        <td><%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success") %></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="app/assets/javascripts/jquery.js"></script>
