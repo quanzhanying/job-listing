@@ -16,3 +16,4 @@
 //= require_tree .
 //= require bootstrap/alert
 //= require_tree
+//= require bootstrap/dropdown
