@@ -8,7 +8,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def show
-    @job = Job.find(params[:id])
+    @job = Job.find(params[:job_id])
   end
 
   def new
@@ -26,11 +26,11 @@ class Admin::JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
+    @job = Job.find(params[:job_id])
   end
 
   def update
-    @job = Job.find(params[:id])
+    @job = Job.find(params[:job_id])
     if @job.update(job_params)
       redirect_to admin_jobs_path, notice: "Update Success"
     else
@@ -39,20 +39,20 @@ class Admin::JobsController < ApplicationController
   end
 
   def destroy
-    @job = Job.find(params[:id])
+    @job = Job.find(params[:job_id])
     @job.destroy
     redirect_to admin_jobs_path, alert: "Job deleted"
   end
 
   def publish
-    @job = Job.find(params[:id])
+    @job = Job.find(params[:job_id])
     @job.publish!
     redirect_to :back
   end
 
 
   def hide
-    @job = Job.find(params[:id])
+    @job = Job.find(params[:job_id])
     @job.hide!
     redirect_to :back
   end
