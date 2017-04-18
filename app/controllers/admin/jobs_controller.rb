@@ -33,7 +33,7 @@ class Admin::JobsController < ApplicationController
     if @job.update(job_params)
       redirect_to admin_jobs_path
     else
-      redner :edit
+      render :edit
     end
   end
 
@@ -50,6 +50,6 @@ class Admin::JobsController < ApplicationController
 
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
   end
 end
