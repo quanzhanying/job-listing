@@ -1,6 +1,7 @@
 class Job < ApplicationRecord
 
 	belongs_to :user
+	has_many :resumes
 	validates :title, presence: true
 	validates :wage_upper_bound, numericality: true
 	# validates :wage_lower_bound, presence: true   如果对一个栏位的属性写两个validates 只有前一个会起作用
