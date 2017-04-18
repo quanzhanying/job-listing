@@ -17,17 +17,20 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <% if job.is_hidden == true %>
-          <td> (Hidden) <%= link_to(job.title, admin_job_path(job)) %> </td>
-          <% else %>
-          <td> (Public) <%= link_to(job.title, admin_job_path(job)) %> </td>
-          <% end %>
+          <td>
+            <%= render_job_status(job) %>
+            <%= link_to(job.title, admin_job_path(job))%>
+          </td>
           <td> <%= job.description %> </td>
           <td> <%= job.updated_at %> </td>
           <td>
               <%= link_to("Edit", edit_admin_job_path(job))%> |
               <%= link_to("Delete", admin_job_path(job),
                           method: :delete, data: { confirm: "Are you sure?" } )%>
+              <% if job.is_hidden %>
+                <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default")%>
+                <%= link_to("Hide", hide_admin_job_path(job), :method => :hide, :class => "btn btn-xs btn-default")%>
+              <% end %>
           </td>
         </tr>
       <% end %>
