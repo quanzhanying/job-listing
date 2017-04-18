@@ -54,17 +54,17 @@
 
     <div class="row">
         <div class="col-sm-4">
-            <%= image_tag("steel.jpg", class: "img-circle img-responsive img-center frontpage-img")%>
+            <%= link_to image_tag("steel.jpg", class: "img-circle img-responsive img-center frontpage-img"), image_path(steel_jobs_path(:order => "category"))%>
             <h2 class="text-center">铁匠</h2>
             <p>铁匠是一门古老的职业，他们以铁为原料。铁匠一般都有一个自己的铁匠铺，有一座用来煅烧铁坯的火炉。铁匠用来打铁的工具有：小铁锤、大铁锤、铁夹（用来夹烧热了的铁坯）、砧子（铁匠打铁的平台）等。</p>
         </div>
         <div class="col-sm-4">
-            <%= image_tag("wood.jpg", class: "img-circle img-responsive img-center frontpage-img")%>
+            <%= link_to image_tag("wood.jpg", class: "img-circle img-responsive img-center frontpage-img"), image_path(wood_jobs_path(:order => "category"))%>
             <h2 class="text-center">木匠</h2>
             <p>木匠古代称为木工、梓匠、梓人。鲁班就是有名的巧木工。木工在现代的状况变成了分工很细的工种，大略分为修建寺庙的“大木工”、作室内空间装修的“装潢木工”、作家具的“家具木工”这三个比较大的方向。</p>
         </div>
         <div class="col-sm-4">
-            <%= image_tag("stone.jpg", class: "img-circle img-responsive img-center frontpage-img")%>
+            <%= link_to image_tag("stone.jpg", class: "img-circle img-responsive img-center frontpage-img"), image_path(stone_jobs_path(:order => "category"))%>
             <h2 class="text-center">石匠</h2>
             <p>石匠在这个世界的各个职业划分中，不是很抢眼，但是石匠却是历史传承时间最长最久的职业。从古石器时代的简单打磨石头，到现代的石雕工艺和艺术的完美结合，离不开石匠们默默的贡献。</p>
         </div>
@@ -102,7 +102,10 @@
                         <td>匠职</td>
                         <td>工种</td>
                         <td>薪俸范围</td>
+                        <td>公司</td>
+                        <td>城市</td>
                         <td>创建时间</td>
+                        <td>竟征人数</td>
                         <td>操作</td>
                     </tr>
                 </thead>
@@ -110,7 +113,7 @@
                     <% @jobs.each do |job| %>
                     <tr>
                         <td><%= link_to(job.title, job_path(job)) %></td>
-                        <td>木工</td>
+                        <td><%= job.category %></td>
                         <td>
                             <span class="badge badge-info">
                                 <span class="fa fa-rmb"></span><%= job.wage_lower_bound%>
@@ -118,7 +121,10 @@
                                 <%= job.wage_upper_bound%>
                             </span>
                         </td>
-                        <td><%= job.created_at %></td>
+                        <td><%= job.company %></td>
+                        <td><%= job.city %></td>
+                        <td><%= job.created_at.to_date %></td>
+                        <td><%= job.resumes.count %></td>
                         <td><%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success") %></td>
                     </tr>
                     <% end %>

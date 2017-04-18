@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {sessions:'users/sessions'}
 
   resources :jobs do
+    collection do
+      get :steel
+      get :wood
+      get :stone
+    end
     resources :resumes
   end
 

@@ -8,9 +8,8 @@
         <thead>
             <tr>
                 <td>职缺</td>
-                <td>收到简历数量</td>
-                <td>薪俸下限</td>
-                <td>薪俸上限</td>
+                <td>收到简历</td>
+                <td>薪俸范围</td>
                 <td>创建时间</td>
                 <td>管理</td>
             </tr>
@@ -23,9 +22,14 @@
                     <%= link_to(job.title, admin_job_path(job)) %>
                 </td>
                 <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
-                <td><%= job.wage_lower_bound %></td>
-                <td><%= job.wage_upper_bound %></td>
-                <td><%= job.created_at %></td>
+                <td>
+                    <span class="badge badge-info">
+                        <span class="fa fa-rmb"></span><%= job.wage_lower_bound%>
+                        -
+                        <%= job.wage_upper_bound%>
+                    </span>
+                </td>
+                <td><%= job.created_at.to_date %></td>
                 <td>
                     <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info" do%>
                     <i class="fa fa-pencil"></i><% end %>

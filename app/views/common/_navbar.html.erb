@@ -6,6 +6,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to("匠职大全", jobs_path) %></li>
+                <li>
+                    <a href="about/index">关于我们</a>
+                </li>
                 <li>
                     <% if !current_user %>
                 <li><%= link_to("注册", new_user_registration_path) %></li>

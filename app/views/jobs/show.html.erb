@@ -6,22 +6,56 @@
 <div class="container">
     <hr>
 
-    <div class="group">
-        <% if current_user && current_user == @job.user.email %>
-        <%= link_to("编辑", edit_job_path(@job), class: "btn btn-default pull-right") %>
-        <% end %>
-        <%= link_to("应征", new_job_resume_path(@job), class: "btn btn-default pull-right") %>
+    <!-- row  -->
+
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>工种：</strong><%= @job.category %>
+                </li>
+                <li class="list-group-item">
+                    <strong>薪俸范围：</strong>
+                </span><%= @job.wage_lower_bound%>
+                -
+                <%= @job.wage_upper_bound%>
+                <span class="fa fa-rmb"></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>公司：</strong><%= @job.company %>
+                </li>
+                <li class="list-group-item">
+                    <strong>创建时间：</strong><%= @job.created_at.to_date %>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>竟征人数：</strong><%= @job.resumes.count %>
+                </li>
+                <li class="list-group-item">
+                    <strong>城市：</strong><%= @job.city %>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <%= link_to("应征", new_job_resume_path(@job), class: "btn btn-default pull-left") %>
+        </div>
 
     </div>
 
-    <h2><%= @job.title %></h2>
+    <!-- <h2><%= @job.title %></h2>
     <p style="font-size:10px; margin-bottom:30px;">创建时间:<%= @job.created_at%></p>
     <p>
         <strong>薪俸上限：</strong><%= @job.wage_upper_bound %>元</p>
     <p>
         <strong>薪俸下限：</strong><%= @job.wage_lower_bound %>元</p>
     <p>
-        <strong>联系方式：</strong><%= @job.contact_email %></p>
+        <strong>联系方式：</strong><%= @job.contact_email %></p> -->
     <hr>
     <p>
         <h4>需求描述：</h4>
@@ -29,4 +63,6 @@
             <%= simple_format(@job.description) %>
         </blockquote>
     </p>
+</div>
+</p>
 </div>
