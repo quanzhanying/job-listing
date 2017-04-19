@@ -17,7 +17,8 @@
             <h4 class="text-center"><%= link_to("全部", jobs_path) %></h4>
         </div>
     </div>
-    <!-- /.row -->
+
+    <!-- /.row --><hr>
 
     <div class="col-md-12">
         <div class="group">
@@ -76,6 +77,10 @@
                     <% end %>
                 </tbody>
             </table>
+        </div>
+
+        <div class="text-center">
+            <%= will_paginate @jobs, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm"%>
         </div>
 
     </div>
