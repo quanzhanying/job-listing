@@ -1,4 +1,4 @@
-<%= simple_form_for @job do |j| %>
+<%= simple_form_for [:admin, @job] do |j| %>
 
 <div class="form_group">
   <%= j.input :title,input_html: { class:"form-control"} %>
