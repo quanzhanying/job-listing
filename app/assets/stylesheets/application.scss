@@ -116,7 +116,7 @@
 }
 
 .jumbotron {
-  background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+  background: asset-data-url("jumbotron.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
@@ -172,8 +172,7 @@
 }
 
 .navbar-default {
-  background-color: #4FC3F7;
-  border-color: #4FC3F7;
+  background: asset-data-url("navbar.png");
   margin-bottom: 0;
 }
 
@@ -222,7 +221,7 @@
 .navbar-brand > img {
   display: inline-block;
   margin-right: 10px;
-  width: 32px;
+  width: 100px;
   height: 32px;
 }
 
