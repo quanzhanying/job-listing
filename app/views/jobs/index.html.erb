@@ -4,7 +4,7 @@
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">排序
       <span class="caret"></span>
     </button>
-    <!--<%= link_to("Add a Job", new_job_path, class: "btn btn-primary pull-right") %>-->
+    <%= link_to("Add a Job", new_job_path, class: "btn btn-default pull-right") %>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
         <li>
           <%= link_to("按照薪资下限排序",jobs_path(:order => "by_lower_bound"))%>
