@@ -1,0 +1,12 @@
+<h2 class="text-center">编辑简历</h2>
+<div class="col-md-4 col-md-offset-4">
+  <%= simple_form_for [@job, @resume] do |f|%>
+    <div class="form-job">
+      <%= f.input :content, input_html: { class: "form-control"} %>
+      <%= f.input :attachment%>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
