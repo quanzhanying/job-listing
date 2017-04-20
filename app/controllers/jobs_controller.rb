@@ -73,7 +73,7 @@ class JobsController < ApplicationController
 
   def search
     if @query_string.present?
-      search_result = Job.ransack(@search_criteria).result(:distinct => true)
+      search_result = Job.published.ransack(@search_criteria).result(:distinct => true)
       @jobs = search_result.paginate(:page => params[:page], :per_page => 5 )
     end
   end
