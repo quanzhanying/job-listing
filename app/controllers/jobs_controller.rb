@@ -4,6 +4,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = case params[:order]
+
     when 'by_lower_bound'
       Job.published.order('wage_lower_bound DESC')
     when 'by_upper_bound'
@@ -11,10 +12,12 @@ class JobsController < ApplicationController
     else
       Job.published.recent
     end
+    @jobs = @jobs.paginate(:page => params[:page], :per_page => 6)
   end
 
   def show
     @job = Job.find(params[:id])
+
 
     if @job.is_hidden
       flash[:warning] = "This Job already archieved"
@@ -94,7 +97,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :contact_email, :About_us, :Company_name, :work_place)
   end
 
 end

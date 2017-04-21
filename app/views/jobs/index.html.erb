@@ -1,48 +1,63 @@
+
 <div class="dropdown clearfix pull-right">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    排序
+    Reorder
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
     <li>
-      <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+      <%= link_to("By lower bound", jobs_path(:order => "by_lower_bound")) %>
     </li>
     <li>
-      <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+      <%= link_to("By upper bound", jobs_path(:order => "by_upper_bound")) %>
     </li>
     <li>
-      <%= link_to("按照发表时间排序", jobs_path) %>
+      <%= link_to("By publish time", jobs_path) %>
     </li>
   </ul>
 </div>
 
+<div class="job-list-back">
 
-<table class="table table-boldered">
-  <thead>
-    <tr>
-      <td>职缺</td>
-      <td>薪资下限</td>
-      <td>薪资上限</td>
-      <td>刊登时间</td>
-    </tr>
-    </thead>
-    <tbody>
-  <% @jobs.each do |job| %>
-  <tr>
+<!--=== 工作列表 ===-->
+<div class="main-box">
+<% @jobs.each do |job| %>
+<div class="col-md-9 col-xs-9 job-box row">
+<!--=== 职位信息 ===-->
+<div class="job-back">
+<div class="info">
+<div class="info-top">
+ <h3><%= link_to(job.title, job_path(job), target: "_blank" )%></h3><span><%= job.created_at.strftime("%Y-%m-%d") %></span>
+</div>
+<div class="info-mid">
+  <%= job.wage_lower_bound %> k ~ <%= job.wage_upper_bound %> k
 
-    <td>
-      <%= link_to(job.title, job_path(job)) %>
-    </td>
-    <td>
-      <%= job.wage_lower_bound %>
-    </td>
-    <td>
-      <%= job.wage_upper_bound %>
-    </td>
-    <td>
-      <%= job.created_at %>
-    </td>
-  </tr>
-  <% end %>
-</tbody>
-</table>
+</div>
+</div>
+
+<!--=== 公司信息 ===-->
+<div class="company">
+<div class="company-top">
+  <% if !current_user %>
+         <%= link_to "Destroy", job_path(job), method: :post do %>
+           <sapn class="fa fa-star"></sapn>
+           <% end %>
+ <% end %>
+</div>
+<div class="company-mid">
+<%= job.Company_name%>
+ <br>
+    <sapn class="fa fa-envelope"></sapn><span><%= job.contact_email %></span>
+ <br>
+   <sapn class="fa fa-map-marker"></sapn><span><%= job.work_place  %></span>
+</div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+</div>
+<!-- 分页区块 ===-->
+<div class="text-center">
+<%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+</div>
