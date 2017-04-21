@@ -1,7 +1,9 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
+  before_action :validate_search_key, only: [:search]
 
+# ---CRUD---
 
   def index
     @jobs = case params[:order]
@@ -56,6 +58,8 @@ class JobsController < ApplicationController
   def admin
   end
 
+# --category--
+
   def steel
     @jobs = case params[:order]
     when 'by_lower_bound'
@@ -89,6 +93,34 @@ class JobsController < ApplicationController
     end
   end
 
+
+# --search--
+
+  def search
+    if @query_string.present?
+      search_result = Job.published.ransack(@search_criteria).result(:distinct => true)
+      @jobs = search_result.paginate(:page => params[:page], :per_page => 10 )
+    end
+  end
+
+  protected
+
+  def validate_search_key
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "")
+    if params[:q].present?
+      @search_criteria = {
+        title_or_description_or_category_or_company_or_city_cont: @query_string
+      }
+    end
+  end
+
+
+  def search_criteria(query_string)
+    { :title_cont => query_string }
+  end
+
+
+# --private--
 
   private
 

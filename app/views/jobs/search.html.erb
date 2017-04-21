@@ -62,6 +62,15 @@
                 </tr>
             </thead>
             <tbody>
+                <% if @jobs.blank?%>
+                <br>
+                <div>
+                    <h3>很抱歉！没有找到您想要的信息...</h3>
+                </div>
+            <% else %>
+                <h3 class="search-info-title">
+                    有<%= @jobs.count %>个符合 "<%= @query_string %>" 的匠职
+                </h3>
                 <% @jobs.each do |job| %>
                 <tr>
                     <td><%= link_to(job.title, job_path(job)) %></td>
@@ -88,5 +97,6 @@
     <div class="text-center">
         <%= will_paginate @jobs, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm"%>
     </div>
+    <% end %>
 
     <script src="app/assets/javascripts/jquery.js"></script>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get :steel
       get :wood
       get :stone
+      get :search
     end
     resources :resumes
   end

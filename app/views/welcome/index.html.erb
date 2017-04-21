@@ -1,4 +1,4 @@
-<header class="business-header row">
+<div class="business-header row">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-</header>
+</div>
 
 <div class="container">
 
@@ -19,7 +19,7 @@
             <h2>我们寻找匠师</h2>
             <p>工匠以极致的态度对自己的产品精雕细琢，精益求精、追求更完美的精神理念。工匠们喜欢不断雕琢自己的产品，不断改善自己的工艺，享受着产品在双手中升华的过程。</p>
             <p>细节、完美、极致，这是精品所追求的气质。从0到1，其利虽微，却长久造福于世。</p>
-            <p>您就是我们所寻找的大匠师。</p>
+            <p>您就是我们寻找的大匠师。</p>
             <p>
                 <a class="btn btn-default btn-lg" href="/jobs">匠职大全 &raquo;</a>
             </p>
@@ -33,7 +33,7 @@
                 <br>Look For Craftsman
                 <br>
                 <strong>Add:
-                </strong>Naning Guangxi Xixiangtang Stree
+                </strong>Nanning Guangxi Xixiangtang Stree
                 <br>
             </address>
             <div>
@@ -78,7 +78,7 @@
         <div class="group">
             <!-- <%= link_to("新增职位", new_job_path, class: "btn btn-default pull-right") %> -->
             <div class="dropdown clearfix pull-right">
-                <button class="dropdown-toggle btn btn-default" type="button" data-toggle="dropdown" id="dropdownMenuDivider" aria-haspopup="true" aria-expanded="true">
+                <button class="dropdown-toggle btn btn-sm btn-default" type="button" data-toggle="dropdown" id="dropdownMenuDivider" aria-haspopup="true" aria-expanded="true">
                     排序
                     <b class="caret"></b>
                 </button>
@@ -101,11 +101,17 @@
                     <tr>
                         <td>匠职</td>
                         <td>工种</td>
-                        <td>薪俸范围</td>
+                        <td>薪俸
+                            <%= link_to jobs_path(:order => "by_lower_bound"), class: "btn btn-xs btn-default" do%>
+                            上限<i class="fa fa-caret-up"></i><% end %>
+                            <%= link_to jobs_path(:order => "by_upper_bound"), class: "btn btn-xs btn-default" do%>
+                            下限<i class="fa fa-caret-down"></i><% end %></td>
                         <td>公司</td>
                         <td>城市</td>
-                        <td>创建时间</td>
-                        <td>竟征人数</td>
+                        <td>
+                            <%= link_to jobs_path, class: "btn btn-xs btn-default" do%>
+                            创建时间<i class="fa fa-caret-down"></i><% end %></td>
+                        <td>竞征人数</td>
                         <td>操作</td>
                     </tr>
                 </thead>

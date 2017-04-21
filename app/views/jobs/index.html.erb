@@ -20,11 +20,14 @@
 
     <!-- /.row --><hr>
 
-    <div class="col-md-12">
-        <div class="group">
-            <!-- <%= link_to("新增职位", new_job_path, class: "btn btn-default pull-right") %> -->
+    <!-- search_bar and clearfix -->
+    <div class="row">
+        <div class="form-group form-inline search-bar col-xs-6">
+            <%= render :partial => "jobs/search_bar" %>
+        </div>
+        <div class="group col-xs-6">
             <div class="dropdown clearfix pull-right">
-                <button class="dropdown-toggle btn btn-default" type="button" data-toggle="dropdown" id="dropdownMenuDivider" aria-haspopup="true" aria-expanded="true">
+                <button class="dropdown-toggle btn btn-sm btn-default" type="button" data-toggle="dropdown" id="dropdownMenuDivider" aria-haspopup="true" aria-expanded="true">
                     排序
                     <b class="caret"></b>
                 </button>
@@ -40,49 +43,56 @@
                     </li>
                 </ul>
             </div>
-
         </div>
-        <div class="table-responsive row">
-            <table class="table table-boldered table-striped">
-                <thead>
-                    <tr>
-                        <td>匠职</td>
-                        <td>工种</td>
-                        <td>薪俸范围</td>
-                        <td>公司</td>
-                        <td>城市</td>
-                        <td>创建时间</td>
-                        <td>竞征人数</td>
-                        <td>操作</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @jobs.each do |job| %>
-                    <tr>
-                        <td><%= link_to(job.title, job_path(job)) %></td>
-                        <td><%= job.category %></td>
-                        <td>
-                            <span class="badge badge-info">
-                                <span class="fa fa-rmb"></span><%= job.wage_lower_bound%>
-                                -
-                                <%= job.wage_upper_bound%>
-                            </span>
-                        </td>
-                        <td><%= job.company %></td>
-                        <td><%= job.city %></td>
-                        <td><%= job.created_at.to_date %></td>
-                        <td><%= job.resumes.count %></td>
-                        <td><%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success") %></td>
-                    </tr>
-                    <% end %>
-                </tbody>
-            </table>
-        </div>
+    </div>
 
-        <div class="text-center">
-            <%= will_paginate @jobs, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm"%>
-        </div>
+    <!-- table -->
+    <div class="table-responsive row container">
+        <table class="table table-boldered table-striped">
+            <thead>
+                <tr>
+                    <td>匠职</td>
+                    <td>工种</td>
+                    <td>薪俸
+                        <%= link_to jobs_path(:order => "by_lower_bound"), class: "btn btn-xs btn-default" do%>
+                        上限<i class="fa fa-caret-up"></i><% end %>
+                        <%= link_to jobs_path(:order => "by_upper_bound"), class: "btn btn-xs btn-default" do%>
+                        下限<i class="fa fa-caret-down"></i><% end %></td>
+                    <td>公司</td>
+                    <td>城市</td>
+                    <td>
+                        <%= link_to jobs_path, class: "btn btn-xs btn-default" do%>
+                        创建时间<i class="fa fa-caret-down"></i><% end %></td>
+                    <td>竞征人数</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @jobs.each do |job| %>
+                <tr>
+                    <td><%= link_to(job.title, job_path(job)) %></td>
+                    <td><%= job.category %></td>
+                    <td>
+                        <span class="badge badge-info">
+                            <span class="fa fa-rmb"></span><%= job.wage_lower_bound%>
+                            -
+                            <%= job.wage_upper_bound%>
+                        </span>
+                    </td>
+                    <td><%= job.company %></td>
+                    <td><%= job.city %></td>
+                    <td><%= job.created_at.to_date %></td>
+                    <td><%= job.resumes.count %></td>
+                    <td><%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success") %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
 
+    <!-- pagination -->
+    <div class="text-center">
+        <%= will_paginate @jobs, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm"%>
     </div>
 
     <script src="app/assets/javascripts/jquery.js"></script>
