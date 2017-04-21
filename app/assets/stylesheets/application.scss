@@ -132,10 +132,24 @@
 //---------Footer---------
 
 footer {
-    color: white;
+    color: #FF6F00;
+    background-color: #FFE0B2;
 }
 
 footer .footer-below {
     padding: 25px 0;
     background-color: #233140;
+}
+
+.custab{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
 }
