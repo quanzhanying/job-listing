@@ -13,7 +13,7 @@ def create
   @resume.user = current_user
 
   if @resume.save
-    flash[:notice] = "成功提交履历"
+    flash[:notice] = "Successed"
     redirect_to job_path(@job)
   else
     render :new

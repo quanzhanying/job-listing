@@ -31,8 +31,16 @@
 </div>
 <div class="info-mid">
   <%= job.wage_lower_bound %> k ~ <%= job.wage_upper_bound %> k
-
 </div>
+
+
+<div class="practice">
+  <% if job.practice%>
+<span class="badge">Practice</span>
+  <% end %>
+</div>
+
+
 </div>
 
 <!--=== 公司信息 ===-->
@@ -46,7 +54,7 @@
 </div>
 <div class="company-mid">
 <%= job.Company_name%>
- <br>
+<br>
     <sapn class="fa fa-envelope"></sapn><span><%= job.contact_email %></span>
  <br>
    <sapn class="fa fa-map-marker"></sapn><span><%= job.work_place  %></span>
@@ -56,8 +64,8 @@
 </div>
 <% end %>
 </div>
-</div>
-<!-- 分页区块 ===-->
 <div class="text-center">
 <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
 </div>
+</div>
+<!-- 分页区块 ===-->

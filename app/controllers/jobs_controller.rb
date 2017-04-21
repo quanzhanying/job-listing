@@ -17,8 +17,6 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-
-
     if @job.is_hidden
       flash[:warning] = "This Job already archieved"
       redirect_to root_path
@@ -97,7 +95,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :contact_email, :About_us, :Company_name, :work_place)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :contact_email, :About_us, :Company_name, :work_place, :practice)
   end
 
 end

@@ -124,11 +124,18 @@
   background-position: center;
 }
 
+.job-show-back {
+  background: asset-data-url("jumbotron.jpg");
+  background-size: cover;
+  padding-bottom: 70px;
+  background-position: center;
+}
+
 .job-list-back {
   background: asset-data-url("jumbotron.jpg");
   background-repeat:no-repeat;
   background-size: cover;
-  padding-bottom: 1000px;
+  padding-bottom: 10px;
 }
 
 .jumbotron {
@@ -321,6 +328,16 @@
   box-shadow: 2px 2px 3px #aaa;
 }
 
+.practice{
+  margin-left: 100px;
+}
+.badge{
+  background-color:#D4E157;
+
+}
+
+
+
 .job-box{
   border: 1.5px solid #ddd;
   background-color: #fff;
@@ -351,12 +368,12 @@
     span{
       margin-left: 10px;
       display: inline;
-      color: #888;
+      color: #82B1FF;
     }
   }
 
   .info-mid{
-    color: #FF7D0A;
+    color: #FFA726;
     letter-spacing: -1px;
     margin-left: 100px;
   }
@@ -507,27 +524,73 @@
   }
 }
 
+
+blockquote{
+    border-left:none;
+}
+
+/*show*/
+.quote-badge{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.quote-box{
+  position: relative;
+  left:80px;
+  h1{text-align: center;}
+
+    overflow: hidden;
+    margin-top: 25px;
+    padding-top: -100px;
+    padding-left: 80px;
+    border-radius: 17px;
+    background-color: #64FFDA;
+    color:white;
+    width: 1000px;
+    box-shadow: 2px 2px 2px 2px;
+    background: asset-data-url("job list back2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+    color: #e1e8ed;
+  background-color: #fff;
+  border-color: #0b7fc6;
+    }
+/*show end*/
+
 /*footer位置*/
-footer {
-    position: relative;/*(此auto也可，其他不可)*/
-    bottom: 0;
-    height: 50px;
-    width: 100%;
-    background: asset-data-url("navbar.png");
-    color: #000000;
-}
+html{
+   height:70px;
+ }
+ body{
+   min-height:70px;
+   margin:0;
+   padding:0;
+   position:relative;
+ }
 
-html, body {
-    height: 100%;
-}
+ main{
+   padding-bottom:70px;/* main的padding-bottom值要等于或大于footer的height值 */
+   background-color: #bdb76b;
 
-.wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -5px;
-}
+ }
 
-.btn-default{
-  margin-right: 30px;
-}
+ footer{
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 15px;
+   color: black;
+ }
+
+
+
+ footer .footer-below {
+     margin-top: 15px;
+     margin-left: -15px;
+     margin-right: -175px;
+     padding: 15px 0;
+     background: asset-data-url("navbar.png");
+ }
