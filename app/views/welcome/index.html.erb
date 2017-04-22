@@ -1,46 +1,66 @@
-
 <!-- 头图 -->
-<div class="jumbotron">
-    <h1 class="title">鼎立木业</h1>
-    <p class="slogan">有用之木为材 无用之木为柴
-        <br>
-        良木难得
-        <br>
-        该仔细丈量 细加思考
-    </p>
-    <p class="lead">
-        <a class="btn btn-lg btn-success" href="/jobs">加入我们</a>
-    </p>
-</div>
+<div class="col-md-12">
+   <div class="row box">
+     <div class="box-inner col-md-6 col-md-offset-3">
+       <h1 class="title">鼎立木业</h1>
+       <p class="slogan">有用之木为材 无用之木为柴
+         <br>
+         良木难得
+         <br>
+         该仔细丈量 细加思考
+       </p>
+       <p class="lead">
+         <%= link_to '加入我们', jobs_path, class: 'btn btn-success' %>
+       </p>
+     </div>
+   </div>
+ </div>
 
-<!-- 图标 -->
-<section id="company">
-  <div class = "container-fluid">
-    <div class="row">
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-31.png" alt="search" class = "img-thumbnail">
-          <div class="caption">
-            <h3>北京朝阳建外SOHO</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-48.png" alt="bid" class = "img-thumbnail">
-          <div class="caption">
-            <h3>info@18koffer.com</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-44-00.png" alt="heart" class = "img-thumbnail">
-          <div class="caption">
-            <h3>010-12344321</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- 首页元素依次排列 -->
+ <div class="content-section-a">
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-5  col-lg-offset-1 col-sm-push-6  col-sm-6">
+         <hr class="section-heading-spacer">
+         <div class="clearfix"></div>
+         <h2 class="section-heading">木材专业生产<br/>Professional</h2>
+         <p class="lead">因为专业 所以卓越</p>
+       </div>
+       <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+         <%= image_tag 'http://ww1.sinaimg.cn/large/006tKfTcly1fevlgfwk10j31fv0ldhdt.jpg', class: 'img-responsive' %>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <div class="content-section-b">
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-5 col-sm-6">
+         <hr class="section-heading-spacer">
+         <div class="clearfix"></div>
+         <h2 class="section-heading">技术经验传承<br/>Experience</h2>
+         <p class="lead">世代交替 经验传承</p>
+       </div>
+       <div class="col-lg-5 col-lg-offset-2  col-sm-6">
+         <%= image_tag 'http://ww3.sinaimg.cn/large/006tKfTcly1fevlg47imcj31ha0m11kx.jpg', class: 'img-responsive' %>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <div class="content-section-a">
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+         <hr class="section-heading-spacer">
+         <div class="clearfix"></div>
+         <h2 class="section-heading">珍惜自然环境<br/>Nature</h2>
+         <p class="lead">善待自然 就是善待自己</a></p>
+       </div>
+       <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+         <%= image_tag 'http://ww1.sinaimg.cn/large/006tKfTcgy1fevlur6yrkj30hs0butad.jpg', class: 'img-responsive' %>
+       </div>
+     </div>
+   </div>
+ </div>
