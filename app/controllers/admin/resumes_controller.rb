@@ -1,11 +1,28 @@
-class Admin::ResumesController < ApplicationController
+class ResumesController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_is_admin
 
-  layout 'admin'
+  def new
+    @task = Task.find(params[:task_id])
+    @resume = Resume.new
+  end
 
-  def index
-    @job = Job.find(params[:job_id])
-    @resumes = @job.resumes.order('created_at DESC')
+  def create
+    @task = Task.find(params[:task_id])
+    @resume = Resume.new(resume_params)
+    @resume.task = @task
+    @resume.user = current_user
+
+    if @resume.save
+      flash[:notice] = "成功提交履历"
+      redirect_to task_path(@task)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def resume_params
+    params.require(:resume).permit(:content, :attachment)
   end
 end
