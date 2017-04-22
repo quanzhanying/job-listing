@@ -1,12 +1,27 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :require_is_admin
+  layout "admin"
+
   def show
     @job = Job.find(params[:id])
+
+    if @job.is_hidden
+      flash[:warning] = "This Job already archived"
+      redirect_to root_path
+    end
+
   end
 
   def index
-    @jobs = Job.all
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+              Job.where(is_hidden: false).order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+              Job.where(is_hidden: false).order('wage_upper_bound DESC')
+            else
+              Job.where(is_hidden: false).order('created_at DESC')
+            end
   end
 
   def new
@@ -41,6 +56,20 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path
   end
 
+  def publish
+    @job = Job.find(params[:id])
+    @job.publish!
+
+    redirect_to :back
+  end
+
+  def hide
+    @job = Job.find(params[:id])
+
+    @job.hide!
+
+    redirect_to :back
+  end
 
   private
 
