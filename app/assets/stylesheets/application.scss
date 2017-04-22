@@ -19,35 +19,128 @@
 @import "bootstrap";
 @import "font-awesome";
 
+//---Navbar---
+
+.navbar-default {
+     background-color: #F5F5F5;  //背景颜色
+
+     border-color: #F5F5F5; //边框色
+
+     margin-bottom: 0; //底部 margin 不撑开距离
+
+ }
+
+ @media (min-width: 768px) {
+   .navbar {
+     border-radius: 0; //圆角为0
+   }
+ }
+
+  .navbar-default .navbar-brand {
+   color: #607D8B; //字体颜色
+
+   padding: 10px 15px; //上下10px，左右15px
+   line-height: 30px; //文字行高
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #66BB6A; //鼠标放置在链接上的文字颜色
+
+   background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+ }
+
+ .navbar-default .navbar-nav > li > a{
+   color: #607D8B;  //右侧注册登录按钮颜色
+
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+   color: #66BB6A;
+
+   background-color: transparent;
+ }
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+   color: #FF6F00;
+
+   background-color: #FFE0B2;
+
+ }
+
+ .navbar-default .navbar-nav > .open > a,
+ .navbar-default .navbar-nav > .open > a:focus,
+ .navbar-default .navbar-nav > .open > a:hover {
+   background-color: #F5F5F5;
+
+   color: #66BB6A;
+
+ }
+
 //---welcome---
 //头图
 .jumbotron {
-  background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+  background-image:url('http://ww2.sinaimg.cn/large/006tKfTcgy1fevhdt4sudj31kw11xhe2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
 }
 
-.title {
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  margin-top: 200px;
-  margin-bottom: 80px;
+ .container-fluid .jumbotron{   //头图满屏显示
+   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+   margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+   border-radius: 0;//圆角为0
+ }
+
+.title {           //头图文字
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  max-width: 500px;//最大宽度
+  margin-top: 200px;//和顶部拉开距离
+  margin-left: 600px;
+  margin-bottom: 0;//这样就可以紧接息面的描述文字
+  border-top-right-radius: 3px;//右上角圆边
+  border-top-left-radius: 3px;//左上角圆边
 }
 
-.slogan {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: center;
-  color: white;
-  top: 12px;
-}
+ .jumbotron h1, .jumbotron .h1 {
+     text-align: center;//文字左对齐
+     color: #000000;  //字体颜色
 
-.lead {
-  margin-bottom: 60px;
-  text-align: center;
-  color: white;
-}
+     padding: 50px 20px 0;//上50px，左右20px，下0
+ }
+
+ .jumbotron p {
+     margin: 0;//上下左右margin为0
+     font-size: 26px;//字体大小
+     max-width: 500px;//最大宽度
+     margin-left: 600px;
+     background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+     padding: 20px;//上下左右padding为20px
+     text-align: center;//文字左对齐
+     color: #000000;//字体颜色
+
+     border-bottom-right-radius: 3px;//右下角圆边
+     border-bottom-left-radius: 3px;//左下角圆边
+ }
+
+.btn-lg, .btn-group-lg > .btn {  //加入按钮大小
+     padding: 8px 16px;//通过padding来决定btn的大小
+     font-size: 20px;//btn文字大小
+     letter-spacing: 3px;//调整文字间距
+     border-radius: 3px;//btn圆角
+     width: 200px;//这里用指定宽度把btn拉得更长
+ }
+
+  .btn-danger:hover {        //鼠标放在加入按钮上颜色
+      background-color: #E65100;//鼠标放置在btn上的背景颜色
+
+      border-color: #E65100;//鼠标放置在btn上的边框颜色
+
+  }
+
+
 //welcome邮件地址
 .caption {
   margin: 30px;

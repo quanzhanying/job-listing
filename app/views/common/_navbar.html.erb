@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/"> Job Listing </a>
+        <a class="navbar-brand" href="/"><i class="fa fa-tree" aria-hidden="true">鼎立木业</i></a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -18,7 +18,7 @@
                   </a>
                   <ul class="dropdown-menu">
                     <% if current_user.admin? %>
-                    <li><%= link_to("Admin Panel", admin_jobs_path) %></li>
+                    <li><%= link_to("管理面板", admin_jobs_path) %></li>
                     <% end %>
                     <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
                   </ul>
