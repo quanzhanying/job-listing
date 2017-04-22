@@ -4,7 +4,7 @@
 
 <br><br>
 
-<table class="table table-boldered">
+<table class="table table-boldered table-striped custab" >
     <thead>
         <tr>
             <td>
@@ -41,16 +41,13 @@
         <td> <%= job.wage_lower_bound %> </td>
         <td> <%= job.wage_upper_bound %> </td>
         <td>
-            <%= link_to("Edit", edit_admin_job_path(job)) %>
-            |
-            <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-
-            |
+          <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-xs btn-info") %>
+          <%= link_to("Destroy", admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
             <% if job.is_hidden %>
 
-            <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
+            <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-success") %>
         <% else %>
-            <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default") %>
+            <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning") %>
             <% end %>
         </td>
         <td>
