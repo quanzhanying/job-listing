@@ -398,13 +398,6 @@
     }
   }
 
-  .company-top{
-    color: #4A6BB5;
-    font-size: 18px;
-    letter-spacing: 0.5px;
-    margin-left: -5px;
-  }
-
   .company-bot{
     margin-left: 3.5px;
     letter-spacing: 1px;
@@ -546,7 +539,7 @@ blockquote{
     border-radius: 17px;
     background-color: #64FFDA;
     color:white;
-    width: 1000px;
+    width: 800px;
     box-shadow: 2px 2px 2px 2px;
     background: asset-data-url("job list back.jpg");
     background-position: center;
@@ -590,7 +583,7 @@ html{
  footer .footer-below {
      margin-top: 15px;
      margin-left: -15px;
-     margin-right: -175px;
+     margin-right: -60px;
      padding: 15px 0;
      background: asset-data-url("navbar.png");
  }
