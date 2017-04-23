@@ -46,11 +46,8 @@
 <!--=== 公司信息 ===-->
 <div class="company">
 <div class="company-top">
-  <% if !current_user %>
-         <%= link_to "Destroy", job_path(job), method: :post do %>
-           <sapn class="fa fa-star"></sapn>
-           <% end %>
- <% end %>
+
+
 </div>
 <div class="company-mid">
 <%= job.Company_name%>
@@ -68,4 +65,3 @@
 <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
 </div>
 </div>
-<!-- 分页区块 ===-->

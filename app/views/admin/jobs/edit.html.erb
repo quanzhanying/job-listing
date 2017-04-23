@@ -1,11 +1,12 @@
+<div class="job-show-back">
 <h1> Edit a job </h1>
 
 <%= simple_form_for [:admin, @job ] do |f| %>
 
 <%= f.input :title %>
 <%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
+<%= f.input :wage_lower_bound, :label => "By_lower_bound" %>
+<%= f.input :wage_upper_bound, :label => "By_upper_bound" %>
 <%= f.input :work_place %>
 <%= f.input :Company_name %>
 <%= f.input :About_us %>
@@ -17,3 +18,4 @@
 
 <%= f.submit "Submit" %>
 <% end %>
+</div>

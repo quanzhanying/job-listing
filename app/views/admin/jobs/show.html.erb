@@ -1,24 +1,35 @@
-<h1> <%= @job.title %> </h1>
+<div class="job-show-back">
+<br/>
 
+<div class="container">
+    <blockquote class="quote-box">
+
+<h1><%= @job.title %> </h1>
 <p>
+Description:<br/>
   <%= simple_format(@job.description) %>
 </p>
 <p>
-    <span class="wage"><%= @job.wage_lower_bound %> k ~ <%= @job.wage_upper_bound %> k </span>
-  </p>
-</div>
+  Wage:<span  class="wage"><%= @job.wage_lower_bound %> k ~ <%= @job.wage_upper_bound %> k </span>
+</p>
+<hr>
 <p>
-  <%= simple_format(@job.Company_name) %>
+  Company name:<%= simple_format(@job.Company_name) %>
 </p>
 <p>
-  <%= simple_format(@job.work_place) %>
+  Work place:<%= simple_format(@job.work_place) %>
 </p>
 <p>
+  About us:<br/>
   <%= simple_format(@job.About_us) %>
 </p>
 <p>
-  <%= simple_format(@job.Address) %>
+  Company address:<%= simple_format(@job.Address) %>
 </p>
 <p>
-  <%= simple_format(@job.contact_email) %>
+  Contact email:<%= simple_format(@job.contact_email) %>
 </p>
+<hr>
+    </blockquote>
+</div>
+</div>
