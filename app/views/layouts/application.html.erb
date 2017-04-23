@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JobListing</title>
+    <title>Lynkle Offer</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+ <%= render 'common/navbar'  %>
+   <div class="wrapper">
+ <%= render 'common/flashes' %>
+  	<%= yield %>
+  </div>
+  <div class="push"></div>
+  <%= render 'common/footer' %>
+</body>
 </html>

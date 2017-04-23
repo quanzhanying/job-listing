@@ -1,0 +1,87 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Lynkle Offer</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and the other content for toggling-->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if !current_user %>
+        <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign up</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#login-modal">Log in</a></li>
+        <% else %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Hi!, <%= current_user.email %>
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <% if current_user.admin? %>
+            <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
+            <% end %>
+            <li> <%= link_to("Log out", destroy_user_session_path, method: :delete) %> </li>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+
+      <!-- 此处是搜索部分的代码 -->
+      <div class="nav navbar-nav navbar-right">
+      <%= form_tag search_jobs_path , :method => :get do %>
+      <div class="input-group" id="search-id" >
+        <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;">
+  <div class="modal-dialog" role="document">
+    <div class="loginmodal-container">
+      <h2>Log in</h2>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email, required:false, autofocus:true %>
+        <%= f.input :password, required:false %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+      <dic class="form-actions">
+        <%= f.button :submit, "Log in" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h2>Sign up</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus:true %>
+        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        <%= f.input :password_confirmation, required:true %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

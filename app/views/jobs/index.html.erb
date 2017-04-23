@@ -1,0 +1,63 @@
+
+<div class="dropdown clearfix pull-right">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Reorder
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+    <li>
+      <%= link_to("By lower bound", jobs_path(:order => "by_lower_bound")) %>
+    </li>
+    <li>
+      <%= link_to("By upper bound", jobs_path(:order => "by_upper_bound")) %>
+    </li>
+    <li>
+      <%= link_to("By publish time", jobs_path) %>
+    </li>
+  </ul>
+</div>
+
+<div class="job-list-back">
+
+<!--=== 工作列表 ===-->
+<div class="main-box">
+<% @jobs.each do |job| %>
+<div class="col-md-9 col-xs-9 job-box row">
+<!--=== 职位信息 ===-->
+<div class="job-back">
+<div class="info">
+<div class="info-top">
+ <h3><%= link_to(job.title, job_path(job), target: "_blank" )%></h3><span><%= job.created_at.strftime("%Y-%m-%d") %></span>
+</div>
+<div class="info-mid">
+  <%= job.wage_lower_bound %> k ~ <%= job.wage_upper_bound %> k
+</div>
+
+
+<div class="practice">
+  <% if job.practice%>
+<span class="badge">Practice</span>
+  <% end %>
+</div>
+
+
+</div>
+
+<!--=== 公司信息 ===-->
+<div class="company">
+<div class="company-mid">
+<%= job.Company_name%>
+<br>
+    <sapn class="fa fa-envelope"></sapn><span><%= job.contact_email %></span>
+ <br>
+   <sapn class="fa fa-map-marker"></sapn><span><%= job.work_place  %></span>
+</div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+<div class="text-center">
+<%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+</div>
+</div>

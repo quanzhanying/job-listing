@@ -1,0 +1,41 @@
+<div class="job-show-back">
+<br/>
+
+<div class="container">
+    <blockquote class="quote-box">
+
+<h1><%= @job.title %> </h1>
+<p>
+Description:<br/>
+  <%= simple_format(@job.description) %>
+</p>
+<p>
+  Wage:<span  class="wage"><%= @job.wage_lower_bound %> k ~ <%= @job.wage_upper_bound %> k </span>
+</p>
+<hr>
+<p>
+  Company name:<%= simple_format(@job.Company_name) %>
+</p>
+<p>
+  Work place:<%= simple_format(@job.work_place) %>
+</p>
+<p>
+  About us:<br/>
+  <%= simple_format(@job.About_us) %>
+</p>
+<p>
+  Company address:<%= simple_format(@job.Address) %>
+</p>
+<p>
+  Contact email:<%= simple_format(@job.contact_email) %>
+</p>
+<hr>
+
+<div class="text-center">
+  <%= link_to("Submit Resume", new_job_resume_path(@job), :class=> "btn btn-default btn-lg") %>
+</div>
+
+
+    </blockquote>
+</div>
+</div>

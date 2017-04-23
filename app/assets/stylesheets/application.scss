@@ -1,0 +1,589 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+/*以上为login部分*/
+
+.job-back{
+  background: asset-data-url("job back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom:  120px;
+  background-position: center;
+}
+
+.job-show-back {
+  background: asset-data-url("jumbotron.jpg");
+  background-size: cover;
+  padding-bottom: 70px;
+  background-position: center;
+}
+
+.job-list-back {
+  background: asset-data-url("jumbotron.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  padding-bottom: 10px;
+}
+
+.jumbotron {
+  background: asset-data-url("jumbotron.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 300px;
+}
+
+.container-fluid .jumbotron{
+  padding-bottom: 150px;
+  margin: 0 -15px 20px;
+  border-radius: 0;
+}
+
+.jumbotron h1, .jumbotron .h1 {
+     text-align: left;//文字左对齐
+     color: #222;  //字体颜色
+
+     padding: 100px 20px 0;//上50px，左右20px，下0
+    }
+
+.jumbotron p {
+  margin-left: 100px;
+  font-size: 26px;
+  max-width: 500px;
+  background-color:  ragba(250,250.250,0.39);
+  padding: 20px;
+  text-align: left;
+  color:#222;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.title a{
+  font-family: "Zapfino";
+  text-decoration: none;
+  color: #000000;
+  max-width: 600px;
+  margin-top: 200px;
+  margin-bottom: 0;
+  margin-left: 100px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.title:hover,
+.title:focus{
+  color: #90A4AE;
+  background-color: transparent;
+}
+
+.slogan{
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
+
+.caption{
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+.thumbnail{
+  border: 0 none;
+  box-shadow: none;
+  margin-top: 60px;
+}
+
+.custab{
+  border: 1px solid #ccc;
+  padding:5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+/*start navbar */
+.navbar-default {
+  background: asset-data-url("navbar.png");
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .navbar{
+    border-radius: 0;
+  }
+}
+
+.navbar-default .navbar-brand {
+  font-family: "Zapfino";
+  padding: 10px 15px;
+  line-height: 30px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus{
+  color: #90A4AE;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a{
+
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus{
+  color: #90A4AE;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a ,
+.navbar-default .navbar-nav > .active > a :hover,
+.navbar-default .navbar-nav > .active > a:focus{
+  color: #BDBDBD;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover{
+  color: #5D4037;
+  background-color: transparent;
+}
+
+.navbar-brand > img {
+  display: inline-block;
+  margin-right: 10px;
+  width: 100px;
+  height: 32px;
+}
+/*end navbar*/
+
+#search-id {
+  width: 200px;
+  padding-top: 7px;
+}
+
+
+.job-content{
+  min-height: 725px;
+  margin-top: 100px;
+
+  a{
+    text-decoration: none;
+  }
+}
+
+.job-bottom{
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.job-limit-box{
+  min-height: 350px;
+  margin-top: 200px;
+}
+
+.job-resume-box{
+  min-height: 475px;
+  margin-top: 125px;
+
+  h3{
+    text-align: center;
+  }
+}
+
+.side-box{
+  display: inline;
+  position: absolute;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  margin-left: 35px;
+
+  background-color: #1A6561;
+  color: #fff;
+  box-shadow: 2px 2px 3px #aaa;
+}
+
+.practice{
+  margin-left: 100px;
+}
+.badge{
+  background-color:#D4E157;
+
+}
+
+
+
+.job-box{
+  border: 1.5px solid #ddd;
+  background-color: #fff;
+  margin-top: 12.5px;
+  margin-left: 150px;
+  padding: 15px 15px 7.5px 15px;
+  color: #555;
+  font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+  font-size: 16px;
+  box-shadow: 1px 1px 5px #ccc;
+
+  div{
+    margin-bottom: 5px;
+  }
+
+  .info{
+      display: inline;
+      float: left;
+  }
+
+  .info-top{
+    margin-top: 15px;
+    h3{
+      margin-left: 100px;
+      display: inline;
+      font-size: 20px;
+    }
+    span{
+      margin-left: 10px;
+      display: inline;
+      color: #82B1FF;
+    }
+  }
+
+  .info-mid{
+    color: #FFA726;
+    letter-spacing: -1px;
+    margin-left: 100px;
+  }
+
+  .info-bot{
+    .category{
+      border: 1px solid #ccc;
+      border-radius: 2.5px;
+      padding: 5px 7.5px 5px 7.5px;
+      font-size: 12px;
+    }
+  }
+
+  .company{
+    float: right;
+    display: inline;
+    width: 35%;
+
+    span{
+      width: 20px;
+      margin-left: 5px;
+    }
+  }
+
+  .company-bot{
+    margin-left: 3.5px;
+    letter-spacing: 1px;
+  }
+}
+
+  /*===== Start Job#Show ====*/
+
+.job-info-box{
+  color: #333;
+  font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+
+  h3{
+    text-align: left;
+    color: #3D537F;
+  }
+
+  p{
+    font-size: 16px;
+    color: #666;
+  }
+
+  .wage{
+    color: #FF7D0A;
+    letter-spacing: -1px;
+    font-size: 18px;
+  }
+
+  .created{
+    color: #999;
+    font-size: 14px;
+  }
+
+}
+
+.job-action-box{
+  text-align: right;
+  margin-top: 25px;
+  margin-right: 25px;
+
+  div{
+    width: 200px;
+    display: inline;
+  }
+
+  .btn-lg{
+    width: 115px;
+  }
+}
+
+.job-content-box{
+  letter-spacing: 0.5px;
+
+  h4{
+    color: #004080;
+  }
+
+  .content-info{
+    min-height: 450px;
+    p{
+      line-height: 30px;
+    }
+  }
+
+  .mail-info{
+    margin-bottom: 75px;
+    font-size: 18px;
+
+    .email{
+      font-size: 16px;
+    }
+  }
+}
+.same-box{
+  padding: 15px;
+
+  .title{
+    font-size: 20px;
+    font-weight: 500;
+    color: #004080;
+    margin-bottom: 7.5px;
+  }
+
+  span::after{
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 120px;
+    display: inline-block;
+    width: 150px;
+    border-bottom: 1px solid #0070DE;
+  }
+
+  .same-content{
+    width: 240px;
+    background-color: #fff;
+    padding: 2px 2px 12px 12px;
+    border: 0.5px dashed #ccc;
+
+    div{
+      margin-top: -5px;
+      margin-bottom: -5px;
+    }
+    h3{
+      font-size: 16px;
+    }
+    p{
+      font-size: 16px;
+      color: #FF7D0A;
+      letter-spacing: -1px;
+    }
+    span{
+      color: #aaa;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+
+blockquote{
+    border-left:none;
+}
+
+/*show*/
+.quote-badge{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.quote-box{
+  position: relative;
+  left:80px;
+  h1{text-align: center;}
+
+    overflow: hidden;
+    margin-top: 25px;
+    padding-top: -100px;
+    padding-left: 80px;
+    border-radius: 17px;
+    background-color: #64FFDA;
+    color:white;
+    width: 800px;
+    box-shadow: 2px 2px 2px 2px;
+    background: asset-data-url("job list back.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+    color: #e1e8ed;
+  background-color: #fff;
+  border-color: #0b7fc6;
+    }
+/*show end*/
+
+/*footer位置*/
+html{
+   height:70px;
+ }
+ body{
+   min-height:70px;
+   margin:0;
+   padding:0;
+   position:relative;
+ }
+
+ main{
+   padding-bottom:70px;/* main的padding-bottom值要等于或大于footer的height值 */
+   background-color: #bdb76b;
+
+ }
+
+ footer{
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 15px;
+   color: black;
+ }
+
+
+
+ footer .footer-below {
+     margin-top: 15px;
+     margin-left: -15px;
+     margin-right: -60px;
+     padding: 15px 0;
+     background: asset-data-url("navbar.png");
+ }

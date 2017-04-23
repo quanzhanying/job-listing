@@ -1,0 +1,20 @@
+<h1> Edit a job </h1>
+
+<%= simple_form_for @job do |f| %>
+
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :wage_lower_bound, :label => "Wage lower bound" %>
+  <%= f.input :wage_upper_bound, :label => "Wage upper bound" %>
+  <%= f.input :work_place %>
+  <%= f.input :Company_name %>
+  <%= f.input :About_us %>
+  <%= f.input :Address %>
+  <%= f.input :contact_email %>
+  <%= f.input :is_hidden %>
+  <%= f.input :practice %>
+
+
+<%= f.submit "Submit" %>
+
+<% end %>

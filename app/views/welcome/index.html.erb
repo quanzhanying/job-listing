@@ -1,0 +1,78 @@
+<div class="jumbotron">
+   <h1 class="title"><a href="/jobs">Lynkle Offer</a></h1>
+
+  <br/>
+  <p class="slogan">Lynkle Offer link you to the circle you want to get in.
+    <br>
+    Clik the title and find your future.
+    <br>
+    Everthing can be possible!
+  </p>
+  </div>
+
+        <!--======== 热门职位 =========-->
+        <section id="genius" class="our-experts">
+                  <div class="container">
+                    <div class="col-md-8 col-md-offset-2">
+                      <div class="row">
+                        <div class="row">
+                          <div class="col-md-6 col-md-offset-3 text-center">
+                            <h2 class="section-title">Link</h2>
+                            <div class="short-line"></div>
+                          </div>
+                        </div>
+                        <br/>
+                          <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-3 category-list">
+                                  <%= link_to jobs_path(:category => "技术") , class: "category_1" do %>
+                                    <div class="expert-box">
+                                        <%= image_tag("company.png") %>
+                                    </div>
+                                    <div>
+                                      <h3>To the companies</h3>
+                                      <p>You can find the proper group for yourself.</p>
+                                    </div>
+                                  <% end %>
+                                </div>
+                                <div class="col-md-3 category-list">
+                                  <%= link_to jobs_path(:category => "产品") , class: "category_2" do %>
+                                    <div class="expert-box">
+                                        <%= image_tag("city.png") %>
+                                    </div>
+                                    <div>
+                                      <h3>To the cities</h3>
+                                      <p>You will find more information of where you want to be.</p>
+                                    </div>
+                                  <% end %>
+                                </div>
+                                <div class="col-md-3 category-list">
+                                  <%= link_to jobs_path(:category => "设计") , class: "category_3" do %>
+                                    <div class="expert-box">
+                                        <%= image_tag("leader.png") %>
+                                    </div>
+                                    <div>
+                                      <h3>To the Leading figures</h3>
+                                      <p>You can contact with those masters.</p>
+                                    </div>
+                                  <% end %>
+                                </div>
+                                <div class="col-md-3 category-list">
+                                  <%= link_to jobs_path(:category => "运营") , class: "category_4" do %>
+                                    <div class="expert-box">
+                                        <%= image_tag("industry.png") %>
+                                    </div>
+                                    <div>
+                                      <h3>To the industries</h3>
+                                      <p>You can learn if you fit the job.</p>
+                                    </div>
+                                  <% end %>
+                                </div>
+                            </div>
+                            <br/>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </section>
+    <!--======== end 热门职位 =========-->

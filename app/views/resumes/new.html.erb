@@ -1,0 +1,23 @@
+<div class="job-show-back">
+<br/>
+
+<div class="container">
+    <blockquote class="quote-box">
+<h3> Submit to <%= @job.title %> </h3>
+
+<hr>
+<%= simple_form_for [@job, @resume] do |f| %>
+<%= f.input :content %>
+<hr>
+<%= f.input :attachment %>
+<%= f.submit "Submit" %>
+<% end %>
+</blockquote>
+</div>
+
+<div class="text-center">
+  <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span>
+    <a href="/jobs">Back</a>
+</button>
+</div>
+</div>
