@@ -14,6 +14,172 @@
  *= require_self
  *= require font-awesome
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+  @import "font-awesome";
+
+   html {
+      position: relative;
+      min-height: 100%;
+    }
+
+    body {
+      /* Margin bottom by footer height */
+      margin-bottom: 100px;
+    }
+
+ //---------Navbar---------
+
+  .navbar-default {
+      background-color: #212121;
+      border-color: #212121;
+      margin-bottom: 0;
+      border-radius: 0;
+  }
+
+  .navbar-default .navbar-brand {
+      color: #EF6C00;
+      padding: 10px 15px;
+      line-height: 30px;
+  }
+
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-brand:focus {
+      color: #FF6F00;
+      background-color: transparent;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+      color: #EF6C00;
+  }
+
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > li > a:focus {
+      color: #FF6F00;
+      background-color: transparent;
+  }
+
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
+      color: #FF6F00;
+      background-color: #FFE0B2;
+  }
+
+  .navbar-default .navbar-nav > .open > a,
+  .navbar-default .navbar-nav > .open > a:focus,
+  .navbar-default .navbar-nav > .open > a:hover {
+      background-color: #FFE0B2;
+      color: #212121;
+  }
+
+   //---------Box---------
+
+  .box {
+      background-image: url("header.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 50px;
+
+      .box-inner {
+          background-color: rgba(250, 250, 250, 0.69);
+          padding-bottom: 5px;
+          margin-top: 150px;
+          margin-bottom: 150px;
+      }
+
+      .title {
+          text-align: center;
+          margin-bottom: 80px;
+      }
+
+      .slogan {
+          color: #222;
+          margin-top: 10px;
+          margin-bottom: 50px;
+          text-align: center;
+          font-size: 25px;
+          top: 12px;
+      }
+
+      .lead {
+          margin-bottom: 60px;
+          text-align: center;
+          color: white;
+      }
+  }
+
+   //---------Content---------
+
+    .content-section-a {
+        padding: 50px 0;
+        background-color: #f8f8f8;
+    }
+
+    .content-section-b {
+        padding: 50px 0;
+        border-top: 1px solid #e7e7e7;
+        border-bottom: 1px solid #e7e7e7;
+    }
+
+    .section-heading-spacer {
+        float: left;
+        width: 200px;
+        border-top: 3px solid #e7e7e7;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .lead {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    //------Information------
+
+    .caption {
+      margin: 30px;
+      text-align: center;
+      top: 20px;
+    }
+
+    .thumbnail {
+        border: 0 none;
+        box-shadow: none;
+        margin-top: 60px;
+    }
+
+   //---------Footer---------
+
+    .footer {
+       position: absolute;
+       bottom: 0;
+       width: 100%;
+       /* Set the fixed height of the footer here */
+       height: 100px;
+       background-color: #233140;
+
+         p {
+           color: white;
+           margin-top: 30px;
+         }
+    }
+
+    //-----Admin's button------
+
+    .custab{
+      border: 1px solid #ccc;
+
+      padding: 5px;
+      margin: 5% 0;
+      box-shadow: 3px 3px 2px #ccc;
+
+      transition: 0.5s;
+    }
+
+    .custab:hover{
+      box-shadow: 3px 3px 0px transparent;
+      transition: 0.5s;
+    }
