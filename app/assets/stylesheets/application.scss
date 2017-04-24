@@ -70,3 +70,28 @@
   box-shadow: 3px 3px 2px transparent;
   transition: 0.5s;
 }
+
+.navbar-default{
+  background-color: #212121;
+  border-color: #212121;
+  margin-bottom: 0;
+}
+
+@media (min-width:768px){
+  .navbar{
+    border-radius: 0;
+  }
+}
+
+.navbar-default .navbar-brand{
+  color: #ef6c00;
+  padding: 10px 15px;
+  line-height: 30px;
+}
+
+.navbar-default .navbar-brand:hover
+.navbar-default .navbar-brand:focus
+{
+    color: #ff6f00;
+    background-color: transparent;
+}
