@@ -18,17 +18,38 @@
  @import "font-awesome";
 
 .jumbotron{
-  background-image: url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+  background-image: url('https://cdn.pixabay.com/photo/2017/04/08/09/59/mushrooms-2212899_960_720.jpg');
   background-repeat: no-repeat;
+  margin: 0 -15px 20px;
   background-size: cover;
   padding-bottom: 100px;
 }
 
 .title{
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  margin-top: 200px;
-  margin-bottom: 80px;
+background-color: rgba(250, 250, 250, 0.39);
+max-width: 500px;
+margin-top: 200px;
+margin-bottom: 0;
+border-top-right-radius: 3px;
+border-top-left-radius: 3px;
+}
+
+.jumbotron h1 , .jumbotron .h1{
+  text-align: left;
+  color: #222;
+  padding: 50px 20px 0;
+}
+
+.jumbotron p{
+  margin: 0;
+  font-size: 26px;
+  max-width: 500px;
+  background-color: rgba(250, 250, 250, 0.39);
+  padding: 20px;
+  text-align: left;
+  color: #222;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .slogan{
@@ -94,4 +115,55 @@
 {
     color: #ff6f00;
     background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ef6c00;
+}
+
+.navbar-default .navbar-nav > li > a:hover
+.navbar-default .navbar-nav > li > a:focus
+{
+  color: #ff6f00;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover{
+  color: #FF6F00;
+  background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover{
+  color: #212121;
+  background-color: #FFE0B2;
+}
+
+.navbar-brand > img{
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #ef6c00;
+  border-color: #ef6c00;
+}
+
+.btn-danger:hover{
+  background-color: #e65100;
+  border-color: #e65100;
+}
+
+.btn-lg, .btn-group-lg > .btn{
+  padding: 8px 16px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  width: 200px;
 }
