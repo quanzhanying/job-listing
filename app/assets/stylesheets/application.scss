@@ -20,32 +20,44 @@
  @import "font-awesome";
 // jumbotron
  .jumbotron {
-   background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+   background-image:url('banner.jpeg');
    background-repeat: no-repeat;
    background-size: cover;
    padding-bottom: 110px;
+   .title {
+     font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+     text-align: center;
+     margin-top: 260px;
+     margin-bottom: 20px;
+     color: #fff;
+     font-size: 3em;
+   }
+   .slogan {
+     margin-top: 10px;
+     margin-bottom: 50px;
+     text-align: center;
+     color: white;
+     top: 12px;
+   }
+
+   .lead {
+     margin-bottom: 60px;
+     text-align: center;
+     color: white;
+   }
+
  }
 
- .title {
-   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-   text-align: center;
-   margin-top: 200px;
-   margin-bottom: 80px;
+ .btn{
+   background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+   transition: all 0.5s ease-in-out;
  }
 
- .slogan {
-   margin-top: 10px;
-   margin-bottom: 50px;
-   text-align: center;
-   color: white;
-   top: 12px;
- }
 
- .lead {
-   margin-bottom: 60px;
-   text-align: center;
-   color: white;
- }
 
 // company
  .caption {
