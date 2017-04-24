@@ -3,7 +3,6 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-
     if @job.is_hidden
       flash[:warning] = 'This Job already archieved'
       redirect_to root_path
@@ -13,11 +12,13 @@ class JobsController < ApplicationController
   def index
     @jobs = case params[:order]
             when 'by_lower_bound'
-              Job.published.order('wage_lower_bound DESC')
+              #  Job.published.order('wage_lower_bound DESC')
+              Job.published.order('wage_lower_bound DESC').search(params[:search]).paginate(page: params[:page], per_page: 5)
             when 'by_upper_bound'
-              Job.published.order('wage_upper_bound DESC')
+              #  Job.published.order('wage_upper_bound DESC')
+              Job.published.order('wage_upper_bound DESC').search(params[:search]).paginate(page: params[:page], per_page: 5)
             else
-              Job.published.recent
+              Job.published.recent.search(params[:search]).paginate(page: params[:page], per_page: 5)
             end
   end
 
