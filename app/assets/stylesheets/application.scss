@@ -26,7 +26,7 @@
 
      border-color: #F5F5F5; //边框色
 
-     margin-bottom: 0; //底部 margin 不撑开距离
+      //底部 margin 不撑开距离
 
      border-radius: 0; //圆角为0
 
@@ -92,6 +92,7 @@
      background-repeat: no-repeat;
      background-size: cover;
      margin-bottom: 50px;
+     margin-top: -20px;//与导航栏边距 ，不显示白边
 
      .box-inner {
          background-color: rgba(250, 250, 250, 0.69);
@@ -213,7 +214,7 @@
   background-image:url('http://ww2.sinaimg.cn/large/006tNc79gy1fevsy65na9j31kw11xe8c.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 110px;
+  padding-bottom: 100px;
 }
 
 .name {
@@ -255,7 +256,7 @@
 
  .container-fluid .jumbotron{
    padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
-   margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+   margin: -20px 0px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
    border-radius: 0;//圆角为0
  }
 
