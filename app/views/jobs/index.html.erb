@@ -1,0 +1,19 @@
+<div class="pull-right">
+  <%= link_to("乐队招人",new_job_path, :class =>"btn btn-default" ) %>
+</div>
+<table class="table table-bordered">
+  <% @jobs.each do |job| %>
+  <tr>
+    <td>
+      <%= link_to(job.title,job_path(job)) %>
+    </td>
+    <td>
+      <%= link_to("编辑", edit_job_path(job)) %>
+      <%= link_to("删除", job_path(job), :method => :delete, :data => { :confirm => "确定要删除吗" }) %>
+    </td>
+    <td>
+      <%= job.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
