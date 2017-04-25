@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :join_collect, :quit_collect]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :join, :quit]
   before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
   before_action :validate_search_key, only: [:search]
 
