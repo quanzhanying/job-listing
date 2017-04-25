@@ -16,3 +16,4 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
+//= require responsive-nav
