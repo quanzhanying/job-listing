@@ -9,7 +9,7 @@
     <!-- row  -->
 
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-md-4">
             <ul class="list-group">
                 <li class="list-group-item">
                     <strong>工种：</strong><%= @job.category %>
@@ -21,7 +21,7 @@
                     <%= @job.wage_upper_bound%></li>
             </ul>
         </div>
-        <div class="col-sm-4">
+        <div class="col-md-4">
             <ul class="list-group">
                 <li class="list-group-item">
                     <strong>公司：</strong><%= @job.company %>
@@ -31,7 +31,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-sm-4">
+        <div class="col-md-4">
             <ul class="list-group">
                 <li class="list-group-item">
                     <strong>竟征人数：</strong><%= @job.resumes.count %>
@@ -43,6 +43,15 @@
         </div>
         <div class="container">
             <%= link_to("应征", new_job_resume_path(@job), class: "btn btn-default pull-left") %>
+            <% if current_user && current_user.is_member_of?(@job) %>
+            <%= link_to quit_job_path(@job), method: :post, class: "btn btn-xs btn-danger pull-right" do%>
+            <i class="fa fa-bookmark-o">
+                取消收藏</i><% end %>
+        <% else %>
+            <%= link_to join_job_path(@job), method: :post, class: "btn btn-xs btn-success pull-right" do%>
+            <i class="fa fa-bookmark">
+                收藏匠职</i><% end %>
+            <% end %>
         </div>
     </div>
     <hr>

@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :join_collect, :quit_collect]
   before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
   before_action :validate_search_key, only: [:search]
 
@@ -94,6 +94,30 @@ class JobsController < ApplicationController
   end
 
 
+
+# --collect--
+
+  def join
+    @job = Job.find(params[:id])
+
+    if !current_user.is_member_of?(@job)
+      current_user.join_collect!(@job)
+    end
+
+    redirect_to job_path(@job)
+  end
+
+  def quit
+    @job = Job.find(params[:id])
+
+    if current_user.is_member_of?(@job)
+      current_user.quit_collect!(@job)
+    end
+
+    redirect_to job_path(@job)
+  end
+
+
 # --search--
 
   def search
@@ -118,6 +142,7 @@ class JobsController < ApplicationController
   def search_criteria(query_string)
     { :title_cont => query_string }
   end
+
 
 
 # --private--

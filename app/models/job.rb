@@ -1,13 +1,15 @@
 class Job < ApplicationRecord
 
   has_many :resumes
+  has_many :collects
+  has_many :members, through: :collects, source: :user
 
   belongs_to :user
   validates :title, presence: true
   validates :wage_lower_bound, presence: true
   validates :wage_upper_bound, presence: true
   validates :wage_lower_bound, numericality: { greater_than: 0}
-  
+
 
   scope :published, -> {where(is_hidden: false)}
   scope :recent, -> {order('created_at DESC')}

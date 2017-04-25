@@ -64,6 +64,7 @@
                         <%= link_to jobs_path, class: "btn btn-xs btn-default" do%>
                         创建时间<i class="fa fa-caret-down"></i><% end %></td>
                     <td>竞征人数</td>
+                    <td>收藏</td>
                     <td>操作</td>
                 </tr>
             </thead>
@@ -83,6 +84,13 @@
                     <td><%= job.city %></td>
                     <td><%= job.created_at.to_date %></td>
                     <td><%= job.resumes.count %></td>
+                    <td>
+                        <% if current_user && current_user.is_member_of?(job) %>
+                        <i class="fa fa-bookmark"></i>
+                    <% else %>
+                        <i class="fa fa-bookmark-o"></i>
+                        <% end %>
+                    </td>
                     <td><%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success") %></td>
                 </tr>
                 <% end %>
