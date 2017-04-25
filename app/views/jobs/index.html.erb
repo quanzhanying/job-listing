@@ -18,10 +18,11 @@
     </ul>
 </div>
 
-<table class="table table-boldered">
+<table class="table table-boldered table-striped custab">
   <thead>
     <tr>
-      <td>职缺</td>
+      <td>职位</td>
+      <td>收到简历数量</td>
       <td>薪资下限</td>
       <td>薪资上限</td>
       <td>刊登时间</td>
@@ -33,6 +34,9 @@
       <tr>
         <td>
           <%= link_to(job.title, job_path(job)) %>
+        </td>
+        <td>
+          <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %>
         </td>
         <td>
           <%= job.wage_lower_bound %>
