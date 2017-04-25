@@ -1,107 +1,133 @@
-  <!--Box-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
 
- <div class="col-md-12">
-    <div class="row box">
-      <div class="box-inner col-md-6 col-md-offset-3">
-        <h1 class="title">Light</h1>
-        <p class="slogan">Light 是一个在全球各国贫困地区执教的求职网站
-          <br>
-          我们希望借由这个网站，能让世界各国贫困地区的孩子接受到教育
-          <br>
-          凭借自己的力量，为世界添一道光亮
-        </p>
-        <p class="lead">
-          <%= link_to '马上应征', jobs_path, class: 'btn btn-danger' %>
-        </p>
-      </div>
-    </div>
-  </div>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
 
-    <!--Content-->
+  </head>
 
-   <div class="content-section-a">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-sm-6">
-          <hr class="section-heading-spacer">
-          <div class="clearfix"></div>
-          <h2 class="section-heading">发现自己</h2>
-          <p class="lead">2017年，请去关心那些更远的和更大的事情。关心这个宇宙、他人、社会的正义，它们会教会我们谦卑，让我们得以放下自己。
-            在这个过程中，你会感到自己的生活是如此的小，而你作为个体的痛苦也就会随之显得渺小、变得更加可以承受了。——KnowYourself
-          </p>
-        </div>
-        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-          <%= image_tag 'pic-1.jpg', class: 'img-responsive' %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="content-section-b">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-          <hr class="section-heading-spacer">
-          <div class="clearfix"></div>
-          <h2 class="section-heading">教育者</h2>
-          <p class="lead">无论你们未来要做什么样的工作,既然从这教育学院的大门走出去,希望你们能关注未来。不是你们个人的未来,是这个国家乃至全人类的未来。
-            因为你们将成为能够影响别人命运的人,你们必须有精益求精的工匠精神和关注他人,关注成长,关注公平的仁义之心。——Dr. Stone
-          </p>
-        </div>
-        <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-          <%= image_tag 'pic-2.jpg', class: 'img-responsive' %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="content-section-a">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-sm-6">
-          <hr class="section-heading-spacer">
-          <div class="clearfix"></div>
-          <h2 class="section-heading">旅行家</h2>
-          <p class="lead">生活就是寻找自己的过程，在不知道要去哪里，不知道还有多远时，只管跑就是了，未来是怎样，交给未来的自己回答，我们都不用为了天亮去跑，跑下去，天自己会亮，
-            让教育和旅行一起在路上，做最酷的老师。
-          </p>
-        </div>
-        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-          <%= image_tag 'pic-3.jpg', class: 'img-responsive' %>
-        </div>
-      </div>
-    </div>
-  </div>
-
- <!--Information-->
-
-<section id="company">
-  <div class = "container-fluid">
+   <!--
+          If you want to change #bootstrap-touch-slider id then you have to change Carousel-indicators and Carousel-Control  #bootstrap-touch-slider slide as well
+          Slide effect: slide, fade
+          Text Align: slide_style_center, slide_style_left, slide_style_right
+          Add Text Animation: https://daneden.github.io/animate.css/
+          -->
+  <body>
     <div class="row">
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-31.png" alt="search" class = "img-thumbnail">
-          <div class="caption">
-            <h3>武汉武昌光谷广场</h3>
-          </div>
-        </div>
+
+        <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper For Slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Third Slide -->
+                <div class="item active">
+
+                    <!-- Slide Background -->
+                    <img src="https://ooo.0o0.ooo/2017/04/25/58ff4f4e1e0e9.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <!-- Slide Text Layer -->
+                            <div class="slide-text slide_style_left">
+                                <h1 data-animation="animated zoomInRight"> Light </h1>
+                                <p data-animation="animated fadeInLeft">是一个在全球各国贫困地区执教的求职网站
+                                  <br>
+                                  我们希望借由这个网站，能让世界各国贫困地区的孩子接受到教育
+                                  <br>
+                                  凭借自己的力量，为世界添一道光亮</p>
+                                    <%= link_to '马上应征', jobs_path, class: 'btn btn-primary' %>
+                                <!-- <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a> -->
+                                <!-- <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">select two</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Second Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="https://ooo.0o0.ooo/2017/04/25/58ff50517cdbc.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_center">
+                        <h1 data-animation="animated flipInX">教育者</h1>
+                        <p data-animation="animated lightSpeedIn">2017年，请去关心那些更远的和更大的事情。关心这个宇宙、他人、社会的正义，它们会教会我们谦卑，让我们得以放下自己。
+                          在这个过程中，你会感到自己的生活是如此的小，而你作为个体的痛苦也就会随之显得渺小、变得更加可以承受了。——KnowYourself</p>
+                          <%= link_to '马上应征', jobs_path, class: 'btn btn-primary' %>
+                        <!-- <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a> -->
+                        <!-- <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a> -->
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Third Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="https://ooo.0o0.ooo/2017/04/25/58ff4fa905fbd.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_right">
+                        <h1 data-animation="animated zoomInLeft">旅行家</h1>
+                        <p data-animation="animated fadeInRight">生活就是寻找自己的过程<br>在不知道要去哪里，不知道还有多远时，只管跑就是了<br>做最酷的老师,让教育和旅行一起在路上</p>
+                        <%= link_to '马上应征', jobs_path, class: 'btn btn-primary' %>
+                        <!-- <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a> -->
+                        <!-- <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-primary" data-animation="animated fadeInRight">select two</a> -->
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+
+            </div><!-- End of Wrapper For Slides -->
+
+            <!-- Left Control -->
+            <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <!-- Right Control -->
+            <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div> <!-- End  bootstrap-touch-slider Slider -->
+
+    <!-- Script to Activate the Carousel -->
+        <script src="js/jquery.js"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="js/bootstrap.min.js"></script>
+
+            <!-- Script to Activate the Carousel -->
+            <script>
+            $('.carousel').carousel({
+                interval: 5000 //changes the speed
+            })
+            $('#bootstrap-touch-slider').bsTouchSlider();
+            </script>
+
+           <script>
+            $(document).ready(function () {
+            $('.material-button-toggle').click(function () {
+                $(this).toggleClass('open');
+                $('.option').toggleClass('scale-on');
+            });
+           });
+          </script>
       </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-48.png" alt="bid" class = "img-thumbnail">
-          <div class="caption">
-            <h3>info@Light.com</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-44-00.png" alt="heart" class = "img-thumbnail">
-          <div class="caption">
-            <h3>027-12344321</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </body>
+</html>
