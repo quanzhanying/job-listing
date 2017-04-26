@@ -9,27 +9,28 @@
     </head>
 
     <body>
-      <div class="row">
-        <div class="container-fluid">
+        <div class="row">
+            <div class="content">
+                <div class="container-fluid">
 
-            <%= render "common/navbar" %>
-            <%= render "common/flashes" %>
+                    <%= render "common/navbar" %>
+                    <%= render "common/flashes" %>
 
+                    <div class="row">
+                        <div class="col-md-2">
+                            <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                                <li class="active"><%= link_to("所有职位", admin_jobs_path) %></li>
+                            </ul>
+                        </div>
 
-            <div class="row">
-              <div class="col-md-2">
-                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-                  <li class="active"><%= link_to("所有职位", admin_jobs_path) %></li>
-                </ul>
-              </div>
-
-              <div class="col-md-10">
-                <%= yield %>
-              </div>
+                        <div class="col-md-10">
+                            <%= yield %>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <%= render "common/footer" %>
-      </div>
+            <%= render "common/footer" %>
+        </div>
     </body>
 </html>
