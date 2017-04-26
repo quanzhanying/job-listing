@@ -27,7 +27,7 @@ end
   end
 
   def update
-    @Job = Job.find(params[:id])
+    @job = Job.find(params[:id])
     if @job.update(job_params)
       redirect_to admin_jobs_path
     else
@@ -43,17 +43,11 @@ end
       redirect_to admin_jobs_path
     end
 
-    def require_is_admin
-      if !current_user.admin?
-        flash[:alert] = '你不是管理员'
-        redirect_to root_path
-      end
-    end
 
 
     private
 
     def job_params
-      params.require(:job).permit(:title, :description)
+      params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email,)
     end
 end
