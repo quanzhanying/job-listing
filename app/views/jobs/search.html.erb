@@ -4,22 +4,28 @@
 
     <div class="panel panel-danger">
         <div class="panel-heading">
-          <div class="search-info-title">
-            <h1 class="panel-title">
-              对不起，搜搜内容不能为空白。
-            </h1>
-          </div>
+            <div class="search-info-title">
+                <h2 class="search-info-title">
+                    对不起，搜搜内容不能为空白。
+                </h2>
+            </div>
         </div>
         <div class="panel-body">
-            请输入一些内容，如工作信息。
+            请输入一些内容，如“总经理、车间主管、操作员、质量检测等”。
+        </div>
+    </div>
+
+    <% elsif @jobs.blank? %>
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h2 class="search-info-title">对不起，没有找到相关信息！</h2>
+        </div>
+        <div class="panel-body">
+            请尝试修改内容，如“总经理、车间主管、操作员、质量检测等”。
         </div>
     </div>
 
 
-
-    <% elsif @jobs.blank? %>
-    <br>
-    <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
 <% else %>
 
     <div class="panel panel-success">
