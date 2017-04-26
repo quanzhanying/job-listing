@@ -82,6 +82,16 @@
  }
 //---Navbar---
 
+//-----搜索------
+
+.search-box{
+  margin-top: 0;
+
+  input{
+    width: 250px !important;
+  }
+}
+
 
 //---welcome content---
 //头图
@@ -124,7 +134,12 @@
      }
  }
 
+//-----common----
+.col-centered {
+  float: none;
+  margin: 0 auto;
 
+}
 
  //---------Content---------
 
