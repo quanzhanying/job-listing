@@ -5,6 +5,18 @@
             <a class="navbar-brand" href="/"><i class="fa fa-lightbulb-o" aria-hidden="true"> Light </i></a>
         </div>
 
+        <!--Search-->
+        <%= form_tag jobs_path, :method => "get" do %>
+
+               <div class="searchform">
+                  <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+                  <span>
+                      <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
+
+                   </span>
+               </div>
+        <% end %>
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">

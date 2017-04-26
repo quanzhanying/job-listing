@@ -1,17 +1,5 @@
-<!--Search-->
-<%= form_tag jobs_path, :method => "get" do %>
-
-       <div class="searchform">
-          <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
-          <span>
-              <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
-              <!-- <input type="submit" value="点 击" class="mike"> -->
-           </span>
-       </div>
-<% end %>
-
 <!--Panel-->
-<div class="col-md-8 col-centered">
+<div class="col-md-10 ">
   <div class="panel panel-default">
 
     <div class="panel-heading">
@@ -75,6 +63,35 @@
       </table>
     </div>
   </div>
+</div>
+
+
+
+<!-- 职位推荐 -->
+<div class="col-md-2 side-box">
+  <div class="row">
+      <div class="col-md-12 suggest-title">
+        <h4><sapn class="fa fa-tags"></sapn> <strong>职位推荐</strong></h4>
+      </div>
+      <div>
+          <% @suggests.each do |job| %>
+              <div class="col-xs-10 col-xs-offset-1 suggest-content">
+
+
+                  <div>
+                    <p>职位：<%= job.title %></p>
+                  </div>
+                  <div>
+                    <p>描述：<%= job.description %></p>
+                  </div>
+              </div>
+          <% end %>
+      </div>
+  </div>
+</div>
+</div>
+
+<div class="col-md-1 ">
 </div>
 
 <!--will_paginate-bootstrap-->

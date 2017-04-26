@@ -125,6 +125,10 @@
       margin-bottom: 100px;
     }
 
+    .content {
+      flex: 1;
+    }
+
  //---------Navbar---------
 
   .navbar-default {
@@ -169,13 +173,16 @@
       color: #212121;
   }
 
-  
+  .dropdown.toggle {
+    margin-top: -100px;
+  }
+
 
    //---------Footer---------
 
     .footer {
        position: absolute;
-       bottom: 0;
+       bottom: -5px;
        width: 100%;
        /* Set the fixed height of the footer here */
        height: 100px;
@@ -216,3 +223,73 @@
       float: none;
       margin: 0 auto;
     }
+
+    //-----Job------
+
+    .job-content{
+      min-height: 25px;
+      margin-top: 100px;
+
+      a{
+        text-decoration: none;
+      }
+    }
+
+    .side-box{
+
+
+     padding: 10px 10px;
+     border-bottom: 1px solid transparent;
+     border-top-right-radius: 3px;
+     border-top-left-radius: 3px;
+
+     background-color: #aaa;
+     color: #fff;
+     box-shadow: 2px 2px 3px #aaa;
+    }
+
+    .job-box{
+     border: 1.5px solid #ddd;
+     box-shadow: 1px 1px 5px #ccc;
+     margin-top: 12.5px;
+     padding: 15px 30px 1px 30px;
+     background-color: #fff;
+     color: #5555;
+     font-size: 16px;
+
+     div{
+     margin-bottom: 0px;
+     }
+    }
+
+    .suggest-title{
+      padding: 0px;
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+
+    .suggest-content{
+      background-color: #fff;
+      padding: 0px;
+      border: 0.5px dashed #eee;
+
+        h3{
+          margin-top: 1px;
+          font-size: 16px;
+        }
+
+        p{
+          font-size: 16px;
+          color: #212121;
+          letter-spacing: -1px;
+        }
+
+        span{
+          color: #aaa;
+          font-size: 14px;
+          letter-spacing: 0.5px;
+        }
+    }
+    

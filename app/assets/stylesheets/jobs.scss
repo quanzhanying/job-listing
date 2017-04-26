@@ -2,33 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.searchform{
-  position: relative;
-  height: 100%;
-  width: 540px;
-  min-height: 100px;
-  margin: 80px auto 0 auto;
-  text-align: left;
-}
-.searchbox{
-  float: left;
-  width: 421px;
-  height: 38px;
-  padding: 9px 7px;
-  font: 16px arial;
-  border: 1px solid #b8b8b8;
-  border-radius: 6px;
-}
-.mike {
-    float: auto;
+  .searchform{
+    position: fixed;
+    // height: 100%;
+    // width: 540px;
+    // min-height: 100px;
+    text-align: left;
+    margin-left: 80px;
+    margin-bottom: -90px;
+  }
+
+  .searchbox{
+    position: absolute;
+    float: left;
+    width: 200px;
+    height: 38px;
+    margin-bottom: -90px;
+    margin-top: 5px;
+    padding: 9px 7px;
+    font: 16px arial;
+    border: 1px solid #b8b8b8;
+    border-radius: 6px;
+  }
+  .mike {
+    margin-left: 205px;
+    margin-top: 5px;
+    float: none;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     background-color: #60af00;
-    width: 86px;
+    width: 56px;
     height: 38px;
     border: 1px solid #5d9b4d;
     font-size: 14px;
     font-family: simsun;
-    border-radius: 15px;
-}
+    border-radius: 5px;
+  }

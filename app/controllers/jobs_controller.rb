@@ -13,13 +13,14 @@ class JobsController < ApplicationController
     @jobs = case params[:order]
             when 'by_lower_bound'
               #  Job.published.order('wage_lower_bound DESC')
-              Job.published.order('wage_lower_bound DESC').search(params[:search]).paginate(page: params[:page], per_page: 5)
+              Job.published.order('wage_lower_bound DESC').search(params[:search]).paginate(page: params[:page], per_page: 10)
             when 'by_upper_bound'
               #  Job.published.order('wage_upper_bound DESC')
-              Job.published.order('wage_upper_bound DESC').search(params[:search]).paginate(page: params[:page], per_page: 5)
+              Job.published.order('wage_upper_bound DESC').search(params[:search]).paginate(page: params[:page], per_page: 10)
             else
-              Job.published.recent.search(params[:search]).paginate(page: params[:page], per_page: 5)
+              Job.published.recent.search(params[:search]).paginate(page: params[:page], per_page: 10)
             end
+    @suggests = Job.published.random5
   end
 
    def new
