@@ -2,9 +2,9 @@ module JobsHelper
 
   def render_job_status(job)
     if job.is_hidden
-      "(隐藏)"
+       content_tag(:span, "", :class => "fa fa-music")
     else
-      "(显示)"
+      content_tag(:span, "", :class => "fa fa-headphones")
     end
   end
 end
