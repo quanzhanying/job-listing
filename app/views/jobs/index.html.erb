@@ -1,0 +1,41 @@
+<div class="col-md-12">
+
+  <div class="group">
+  <h2 class="text-center">  Job Lists </h2>
+  </div>
+  <div class="dropdown clearfix pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Order
+      <span class"caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+      <li>
+      <%= link_to("Order by Wage_Lower_Bound", jobs_path(:order => "by_lower_bound")) %>
+      </li>
+      <li>
+      <%= link_to("Order by Wage_Upper_Bound", jobs_path(:order => "by_upper_bound")) %>
+      </li>
+      <li>
+      <%= link_to("Order by Update_Time", jobs_path ) %>
+      </li>
+    </ul>
+  </div>
+  
+
+  <table class="table table-hover">
+    <tr>
+      <th> Job title </th>
+      <th>Wage_Lower_Bound</th>
+      <th>
+         Wage_Upper_Bound
+        <span class="fa fa-caret-down"></span>
+      </th>
+      <th> Updated_at </th>
+    </tr>
+
+    <tbody>
+    <%= render :partial => "job_item", :collection => @jobs, :as => :job %>
+    </tbody>
+  </table>
+
+</div>

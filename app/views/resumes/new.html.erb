@@ -1,0 +1,9 @@
+<div class="well">
+  <%= simple_form_for @resume, html:{ multripart: true } do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
+    <%= f.submit "Save", class:"btn btn-primary" %>
+  <% end %>
+</div>
