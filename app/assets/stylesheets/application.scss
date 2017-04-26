@@ -109,11 +109,12 @@ body {
 
 
  .box {
-     background-image: url("http://ww1.sinaimg.cn/large/006tNc79gy1fevqlbxn0lj31kw11ynpi.jpg");
+     background-image: image-url("header.jpg");
      background-repeat: no-repeat;
      background-size: cover;
      margin-bottom: 50px;
      margin-top: -20px;//与导航栏边距 ，不显示白边
+
 
      .box-inner {
          background-color: rgba(250, 250, 250, 0.69);
