@@ -1,29 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <h3>个人资料</h3>
-      <ul class="list-group">
-        <li href="#" class="list-group-item">
-          <strong>登录邮箱：</strong><%= current_user.email %>
-        </li>
-        <li href="#" class="list-group-item">
-          <strong>昵称</strong>：韵儿爸爸
-        </li>
-        <li href="#" class="list-group-item">
-          <strong>性别</strong>：男
-        </li>
-        <li href="#" class="list-group-item">
-          <strong>生日</strong>：40
-        </li>
-        <li href="#" class="list-group-item">
-          <strong>座右铭</strong>：当爱已成往事，我愿随风而去
-        </li>
 
-      </ul >
-    </div>
 
-    <div class="col-md-9">
-      <h3 class="text-center">你已投的匠职</h3>
+    <div class="col-md-12">
+      <h3>你已投的匠职</h3>
 
       <div class="table-responsive">
           <table class="table table-boldered table-striped">
@@ -45,7 +25,7 @@
                       </td>
                       <td>竞征人数</td>
                       <td>收藏</td>
-                      <!-- <td>操作</td> -->
+                      <td>状态</td>
                   </tr>
               </thead>
               <tbody>
@@ -71,6 +51,13 @@
                           <i class="fa fa-bookmark-o"></i>
                           <% end %>
                       </td>
+                      <td>
+                        <% if current_user && current_user.has_postmen_of?(job) %>
+                          <%= link_to("已应征", new_job_resume_path(job), class: "btn btn-xs btn-success disabled", method: :get) %>
+                        <% else %>
+                          <%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success", method: :get) %>
+                        <% end %>
+                      </td>
                       <!-- <td>
                         <%= link_to("撤回", account_post_path(job), method: :delete, class: "btn btn-xs btn-success") %>
                       </td> -->
@@ -83,7 +70,7 @@
       <hr>
 
 
-      <h3 class="text-center">你收藏匠职</h3>
+      <h3>你收藏匠职</h3>
 
       <div class="table-responsive">
           <table class="table table-boldered table-striped">

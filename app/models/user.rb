@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :jobs
   has_many :resumes
+  belongs_to :info
 
 
   # ---已投功能---
@@ -46,6 +47,7 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+
 
 
 end

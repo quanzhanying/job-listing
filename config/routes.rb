@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+
   get "about/index"
 
   root 'welcome#index'
