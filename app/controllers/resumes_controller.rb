@@ -13,12 +13,22 @@ class ResumesController < ApplicationController
     @resume.user = current_user
 
     if @resume.save
+      current_user.join_post!(@job)
       flash[notice] = "成功提交简历"
       redirect_to job_path(@job)
     else
       redirect_to :new
     end
   end
+
+  # def destroy
+  #   @job = Job.find(params[:job_id])
+  #   @resume = Resume.find(params[:id])
+  #   @resume.destroy
+  #   current_user.quit_post!(@job)
+  #
+  #   redirect_to account_posts_path
+  # end
 
 
   private

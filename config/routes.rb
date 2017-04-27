@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :account do
+    resources :posts
+  end
+
   get "about/index"
 
   root 'welcome#index'

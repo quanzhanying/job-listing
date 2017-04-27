@@ -53,11 +53,18 @@
                 <tr>
                     <td>匠职</td>
                     <td>工种</td>
-                    <td>薪俸范围</td>
+                    <td>薪俸
+                        <%= link_to jobs_path(:order => "by_lower_bound"), class: "btn btn-xs btn-default" do%>
+                        上限<i class="fa fa-caret-up"></i><% end %>
+                        <%= link_to jobs_path(:order => "by_upper_bound"), class: "btn btn-xs btn-default" do%>
+                        下限<i class="fa fa-caret-down"></i><% end %></td>
                     <td>公司</td>
                     <td>城市</td>
-                    <td>创建时间</td>
+                    <td>
+                        <%= link_to jobs_path, class: "btn btn-xs btn-default" do%>
+                        创建时间<i class="fa fa-caret-down"></i><% end %></td>
                     <td>竞征人数</td>
+                    <td>收藏</td>
                     <td>操作</td>
                 </tr>
             </thead>
@@ -76,8 +83,21 @@
                     <td><%= job.company %></td>
                     <td><%= job.city %></td>
                     <td><%= job.created_at.to_date %></td>
-                    <td><%= job.resumes.count %></td>
-                    <td><%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success") %></td>
+                    <td><%= job.resume_relationship.count %></td>
+                    <td>
+                        <% if current_user && current_user.is_member_of?(job) %>
+                        <i class="fa fa-bookmark"></i>
+                    <% else %>
+                        <i class="fa fa-bookmark-o"></i>
+                        <% end %>
+                    </td>
+                    <td>
+                      <% if current_user && current_user.has_postmen_of?(job) %>
+                        <%= link_to("已应征", new_job_resume_path(job), class: "btn btn-xs btn-success disabled", method: :get) %>
+                      <% else %>
+                        <%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success", method: :get) %>
+                      <% end %>
+                    </td>
                 </tr>
                 <% end %>
             </tbody>
