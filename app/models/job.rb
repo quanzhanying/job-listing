@@ -9,7 +9,7 @@ class Job < ApplicationRecord
     self.save
   end
 
-  has_many :resume
+  has_many :resumes
 
   validates :title, presence: true
   validates :wage_upper_bound, presence: true
