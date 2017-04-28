@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get :wood
       get :stone
       get :search
+      get :perjobs
     end
     resources :resumes
   end

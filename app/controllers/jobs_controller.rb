@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :join, :quit]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :join, :quit, :perjobs]
   before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
   before_action :validate_search_key, only: [:search]
 
@@ -33,7 +33,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = current_user
     if @job.save
-      redirect_to jobs_path, notice: "新建职位成功！待管理员审核！"
+      redirect_to perjobs_jobs_path, notice: "新建职位成功！待管理员审核后将公开发布！"
     else
       render :new
     end
@@ -44,7 +44,7 @@ class JobsController < ApplicationController
 
   def update
     if @job.update(job_params)
-      redirect_to jobs_path, notice: "更新职位成功！"
+      redirect_to perjobs_jobs_path, notice: "更新职位成功！"
     else
       render :edit
     end
@@ -52,11 +52,19 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-    redirect_to jobs_path, notice: "删除职位成功！"
+    redirect_to perjobs_jobs_path, notice: "删除职位成功！"
   end
 
   def admin
   end
+
+
+# --个人发布职位--
+
+  def perjobs
+    @jobs = current_user.jobs
+  end
+
 
 # --category--
 
@@ -153,7 +161,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     if current_user != @job.user
-      redirect_to root_path, alert: "你没有权限修改！"
+      redirect_to perjobs_jobs_path, alert: "你没有权限修改！"
     end
   end
 

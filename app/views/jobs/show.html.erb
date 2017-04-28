@@ -42,7 +42,11 @@
             </ul>
         </div>
         <div class="container">
-            <%= link_to("应征", new_job_resume_path(@job), class: "btn btn-default pull-left") %>
+          <% if current_user && current_user.has_postmen_of?(@job) %>
+            <%= link_to("已应征", new_job_resume_path(@job), class: "btn btn-default disabled", method: :get) %>
+          <% else %>
+            <%= link_to("应征", new_job_resume_path(@job), class: "btn btn-default", method: :get) %>
+          <% end %>
             <% if current_user && current_user.is_member_of?(@job) %>
             <%= link_to quit_job_path(@job), method: :post, class: "btn btn-xs btn-danger pull-right" do%>
             <i class="fa fa-bookmark-o">

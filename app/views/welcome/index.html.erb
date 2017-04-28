@@ -131,7 +131,13 @@
                         <td><%= job.city %></td>
                         <td><%= job.created_at.to_date %></td>
                         <td><%= job.resumes.count %></td>
-                        <td><%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success") %></td>
+                        <td>
+                          <% if current_user && current_user.has_postmen_of?(job) %>
+                            <%= link_to("已应征", new_job_resume_path(job), class: "btn btn-xs btn-success disabled", method: :get) %>
+                          <% else %>
+                            <%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success", method: :get) %>
+                          <% end %>
+                        </td>
                     </tr>
                     <% end %>
                 </tbody>
