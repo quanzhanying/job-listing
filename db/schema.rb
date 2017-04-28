@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428184223) do
+ActiveRecord::Schema.define(version: 20170428194957) do
 
   create_table "collects", force: :cascade do |t|
     t.integer  "job_id"
