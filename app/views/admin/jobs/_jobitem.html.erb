@@ -16,7 +16,7 @@
 <% if !isUserDashBoard %>
 <td class="col-md-3">
   <div row vdivide>
-    <%= link_to("Resumes (" + job.resumes.length.to_s + ")", admin_job_resumes_path(job), class:"btn btn-lg btn-success")%>
+    <%= link_to("Resumes (" + job.resumes.length.to_s + ")", admin_job_resumes_path(job), class:"btn btn-xs btn-success")%>
 
     <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-xs btn-primary") %>
 
