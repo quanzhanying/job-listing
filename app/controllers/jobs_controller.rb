@@ -66,6 +66,14 @@ class JobsController < ApplicationController
   end
 
 
+  # --个人投递职位--
+
+  def perresumes
+    @post_jobs = current_user.post_jobs
+    @collect_jobs = current_user.participated_jobs
+
+  end
+
 # --category--
 
   def steel

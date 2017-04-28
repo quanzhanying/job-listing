@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get :stone
       get :search
       get :perjobs
+      get :perresumes
     end
     resources :resumes
   end

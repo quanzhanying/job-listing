@@ -29,7 +29,7 @@
                       <td>竞征人数</td>
                       <td>收藏</td>
                       <td>状态</td>
-                      <td>操作</td>
+                      <!-- <td>操作</td> -->
                   </tr>
               </thead>
               <tbody>
@@ -62,10 +62,8 @@
                           <%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success", method: :get) %>
                         <% end %>
                       </td>
-              
-                      <!-- <td>
-                        <%= link_to("撤回", account_post_path(job), method: :delete, class: "btn btn-xs btn-success") %>
-                      </td> -->
+                      
+
                   </tr>
                   <% end %>
               </tbody>
