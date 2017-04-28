@@ -17,6 +17,18 @@ class JobsController < ApplicationController
 
   end
 
+  def business
+
+  end
+
+  def professional
+
+  end
+
+  def quality
+
+  end
+
   def new
     @job = Job.new
   end
