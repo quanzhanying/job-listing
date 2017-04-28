@@ -33,9 +33,9 @@ body {
 //---Navbar---
 
 .navbar-default {
-     background-color: #F5F5F5;  //背景颜色
+     background-color: #0aac84;  //背景颜色
 
-     border-color: #F5F5F5; //边框色
+     border-color: #0aac84; //边框色
 
       //底部 margin 不撑开距离
 
@@ -44,7 +44,7 @@ body {
  }
 
   .navbar-default .navbar-brand {
-   color: #607D8B; //字体颜色
+   color: #ffffff; //字体颜色
 
    padding: 10px 15px; //上下10px，左右15px
    line-height: 30px; //文字行高
@@ -55,13 +55,13 @@ body {
 
  .navbar-default .navbar-brand:hover,
  .navbar-default .navbar-brand:focus {
-   color: #66BB6A; //鼠标放置在链接上的文字颜色
+   color: #ffffff; //鼠标放置在链接上的文字颜色
 
    background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
  }
 
  .navbar-default .navbar-nav > li > a{
-   color: #607D8B;  //右侧注册登录按钮颜色
+   color: #ffffff;  //右侧注册登录按钮颜色
    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
    font-size: 15px;
 
@@ -70,25 +70,25 @@ body {
 
  .navbar-default .navbar-nav > li > a:hover,
  .navbar-default .navbar-nav > li > a:focus {
-   color: #66BB6A;
+   color: #ffffff;
 
-   background-color: transparent;
+   background-color: #009572;
  }
  .navbar-default .navbar-nav > .active > a,
  .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
-   color: #FF6F00;
+   color: #ffffff;
 
-   background-color: #FFE0B2;
+   background-color: #009572;
 
  }
 
  .navbar-default .navbar-nav > .open > a,
  .navbar-default .navbar-nav > .open > a:focus,
  .navbar-default .navbar-nav > .open > a:hover {
-   background-color: #F5F5F5;
+   background-color: #009572;
 
-   color: #66BB6A;
+   color: #ffffff;
 
  }
 //---Navbar---
@@ -109,7 +109,7 @@ body {
 
 
  .box {
-     background-image: url("http://ww4.sinaimg.cn/large/006tNbRwly1ff29sbefnpj31kw11ynpi.jpg");
+     background-image: url("http://ww4.sinaimg.cn/large/006tNbRwgy1ff2jqs78bvj31hf0hen57.jpg");
      background-repeat: no-repeat;
      background-size: cover;
      margin-bottom: 50px;
@@ -153,6 +153,202 @@ body {
 
 }
 
+//------第二块 -------
+
+
+.mdpftop2 {
+    float: left;
+    width: 100%;
+}
+
+.mdwebf {
+    width: 980px;
+    margin: 50px auto 0 auto;
+}
+
+.mnpdbT2 {
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 40px;
+    color: #462e11;
+    text-align: center;
+    letter-spacing: 2pt;
+}
+
+.mnpdbf {
+    float: left;
+    width: 980px;
+    margin-top: 10px;
+}
+
+.mnpdpf {
+    float: left;
+    width: 306px;
+    margin: 20px 10px 0 10px;
+}
+
+.mnpdp {
+    float: left;
+    width: 306px;
+    height: 231px;
+    background-color: #000000;
+    text-align: center;
+}
+
+.mnpdTt {
+    float: left;
+    width: 306px;
+    height: 26px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mnpdTt a {
+    font-family: "微軟正黑體","Microsoft JhengHei", "Arial", "Helvetica", "sans-serif";
+    font-size: 15px;
+    color: #5d3d16;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+.v30 {
+    float: left;
+    width: 980px;
+    height: 50px;
+    padding: 5px 0px 5px 0px;
+}
+.clear {
+    clear: both;
+}
+
+//---------第三块-----------
+
+.mdpftopin2 {
+    float: left;
+    width: 100%;
+    height: 480px;
+    background-color: #f7f6f4;
+}
+
+.mdflow {
+    width: 568px;
+    padding: 0 2px 0 390px;
+    margin: 50px auto 0 auto;
+}
+
+.mdflowTt {
+    float: left;
+    width: 568px;
+    padding-top: 80px;
+    margin-bottom: 10px;
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 40px;
+    color: #462e11;
+    text-align: center;
+    line-height: 30px;
+}
+.mdflowTt ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+.mdflowTt li {
+    margin: 0 0 15px 0;
+    strong, b {
+    font-weight: bold;
+}
+}
+
+.mdflowst {
+    float: left;
+    width: 568px;
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 20px;
+    color: #462e11;
+    text-align: left;
+}
+.mdflowst ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+.mdflowst li {
+    margin: 0 0 10px 0;
+}
+
+
+
+.mdflowfPw {
+    float: left;
+    width: 650px;
+    margin: 25px 15px 0 200px;
+}
+
+
+
+
+//----------首页第四块-----------
+
+.mdpftopin {
+    float: left;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+.mnbtnauto {
+    width: 980px;
+    margin: 45px auto 0 auto;
+}
+.mnbtr {
+    float: left;
+    width: 960px;
+    margin: 0 10px 10px 10px;
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 15px;
+    color: #462e11;
+    text-align: center;
+    line-height: 30px;
+}
+.brownbT {
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 28px;
+    color: #462e11;
+    text-align: center;
+    line-height: 68px;
+}
+.mnbtn {
+    float: left;
+    width: 980px;
+}
+.mncsoutf {
+    float: left;
+    width: 215px;
+    margin: 40px 15px 0 15px;
+}
+.mncasep {
+    float: left;
+    width: 215px;
+    height: 160px;
+    margin-bottom: 10px;
+    background-color: #000000;
+}
+.mncaseTt {
+    float: left;
+    width: 211px;
+    padding: 0 2px 0 2px;
+    text-align: center;
+}
+.v70 {
+    float: left;
+    width: 960px;
+    height: 70px;
+    padding: 5px 0px 5px 0px;
+}
+.clear {
+    clear: both;
+}
+
+
+
+
  //---------Content---------
 
   .content-section-a {
@@ -194,12 +390,13 @@ body {
 //---------Footer---------
 
 .footer-default {
-    color: #607D8B;
+
 }
 
 footer .footer-below {
     padding: 25px 0;
-    background-color: #F5F5F5;
+    background-color: #0aac84;
+    color: #ffffff;
 }
 
 
