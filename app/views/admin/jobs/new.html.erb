@@ -1,13 +1,25 @@
-<h1> 乐团招人 </h1>
 
-<%= simple_form_for [:admin,@job] do |f| %>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email %>
-<%= f.input :is_hidden %>
 
-  <%= f.submit "发布" %>
-<% end %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      乐团招人
+    </h3>
+  </div>
+  <div class="panel-body">
+    <%= simple_form_for [:admin,@job] do |f| %>
+
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :wage_lower_bound, :label => "薪资下限" %>
+    <%= f.input :wage_upper_bound, :label => "薪资上限" %>
+    <%= f.input :contact_email %>
+    <%= f.input :is_hidden %>
+
+      <%= f.submit "发布", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>

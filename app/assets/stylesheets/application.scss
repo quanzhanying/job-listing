@@ -18,3 +18,115 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+html { height: 100%;}
+  body { min-height: 100%; display: flex; flex-direction: column;}
+  .content { flex: 1;}
+
+/* Add a dark background color with a little bit see-through */
+.navbar {
+    margin-bottom: 0;
+    background-color: #373737;
+    border: 0;
+    font-size: 17px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand {
+    color: #26A69A !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #26A69A !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn #26A69A */
+.dropdown-menu li a:hover {
+    background-color: #26A69A !important;
+}
+
+
+body {
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+
+
+
+.carousel-inner img {
+
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+
+
+.container {
+    padding: 80px 120px;
+}
+
+
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+
+}
+.person:hover {
+    border-color: #f1f1f1;
+}
+
+
+
+
+/* Add a dark background color to the footer */
+footer {
+    background-color: #2d2d30;
+    color: #26A69A;
+    padding: 32px;
+}
+
+footer a {
+    color: #26A69A;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}

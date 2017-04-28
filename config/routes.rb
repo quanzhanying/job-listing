@@ -8,7 +8,7 @@ Rails.application.routes.draw do
        post :hide
 
      end
-     resources :resumes 
+     resources :resumes
    end
  end
 
@@ -16,5 +16,13 @@ Rails.application.routes.draw do
    resources :resumes
  end
 
- root 'jobs#index'
+ root 'welcome#index'
+
+ resources :jobs do
+   collection do
+     get :search
+   end
+   resources
+   end
  end
+ 
