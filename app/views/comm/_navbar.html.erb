@@ -1,10 +1,19 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/"><img src="<%= image_url 'logo.png' %>"/>18K Offer</a>
+    <div class="navbar-header col-sm-3 col-md-3">
+      <a class="navbar-brand" href="/"><img src="<%= image_url 'logo2.png' %>"/><span class="brand-name">今日招聘</span></a>
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="col-sm-7 col-md-7 ">
+            <form class="navbar-form" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" id="search-input" placeholder="Search" name="q">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" id="btn-search" type="submit">搜索</button>
+                </div>
+            </div>
+            </form>
+    </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if current_user.blank? %>
         <li>

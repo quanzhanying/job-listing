@@ -17,39 +17,34 @@
  @import "bootstrap";
  @import "font-awesome";
 
+//jumbotron
 .jumbotron{
-  background-image: url('https://cdn.pixabay.com/photo/2017/04/08/09/59/mushrooms-2212899_960_720.jpg');
+  background-image: url('/images/headbk.jpg');
   background-repeat: no-repeat;
   margin: 0 -15px 20px;
   background-size: cover;
-  padding-bottom: 100px;
+  padding-bottom: 120px;
 }
 
 .title{
-background-color: rgba(250, 250, 250, 0.39);
-max-width: 500px;
+background-color: transparent;
+max-width: 100%;
 margin-top: 200px;
-margin-bottom: 0;
-border-top-right-radius: 3px;
-border-top-left-radius: 3px;
+margin-bottom: 80px;
 }
 
 .jumbotron h1 , .jumbotron .h1{
-  text-align: left;
-  color: #222;
-  padding: 50px 20px 0;
+  text-align: center;
+  color: white;
 }
 
 .jumbotron p{
   margin: 0;
   font-size: 26px;
-  max-width: 500px;
-  background-color: rgba(250, 250, 250, 0.39);
+  max-width: 100%;
   padding: 20px;
-  text-align: left;
-  color: #222;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  text-align: center;
+  color: #dcdcdd;
 }
 
 .slogan{
@@ -61,41 +56,37 @@ border-top-left-radius: 3px;
 }
 
 .lead{
-  margin-bottom: 60px;
-  text-align: center;
-  color: white;
-}
-
-.caption{
-  margin: 30px;
-  text-align: center;
-  top: 20px;
-}
-
-.thumbnail{
+  height: 200px;
+  background-color: transparent;
   border: 0 none;
-  box-shadow: none;
-  margin-top: 60px;
 }
 
-
-.custab{
-  border: 1px solid #ccc;
-  padding: 5px;
-  margin: 5% 0;
-  box-shadow: 3px 3px 2px #ccc;
-  transition: 0.5s;
+ .jumbotron .lead .btn-apply{
+   margin-top: 20px;
+   width: 300px;
+   letter-spacing: 8px;
+   font-size: 30px;
+   padding: 30px 0px ;
+   line-height: 0.5;
+   background-color: #00c6b6;
+   border: 0 none;
 }
 
-.custab:hover{
-  box-shadow: 3px 3px 2px transparent;
-  transition: 0.5s;
+.jumbotron .lead .btn-apply:hover,
+.jumbotron .lead .btn-apply:focus
+{
+  background-color: #00b0a1;
 }
+//end jumbotron
 
+// Nav bar
 .navbar-default{
   background-color: #212121;
   border-color: #212121;
   margin-bottom: 0;
+  padding: 10px;
+  height: 80px;
+  vertical-align: middle;
 }
 
 @media (min-width:768px){
@@ -105,41 +96,45 @@ border-top-left-radius: 3px;
 }
 
 .navbar-default .navbar-brand{
-  color: #ef6c00;
-  padding: 10px 15px;
-  line-height: 30px;
+  color: white;
+  padding-left: 100px;
+  font-size: 1.6em;
 }
 
-.navbar-default .navbar-brand:hover
-.navbar-default .navbar-brand:focus
-{
-    color: #ff6f00;
-    background-color: transparent;
+.navbar-default .navbar-brand:hover{
+  color: #DCDCDD;
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #ef6c00;
+  color: white;
+  font-size: 1.6em;
 }
 
-.navbar-default .navbar-nav > li > a:hover
+.navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus
 {
-  color: #ff6f00;
-  background-color: transparent;
+  color: white;
+  background-color: #15AFA1;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus{
+  color: white;
+  background-color: #15AFA1;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:hover{
-  color: #FF6F00;
-  background-color: #FFE0B2;
+  color: white;
+  background-color: #15AFA1;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover{
-  color: #212121;
-  background-color: #FFE0B2;
+  color: #DCDCDD;
+  background-color: red;
 }
 
 .navbar-brand > img{
@@ -148,6 +143,50 @@ border-top-left-radius: 3px;
   display: inline-block;
   margin-right: 10px;
 }
+
+
+#btn-search{
+  color: white;
+  background-color: transparent;
+  border-radius: 0px;
+  border: 0 none;
+  height: 100%;
+  width: 100px !important;
+  margin: 0;
+  padding: 0;
+}
+
+#btn-search:hover, #btn-search:focus{
+  color: white;
+  background-color: #15AFA1;
+  border-radius: 0px;
+  border: 0px none;
+  box-shadow: none;
+  width: 100px !important;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.input-group{
+  background-color: #00c5b6;
+  border-radius: 0;
+  padding: 1px;
+  height: 100%;
+  width: 500px;
+}
+
+#search-input,#search-input:focus,#search-input:hover,#search-input:active{
+  border-radius: 0px;
+  border: 0 none;
+  height: 40px;
+  width: 400px;
+}
+
+
+
+
+//end nav bar
 
 .btn-danger {
   color: #fff;
@@ -264,3 +303,257 @@ border-top-left-radius: 3px;
 .login-help{
   font-size: 12px;
 }
+
+// content
+.caption{
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+  color: #161616;
+}
+.caption p{
+  color: #5c5b5c;
+  font-size: 25px;
+}
+
+.thumbnail{
+  border: 0 none;
+  box-shadow: none;
+  margin-top: 80px;
+}
+
+
+.img-thumbnail{
+  border: none;
+  width: 140px;
+  height: 140px;
+}
+
+.goodjob{
+  margin: 0  -15px  0;
+  background-color: #f1f1f1;
+}
+
+.thumbnailicon{
+  border: 0 none;
+  box-shadow: none;
+  margin-top: 80px;
+}
+.thumbnailicon img{
+  background-color: transparent;
+  height: 200px;
+  width: auto;
+}
+
+.thumbnailinfo{
+  border: 0 none;
+  box-shadow: none;
+  margin-top: 80px;
+  text-align: left;
+  margin-bottom: 80px;
+}
+
+.goodjob p{
+  color: #5C5B5C;
+  font-size: 35px;
+}
+
+.goodjob h1{
+  color: #161616;
+  font-size: 55px;
+  margin-bottom: 50px;
+}
+
+// section features
+.easyuse{
+  background-color: white;
+  margin: 0  -15px  0;
+}
+
+.easyuse .container-fluid{
+    margin: 0  -15px 0;
+}
+
+.upper{
+  margin: 0;
+  color: white;
+  background-image: url('/images/features_cell_bk.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+
+.upper h1{
+  background-color: transparent;
+  max-width: 100%;
+  margin-top: 0px;
+  padding-top: 100px;
+  color: white;
+  text-align: center;
+  font-size: 55px;
+}
+
+.shadowthumbnail{
+  text-align: center;
+  min-width: 300px !important;
+  margin: 40px 25% 40px;
+  background-color: white;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border: 0;
+  height: 400px;
+  width: 50%;
+}
+
+.features{
+  margin: -200px 0 0;
+  width: 100%;
+}
+
+
+.shadowthumbnail .img-thumbnail{
+  width: 100px;
+  height: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.shadowthumbnail h3{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #161616;
+}
+
+.shadowthumbnail p{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #5C5B5C;
+  font-size: 20px;
+}
+
+//end section features
+
+// colorlife
+
+
+.colorlife{
+  margin: 0 -15px 0;
+  background-color: #f1f1f1;
+}
+
+.thumbnailinfoleft {
+  text-align: right;
+  padding-bottom: 100px;
+}
+
+.thumbnailinfoleft p{
+  color: #5C5B5C;
+  font-size: 35px;
+}
+
+.thumbnailinfoleft h1 {
+  margin-top: 100px;
+  color: #161616;
+  font-size: 55px;
+  margin-bottom: 50px;
+}
+
+//end colorlife
+
+// applynow
+.applynow{
+  margin: 0  -15px 0;
+}
+
+.applynow .bottomapply{
+  background-image: url('/images/applynow_bk.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+.applynow h3{
+  margin: 0;
+  font-size: 50px;
+  padding-top: 160px;
+  margin-bottom: 80px;
+}
+
+.applynow .btnApply{
+  text-align: center;
+  width: 100%;
+  padding-bottom: 180px;
+}
+
+.applynow .btnApply .btn{
+  margin-top: 20px;
+  width: 300px;
+  letter-spacing: 8px;
+  font-size: 30px;
+  padding: 30px 0px;
+  line-height: 0.5;
+  background-color: #00c6b6;
+  border: 0 none;
+  color: white;
+}
+//end applynow
+
+//end content
+
+// admin
+.custab{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 2px transparent;
+  transition: 0.5s;
+}
+// end admin
+
+//footer
+.snsicon{
+  margin: 30px 20px 30px;
+}
+.feedback{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footerinfo{
+  margin: 0;
+  margin: 0px -15px 0px;
+  background-color: black;
+}
+
+.goup{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footerinfo .input-group{
+  text-align: center;
+  margin: 30px 30px;
+}
+
+#subscribe-input,
+#subscribe-input:focus,
+#subscribe-input:hover,
+#subscribe-input:active{
+  border-radius: 0px;
+  border: 0 none;
+  height: 40px;
+  width: 400px;
+}
+
+
+#subscribe-input{
+  margin-left: 1px;
+}
+// end footer
