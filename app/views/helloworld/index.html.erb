@@ -14,8 +14,8 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="thumbnail">
-          <img src="/images/one.png" alt="" class="img-thumbnail"/>
-            <div class="caption">
+          <img src="/images/one.png" alt="" class="img-thumbnail slideanim"/>
+            <div class="caption slideanim">
                 <h1>创建账号</h1>
                 <p>
                   创建账号，方便 <br />
@@ -26,8 +26,8 @@
     </div>
       <div class="col-sm-4">
         <div class="thumbnail">
-          <img src="/images/two.png" alt="" class="img-thumbnail"/>
-            <div class="caption">
+          <img src="/images/two.png" alt="" class="img-thumbnail slideanim"/>
+            <div class="caption slideanim">
                 <h1>撰写简历</h1>
                 <p>
                   简单扼要，突出<br />
@@ -38,8 +38,8 @@
       </div>
       <div class="col-sm-4">
         <div class="thumbnail">
-          <img src="/images/three.png" alt="" class="img-thumbnail"/>
-            <div class="caption">
+          <img src="/images/three.png" alt="" class="img-thumbnail slideanim"/>
+            <div class="caption slideanim">
                 <h1>发布简历</h1>
                 <p>
                   1 键发布，随时 <br />
@@ -58,10 +58,10 @@
   <div class="row">
       <div class="col-sm-4 col-md-4 text-center">
         <div class="thumbnailicon">
-          <img src="/images/icon_new.png" class="img-thumbnail">
+          <img src="/images/icon_new.png" class="img-thumbnail slideanim">
         </div>
       </div>
-      <div class="col-sm-8 col-md-8 thumbnailinfo">
+      <div class="col-sm-8 col-md-8 thumbnailinfo slideanim">
         <h1>好工作，一网打尽</h1>
         <p>
           找工作，上今天招聘 <br />
@@ -79,11 +79,11 @@
 <section id="easyuse" class="easyuse">
   <div class="container-fluid">
     <div class="upper">
-        <h1>易用，好使</h1>
+        <h1 class="slideanim">易用，好使</h1>
     </div>
     <div class="row features">
 
-      <div class="col-sm-4 col-md-4 shadowcell">
+      <div class="col-sm-4 col-md-4 shadowcell slideanim">
         <div class="shadowthumbnail">
           <img src="/images/icon_search.png" alt="search" class="img-thumbnail"/>
           <h3>快速搜索</h3>
@@ -94,7 +94,7 @@
         </div>
       </div>
 
-      <div class="col-sm-4 col-md-4 shadowcell">
+      <div class="col-sm-4 col-md-4 shadowcell slideanim">
         <div class="shadowthumbnail">
           <img src="/images/icon_message.png" alt="search" class="img-thumbnail"/>
           <h3>用户评论</h3>
@@ -105,7 +105,7 @@
         </div>
       </div>
 
-      <div class="col-sm-4 col-md-4 shadowcell">
+      <div class="col-sm-4 col-md-4 shadowcell slideanim">
         <div class="shadowthumbnail">
           <img src="/images/icon_star.png" alt="search" class="img-thumbnail"/>
           <h3>星级打分</h3>
@@ -126,18 +126,18 @@
 <div class="container-fluid" >
   <div class="row">
 
-      <div class="col-sm-8 col-md-8 thumbnailinfoleft">
+      <div class="col-sm-8 col-md-8 thumbnailinfoleft slideanim">
         <h1>开启精彩人生</h1>
       <p>
+        订阅你感兴趣的公司，职位<br />
             我们第一时间帮你开启<br />
-            天天有推荐，日日有更新<br />
             新的职业大门
         </p>
       </div>
 
       <div class="col-sm-4 col-md-4 text-center">
         <div class="thumbnailicon">
-          <img src="/images/icon_color_bubble.png" class="img-thumbnail">
+          <img src="/images/icon_color_bubble.png" class="img-thumbnail slideanim">
         </div>
       </div>
 
@@ -148,11 +148,25 @@
 
 <!-- apply now  -->
 <section id="applynow" class="applynow">
-  <div class="bottomapply">
-    <h3>现在应聘，即可获赠简历秘籍一本</h3>
-    <div class="btnApply">
+  <div class="bottomapply ">
+    <h3 class="slideanim">现在应聘，即可获赠简历秘籍一本</h3>
+    <div class="btnApply slideanim">
         <a class="btn btn-lg" href="/jobs" target="_parent">我要应聘</a>
     </div>
   </div>
 </section>
 <!-- end apply now  -->
+
+<script>
+$(window).scroll(
+  function(){
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+      var wintop = $(window).scrollTop();
+      if(pos < wintop + 600){
+        $(this).addClass("slide");
+      }
+    });
+  }
+);
+</script>
