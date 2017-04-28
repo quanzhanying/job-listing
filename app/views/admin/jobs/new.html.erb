@@ -5,5 +5,9 @@
 <%= f.input :title %>
 <%= f.input :description %>
 
+<%= f.input :wage_lower_bound, :label => "薪资下限" %>
+<%= f.input :wage_upper_bound, :label => "薪资上限" %>
+<%= f.input :contact_email %>
+
   <%= f.submit "Submit" %>
 <% end %>
