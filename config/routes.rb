@@ -17,7 +17,7 @@ Rails.application.routes.draw do
         get :search
       end
     end
-
+  
   root 'welcome#index'
 
   get 'introduction' => 'jobs#introduction'
