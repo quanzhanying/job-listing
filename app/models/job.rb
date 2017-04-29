@@ -3,6 +3,7 @@ class Job < ApplicationRecord
   validates :wage_upper_bound, presence: true
   validates :wage_lower_bound, presence: true
   validates :wage_lower_bound, numericality: { greater_than: 0 }
+  has_many :resumes
   scope :recent, -> { order("created_at DESC")}
   scope :wage_up, -> { order('wage_upper_bound DESC')}
   scope :wage_down, ->{order('wage_lower_bound DESC')}
