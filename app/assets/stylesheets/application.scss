@@ -102,12 +102,15 @@
 //---------Content---------
 
 .content-section-a {
-    padding: 50px 0;
+    padding: 50px ;
+    margin: 0 -15px;
+
     background-color: #f8f8f8;
 }
 
 .content-section-b {
     padding: 50px 0;
+    margin: 0 -15px;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
 }
@@ -133,10 +136,29 @@ footer {
     color: white;
 }
 
-footer .footer-below {
-    padding: 25px 0;
+
+footer .footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+
+
+/* Set the fixed height of the footer here */
+// height: 150px;
+
+ padding: 10px 0 0 0;
+
     background-color: #233140;
 }
+html {
+   position: relative;
+   min-height: 100%;
+ }
+
+ body {
+   /* Margin bottom by footer height */
+   margin-bottom: 150px;
+ }
 
 //-----table
 .custab{
@@ -215,18 +237,17 @@ footer .footer-below {
      color: #5D4037;
 
    }
+//让大图满屏显示
 
-  //让大图满屏显示
-
-         .container-fluid .jumbotron{
-         padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
-         margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
-         border-radius: 0;//圆角为0
+ .container-fluid .jumbotron{
+ padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+ margin: 0 -15px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+ border-radius: 0;//圆角为0
           }
 
 //shouye
 .jumbotron {
-  background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+  background-image:url('/images/shouye.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
@@ -273,7 +294,7 @@ footer .footer-below {
 .lead {
   margin-bottom: 60px;
   text-align: center;
-  color: white;
+  color: rgba(9, 9, 9, 0.55);
 }
 
 

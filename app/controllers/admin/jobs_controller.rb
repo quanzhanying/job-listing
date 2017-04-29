@@ -1,6 +1,6 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!,only:[:new, :create, :update, :edit, :destroy]
-  before_action :require_is_admin
+  # before_action :require_is_admin
   layout "admin"
   def show
     @job=Job.find(params[:id])
@@ -17,6 +17,7 @@ class Admin::JobsController < ApplicationController
 
   def create
     @job=Job.new(job_params)
+    @job.user = current_user
     if @job.save
       redirect_to admin_jobs_path
     else

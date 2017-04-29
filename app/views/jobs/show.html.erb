@@ -3,4 +3,27 @@
 <p>
   <%=simple_format(@job.description)%>
 </p>
-<%= link_to("发送简历", new_job_resume_path(@job), class: "btn btn-default pull-right")%>
+
+
+<%= link_to("评论", new_job_resume_path(@job), class: "btn btn-default pull-right")%>
+<table class="table table-boldered">
+  <thead>
+      <tr>
+          <td>评论</td>
+          <td>发布时间</td>
+      </tr>
+
+  </thead>
+  <tbody>
+      <% @job.resumes.each do |job| %>
+      <tr>
+          <td>
+              <%=simple_format(job.description)%>
+          </td>
+
+          <td>
+              <%= job.created_at %>
+          </td>
+      </tr>
+      <% end %>
+  </tbody>

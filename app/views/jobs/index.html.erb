@@ -1,4 +1,4 @@
-<div class="dropdown clearfix pull-right">
+<!-- <div class="dropdown clearfix pull-right">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
         <span class="caret"></span>
@@ -16,15 +16,18 @@
 
         </li>
     </ul>
+</div> -->
+<div class="tpull-right">
+  <%=link_to("发布新欢",new_admin_job_path,:class=>"btn btn-default")%>
 </div>
-
 <table class="table table-boldered">
   <thead>
       <tr>
-          <td>职缺</td>
-          <td>薪资下限</td>
-          <td>薪资上限</td>
-          <td>刊登时间</td>
+          <td>What are you zuijinfan？</td>
+          <td></td>
+          <!-- <td>薪资下限</td>
+          <td>薪资上限</td> -->
+          <td>发布时间</td>
       </tr>
 
   </thead>
@@ -32,13 +35,16 @@
       <% @jobs.each do |job| %>
       <tr>
           <td>
-              <%= link_to(job.title, job_path(job)) %>
+              <%= link_to(job.user.email, chaxun_job_path(job),:method => :get)%>最近FAN<%= link_to(job.title, job_path(job))%><%=simple_format(job.description)%>
           </td>
-          <td>
+          <!-- <td>
               <%= job.wage_lower_bound %>
           </td>
           <td>
               <%= job.wage_upper_bound %>
+          </td> -->
+          <td>
+            <%= link_to("评论", new_job_resume_path(job), class: "btn btn-default pull-right")%>
           </td>
           <td>
               <%= job.created_at %>

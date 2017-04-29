@@ -1,14 +1,10 @@
 
-<h1>上传简历</h1>
-
-<hr>
   <%= simple_form_for [@job,@resume] do |f| %>
 
+    <%= f.input :description ,:label => "评论"%>
+    <!-- <%= f.input :title %>
 
-    <%= f.input :title %>
 
-
-
-    <%= f.input :attachment %>
+    <%= f.input :attachment %> -->
     <%= f.submit "Send" %>
   <% end %>

@@ -18,7 +18,7 @@ class JobsController < ApplicationController
     if @job.is_hidden
       flash[:warning] = "This Job already archieved"
       redirect_to root_path
-end
+  end
   end
 
   def edit
@@ -40,6 +40,7 @@ end
 
   def create
     @job=Job.new(job_params)
+    @job.user = current_user
     if @job.save
       redirect_to jobs_path
     else
@@ -52,6 +53,9 @@ end
     @job.destroy
 
     redirect_to jobs_path,notice: "Deleted  "
+  end
+  def chaxun
+    @jobs=Job.find(params[:id]).user.jobs
   end
 
   private

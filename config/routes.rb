@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :jobs do
+    member do
+      post :lishi
+      post :lishi1
+      get :chaxun
+    end
     resources :resumes
   end
 
