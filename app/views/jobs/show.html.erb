@@ -4,8 +4,19 @@
   <%=simple_format(@job.description)%>
 </p>
 
-
 <%= link_to("评论", new_job_resume_path(@job), class: "btn btn-default pull-right")%>
+<% if current_user && current_user.is_shoucang_of?(@job) && current_user!=@job.user %>
+<%= link_to("取消收藏", quit_job_path(@job),:method => :post, class: "btn btn-default pull-right")%>
+<%end %>
+<% if current_user && !current_user.is_shoucang_of?(@job) && current_user!=@job.user %>
+<%= link_to("收藏", join_job_path(@job), :method => :post,class: "btn btn-default pull-right")%>
+<%end %>
+<% if current_user && current_user.following?(@job.user) && current_user!=@job.user %>
+<%= link_to("取消关注", quguan_job_path(@job),:method => :post, class: "btn btn-default pull-right")%>
+<%end %>
+<% if current_user && !current_user.following?(@job.user) && current_user!=@job.user %>
+<%= link_to("关注ta", guanzhu_job_path(@job), :method => :post,class: "btn btn-default pull-right")%>
+<%end %>
 <table class="table table-boldered">
   <thead>
       <tr>

@@ -1,32 +1,11 @@
-<!-- <div class="dropdown clearfix pull-right">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      排序
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li>
-          <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-        </li>
-        <li>
-            <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-
-        </li>
-        <li>
-          <%= link_to("按照发表时间排序", jobs_path ) %>
-
-        </li>
-    </ul>
-</div> -->
-<div class="text-center">
-  <%=link_to("发布新欢",new_job_path,:class=>"btn btn-success center")%>
+<div class="tpull-right">
+  <%=link_to("发布新欢",new_job_path,:class=>"btn btn-default")%>
 </div>
 <table class="table table-boldered">
   <thead>
       <tr>
-          <td>What are you zuijinfan？</td>
+          <td>Ta的历史</td>
           <td></td>
-          <!-- <td>薪资下限</td>
-          <td>薪资上限</td> -->
           <td>发布时间</td>
       </tr>
 
@@ -38,12 +17,6 @@
               <%= link_to(job.user.email, chaxun_job_path(job),:method => :get)%>最近FAN<%= link_to(job.title, job_path(job))%><%=simple_format(job.description)%>
 
           </td>
-          <!-- <td>
-              <%= job.wage_lower_bound %>
-          </td>
-          <td>
-              <%= job.wage_upper_bound %>
-          </td> -->
           <td>
             <%= link_to("评论", new_job_resume_path(job), class: "btn btn-default pull-right")%>
             <% if current_user && current_user.is_shoucang_of?(job) && current_user!=job.user %>

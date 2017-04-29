@@ -43,6 +43,7 @@ class JobsController < ApplicationController
     @job.user = current_user
     if @job.save
       redirect_to jobs_path
+
     else
       render :new
     end
@@ -55,7 +56,7 @@ class JobsController < ApplicationController
     redirect_to jobs_path,notice: "Deleted  "
   end
   def chaxun
-    @jobs=Job.find(params[:id]).user.jobs
+    @jobs=Job.find(params[:id]).user.jobs.where(:is_hidden => false)
   end
 
   def join
@@ -75,6 +76,20 @@ class JobsController < ApplicationController
     end
     redirect_to jobs_path
   end
+
+  def guanzhu
+    @job=Job.find(params[:id])
+    current_user.follow!(@job.user)
+    redirect_to job_path(@job)
+  end
+  def quguan
+    @job=Job.find(params[:id])
+    current_user.unfollow!(@job.user)
+    redirect_to job_path(@job)
+  end
+
+
+
   private
 
   def job_params

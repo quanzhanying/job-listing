@@ -13,5 +13,21 @@ class User < ApplicationRecord
 
   def is_shoucang_of?(job)
     shoucang_jobs.include?(job)
-  end  
+  end
+
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+
+  def following?(other_user)
+    self.relationships.find_by(followed_id: other_user.id)
+  end
+
+  def follow!(other_user)
+    self.relationships.create!(followed_id: other_user.id)
+  end
+  def unfollow!(other_user)
+    self.relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+
 end

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       post :join
       post :quit
       get :chaxun
+      post :guanzhu
+      post :quguan
     end
     resources :resumes
   end

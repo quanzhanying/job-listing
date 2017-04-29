@@ -5,15 +5,18 @@
       <a class="navbar-brand" href="/">首页</a>
       <!-- <a class="navbar-brand" href="/"><i class="fa " aria-hidden="true">首页</i></a> -->
       <a class="navbar-brand" href="/jobs#index">广场</a>
+
     </div>
 
 
     <!--collect the nav links,forms,and other content for toggling-->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user%>
           <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
           <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+
           <!--
           <li><%=link_to("注册",new_user_registration_path)%></li>
           <li><%=link_to("登陆",new_user_session_path)%></li>
@@ -30,14 +33,16 @@
             <%end%>
             <li><%=link_to("我发布的",fabu_account_job_path([:id]),:method => :get)%></li>
             <li><%=link_to("我收藏的",dianzan_account_job_path([:id]),:method => :get)%></li>
-            <li><%=link_to("我关注的人",jobs_path)%></li>
+            <li><%=link_to("我关注的人",account_jobs_path)%></li>
             <li><%=link_to("退出",destroy_user_session_path,method: :delete)%></li>
 
           </ul>
           </li>
         <%end%>
       </ul>
+      <!-- <a class="navbar-brand pull-right" href="/jobs/new">发布</a> -->
     </div>
+
     <!-- /.navbar-collapse-->
   </div>
 </nav>
