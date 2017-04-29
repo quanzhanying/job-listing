@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!,only:[:new,:create,:edit,:update,:destroy]
+  before_action :authenticate_user!,only:[:new,:create,:edit,:update,:destroy,:join,:quit]
 
   def index
     @jobs=case params[:order]
@@ -58,6 +58,23 @@ class JobsController < ApplicationController
     @jobs=Job.find(params[:id]).user.jobs
   end
 
+  def join
+    @job=Job.find(params[:id])
+    if !current_user.is_shoucang_of?(@job)
+      @job.shoucangzhes << current_user
+      flash[:notice] = "添加至收藏！"
+    end
+    redirect_to jobs_path
+  end
+
+  def quit
+    @job=Job.find(params[:id])
+    if current_user.is_shoucang_of?(@job)
+      @job.shoucangzhes.delete(current_user)
+      flash[:warning] = "取消收藏"
+    end
+    redirect_to jobs_path
+  end
   private
 
   def job_params

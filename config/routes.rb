@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :jobs do
     member do
-      post :lishi
-      post :lishi1
+      post :join
+      post :quit
       get :chaxun
     end
     resources :resumes
@@ -26,6 +26,16 @@ Rails.application.routes.draw do
       end
       resources :resumes
     end
+  end
+
+  namespace :account do
+    resources :jobs do
+      member do
+        get :dianzan
+        get :fabu
+      end
+    end
+    resources :resumes
 
   end
   root "welcome#index"

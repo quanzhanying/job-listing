@@ -18,7 +18,7 @@
     </ul>
 </div> -->
 <div class="tpull-right">
-  <%=link_to("发布新欢",new_admin_job_path,:class=>"btn btn-default")%>
+  <%=link_to("发布新欢",new_job_path,:class=>"btn btn-default")%>
 </div>
 <table class="table table-boldered">
   <thead>
@@ -36,6 +36,7 @@
       <tr>
           <td>
               <%= link_to(job.user.email, chaxun_job_path(job),:method => :get)%>最近FAN<%= link_to(job.title, job_path(job))%><%=simple_format(job.description)%>
+
           </td>
           <!-- <td>
               <%= job.wage_lower_bound %>
@@ -45,6 +46,14 @@
           </td> -->
           <td>
             <%= link_to("评论", new_job_resume_path(job), class: "btn btn-default pull-right")%>
+            <% if current_user && current_user.is_shoucang_of?(job) && current_user!=job.user %>
+            <%= link_to("取消收藏", quit_job_path(job),:method => :post, class: "btn btn-default pull-right")%>
+            <%end %>
+            <% if current_user && !current_user.is_shoucang_of?(job) && current_user!=job.user %>
+            <%= link_to("收藏", join_job_path(job), :method => :post,class: "btn btn-default pull-right")%>
+            <%end %>
+
+
           </td>
           <td>
               <%= job.created_at %>

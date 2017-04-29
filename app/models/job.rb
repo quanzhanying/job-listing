@@ -10,6 +10,8 @@ class Job < ApplicationRecord
 
   has_many :resumes
   belongs_to :user
+  has_many :shoucang_relationships
+  has_many :shoucangzhes, :through => :shoucang_relationships, :source => :user
 
 
   def publish!

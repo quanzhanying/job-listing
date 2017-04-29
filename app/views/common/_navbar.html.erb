@@ -28,6 +28,9 @@
             <% if current_user.admin?%>
             <li><%=link_to("Admin Panel",admin_jobs_path)%></li>
             <%end%>
+            <li><%=link_to("我发布的",fabu_account_job_path([:id]),:method => :get)%></li>
+            <li><%=link_to("我收藏的",dianzan_account_job_path([:id]),:method => :get)%></li>
+            <li><%=link_to("我关注的人",jobs_path)%></li>
             <li><%=link_to("退出",destroy_user_session_path,method: :delete)%></li>
 
           </ul>

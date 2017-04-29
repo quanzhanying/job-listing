@@ -8,4 +8,10 @@ class User < ApplicationRecord
   end
   has_many :resumes
   has_many :jobs
+  has_many :shoucang_relationships
+  has_many :shoucang_jobs, :through => :shoucang_relationships, :source => :job
+
+  def is_shoucang_of?(job)
+    shoucang_jobs.include?(job)
+  end  
 end
