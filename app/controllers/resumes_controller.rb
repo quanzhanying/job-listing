@@ -15,7 +15,7 @@ class ResumesController < ApplicationController
     @resume.job=@job
     @resume.user = current_user
     if @resume.save
-      redirect_to jobs_path, notice: "The resume #{@resume.title} has been uploaded."
+      redirect_to job_path(@job), notice: "谢谢评论"
     else
       render "new"
     end
@@ -24,7 +24,7 @@ class ResumesController < ApplicationController
   def destroy
     @resume = Resume.find(params[:id])
     @resume.destroy
-    redirect_to resumes_path, notice:  "The resume #{@resume.title} has been deleted."
+    redirect_to resumes_path, notice:  "删除评论"
   end
 
 private

@@ -1,7 +1,7 @@
 <table class="table table-boldered">
   <thead>
       <tr>
-          <td>What are you zuijinfan？</td>
+          <td>我的“新欢”</td>
           <td></td>
           <!-- <td>薪资下限</td>
           <td>薪资上限</td> -->
@@ -22,6 +22,13 @@
               <%= job.wage_upper_bound %>
           </td> -->
           <td>
+            <%= link_to("Delete", job_path(job), :method => :delete,:class => "btn btn-xs btn-danger",:data=>{:confirm=>"Are you sure?"})%>
+            <% if job.is_hidden %>
+
+              <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-success") %>
+            <% else %>
+              <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning") %>
+            <% end %>
             <%= link_to("评论", new_job_resume_path(job), class: "btn btn-default pull-right")%>
           </td>
           <td>
