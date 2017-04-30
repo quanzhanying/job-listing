@@ -8,7 +8,7 @@
     <div class="col-md-12 col-xs-12 job-box">
       <div class="row">
       <!--=== 职位信息 ===-->
-      <div class="col-md-7 col-xs-12 info ">
+      <div class="col-md-7 col-xs-12 info zuobiankuang ">
         <div class="info-top">
 
           最近FAN:
@@ -27,10 +27,10 @@
       <!--=== 公司信息 ===-->
       <div class="col-md-5 col-xs-12 company">
         <div class="company-top">
-          <% if current_user && current_user!=job.user %>
-          来自：<h4><%= link_to(job.user.display_name, chaxun_job_path(job),:method => :get)%></h4>
-          <% else%>
-          <h4>我发布的</h4>
+          <% if current_user==job.user %>
+            <h4>我的^_^</h4>
+          <% elsif %>
+            来自：<h4><%= link_to(job.user.display_name, chaxun_job_path(job),:method => :get)%></h4>
           <% end %>
         </div>
         <div class="company-mid">
@@ -51,10 +51,14 @@
             <%= link_to quit_job_path(job), method: :post do %>
               <span class="fa fa-star">已收藏</span>
             <% end %>
-          <% elsif current_user && !current_user.is_shoucang_of?(job) && current_user!=job.user%>
+          <% elsif !current_user%>
             <%= link_to join_job_path(job), method: :post do %>
               <span class="fa fa-star-o">收藏</span>
             <% end %>
+          <% elsif current_user && !current_user.is_shoucang_of?(job) && current_user!=job.user%>
+              <%= link_to join_job_path(job), method: :post do %>
+                <span class="fa fa-star-o">收藏</span>
+              <% end %>
           <% else %>
               <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn-sm btn-warning") %>
           <% end %>
@@ -73,10 +77,14 @@
             <span class="fa fa-star">已关注</span>
             <% end %>
 
-          <% elsif current_user && !current_user.following?(job.user) && current_user!=job.user %>
+          <% elsif !current_user  %>
             <%= link_to guanzhu_job_path(job), method: :post do %>
               <span class="fa fa-star-o">关注ta</span>
             <% end %>
+          <% elsif current_user && !current_user.following?(job.user) && current_user!=job.user %>
+              <%= link_to guanzhu_job_path(job), method: :post do %>
+                <span class="fa fa-star-o">关注ta</span>
+              <% end %>
           <% else %>
               <%= link_to("Delete", job_path(job), :method => :delete,:class => "btn btn-xs btn-danger",:data=>{:confirm=>"Are you sure?"})%>
           <% end %>
@@ -90,7 +98,6 @@
     <!--=== 没有职位资料 ===-->
     <div class="col-md-12 col-xs-12 no-job-data">
       <h2>本站濒临倒闭，給开个张呗</h2>
-    </div>
   <% end %>
 
   <div class="text-center">

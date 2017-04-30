@@ -6,7 +6,7 @@
   <div class="col-md-12 col-xs-12 job-box">
     <div class="row">
     <!--=== 职位信息 ===-->
-    <div class="col-md-7 col-xs-12 info ">
+    <div class="col-md-7 col-xs-12 info zuobiankuang ">
       <div class="info-top">
 
         最近FAN:
@@ -24,7 +24,7 @@
 
     <!--=== 公司信息 ===-->
     <div class="col-md-5 col-xs-12 company">
-      <div class="company-top">
+      <div class="company-top  ">
         <% if current_user && current_user!=job.user %>
         来自：<h4><%= link_to(job.user.display_name, chaxun_job_path(job),:method => :get)%></h4>
         <% else%>

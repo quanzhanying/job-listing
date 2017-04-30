@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!,only:[:new,:create,:edit,:update,:destroy,:join,:quit]
+  before_action :authenticate_user!,only:[:new,:create,:edit,:update,:destroy,:join,:quit,:chaxun,:guanzhu,:quguan]
+
 
   def index
     @jobs=case params[:order]
@@ -56,7 +57,7 @@ class JobsController < ApplicationController
     redirect_to jobs_path,notice: "Deleted  "
   end
   def chaxun
-    @jobs=Job.find(params[:id]).user.jobs.where(:is_hidden => false)
+    @jobs=Job.find(params[:id]).user.jobs.where(:is_hidden => false).recent
     @user=Job.find(params[:id]).user
   end
 
