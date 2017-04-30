@@ -34,6 +34,8 @@ gem 'simple_form'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'carrierwave', '~> 0.9'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'will_paginate', github: 'jonatack/will_paginate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

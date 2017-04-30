@@ -1,3 +1,20 @@
+GIT
+  remote: git://github.com/activerecord-hackery/ransack.git
+  revision: 8ca8c95c6543c5da9b98a4e2747a0a4023d60bfc
+  specs:
+    ransack (1.8.2)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.3)
+
+GIT
+  remote: git://github.com/jonatack/will_paginate.git
+  revision: 3c861498bdbc643638c1f25bdbe67f93d03be79b
+  specs:
+    will_paginate (3.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -103,6 +120,8 @@ GEM
     orm_adapter (0.5.0)
     pg (0.19.0)
     pkg-config (1.1.7)
+    polyamorous (1.3.1)
+      activerecord (>= 3.0)
     puma (3.5.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -191,6 +210,7 @@ DEPENDENCIES
   pg
   puma (~> 3.0)
   rails (~> 5.0.0)
+  ransack!
   sass-rails (~> 5.0)
   simple_form
   sqlite3
@@ -198,6 +218,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console
+  will_paginate!
 
 BUNDLED WITH
    1.14.5

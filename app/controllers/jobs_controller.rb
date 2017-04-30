@@ -1,14 +1,22 @@
 class JobsController < ApplicationController
 
+
   def index
-    @jobs = case params[:order]
-      when 'by_min_salary'
-         Job.all.order(salaryMin: :DESC)
-      when 'by_max_salary'
-         Job.where(hide:false).order(salaryMax: :DESC)
-      else
-        Job.where(hide:false).order(created_at: :DESC)
-    end
+
+    @q = Job.ransack(params[:q])
+
+      @jobs = case params[:order]
+        when 'by_min_salary'
+          #  Job.all.order(salaryMin: :DESC).paginate(page: params[:page])
+          @jobs = @q.result(distinct: true).order(salaryMin: :DESC).page(params[:page])
+
+        when 'by_max_salary'
+          #  Job.where(hide:false).order(salaryMax: :DESC).paginate(page: params[:page])
+          @jobs = @q.result(distinct: true).order(salaryMax: :DESC).page(params[:page])
+        else
+          # Job.where(hide:false).order(created_at: :DESC).paginate(page: params[:page])
+          @jobs = @q.result(distinct: true).order(created_at: :DESC).page(params[:page])
+      end
   end
 
   def show
@@ -37,6 +45,10 @@ class JobsController < ApplicationController
   def destroy
     flash[:warning] = "You can delete job!"
     redirect_to jobs_path
+  end
+
+  def search
+    
   end
 
 end

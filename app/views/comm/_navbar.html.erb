@@ -4,14 +4,21 @@
       <a class="navbar-brand" href="/"><img src="<%= image_url 'logo2.png' %>"/><span class="brand-name">今日招聘</span></a>
     </div>
     <div class="col-sm-7 col-md-7 ">
-            <form class="navbar-form" role="search">
+          <% unless @q.blank? %>
+            <%= search_form_for @q, class: "input-group" do |f| %>
+            <%= f.search_field :searchjob_cont, class:"form-control", id: "search-input", placeholder:"好工作，都在这！" %>
+            <div class="input-group-btn">
+              <%= f.submit "搜索",  class:"btn btn-default", id: "btn-search"%>
+            </div>
+            <% end %>
+          <% end %>
+
+            <!-- <form class="navbar-form" role="search">
             <div class="input-group">
                 <input type="text" class="form-control" id="search-input" placeholder="Search" name="q">
-                <div class="input-group-btn">
-                  <button class="btn btn-default" id="btn-search" type="submit">搜索</button>
-                </div>
+
             </div>
-            </form>
+            </form> -->
     </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">

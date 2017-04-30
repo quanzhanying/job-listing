@@ -5,5 +5,8 @@ class Job < ApplicationRecord
   validates :salaryMax, presence:true , numericality:{greater_than:0}
   belongs_to :user
   has_many :resumes
-  
+  ransack_alias :searchjob, :title_or_description
+
+  self.per_page = 5
+
 end
