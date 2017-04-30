@@ -6,5 +6,6 @@ class Resume < ApplicationRecord
   belongs_to :job
   belongs_to :user
 
+  scope :recent, -> { order('created_at DESC') }
 
 end

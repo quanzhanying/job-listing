@@ -57,6 +57,7 @@ class JobsController < ApplicationController
   end
   def chaxun
     @jobs=Job.find(params[:id]).user.jobs.where(:is_hidden => false)
+    @user=Job.find(params[:id]).user
   end
 
   def join
@@ -72,7 +73,7 @@ class JobsController < ApplicationController
     @job=Job.find(params[:id])
     if current_user.is_shoucang_of?(@job)
       @job.shoucangzhes.delete(current_user)
-      flash[:warning] = "取消收藏"
+      flash[:warning] = "已收藏"
     end
     redirect_to jobs_path
   end
@@ -80,12 +81,12 @@ class JobsController < ApplicationController
   def guanzhu
     @job=Job.find(params[:id])
     current_user.follow!(@job.user)
-    redirect_to job_path(@job)
+    redirect_to jobs_path
   end
   def quguan
     @job=Job.find(params[:id])
     current_user.unfollow!(@job.user)
-    redirect_to job_path(@job)
+    redirect_to jobs_path
   end
 
 

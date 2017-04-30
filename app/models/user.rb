@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   def admin?
@@ -29,5 +30,14 @@ class User < ApplicationRecord
     self.relationships.find_by(followed_id: other_user.id).destroy
   end
 
+  def display_name
+    if self.username.present?
+      self.username
+    else
+      self.email.split("@").first
+    end
+  end
 
+  mount_uploader :attachment, AttachmentUploader
+  mount_uploader :avatar, AttachmentUploader
 end

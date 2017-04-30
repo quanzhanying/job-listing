@@ -180,7 +180,7 @@ html {
  .navbar-default {
      background-color: #212121;  //背景颜色
 
-     border-color: #8BC34A; //边框色
+     border-color: #333333; //边框色
 
      margin-bottom: 0; //底部 margin 不撑开距离
  }
@@ -292,7 +292,7 @@ html {
 }
 
 .lead {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
   text-align: center;
   color: rgba(9, 9, 9, 0.55);
 }
@@ -330,11 +330,11 @@ html {
 
  //修改按钮大小
     .btn-lg, .btn-group-lg > .btn {
-       padding: 8px 16px;//通过padding来决定btn的大小
-       font-size: 15px;//btn文字大小
-       letter-spacing: 3px;//调整文字间距
+       padding: 9px 16px;//通过padding来决定btn的大小
+       font-size: 20px;//btn文字大小
+       letter-spacing: 30px;//调整文字间距
        border-radius: 0px;//btn圆角
-       width: 200px;//这里用指定宽度把btn拉得更长
+       width: 100%;//这里用指定宽度把btn拉得更长
      }
 
 
@@ -434,4 +434,33 @@ html {
 
 .login-help{
   font-size: 12px;
+}
+
+
+
+
+
+
+.job-box {
+    border: 1.5px solid #ddd;
+    box-shadow: 1px 1px 5px #ccc;
+    margin: 9px;
+    padding: 15px ;
+    background-color: #fff;
+    color: #555;
+    font-size: 16px;
+    font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+    border-radius:25px;
+}
+
+
+
+
+.juzhong{
+  margin: 2% 10%;
+}
+
+.zuoyoubiankuang{
+  border-right:2px solid #ddd ;
+  border-left:2px solid #ddd;
 }

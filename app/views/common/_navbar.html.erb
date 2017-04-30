@@ -24,7 +24,7 @@
         <%else%>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
-            Hi!<%=current_user.email%>
+            Hi!,<%= current_user.display_name %>
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
@@ -34,6 +34,7 @@
             <li><%=link_to("我发布的",fabu_account_job_path([:id]),:method => :get)%></li>
             <li><%=link_to("我收藏的",dianzan_account_job_path([:id]),:method => :get)%></li>
             <li><%=link_to("我关注的人",account_jobs_path)%></li>
+            <li><%= link_to "修改用户名", edit_account_user_path(current_user) %></li>
             <li><%=link_to("退出",destroy_user_session_path,method: :delete)%></li>
 
           </ul>
@@ -55,6 +56,7 @@
        <%= devise_error_messages! %>
          <div class="form-inputs">
            <%= f.input :email, required: false, autofocus: true %>
+
            <%= f.input :password, required: false %>
            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
          </div>
@@ -74,6 +76,7 @@
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true %>
+
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
         </div>

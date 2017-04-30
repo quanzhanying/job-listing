@@ -1,23 +1,29 @@
-<table class="table table-boldered">
-  <thead>
-      <tr>
-          <td>关注列表</td>
-          <td>操作</td>
-      </tr>
+</div>
 
-  </thead>
-  <tbody>
-      <% @users.each do |user| %>
-      <tr>
-          <td>
-              <%=link_to(user.email,account_job_path(user))%>
-          </td>
-          <td>
+<div class="container-fluid juzhong">
 
-          </td>
-      </tr>
-      <% end %>
-  </tbody>
+  <table class="table table-boldered">
+    <thead>
+        <tr>
+            <td>关注列表</td>
+            <td>操作</td>
+        </tr>
+
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <td>
+                <%=link_to(user.display_name,account_job_path(user))%>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
 
 
-</table>
+  </table>
+
+</div>
