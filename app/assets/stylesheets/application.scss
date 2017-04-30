@@ -24,6 +24,7 @@ html { height: 100%;}
   .content { flex: 1;}
 
 /* Add a dark background color with a little bit see-through */
+
 .navbar {
     margin-bottom: 0;
     background-color: #373737;
@@ -77,6 +78,111 @@ padding-bottom: 50px;
 }
 
 
+/* 下面是搜索框的css */
+#search-id {
+    width: 200px;
+    padding-top: 7px;
+}
+
+
+
+/* 下面登陆的css */
+
+
+
+
+/* 首页大图 */
+body {
+  font-family: Hiragino Sans GB,Lantinghei SC,Open Sans,Arial,Microsoft YaHei,sans-serif;
+  // letter-spacing: 0.1em;
+}
+
+.table {
+  border: 1px solid #e0e6ed;
+  thead > tr > th {
+    background: #eff2f7;
+    border-bottom: 1px solid #e0e6ed;
+  }
+  &.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+  }
+  &.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #fff;
+  }
+  td, th {
+    // border-right: 1px solid #ddd;
+  }
+  .btn {
+    &.btn-info {
+      background: #F0AD4E;
+      border-color: #F0AD4E;
+    }
+    &.btn-warning {
+      background: #62A8EA;
+      border-color: #62A8EA;
+    }
+    &.btn-danger {
+      background: #F96868;
+      border-color: #F96868;
+    }
+  }
+}
+
+.custab{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+
+// section-title
+section {
+  padding-top: 20px;
+  padding-bottom: 85px;
+  &.odd {
+    background: #F2F2F5;
+  }
+}
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  color: #858c8b;
+  line-height: 34px;
+}
+
+/* 选择阵营按钮 */
+.wrapper {
+    display: block;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    padding: 0.1em 0.6em;
+    text-align: center;
+    color: #BF970D;
+    border: 2px solid #BF970D;
+    font-size: 1.5em;
+
+    border-radius: 0.2em;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+
 
 
 .carousel-inner img {
@@ -111,6 +217,43 @@ padding-bottom: 50px;
 .person:hover {
     border-color: #f1f1f1;
 }
+
+
+
+
+
+/* footer上面的图 */
+
+.jumbotron {
+  background-image:url('http://ww3.sinaimg.cn/large/006tKfTcgy1ff3rwbe04ej31hc0u04ao.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #BFA90C;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: #BFA90C;
+}
+
+
+
 
 
 

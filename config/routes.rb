@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,controllers:{sessions:'users/sessions'}
 
    namespace :admin do
    resources :jobs  do
@@ -13,8 +13,11 @@ Rails.application.routes.draw do
  end
 
  resources :jobs do
-   resources :resumes
- end
+     resources :resumes
+     collection do
+       get :search
+     end
+   end
 
  root 'welcome#index'
 
@@ -22,7 +25,5 @@ Rails.application.routes.draw do
    collection do
      get :search
    end
-   resources
    end
  end
- 
