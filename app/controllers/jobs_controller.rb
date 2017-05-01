@@ -67,7 +67,7 @@ class JobsController < ApplicationController
       @job.shoucangzhes << current_user
       flash[:notice] = "添加至收藏！"
     end
-    redirect_to jobs_path
+    redirect_to :back
   end
 
   def quit
@@ -76,18 +76,18 @@ class JobsController < ApplicationController
       @job.shoucangzhes.delete(current_user)
       flash[:warning] = "已收藏"
     end
-    redirect_to jobs_path
+    redirect_to :back
   end
 
   def guanzhu
     @job=Job.find(params[:id])
     current_user.follow!(@job.user)
-    redirect_to jobs_path
+    redirect_to :back
   end
   def quguan
     @job=Job.find(params[:id])
     current_user.unfollow!(@job.user)
-    redirect_to jobs_path
+    redirect_to :back
   end
 
 
