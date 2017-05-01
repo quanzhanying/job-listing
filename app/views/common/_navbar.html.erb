@@ -31,8 +31,8 @@
             <% if current_user.admin?%>
             <li><%=link_to("Admin Panel",admin_jobs_path)%></li>
             <%end%>
-            <li><%=link_to("我发布的",fabu_account_job_path([:id]),:method => :get)%></li>
-            <li><%=link_to("我收藏的",dianzan_account_job_path([:id]),:method => :get)%></li>
+            <li><%=link_to("我发布的",fabu_account_job_path([:zhekeyiluanxie]),:method => :get)%></li>
+            <li><%=link_to("我收藏的",dianzan_account_job_path([:zhekeyiluanxie]),:method => :get)%></li>
             <li><%=link_to("我关注的人",account_jobs_path)%></li>
             <li><%= link_to "修改用户名", edit_account_user_path(current_user) %></li>
             <li><%=link_to("退出",destroy_user_session_path,method: :delete)%></li>
