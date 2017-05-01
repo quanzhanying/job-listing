@@ -47,7 +47,7 @@
                       <td><%= job.company %></td>
                       <td><%= job.city %></td>
                       <td><%= job.created_at.to_date %></td>
-                      <td><%= job.resume_relationship.count %></td>
+                      <td><%= job.resumes.count %></td>
                       <td>
                           <% if current_user && current_user.is_member_of?(job) %>
                           <i class="fa fa-bookmark"></i>
@@ -62,7 +62,7 @@
                           <%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success", method: :get) %>
                         <% end %>
                       </td>
-                      
+
 
                   </tr>
                   <% end %>
@@ -113,7 +113,7 @@
                       <td><%= job.company %></td>
                       <td><%= job.city %></td>
                       <td><%= job.created_at.to_date %></td>
-                      <td><%= job.resume_relationship.count %></td>
+                      <td><%= job.resumes.count %></td>
                       <td>
                           <% if current_user && current_user.is_member_of?(job) %>
                           <i class="fa fa-bookmark"></i>
