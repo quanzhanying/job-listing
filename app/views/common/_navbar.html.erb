@@ -1,25 +1,31 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
             <a class="navbar-brand" href="/"><i class="fa fa-lightbulb-o" aria-hidden="true"> Light </i></a>
         </div>
 
-        <!--Search-->
-        <%= form_tag jobs_path, :method => "get" do %>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="navbar-collapse navbar-ex1-collapse collapse"  aria-expanded="false">
 
+        <!--Search-->
+        <div class="nav navbar-nav navbar-left navbar-link">
+            <%= form_tag jobs_path, :method => "get" do %>
                <div class="searchform">
                   <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
-                  <span>
                       <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
-
-                   </span>
                </div>
-        <% end %>
+            <% end %>
+        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right navbar-link">
                 <li>
                   <% if !current_user %>
                     <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
@@ -40,8 +46,9 @@
                 <% end %>
                 </li>
             </ul>
-        </div>
+
         <!-- /.navbar-collapse -->
+      </div>
     </div>
     <!-- /.container-fluid -->
 </nav>
