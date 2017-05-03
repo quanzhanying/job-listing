@@ -1,0 +1,106 @@
+<div class="col-md-1">
+</div>
+
+<!--Panel-->
+<div class="col-md-8 ">
+  <div class="panel panel-default">
+
+    <div class="panel-heading">
+      <h3>
+        职位列表
+        <div class="pull-right">
+            <%# link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+        </div>
+
+        <div class="dropdown clearfix pull-right">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              排序
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+                <li>
+                  <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+                </li>
+                <li>
+                    <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+
+                </li>
+                <li>
+                  <%= link_to("按照发表时间排序", jobs_path ) %>
+
+                </li>
+            </ul>
+        </div>
+      </h3>
+    </div>
+
+    <div class="panel-body">
+      <table class="table table-boldered">
+          <thead>
+              <tr>
+                  <td>职位</td>
+                  <td>薪资下限</td>
+                  <td>薪资上限</td>
+                  <td>刊登时间</td>
+              </tr>
+
+          </thead>
+          <tbody>
+              <% @jobs.each do |job| %>
+              <tr>
+                  <td>
+                      <%= link_to(job.title, job_path(job)) %>
+                  </td>
+                  <td>
+                      <%= job.wage_lower_bound %>
+                  </td>
+                  <td>
+                      <%= job.wage_upper_bound %>
+                  </td>
+                  <td>
+                      <%= job.created_at %>
+                  </td>
+              </tr>
+              <% end %>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 职位推荐 -->
+<div class="col-md-2 side-box">
+  <div class="row">
+      <div class="col-md-12 suggest-title">
+        <h4><sapn class="fa fa-tags"></sapn> <strong>职位推荐</strong></h4>
+      </div>
+      <div>
+          <% @suggests.each do |job| %>
+              <div class="col-xs-10 col-xs-offset-1 suggest-content">
+
+
+                  <div>
+                    <p>职位：<%= job.title %></p>
+                  </div>
+                  <div>
+                    <p>描述：<%= job.description %></p>
+                  </div>
+              </div>
+          <% end %>
+      </div>
+  </div>
+</div>
+</div>
+
+<div class="col-md-1 ">
+</div>
+
+<!--will_paginate-bootstrap-->
+
+<div class="col-md-12">
+  <div class="text-center">
+      <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>
