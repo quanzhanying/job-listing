@@ -20,6 +20,14 @@
  @import "bootstrap";
  @import "font-awesome";
 
+.navbar-brand{
+   font-size: 30px;
+}
+
+.navbar-nav{
+   font-size: 20px;
+}
+
 .navbar-default {
   color: #212121; //字体颜色
 
@@ -35,7 +43,8 @@
 
  .navbar-default .navbar-brand:hover,
  .navbar-default .navbar-brand:focus {
-   color: #FF6F00; //鼠标放置在链接上的文字颜色
+   color: #8BC34A; //鼠标放置在链接上的文字颜色
+
 
    background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
  }
@@ -55,6 +64,7 @@
    text-align: center;
    margin-top: 200px;
    margin-bottom: 80px;
+   font-size: 60px;
  }
 
  .slogan {
