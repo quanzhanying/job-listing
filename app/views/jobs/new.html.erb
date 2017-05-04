@@ -1,0 +1,19 @@
+</div>
+
+<div class="container-fluid juzhong">
+
+  <h1>发布新欢</h1>
+
+  <%= simple_form_for @job do |f|%>
+
+  <%=f.input :title, :label => "最近Fan："%>
+  <%=f.input :description, :label => "Why："%>
+  <!-- <%= f.input :wage_lower_bound, :label => "薪资下限" %>
+  <%= f.input :wage_upper_bound, :label => "薪资上限" %> -->
+  <!-- <%= f.input :contact_email %> -->
+  <%= f.input :is_hidden,:label => "勾选后不公开发布" %>
+
+  <%=f.submit "Submit"%>
+  <%end%>
+
+</div>

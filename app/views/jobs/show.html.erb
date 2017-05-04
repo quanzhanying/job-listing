@@ -1,0 +1,43 @@
+</div>
+
+<div class="container-fluid juzhong">
+<div class="text-center">
+  最近饭：<h2 ><%= @job.title %></h1><span class="fa fa-clock-o" ><%= @job.created_at.strftime("%Y/%m/%d/%H:%M	") %>From :<%= @job.user.display_name%>
+</div>
+
+
+<div class="text-center" >
+  <span>
+
+  <% if current_user && current_user.is_shoucang_of?(@job) && current_user!=@job.user %>
+  <%= link_to("已收藏", quit_job_path(@job),:method => :post, class: "btn btn-default ")%>
+  <%end %>
+  <% if current_user && !current_user.is_shoucang_of?(@job) && current_user!=@job.user %>
+  <%= link_to("收藏", join_job_path(@job), :method => :post,class: "btn btn-default ")%>
+  <%end %>
+  <% if current_user && current_user.following?(@job.user) && current_user!=@job.user %>
+  <%= link_to("已关注", quguan_job_path(@job),:method => :post, class: "btn btn-default ")%>
+  <%end %>
+  <% if current_user && !current_user.following?(@job.user) && current_user!=@job.user %>
+  <%= link_to("关注ta", guanzhu_job_path(@job), :method => :post,class: "btn btn-default ")%>
+  <%end %>
+  </span>
+</div>
+<div class="text-center job-box">
+  <%=simple_format(@job.description)%>
+</div>
+<div class="text-center" >
+  <%= link_to("评论", new_job_resume_path(@job), class: "btn btn-default ")%>
+</div>
+<hr>
+<div class="">
+  <% @job.resumes.scope.recent.each do |f| %>
+    <div class="job-box">
+      <%= f.description%></br>
+      <span class="fa fa-clock-o" ><%= f.created_at.strftime("%Y/%m/%d/%H:%M	") %>From :<%= f.user.display_name%></span>
+    </div>
+  <% end %>
+</div>
+
+
+</div>

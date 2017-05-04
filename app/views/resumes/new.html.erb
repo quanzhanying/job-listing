@@ -1,0 +1,14 @@
+</div>
+<div class="container-fluid juzhong">
+
+  <%= simple_form_for [@job,@resume] do |f| %>
+
+    <%= f.input :description ,:label => "评论"%>
+    <!-- <%= f.input :title %>
+
+
+    <%= f.input :attachment %> -->
+    <%= f.submit "Send" %>
+  <% end %>
+
+</div>

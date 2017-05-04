@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JobListing</title>
+    <title>最近FAN</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+
+     <div class="row ">
+       <%= render "common/navbar" %>
+     </div>
+     <div class="row">
+       <%=render "common/flashes"%>
+     </div>
+     <div class="row">
+      <%=yield%>
+      </div>
+
+
+    <%=render "common/footer"%>
+
+    </div>
   </body>
 </html>
