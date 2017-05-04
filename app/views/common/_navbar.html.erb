@@ -16,22 +16,24 @@
       <div class="navbar-collapse navbar-ex1-collapse collapse"  aria-expanded="false">
 
         <!--Search-->
-        <div class="nav navbar-nav navbar-left navbar-link">
+        <ul class="nav navbar-nav  ">
+          <li>
             <%= form_tag jobs_path, :method => "get" do %>
                <div class="searchform">
                   <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
                       <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
                </div>
             <% end %>
-        </div>
+          </li>
+        </ul>
 
             <ul class="nav navbar-nav navbar-right navbar-link">
-                <li>
+              <li>
                   <% if !current_user %>
                     <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
-                <% else %>
-                  <li class="dropdown">
+                  <% else %>
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Hi!, <%= current_user.email %>
                         <b class="caret"></b>
@@ -42,9 +44,9 @@
                       <% end %>
                         <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
                     </ul>
-                  </li>
-                <% end %>
                 </li>
+                <% end %>
+              </li>
             </ul>
 
         <!-- /.navbar-collapse -->
