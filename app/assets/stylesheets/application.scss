@@ -20,24 +20,43 @@
  @import "bootstrap";
  @import "font-awesome";
 
-.navbar-brand{
+
+.navbar-brand{  //导航栏商标
    font-size: 30px;
 }
 
-.navbar-nav{
+.navbar-nav{    //注册字体
    font-size: 20px;
 }
 
-.navbar-default {
+.container{
+  height: 800px;
+}
+
+.middle{  //中间颜色
+  // margin-right： 0；
+  // margin: 20px auto;
+   width: 100%;
+   height: 800px;
+   background: #e6edff;
+   font-size: 30px;
+   text-align: center;
+   line-height: 150px;
+}
+
+.title-A{
+  font-size: 90px;
+  color: #FAFAFA;
+}
+
+.navbar-default {   //导航栏
   color: #212121; //字体颜色
-
+  height: 120px;
   padding: 10px 80px; //上下10px，左右15px
-  line-height: 30px; //文字行高
-  background-color: #212121;
-  border-color: #424242;
+  line-height: 0px; //文字行高
+  background-color: #8BC34A;
+  border-color: #4CAF50;
   margin-bottom: 0;
-
-
 }
 
 
@@ -54,9 +73,6 @@
    background-repeat: no-repeat;
    background-size: cover;
    padding-bottom: 110px;
-
-
-
  }
 
  .title {
@@ -64,24 +80,27 @@
    text-align: center;
    margin-top: 200px;
    margin-bottom: 80px;
-   font-size: 60px;
+   font-size: 100px;
  }
 
+.btn-lg{    //马上参与按钮大小
+  font-size: 50px;
+}
+
  .slogan {
-   margin-top: 10px;
+   margin-top: 20px;
    margin-bottom: 50px;
    text-align: center;
-   color: #212121;
-   top: 12px;
-   font-size: 30px;
+   color: #8BC34A;
+   font-size: 50px;
 
  }
 
  .lead {
 
-   margin-bottom: 60px;
+   margin-bottom: 100px;
    text-align: center;
-   color: white;
+   color: #8BC34A;
    line-height: 100px;
 
  }
@@ -102,12 +121,12 @@
 }
 
 .footer{
-  height: 100px;
+  height: 150px;
   background-color: #424242;
-   padding-top: 25px;
+   padding-top: 35px;
    padding-bottom: 30px;
-   color: #9E9E9E;
-   font-size: 20px;
+   color: #757575;
+   font-size: 26px;
 
 }
 
