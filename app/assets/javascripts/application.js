@@ -16,4 +16,6 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap/collapse
+//= require underscore
+//= require gmaps/google
 //= require_tree .

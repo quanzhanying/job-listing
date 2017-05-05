@@ -34,4 +34,11 @@ class Job < ApplicationRecord
     self.is_hidden = true
     self.save
   end
+
+
+  # converting address
+  geocoded_by :address
+  after_validation :geocode
+
+
 end

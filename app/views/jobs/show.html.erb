@@ -66,4 +66,28 @@
             <%= simple_format(@job.description) %>
         </blockquote>
     </p>
-</div>
+
+    <hr>
+
+
+    <!-- 谷歌地图 -->
+    <div class="col-xs-12">
+      <div class="container">
+        <p class="text-center">地址：<%= @job.address %></p>
+        <div id="map"></div>
+      </div>
+    </div>
+
+
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyAWeJRGCTVG1DYWGirPOHBDxrb4jhPfMaU"></script>
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
+    <script type="text/javascript">
+      handler = Gmaps.build('Google');
+      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+        markers = handler.addMarkers(<%=raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    </script>
+  </div>
