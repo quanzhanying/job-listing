@@ -1,0 +1,26 @@
+<header class="login_bg row">
+    <div class="container">
+
+        <div class="login_inter col-md-4 col-sm-6 col-sm-offset-4" style="margin-top: 80px;">
+
+            <h2 class="text-center">注册</h2>
+
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+                <%= f.input :email, required: true, autofocus: true, :label => "邮箱" %>
+                <%= f.input :password, required: true, hint: ("请输入至少 #{@minimum_password_length} 位数的密码" if @minimum_password_length), :label => "密码" %>
+                <%= f.input :password_confirmation, required: true, :label => "确认密码" %>
+            </div>
+
+            <div class="form-actions">
+                <%= f.button :submit, "注册" %>
+            </div>
+            <% end %>
+
+            <%= render "devise/shared/links" %>
+
+        </div>
+
+    </div>

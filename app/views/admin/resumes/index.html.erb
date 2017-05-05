@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-12">
+      <%= link_to image_tag("resume_all.jpg", class: "img-rounded img-responsive img-center") %>
+      <hr>
+    </div>
+
+    <h2 class="text-center"><%= @job.title %>
+        - 收到简历列表
+    </h2>
+
+    <%= render :partial => "resume", :collection => @resumes, :as => :resume %>
+
+  </div>
+</div>

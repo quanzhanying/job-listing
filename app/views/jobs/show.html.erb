@@ -1,0 +1,93 @@
+<div class="show_bg row">
+    <div class="show_title container">
+        <h1><%= @job.title %></h2>
+    </div>
+</div>
+<div class="container">
+    <hr>
+
+    <!-- row  -->
+
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>工种：</strong><%= @job.category %>
+                </li>
+                <li class="list-group-item">
+                    <strong>薪俸范围：</strong>
+                    <span class="fa fa-rmb"></span><%= @job.wage_lower_bound%>
+                    -
+                    <%= @job.wage_upper_bound%></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>公司：</strong><%= @job.company %>
+                </li>
+                <li class="list-group-item">
+                    <strong>城市：</strong><%= @job.city %>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>竟征人数：</strong><%= @job.resumes.count %>
+                </li>
+                <li class="list-group-item">
+                    <strong>创建时间：</strong><%= @job.created_at.to_date %>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+          <% if current_user && current_user.has_postmen_of?(@job) %>
+            <%= link_to("已应征", new_job_resume_path(@job), class: "btn btn-default disabled", method: :get) %>
+          <% else %>
+            <%= link_to("应征", new_job_resume_path(@job), class: "btn btn-default", method: :get) %>
+          <% end %>
+            <% if current_user && current_user.is_member_of?(@job) %>
+            <%= link_to quit_job_path(@job), method: :post, class: "btn btn-xs btn-danger pull-right" do%>
+            <i class="fa fa-bookmark-o">
+                取消收藏</i><% end %>
+        <% else %>
+            <%= link_to join_job_path(@job), method: :post, class: "btn btn-xs btn-success pull-right" do%>
+            <i class="fa fa-bookmark">
+                收藏匠职</i><% end %>
+            <% end %>
+        </div>
+    </div>
+    <hr>
+
+    <p>
+        <h4>需求描述：</h4>
+        <blockquote id="description">
+            <%= simple_format(@job.description) %>
+        </blockquote>
+    </p>
+
+    <hr>
+
+
+    <!-- 谷歌地图 -->
+    <div class="col-xs-12">
+      <div class="container">
+        <p class="text-center">地址：<%= @job.address %></p>
+        <div id="map"></div>
+      </div>
+    </div>
+
+
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyAWeJRGCTVG1DYWGirPOHBDxrb4jhPfMaU"></script>
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
+    <script type="text/javascript">
+      handler = Gmaps.build('Google');
+      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+        markers = handler.addMarkers(<%=raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    </script>
+  </div>

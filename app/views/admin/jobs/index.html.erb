@@ -1,0 +1,51 @@
+<div class="col-md-12">
+    <div class="group">
+        <%= link_to("新增职位", new_admin_job_path, class: "btn btn-default pull-right") %>
+    </div>
+    <br>
+
+    <table class="table table-boldered table-striped custab">
+        <thead>
+            <tr>
+                <td>职缺</td>
+                <td>收到简历</td>
+                <td>薪俸范围</td>
+                <td>创建时间</td>
+                <td>管理</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% @jobs.each do |job| %>
+            <tr>
+                <td>
+                    <%= render_job_status(job) %>
+                    <%= link_to(job.title, admin_job_path(job)) %>
+                </td>
+                <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
+                <td>
+                    <span class="badge badge-info">
+                        <span class="fa fa-rmb"></span><%= job.wage_lower_bound%>
+                        -
+                        <%= job.wage_upper_bound%>
+                    </span>
+                </td>
+                <td><%= job.created_at.to_date %></td>
+                <td>
+                    <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info" do%>
+                    <i class="fa fa-pencil"></i><% end %>
+                    <%= link_to admin_job_path(job), method: :delete, class: "btn btn-xs btn-danger", data:{ confirm: "你确定删除吗？"} do%>
+                    <i class="fa fa-trash-o"></i><% end %>
+                    <% if job.is_hidden %>
+                    <%= link_to publish_admin_job_path(job), method: :post, class: "btn btn-xs btn-success" do %>
+                    <i class="fa fa-eye"></i><% end %>
+                <% else %>
+                    <%= link_to hide_admin_job_path(job), method: :post, class: "btn btn-xs btn-warning" do %>
+                    <i class="fa fa-eye-slash"></i><% end %>
+                    <% end %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+
+    </table>
+</div>

@@ -12,4 +12,47 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+
+
+
+
+
+ //--- row ---
+
+.custab{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+
+
+.frontpage-img{
+  box-shadow: 4px 4px 4px 4px 0px transparent;
+  transition: 0.5s;
+}
+
+.frontpage-img:hover{
+  box-shadow: 4px 4px 4px 4px 8px #ccc;
+  transition: 0.5s;
+  padding: 1%;
+}
+
+// google map
+#map{
+  width: 50em;
+  height: 12em;
+  margin: 12px auto 30px;
+}

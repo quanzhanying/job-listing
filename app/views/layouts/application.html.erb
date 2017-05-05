@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JobListing</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <title>寻找匠人 - 韵儿爸爸</title>
+        <%= csrf_meta_tags %>
 
-  <body>
-    <%= yield %>
-  </body>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        <!-- Custom CSS -->
+        <link href="app/assets/stylesheets/business-frontpage.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="container-fluid">
+
+            <%= render "common/navbar" %>
+            <%= render "common/flashes" %>
+            <%= yield %>
+
+        </div>
+
+        <%= render "common/footer" %>
+
+        <script src="https://qiyukf.com/script/aa9e006de13d137b3ef3b6fe0704d745.js" defer async></script>
+    </body>
 </html>

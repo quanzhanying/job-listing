@@ -1,0 +1,54 @@
+<div class="container">
+    <h1><%= @job.title %></h2>
+</div>
+<div class="container">
+    <hr>
+
+    <!-- row  -->
+
+    <div class="row">
+        <div class="col-sm-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>工种：</strong><%= @job.category %>
+                </li>
+                <li class="list-group-item">
+                    <strong>薪俸范围：</strong>
+                    <span class="fa fa-rmb"></span><%= @job.wage_lower_bound%>
+                    -
+                    <%= @job.wage_upper_bound%></li>
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>公司：</strong><%= @job.company %>
+                </li>
+                <li class="list-group-item">
+                    <strong>城市：</strong><%= @job.city %>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>竟征人数：</strong><%= @job.resumes.count %>
+                </li>
+                <li class="list-group-item">
+                    <strong>创建时间：</strong><%= @job.created_at.to_date %>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <%= link_to("应征", new_job_resume_path(@job), class: "btn btn-default pull-left") %>
+        </div>
+    </div>
+    <hr>
+
+    <p>
+        <h4>需求描述：</h4>
+        <blockquote id="description">
+            <%= simple_format(@job.description) %>
+        </blockquote>
+    </p>
+</div>

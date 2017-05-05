@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row all_image">
+        <div class="col-xs-6 col-md-3 all_image_css">
+            <%= link_to image_tag("all_steel.jpg", class: "img-rounded img-responsive img-center"), image_path(steel_jobs_path(:order => "category")) %>
+            <h4 class="text-center"><%= link_to("铁匠", steel_jobs_path(:order => "category")) %></h4>
+        </div>
+        <div class="col-xs-6 col-md-3 all_image_css">
+            <%= link_to image_tag("all_wood.jpg", class: "img-rounded img-responsive img-center"), image_path(wood_jobs_path(:order => "category")) %>
+            <h4 class="text-center"><%= link_to("木匠", wood_jobs_path(:order => "category")) %></h4>
+        </div>
+        <div class="col-xs-6 col-md-3 all_image_css">
+            <%= link_to image_tag("all_stone.jpg", class: "img-rounded img-responsive img-center"), image_path(stone_jobs_path(:order => "category")) %>
+            <h4 class="text-center"><%= link_to("石匠", stone_jobs_path(:order => "category")) %></h4>
+        </div>
+        <div class="col-xs-6 col-md-3 all_image_css">
+            <%= link_to image_tag("all_jobs.jpg", class: "img-rounded img-responsive img-center"), image_path(jobs_path) %>
+            <h4 class="text-center"><%= link_to("全部", jobs_path) %></h4>
+        </div>
+    </div>
+
+    <!-- /.row --><hr>
+
+    <!-- search_bar and clearfix -->
+    <div class="row">
+        <div class="form-group form-inline search-bar col-xs-6">
+            <%= render :partial => "jobs/search_bar" %>
+        </div>
+        <div class="group col-xs-6">
+            <div class="dropdown clearfix pull-right">
+                <button class="dropdown-toggle btn btn-sm btn-default" type="button" data-toggle="dropdown" id="dropdownMenuDivider" aria-haspopup="true" aria-expanded="true">
+                    排序
+                    <b class="caret"></b>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+                    <li>
+                        <%= link_to("按薪俸下限排序", jobs_path(:order => "by_lower_bound")) %>
+                    </li>
+                    <li>
+                        <%= link_to("按薪俸上限排序", jobs_path(:order => "by_upper_bound")) %>
+                    </li>
+                    <li>
+                        <%= link_to("按创建时间排序", jobs_path) %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- table -->
+    <div class="table-responsive row container">
+        <table class="table table-boldered table-striped">
+            <thead>
+                <tr>
+                    <td>匠职</td>
+                    <td>工种</td>
+                    <td>薪俸范围</td>
+                    <td>公司</td>
+                    <td>城市</td>
+                    <td>创建时间</td>
+                    <td>竞征人数</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% if @jobs.blank?%>
+                <br>
+                <div>
+                    <h3>很抱歉！没有找到您想要的信息...</h3>
+                </div>
+            <% else %>
+                <h3 class="search-info-title">
+                    有<%= @jobs.count %>个符合 "<%= @query_string %>" 的匠职
+                </h3>
+                <% @jobs.each do |job| %>
+                <tr>
+                    <td><%= link_to(job.title, job_path(job)) %></td>
+                    <td><%= job.category %></td>
+                    <td>
+                        <span class="badge badge-info">
+                            <span class="fa fa-rmb"></span><%= job.wage_lower_bound%>
+                            -
+                            <%= job.wage_upper_bound%>
+                        </span>
+                    </td>
+                    <td><%= job.company %></td>
+                    <td><%= job.city %></td>
+                    <td><%= job.created_at.to_date %></td>
+                    <td><%= job.resume_relationship.count %></td>
+                    <td>
+                      <% if current_user && current_user.has_postmen_of?(job) %>
+                        <%= link_to("已应征", new_job_resume_path(job), class: "btn btn-xs btn-success disabled", method: :get) %>
+                      <% else %>
+                        <%= link_to("应征", new_job_resume_path(job), class: "btn btn-xs btn-success", method: :get) %>
+                      <% end %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- pagination -->
+    <div class="text-center">
+        <%= will_paginate @jobs, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm"%>
+    </div>
+    <% end %>
+
+    <script src="app/assets/javascripts/jquery.js"></script>

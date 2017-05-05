@@ -1,0 +1,16 @@
+<div class=" col-md-8 col-md-offset-2">
+  <%= simple_form_for @job do |f| %>
+  <div class="form-group">
+    <%= f.input :title, :label => "匠职名称" %>
+    <%= f.input :description, :label => "匠职描述" %>
+    <%= f.input :wage_upper_bound, :label => "薪资上限" %>
+    <%= f.input :wage_lower_bound, :label => "薪资下限" %>
+    <%= f.input :category, as: :radio_buttons, collection:  [['铁匠', '铁匠'], ['木匠', '木匠'], ['石匠', '石匠']], required: '石匠', :label => "工种" %>
+    <%= f.input :company, :label => "公司" %>
+    <%= f.input :city, :label => "城市" %>
+    <%= f.input :address, :label => "地址" %>
+    <%= f.input :contact_email, :label => "联系Email" %>
+  </div>
+  <%= f.submit "提交", class: "btn btn-default", data: {disable_with: "Submiting..."} %>
+  <% end %>
+</div>
