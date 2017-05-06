@@ -183,6 +183,51 @@
     margin-top: -100px;
   }
 
+  //---------Testomonial---------
+#testimony {
+    padding: 5rem 0 5rem 0;
+    text-align: center;
+    position: relative;
+
+    .title {
+      font-size: 2.5rem;
+      color: black;
+      margin: 0;
+      padding-bottom: 2rem;
+    }
+
+    .testimony p {
+      text-align: justify;
+      font-style: italic;
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+
+    .testimony {
+      width: 22.75%;
+      display: inline-block;
+      margin: 0 1% 0;
+      padding: 2.5rem 1.5%;
+      text-align: center;
+      -webkit-box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+      -moz-box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+      box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+      border-radius: .35rem;
+
+      img {
+        max-width: 140px;
+        border-radius: 80%;
+      }
+    }
+
+    .button_wrapper {
+      text-align: center;
+      margin: 4rem 0;
+      display: inline-block;
+    }
+}
+
+
 
    //---------Footer---------
 
@@ -297,4 +342,15 @@
           font-size: 14px;
           letter-spacing: 0.5px;
         }
+    }
+    body {
+        background: url("https://ooo.0o0.ooo/2017/05/07/590e0cf90c3bd.png");
+        //使用 iPic这个软件即可将图片转换为图片超链接，app store 搜索 iPic 即可
+
+        background-size: cover;
+        //这段代码主要实现了图片不会被拉伸变现的效果，具体细则在我发布的另一个教程中有说明
+
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        font-family: 'Open Sans', sans-serif;
     }
