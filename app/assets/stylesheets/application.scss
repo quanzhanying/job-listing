@@ -343,14 +343,4 @@
           letter-spacing: 0.5px;
         }
     }
-    body {
-        background: url("https://ooo.0o0.ooo/2017/05/07/590e0cf90c3bd.png");
-        //使用 iPic这个软件即可将图片转换为图片超链接，app store 搜索 iPic 即可
-
-        background-size: cover;
-        //这段代码主要实现了图片不会被拉伸变现的效果，具体细则在我发布的另一个教程中有说明
-
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        font-family: 'Open Sans', sans-serif;
-    }
+    
