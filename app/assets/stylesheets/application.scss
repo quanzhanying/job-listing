@@ -70,7 +70,7 @@
   padding:15px;  //内边距
   margin-top: 400px;
   font-size: 60px;
-  color: #69F0AE;
+  color: #FAFAFA;
 }
 
 .btn-lg{    /*马上参与按钮大小*/
@@ -79,63 +79,65 @@
  text-align: center;
 }
 
-.container{  //容器
-  height: 800px;
-}
+// .container{  //容器
+//   height: 800px;
+// }
 
 .slogan-A{  //丰富多彩的..
-  margin-top: 80px;
+  margin-bottom: 40px;
+  margin-top:120px;
   text-align: center;
   color: #8BC34A;
   font-size: 40px;
 }
-//
-//
-// .middle{  //中间颜色
-//   // margin-right： 0；
-//   // margin: 20px auto;
-//    width: 100%;
-//    height: 800px;
-//    background: #F0F4C3;
-//    font-size: 30px;
-//    text-align: center;
-//    line-height: 150px;
-// }
-//
-// .title-A{  //怎么玩
-//   font-size: 90px;
-//   color: #FAFAFA;
-// }
-//
 
-//
-// // table shadows
-//
-//  .caption {
-//   margin: 30px;
-//   text-align: center;
-//   top: 20px;
-//   color: #8BC34A;
+.middle{  //中间颜色
+  text-align: center;
+   background: #ECEFF1;
+   font-size: 25px;
+   line-height: 40px;
+   padding: 60px;
+}
+
+.title-A{  //怎么玩
+  padding: 60px;
+  font-size: 60px;
+  text-align: center;
+  color: #546E7A;
+}
+
+// .page-header-right{
+//   text-align: left;
 // }
-//
-// .thumbnail {
-//     border: 0 none;
-//     box-shadow: none;
-//     margin-top: 60px;
-// }
-//
-// .footer{
-//   height: 150px;
-//   background-color: #424242;
-//    padding-top: 35px;
-//    padding-bottom: 30px;
-//    color: #757575;
-//    font-size: 26px;
-// }
-//
-// .main {
-//   margin-bottom: 100px;
-// }
+
+
+// table shadows
+
+ .caption {
+  margin: 30px;
+  text-align: center;
+  // top: 20px;
+  color: #8BC34A;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
+}
+
+.footer{
+  height: 150px;
+  background-color: #424242;
+   padding-top: 35px;
+   padding-bottom: 30px;
+   color: #757575;
+   font-size: 26px;
+}
+
+.main {
+  margin-bottom: 100px;
+}
 
 
 // table styles
