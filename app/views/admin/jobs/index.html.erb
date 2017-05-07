@@ -1,5 +1,5 @@
 <div class="pull-right">
-  <%= link_to("乐团招人", new_admin_job_path, :class => "btn btn-default" ) %>
+  <%= link_to("军令状", new_admin_job_path, :class => "btn btn-default" ) %>
 </div>
 
 <br/>
@@ -38,7 +38,7 @@
       <td> <%= job.wage_lower_bound %> </td>
       <td> <%= job.wage_upper_bound %> </td>
       <td>
-        <%= link_to("编辑乐手资料", edit_admin_job_path(job))%>
+        <%= link_to("编辑人才资料", edit_admin_job_path(job))%>
         <%= link_to("删除", admin_job_path(job), :method => :delete, :data => { :confirm => "你确定要删除吗？" }) %>
         <% if job.is_hidden %>
 

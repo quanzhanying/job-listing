@@ -19,6 +19,10 @@ Rails.application.routes.draw do
      end
    end
 
+   namespace :shuguo do
+  resources :jobs
+end
+
  root 'welcome#index'
 
  resources :jobs do
