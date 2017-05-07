@@ -1,0 +1,36 @@
+<div>
+  <br>
+<% if @query_string.blank? %>
+    <div class="search-info-title">
+      Sorry, The search content cannot be blank, please type some product into to search.
+    </div>
+
+  <% elsif @jobs.blank? %>
+    <br>
+    <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
+  <% else %>
+    <h2 class="search-info-title"> 有关"<%= @query_string %>"的工作信息 </h2>
+    <div class="search-result">
+
+      <div class="row jobs-show0"></div>
+      <div class="job-table">
+        <% @jobs.each do |job| %>
+        <div class="row jobs-show">
+
+          <div class="col-md-12 col-lg-9 col-lg-offset-1">
+
+            <div class="pull-right">
+              发布时间：<%= job.created_at.to_date %>
+            </div>
+            <p ><%= link_to(render_highlight_content(job,@query_string),job_path(job)) %></p>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+    </div>
+  <% end %>
+</div>

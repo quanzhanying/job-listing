@@ -1,0 +1,30 @@
+<div class="container page-wrap ">
+  <div class="devise-view">
+    <img src="http://ww3.sinaimg.cn/large/006tKfTcgy1ff3rwbe04ej31hc0u04ao.jpg" alt="background image">
+    <div class="devise-sign-up">
+
+        <div class="input-block">
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <!-- <div class="form-inputs"> -->
+              <%= f.input :email, required: false, autofocus: true, :label => "邮箱", placeholder: "请输入您的邮箱", type: "email", value: "", name: "user[email]", id: "user_email", input_html: { class: "string email optional form-control"}%>
+
+            <!-- </div> -->
+          </div>
+          <div class="form-inputs">
+              <%= f.input :password, required: false, :label => "密码",placeholder: "请输入您的密码", type: "password", name: "user[password]", id: "user_password", input_html: { class: "form-group password optional user_password"}%>
+          </div>
+          <div class="form-group boolean optional user_remember_me">
+            <div class="checkbox">
+              <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable?, :label => "记住我", input_html: { class: "form-group boolean optional user_remember_me"}%>
+            </div>
+          </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, type: "submit", name: "commit", value: "登 录", input_html: { class: "btn btn-default btn btn-devise btn-block"}%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
