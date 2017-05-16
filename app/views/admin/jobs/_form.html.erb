@@ -1,0 +1,11 @@
+<%= simple_form_for [:admin,@job] do |f|%>
+  <div class="from-group">
+    <%= f.input :title,label:"职位名称",input_html:{ classs:"form-control"}%>
+    <%= f.input :description,label:"职位要求",input_html:{ class:"form-control"}%>
+    <%= f.input :wage_upper_bound,label:"薪资上限",input_html:{ class: "form-control"}%>
+    <%= f.input :wage_lower_bound,label:"薪资下限",input_html:{ class: "form-control"}%>
+    <%= f.input :contact_email,label:"联系方式",input_html:{ class: "form-control"}%>
+    <%= f.input :is_hidden, as: :boolean, checked_value:true, unchecked_value: false %>
+  </div>
+  <%= f.submit "Submit",class:"btn btn-primary",data:{ disable_with: "Submiting..."}%>
+<% end %>
