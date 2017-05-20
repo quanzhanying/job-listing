@@ -13,4 +13,29 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require jquery-1.8.3.min.js
+//= require jquery.fullPage.min.js
+//= require BMap.js
 //= require_tree .
+$(function(){
+  $('#dowebok').fullpage({
+    sectionsColor: ['#000000', '#000000', '#000000'],
+    anchors: ['home', 'list', 'about'],
+    navigationTooltips: ['[Home]', '[List]', '[About]'],
+    'navigation': true,
+    loopBottom: true,
+    slidesNavigation: true, //是否显示左右滑块的项目导航
+    menu: '#menu'
+  });
+
+  //setInterval(function(){
+  //    $.fn.fullpage.moveSlideRight();
+  //}, 15000);
+
+  //setInterval(function(){
+  //    $.fn.fullpage.moveSectionDown();
+  //}, 20000);
+
+});

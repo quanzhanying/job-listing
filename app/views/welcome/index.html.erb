@@ -1,0 +1,154 @@
+<ul id="menu">
+	<li data-menuanchor="home" class="active"><a href="#home">主页</a></li>
+	<li data-menuanchor="list"><a href="#list">一块视听</a></li>
+	<li data-menuanchor="about"><a href="#about">关于</a></li>
+</ul>
+<ul id="menu_user">
+		<li>
+			<% if !current_user %>
+				<li><%= link_to("✏️注册", new_user_registration_path) %></li>
+				<li><%= link_to("🔐登陆", new_user_session_path) %></li>
+			<% else %>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							👏欢迎, <%= current_user.email %>
+							<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+							<% if current_user.admin? %>
+							<li> <%= link_to("🛠讲演操作中心", admin_jobs_path) %></li>
+							<li class="divider"></li>
+							<% end %>
+							<li><%= link_to("📴退出", destroy_user_session_path, method: :delete) %></li>
+					</ul>
+				</li>
+			<% end %>
+	  </li>
+</ul>
+
+<ul id="menu_tips">
+	<%= render "common/flashes" %>
+</ul>
+
+<div id="dowebok">
+  <!--home-->
+	<div class="section">
+		<div class="bgp_universe">
+			<div class="bgp_yikuaishiting">
+			</div>
+			<div class="bgp_biaoyu">
+			</div>
+			<p class="p_des">
+				一块视听 —— 2017年最具创意气质的重量级知识分享平台，重生光华，为之瞩目。集
+				<br>
+				最具人气的大师匠人视频音频知识服务并有不定期直播互动与线下meetup，无可替代的
+				<br>
+				独创交互设计，提供知识付费时代的饕餮盛宴，成就无与伦比的出众品味。无可比拟的
+				<br>
+				美妙体验和人生升级,最低只需一块钱，让我们一块视听。
+			</p>
+			<div class="bgp_peopleback">
+			</div>
+			<div class="bgp_peoplefront">
+			</div>
+		</div>
+	</div>
+
+  <!--joblist-->
+	<div class="section">
+		<div class="bgp_sun">
+			<div class="slide">
+				<div class="bg-content">
+					<script src="//fast.wistia.com/embed/medias/j0ms3g9zeq.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:51.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_j0ms3g9zeq videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+					<h3>《七年就是一辈子》 - 比特币首富李笑来老师分享</h3>
+					<a href="javascript:" style="text-decoration: underline; color: #000000; font-weight: 300;">更多精彩，尽在一块视听...[内测]</a>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="bg-content">
+					<marquee scrollamount="2" direction="up" bgcolor="#3e362a" onmouseover=stop() onmouseout=start()>
+						<p><a href="javascript:" style="text-decoration: underline; color: #ff45f0; font-size: 4;"> 不想上班怎么破？丨窦文涛陈丹青圆桌夜话（2016-12-02 00:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #ff4500; font-size: 4;"> 如何有效提升写作能力？丨师北宸教你最核心的4招（2017-01-09 21:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #ff5600; font-size: 4;"> 普通商家如何抓住外卖商机收入翻倍？丨洪七公的外卖大课（2017-01-12 20:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #dd6700; font-size: 4;"> 如何保护婚姻这种「契约关系」 | CCTV《法律讲堂》金牌主讲人@余婧律师，同时也是王宝强离婚案中王宝强的代理律师，来为大家分享一些婚姻危机中的法律常识和应对智慧（2017-01-12 20:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #2387ff; font-size: 4;"> 如何让孩子在未来更有竞争力？丨张旎的育儿心经（2017-01-12 21:30）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #ff8900; font-size: 4;"> 我从月球回来这 48 年 | 巴兹·奥尔德林盯着一片空白的仪表屏幕，冷静地通过话筒向地球上的人们报告（2017-01-15 14:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #ff45f0; font-size: 4;"> 如何通过演讲改变命运？| 语言都是苍白的，直接听老罗的直播吧（2017-01-16 20:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #ff1200; font-size: 4;"> 初创品牌如何从0到1做营销？|营销达人雅君的好用分享（2017-01-16 20:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #876664; font-size: 4;"> 小程序上线，内容运营如何迎接挑战？丨《跟小贤学运营》作者来了（2017-01-19 21:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #ff3400; font-size: 4;"> 这是一个你会用到的春节锦囊 | 川菜行业杂志《四川烹饪》@灰子教你做好一桌年夜饭（2017-01-20 21:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #ff0011; font-size: 4;"> 如何用心理学知识掌握搭讪技巧？|《魔鬼搭讪学》阮琦一小时教会你（2017-01-26 20:30）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #239876; font-size: 4;"> 每周健身2小时获得理想身材的具体方法 | Dr Burning Fitness 的创始人刘洹（2017-02-02 21:00）</a></p>
+						<p><a href="javascript:" style="text-decoration: underline; color: #ffffff; font-size: 4;"> (更多精彩，尽在一块视听...[内测])</a></p>
+					</marquee >
+					<span style="color: #202020;">
+						<li>集合优秀于一身&nbsp;--&nbsp;知乎大神，分答专家，一块听听大牛等</li>
+						<li>致力服务于大众&nbsp;--&nbsp;上到天文下至地理，生活社会无所不包</li>
+					</span>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="bg-content">
+					<div style="width:100%; height:400px; border:#ccc solid 1px;" id="dituContent"></div>
+					<h3>最近一月内视听meetup分布图</h3>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="bg-content">
+					<p style="text-align: center;">
+						<img src="http://oj8zlumqh.bkt.clouddn.com/image/woyaozhubo.png" alt="gerenjueqi" width="830" height="400" style="opacity:1.0;">
+					</p>
+					<h3>财富自由之路</h3>
+					<span style="color: #202020;">
+						<li>突破时间的局限&nbsp;--&nbsp;想办法尽量把自己的同一段时间卖给很多人</li>
+						<li>把时间卖给自己&nbsp;--&nbsp;将一切自己动手的事情当做自己的事情来做</li>
+						<li>财务自由非终点&nbsp;--&nbsp;世界因为你而不同才是你我生命的终极意义</li>
+					</span>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="bg-content">
+					<p style="text-align: center;">
+						<img src="http://oj8zlumqh.bkt.clouddn.com/image/woyaoshiting.png" alt="ziwoshengji" width="600" height="400" style="opacity:1.0;">
+					</p>
+					<h3>自我升级之路</h3>
+					<span style="color: #202020;">
+						<li>成长是根本关键&nbsp;--&nbsp;里程碑式思维可以帮你获得更多新能力</li>
+						<li>概念是重要基石&nbsp;--&nbsp;掌握正确给自己洗脑的方法不交傻逼税</li>
+						<li>最贵资源是时间&nbsp;--&nbsp;花钱去买别人的时间来节省自己的时间</li>
+					</span>
+				</div>
+			</div>
+			<div class="bgp_dots"></div>
+		</div>
+		<div class="zhubo">
+			<img src="http://oj8zlumqh.bkt.clouddn.com/image/microphone.png" alt="zhubo">
+			<h4><%= link_to("我要主播", admin_jobs_path ) %></h4>
+		</div>
+		<div class="shouting">
+			<img src="http://oj8zlumqh.bkt.clouddn.com/image/headphones.png" alt="zhubo">
+			<h4><%= link_to("我要视听", jobs_path ) %></h4>
+		</div>
+	</div>
+
+  <!--about-->
+	<div class="section">
+		<div class="bgp_pure">
+			<div class="bgp_goutongwujie"></div>
+		  <div class="bgp_houjibofa"></div>
+			<div class="bgp_video">
+				<h4>弥补遗憾回顾历史之轮</h4>
+				<p><a href="javascript:" style="color: #ffffff;">勇于探索新边疆快速成长的你，请相信自己不会错过什么的，这里一切有迹可循。</a></p>
+			</div>
+			<div class="bgp_email">
+				<h4>投稿建议共建优质平台</h4>
+				<p><a href="mailto:taketimeasafriend@gmail.com" style="color: #ffffff;">我们的成长离不开你，让我们在一起成长的道路上互帮互助，成为对方的贵人。</a></p>
+			</div>
+			<div class="bgp_author">
+				<h4>联系掌柜开启主播特权</h4>
+				<p><a href="http://oj8zlumqh.bkt.clouddn.com/image/whynotwangwei.jpeg" target=_new style="color: #ffffff;">知识就是金钱，时间就是力量。开启个人崛起模式，踏上财富自由之路其实并不难。</a></p>
+			</div>
+			<%= render "common/footer" %>
+		</div>
+	</div>
+</div>

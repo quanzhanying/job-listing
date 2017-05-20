@@ -1,0 +1,284 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ *= require jquery.fullPage.css
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+#menu { margin: 0; padding: 0; position: fixed; list-style-type: none; z-index: 70;}
+#menu li { float: left; margin:  0 0 0 0; font-size: 15px;}
+#menu a { float: left; padding: 10px 20px; background-color: #333; color: #fff; text-decoration: none;}
+#menu .active a { color: #333; background-color: #fff;}
+
+#menu_user { top: 0; right: 0; position: fixed; list-style-type: none; z-index: 70;}
+#menu_user li { float: left; margin:  0 0 0 0; font-size: 15px;}
+#menu_user a { float: left; padding: 10px 20px; background-color: #333; color: #fff; text-decoration: none;}
+#menu_user .active a { color: #333; background-color: #fff;}
+
+#menu_tips { bottom: 0; right: 10px; position: fixed; list-style-type: none; z-index: 70;}
+
+.section { font: "Microsoft Yahei"; color: #fff;}
+
+.section .bg-content {
+  position: relative;
+  top: -10%;
+  margin: 0 100px 0px 100px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: #333;
+  text-align: center;
+  font-size: 15px;
+}
+
+.section .zhubo {
+  position: absolute;
+  left: 30%;
+  top: 80%;
+  text-align: center;
+  padding: 0 20px 0 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #333;
+  font-size: 15px;
+  z-index:99;
+}
+
+.section .shouting {
+  position: absolute;
+  right: 30%;
+  top: 80%;
+  text-align: center;
+  padding: 0 20px 0 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #330;
+  font-size: 15px;
+  z-index:99;
+}
+//------------------------------------------------------------------------------
+//section1
+.bgp_universe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/universe.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bgp_yikuaishiting {
+  position: absolute;
+  width: 100%;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/name.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: 66%;
+  padding-top: 170px;
+  animation:yikuaishiting_move 1s;
+}
+@keyframes yikuaishiting_move {
+  from {bottom:0px;}
+	to {bottom:66%;}
+}
+
+.bgp_biaoyu {
+  position: absolute;
+  width: 100%;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/yuanyushiting.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: 57%;
+  padding-top: 110px;
+  animation:biaoyu_move 1s;
+}
+@keyframes biaoyu_move {
+  from {bottom:0px;}
+	to {bottom:57%;}
+}
+
+.bgp_peopleback {
+  position: absolute;
+  width: 100%;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/people--back.png');
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 0;
+  bottom: -10px;
+  padding-top: 400px;
+  animation:peopleback_move 2s;
+}
+@keyframes peopleback_move {
+  from {bottom: -200px;}
+	to {bottom: -10px;}
+}
+
+.bgp_peoplefront {
+  position: absolute;
+  width: 100%;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/people--front.png');
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 0;
+  bottom: -10px;
+  padding-top: 400px;
+  animation:peopleback_front 1s;
+}
+@keyframes peopleback_front {
+  from {bottom: -100px;}
+	to {bottom: -10px;}
+}
+
+.p_des {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 600px;
+  margin: 0 0 0 -280px;
+  font-size: 15px;
+  color: #94a7c6;
+  animation:p_des_move 1s;
+}
+@keyframes p_des_move {
+  from {top:0px;}
+	to {top:50%;}
+}
+//section2
+.bgp_sun {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/section2-1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bgp_dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/section2-2.png');
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 20%;
+  animation:dots_move 30s infinite;
+}
+@keyframes dots_move {
+  from {top:-140px;}
+	to {top:0px;}
+}
+
+.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+.iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+//section3
+.bgp_pure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/bgp-about.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bgp_video {
+  position: absolute;
+  width: 208px;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/video.png');
+  background-repeat: no-repeat;
+  left: 10%;
+  bottom: 20%;
+  padding-top: 170px;
+  animation:video_move 3s;
+}
+@keyframes video_move {
+  from {left:0;}
+	to {left:10%;}
+}
+.bgp_video p{font-size: 14px;}
+
+.bgp_email {
+  position: absolute;
+  width: 208px;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/email.png');
+  background-repeat: no-repeat;
+  left: 45%;
+  bottom: 20%;
+  padding-top: 170px;
+  animation:email_move 3s;
+}
+@keyframes email_move {
+  from {bottom:0px;}
+	to {bottom:20%;}
+}
+.bgp_email p{font-size: 14px;}
+
+.bgp_author {
+  position: absolute;
+  width: 208px;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/author.png');
+  background-repeat: no-repeat;
+  left: 80%;
+  bottom: 20%;
+  padding-top: 170px;
+  animation:author_move 3s;
+}
+@keyframes author_move {
+  from {left:100%;}
+	to {left:80%;}
+}
+.bgp_author p{font-size: 14px;}
+
+.bgp_goutongwujie {
+  position: absolute;
+  width: 800px;
+  right: 50px;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/gtwj11.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: 70%;
+  padding-top: 170px;
+  animation:goutongwujie_move 1s;
+}
+@keyframes goutongwujie_move {
+  from {bottom:0px;}
+	to {bottom:70%;}
+}
+
+.bgp_houjibofa {
+  position: absolute;
+  width: 800px;
+  left: 50px;
+  background-image:url('http://oj8zlumqh.bkt.clouddn.com/image/hjbf22.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: 80%;
+  padding-top: 170px;
+  animation:houjibofa_move 1s;
+}
+@keyframes houjibofa_move {
+  from {bottom:0px;}
+	to {bottom:80%;}
+}

@@ -1,0 +1,49 @@
+<div class="col-md-12">
+  <h3 style="text-align:center;
+  background:#dddddd;
+  border:3px solid #a1a1a1;
+  padding:10px 40px;
+  border-radius:25px;">📖播主面板</h3>
+
+  <div class="job">
+    <%= link_to("📎添加视听活动信息", new_admin_job_path, class: "btn btn-primary pull-right") %>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <!--<td>#</td>-->
+        <td>👤项目(标题)</td>
+        <td>💰观众下限</td>
+        <td>💰观众上限</td>
+        <td>🕛创建时间</td>
+        <td>📩参加者数量</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <!--<td>#</td>-->
+          <td>
+            <%= render_job_status(job) %>
+            <%= link_to(job.title, admin_job_path(job)) %>
+          </td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.wage_upper_bound %></td>
+          <td><%= job.created_at %></td>
+          <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
+          <td>
+            <%= link_to("🗑删除", admin_job_path(job),    class: "btn btn-sm btn-danger pull-right",
+                        method: :delete, data: { confirm: "⚠️您确定删除吗?" } )%>
+            <%= link_to("📝编辑", edit_admin_job_path(job), class: "btn btn-sm btn-primary pull-right")%>
+            <% if job.is_hidden %>
+              <%= link_to("👓显示", publish_admin_job_path(job), :method => :post, class: "btn btn-sm btn-info pull-right")%>
+            <% else %>
+              <%= link_to("🕶隐藏", hide_admin_job_path(job), :method => :post, class: "btn btn-sm btn-info pull-right")%>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

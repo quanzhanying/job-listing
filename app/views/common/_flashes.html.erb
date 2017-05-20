@@ -1,0 +1,15 @@
+<% if flash.any? %>
+  <% user_facing_flashes.each do |key, value| %>
+    <div class="alert alert-dismissable alert-<%= flash_class(key) %>" style="font-size: 15px;
+    text-align:center;
+    background:rgba(255, 255, 255, 0.5);
+    border:2px outset rgba(255, 255, 255, 0.6);
+    width:25%;
+    bottom:0;right:10px;
+    position: fixed;">
+    <!--<button class="close" data-dismiss="alert" >x</button>-->
+      <%= value %>
+      <a class="btn btn-danger"  data-dismiss="alert" style="border-radius:50%;">X</a>
+    </div>
+  <% end %>
+<% end %>
