@@ -1,0 +1,35 @@
+<tr>
+<td class="col-md-1">
+<%= render_job_state(job) %>
+<% if isUserDashBoard %>
+<%= link_to(job.title,  admin_job_path(job, {isUserDashBoard:true}))%>
+<% else %>
+<%= link_to(job.title,  admin_job_path(job))%>
+<% end %>
+</td>
+
+<!-- <td><%= simple_format(job.description) %></td> -->
+<td> <%=job.salaryMin%> - <%=job.salaryMax%></td>
+<td><%= job.contact %></td>
+<td><%= job.created_at.strftime("%Y/%m/%d") %></td>
+
+<% if !isUserDashBoard %>
+<td class="col-md-3">
+  <div row vdivide>
+    <%= link_to("Resumes (" + job.resumes.length.to_s + ")", admin_job_resumes_path(job), class:"btn btn-xs btn-success")%>
+
+    <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-xs btn-primary") %>
+
+    <%= link_to("Delete",admin_job_path(job), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-xs btn-danger") %>
+    <%  if job.hide %>
+
+    <%= link_to("Publish",admin_job_publish_path(job), method: :post, class: "btn btn-xs btn-info") %>
+    <% else %>
+    <%= link_to("Hide", admin_job_hide_path(job), method: :post, class: "btn btn-xs btn-warning") %>
+    <% end %>
+  </div>
+</td>
+
+<% end %>
+
+</tr>

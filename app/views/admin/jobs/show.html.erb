@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h1> <%= @job.title %> </h1>
+      <br />
+      <p>
+      <%= simple_format(@job.description) %>
+      </p>
+
+    </div>
+    <% if !isUserDashBoard %>
+    <div class="col-md-1 col-md-offset-9 center-block">
+      <%= link_to("View Resumes (" + @job.resumes.length.to_s + ")", admin_job_resumes_path(@job), class:"btn btn-primary")%>
+    </div>
+    <% end %>
+  </div>
+</div>
