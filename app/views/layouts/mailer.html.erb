@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
-    </style>
-  </head>
+    <head>
+        <title>Job Listing </title>
+        <%= csrf_meta_tags %>
 
-  <body>
-    <%= yield %>
-  </body>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <%= render "common/navbar" %>
+            <%= yield %>
+        </div>
+
+        <%= render "common/footer" %>
+
+    </body>
 </html>
