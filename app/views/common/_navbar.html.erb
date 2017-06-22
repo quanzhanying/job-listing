@@ -1,0 +1,95 @@
+<nav class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="/"><i class="fa fa-lightbulb-o" aria-hidden="true"> Light </i></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="navbar-collapse navbar-ex1-collapse collapse"  aria-expanded="false">
+
+        <!--Search-->
+        <ul class="nav navbar-nav  ">
+          <li>
+            <%= form_tag jobs_path, :method => "get" do %>
+               <div class="searchform">
+                  <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+                      <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
+               </div>
+            <% end %>
+          </li>
+        </ul>
+
+            <ul class="nav navbar-nav navbar-right navbar-link">
+              <li>
+                  <% if !current_user %>
+                    <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+                  <% else %>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Hi!, <%= current_user.email %>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <% if current_user.admin? %>
+                        <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
+                      <% end %>
+                        <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+                    </ul>
+                </li>
+                <% end %>
+              </li>
+            </ul>
+
+        <!-- /.navbar-collapse -->
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Login window -->
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="loginmodal-container">
+       <h2>Log in</h2>
+       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+         <div class="form-inputs">
+           <%= f.input :email, required: false, autofocus: true %>
+           <%= f.input :password, required: false %>
+           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+         </div>
+         <div class="form-actions">
+           <%= f.button :submit, "Log in" %>
+         </div>
+       <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h2>Sign up</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+        <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
