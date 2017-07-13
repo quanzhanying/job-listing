@@ -1,0 +1,79 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                <i class="fa fa-tree" aria-hidden="true">鼎立木业</i>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><%= link_to("首页", root_path) %></li>
+                <li><%= link_to("加入我们", jobs_path) %></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        关于我们
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a><%= link_to '公司简介', introduction_path %></a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a><%= link_to '经营理念', business_path %></a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a><%= link_to '专业技术',professional_path %></a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a><%=link_to '品质检验', quality_path %></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                    <%= form_tag search_jobs_path, :method => :get, class: "navbar-form navbar-left" do %>
+                    <div class="input-group search-box" >
+                        <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入职位信息">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <% end %>
+
+                <li>
+                    <% if !current_user %>
+                <li><%= link_to("注册", new_user_registration_path) %>
+                </li>
+                <li><%= link_to("登入", new_user_session_path) %></li>
+            <% else %>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Hi!,
+                        <%= current_user.email %>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <% if current_user.admin? %>
+                        <li><%= link_to("管理面板", admin_jobs_path) %></li>
+                        <% end %>
+                        <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
+                    </ul>
+                </li>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
+</nav>

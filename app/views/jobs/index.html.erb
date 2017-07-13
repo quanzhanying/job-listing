@@ -1,0 +1,72 @@
+
+<div class="jumbotron">
+    <h1 class="name">鼎立木业</h1>
+    <p class="slogan">鼎立木业是一个木质板材生产工厂。
+        <br>
+        我们希望藉由这个平台，能让大家找到且应征上高薪且优质的工作。
+        <br>
+        凭借自己的努力和天份也会变 Winner
+    </p>
+</div>
+
+<div class="col-md-8 col-centered">
+<div class="panel panel-primary">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+        <h3>工作列表
+          <div class="dropdown clearfix pull-right">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  排序
+                  <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+                  <li>
+                      <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+                  </li>
+                  <li>
+                      <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+                  </li>
+                  <li>
+                      <%= link_to("按照发表时间排序", jobs_path)%>
+                  </li>
+              </ul>
+          </div>
+        </h3>
+    </div>
+    <div class="panel-body">
+
+        <p>
+            <table class="table table-boldered">
+                <thead>
+                    <tr>
+                        <td>职缺</td>
+                        <td>薪资下限</td>
+                        <td>薪资上限</td>
+                        <td>发布时间</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @jobs.each do |job| %>
+                    <tr>
+                        <td>
+                            <%= link_to(job.title, job_path(job)) %>
+                        </td>
+                        <td>
+                            <%= job.wage_lower_bound %>
+                        </td>
+                        <td>
+                            <%= job.wage_upper_bound %>
+                        </td>
+                        <td>
+                            <%= job.created_at %>
+                        </td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </p>
+    </div>
+</div>
+
+
+</div>

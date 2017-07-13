@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JobListing</title>
+    <title>鼎立木业</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon-tree.ico">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="content">
+      <div class="container-fluid">
+        <!-- layout 里用到了 container-fluid 这个 class，它默认会把左右两边的 padding 撑开15px，
+        而 row 这个 class 则是带有左右 负 15px 的 margin，这样就可以抵消掉外面的两个 padding 了。 -->
+        <div class="row">
+          <%= render "common/navbar" %>
+          <%= render "common/flashes"%>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <%= render "common/footer" %>
+
   </body>
 </html>

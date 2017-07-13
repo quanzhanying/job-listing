@@ -1,0 +1,584 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display:
+  flex;
+  flex-direction: column;
+}
+.content { flex: 1;}
+
+//---Navbar---
+
+.navbar-default {
+     background-color: #0aac84;  //背景颜色
+
+     border-color: #0aac84; //边框色
+
+      //底部 margin 不撑开距离
+
+     border-radius: 0; //圆角为0
+
+ }
+
+  .navbar-default .navbar-brand {
+   color: #ffffff; //字体颜色
+
+   padding: 10px 15px; //上下10px，左右15px
+   line-height: 30px; //文字行高
+   font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+   font-size: 25px;
+
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #ffffff; //鼠标放置在链接上的文字颜色
+
+   background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+ }
+
+ .navbar-default .navbar-nav > li > a{
+   color: #ffffff;  //右侧注册登录按钮颜色
+   font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+   font-size: 15px;
+
+
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+   color: #ffffff;
+
+   background-color: #009572;
+ }
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+   color: #ffffff;
+
+   background-color: #009572;
+
+ }
+
+ .navbar-default .navbar-nav > .open > a,
+ .navbar-default .navbar-nav > .open > a:focus,
+ .navbar-default .navbar-nav > .open > a:hover {
+   background-color: #009572;
+
+   color: #ffffff;
+
+ }
+//---Navbar---
+
+//-----搜索------
+
+.search-box{
+  margin-top: 0;
+
+  input{
+    width: 250px !important;
+  }
+}
+
+
+//---welcome content---
+//头图
+
+
+ .box {
+     background-image: url("http://ww4.sinaimg.cn/large/006tNbRwgy1ff2jqs78bvj31hf0hen57.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position:center;
+     margin-bottom: 50px;
+     margin-top: -20px;//与导航栏边距 ，不显示白边
+
+
+     .box-inner {
+         background-color: rgba(250, 250, 250, 0.69);
+         padding-bottom: 5px;
+         margin-top: 150px;
+         margin-bottom: 150px;
+     }
+
+     .title {
+         font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+         font-size: 50px;
+         text-align: center;
+         margin-bottom: 30px;
+     }
+
+     .slogan {
+         color: #222;
+         margin-top: 10px;
+         margin-bottom: 50px;
+         text-align: center;
+         font-size: 25px;
+         top: 12px;
+     }
+
+     .lead {
+         margin-bottom: 60px;
+         text-align: center;
+         color: white;
+     }
+ }
+
+//-----common----
+.col-centered {
+  float: none;
+  margin: 0 auto;
+
+}
+
+//------第二块 -------
+
+
+.mdpftop2 {
+    float: left;
+    width: 100%;
+}
+
+.mdwebf {
+    width: 980px;
+    margin: 50px auto 0 auto;
+}
+
+.mnpdbT2 {
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 40px;
+    color: #462e11;
+    text-align: center;
+    letter-spacing: 2pt;
+}
+
+.mnpdbf {
+    float: left;
+    width: 980px;
+    margin-top: 10px;
+}
+
+.mnpdpf {
+    float: left;
+    width: 306px;
+    margin: 20px 10px 0 10px;
+}
+
+.mnpdp {
+    float: left;
+    width: 306px;
+    height: 231px;
+    background-color: #000000;
+    text-align: center;
+}
+
+.mnpdTt {
+    float: left;
+    width: 306px;
+    height: 26px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mnpdTt a {
+    font-family: "微軟正黑體","Microsoft JhengHei", "Arial", "Helvetica", "sans-serif";
+    font-size: 15px;
+    color: #5d3d16;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+.v30 {
+    float: left;
+    width: 980px;
+    height: 50px;
+    padding: 5px 0px 5px 0px;
+}
+.clear {
+    clear: both;
+}
+
+//---------第三块-----------
+
+.mdpftopin2 {
+    float: left;
+    width: 100%;
+    height: 480px;
+    background-color: #f7f6f4;
+}
+
+.mdflow {
+    width: 568px;
+    padding: 0 2px 0 390px;
+    margin: 50px auto 0 auto;
+}
+
+.mdflowTt {
+    float: left;
+    width: 568px;
+    padding-top: 80px;
+    margin-bottom: 10px;
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 40px;
+    color: #462e11;
+    text-align: center;
+    line-height: 30px;
+}
+.mdflowTt ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+.mdflowTt li {
+    margin: 0 0 15px 0;
+    strong, b {
+    font-weight: bold;
+}
+}
+
+.mdflowst {
+    float: left;
+    width: 568px;
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 20px;
+    color: #462e11;
+    text-align: left;
+}
+.mdflowst ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+.mdflowst li {
+    margin: 0 0 10px 0;
+}
+
+
+
+.mdflowfPw {
+    float: left;
+    width: 650px;
+    margin: 25px 15px 0 200px;
+}
+
+
+
+
+//----------首页第四块-----------
+
+.mdpftopin {
+    float: left;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+.mnbtnauto {
+    width: 980px;
+    margin: 45px auto 0 auto;
+}
+.mnbtr {
+    float: left;
+    width: 960px;
+    margin: 0 10px 10px 10px;
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 15px;
+    color: #462e11;
+    text-align: center;
+    line-height: 30px;
+}
+.brownbT {
+    font-family: "微軟正黑體","Microsoft JhengHei","Arial", "Helvetica", "sans-serif";
+    font-size: 28px;
+    color: #462e11;
+    text-align: center;
+    line-height: 68px;
+}
+.mnbtn {
+    float: left;
+    width: 980px;
+}
+.mncsoutf {
+    float: left;
+    width: 215px;
+    margin: 40px 15px 0 15px;
+}
+.mncasep {
+    float: left;
+    width: 215px;
+    height: 160px;
+    margin-bottom: 10px;
+    background-color: #000000;
+}
+.mncaseTt {
+    float: left;
+    width: 211px;
+    padding: 0 2px 0 2px;
+    text-align: center;
+}
+.v70 {
+    float: left;
+    width: 960px;
+    height: 70px;
+    padding: 5px 0px 5px 0px;
+}
+.clear {
+    clear: both;
+}
+
+
+
+
+ //---------Content---------
+
+  .content-section-a {
+      padding: 50px 0;
+      background-color: #f8f8f8;
+  }
+
+  .content-section-b {
+      padding: 50px 0;
+      border-top: 1px solid #e7e7e7;
+      border-bottom: 1px solid #e7e7e7;
+  }
+
+  .section-heading-spacer {
+      float: left;
+      width: 200px;
+      border-top: 3px solid #e7e7e7;
+  }
+
+  .section-heading {
+      margin-bottom: 30px;
+  }
+
+  .lead {
+      font-size: 18px;
+      font-weight: 400;
+  }
+ View
+
+
+
+//---welcome content---
+
+
+
+
+
+//---------footer----------
+//---------Footer---------
+
+.footer-default {
+
+}
+
+footer .footer-below {
+    padding: 25px 0;
+    background-color: #0aac84;
+    color: #ffffff;
+}
+
+
+
+
+
+//------footer--------
+
+
+//--------jumbotron----------
+.jumbotron {
+  background-image:url('http://ww2.sinaimg.cn/large/006tNc79gy1fevsy65na9j31kw11xe8c.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 100px;
+}
+
+.name {
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  max-width: 500px;//最大宽度
+  margin-top: 200px;//和顶部拉开距离
+  margin-bottom: 0;//这样就可以紧接息面的描述文字
+  border-top-right-radius: 3px;//右上角圆边
+  border-top-left-radius: 3px;//左上角圆边
+}
+
+ .jumbotron h1, .jumbotron .h1 {
+     text-align: left;//文字左对齐
+     color: #222;  //字体颜色
+
+     padding: 50px 20px 0;//上50px，左右20px，下0
+ }
+
+ .jumbotron p {
+     margin: 0;//上下左右margin为0
+     font-size: 26px;//字体大小
+     max-width: 500px;//最大宽度
+     background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+     padding: 20px;//上下左右padding为20px
+     text-align:left;//文字左对齐
+     color: #222;//字体颜色
+
+     border-bottom-right-radius: 3px;//右下角圆边
+     border-bottom-left-radius: 3px;//左下角圆边
+ }
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+ .container-fluid .jumbotron{
+   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+   margin: -20px 0px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+   border-radius: 0;//圆角为0
+ }
+
+
+
+
+
+//admin职位表格样式
+.custab{
+  border: 1px solid #ccc;
+
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+//admin职位表格样式
+
+
+
+
+
+
+//------登录弹窗------
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+//------登录弹窗------

@@ -1,24 +1,16 @@
-# README
+# 招聘网站
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 管理员
+* 可以新增职位需求；（包括标题、内容、薪资上限、薪资下限、联系方式）
+* 可以编辑、删除、隐藏职位需求（后台）；
 
-Things you may want to cover:
+### 使用者
+* 必须登录才能申请职位；
+* 必须有admin身份才能进入后台；
+* 可以浏览职位需求；
+* 可以搜索职位需求；
+* 可以按需排序职位；
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 管理员账号
+* test@gmail.com
+* 111111
