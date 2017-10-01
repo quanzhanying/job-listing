@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :get_job_id, :only =>[:show, :edit, :destroy, :update]
+  before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
     @jobs = Job.all
