@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   before_filter :require_is_admin, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-    @jobs = Job.where(:is_hidden => false)
+    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
   end
 
   def new
