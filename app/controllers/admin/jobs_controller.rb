@@ -1,44 +1,10 @@
 class Admin::JobsController < ApplicationController
 
   before_action :get_job_id, :only =>[:show, :edit, :destroy, :update]
-  before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
-  before_filter :require_is_admin, only: [:new, :create, :update, :edit, :destroy]
-
+  before_filter :authenticate_user!
+  before_filter :require_is_admin
   def index
     @jobs = current_user.jobs.order("created_at DESC")
-  end
-
-  def new
-    @job = Job.new
-  end
-
-  def create
-    @job = Job.new(job_params)
-    @job.user = current_user
-    if @job.save
-      redirect_to amdin_jobs_path
-    else
-      render :new
-    end
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-    if @job.update(job_params)
-      redirect_to admin_jobs_path, notice: 'update job success'
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @job.destroy
-    redirect_to admin_jobs_path, alert: 'delete job-list success'
   end
 
   def require_is_admin

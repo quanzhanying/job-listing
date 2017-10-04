@@ -26,8 +26,8 @@
           <td><%= job.salary_min %></td>
           <td><%= job.updated_at %></td>
           <td>
-              <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", admin_job_path(job),    class: "btn btn-sm btn-default",
+              <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
+              <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
           </td>
         </tr>
