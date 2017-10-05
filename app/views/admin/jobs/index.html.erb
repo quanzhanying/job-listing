@@ -1,0 +1,44 @@
+<div class="col-md-12">
+  <div class="navbar-header">
+      <a class="navbar-brand" href="/">Amdin Panel</a>
+  </div>
+  <div class="job">
+    <%= link_to("New job", new_admin_job_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>hide</td>
+        <td>Title</td>
+        <td>Description</td>
+        <td>Salary_max</td>
+        <td>Salary_min</td>
+        <td>email</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td>#</td>
+          <td>
+            <% if job.is_hidden %>
+              (Hidden)<%= link_to(job.title, admin_job_path(job)) %>
+            <% else %>
+              (Public)<%= link_to(job.title, admin_job_path(job)) %>
+            <% end %>
+          </td>
+          <td><%= job.description %></td>
+          <td><%= job.salary_max %></td>
+          <td><%= job.salary_min %></td>
+          <td><%= job.email %></td>
+          <td>
+              <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default")%>
+              <%= link_to("Delete", admin_job_path(job),    class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?" } )%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
