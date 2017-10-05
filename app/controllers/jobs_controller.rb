@@ -1,7 +1,6 @@
 class JobsController < ApplicationController
   before_action :get_job_id, :only =>[:show, :edit, :destroy, :update]
-  before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
-  before_filter :require_is_admin, only: [:new, :create, :update, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
     @jobs = Job.where(:is_hidden => false).order("created_at DESC")
@@ -15,7 +14,11 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = current_user
     if @job.save
-      redirect_to admin_jobs_path
+      if @job.user.admin?
+        redirect_to admin_jobs_path,notice: 'create new job success'
+      else
+        redirect_to jobs_path, notice: 'create new job success'
+      end
     else
       render :new
     end
@@ -29,7 +32,11 @@ class JobsController < ApplicationController
 
   def update
     if @job.update(job_params)
-      redirect_to admin_jobs_path, notice: 'update job success'
+      if @job.user.admin?
+        redirect_to admin_jobs_path,notice: 'update job success'
+      else
+        redirect_to jobs_path, notice: 'update job success'
+      end
     else
       render :edit
     end
@@ -37,14 +44,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-    redirect_to admin_jobs_path, alert: 'delete job-list success'
-  end
-
-  def require_is_admin
-    unless current_user.admin?
-      flash[:alert] = 'You are not admin'
-      redirect_to root_path
-    end
+    redirect_to jobs_path, alert: 'delete job-list success'
   end
 
   private

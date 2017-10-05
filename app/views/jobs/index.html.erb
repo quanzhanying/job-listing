@@ -1,10 +1,14 @@
 <div class="col-md-12">
 
   <table class="table table-hover">
+    <div class="job">
+      <%= link_to("New job", new_job_path, class: "btn btn-primary pull-right") %>
+    </div>
     <thead>
       <tr>
         <td>#</td>
         <td>Title</td>
+        <td>Edit/Delete</td>
         <td>Description</td>
         <td>salary_max</td>
         <td>salary_min</td>
@@ -16,10 +20,16 @@
         <tr>
           <td>#</td>
           <td><%= job.title %></td>
+          <td>
+              <%= link_to("Edit", edit_job_path(job))%>
+              <%= link_to("Delete", job_path(job),
+                          method: :delete, data: { confirm: "Are you sure?" } )%>
+          </td>
           <td><%= job.description %></td>
           <td><%= job.salary_max %></td>
           <td><%= job.salary_min %></td>
           <td><%= job.email %></td>
+
         </tr>
       <% end %>
     </tbody>
