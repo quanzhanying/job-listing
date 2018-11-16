@@ -1,0 +1,20 @@
+<div class="pull-right">
+  <%= link_to("Add a movie", new_admin_movie_path, :class => "btn btn-default" ) %>
+</div>
+<br><br>
+<table class="table table-bordered">
+  <% @movies.each do |movie| %>
+  <tr>
+    <td>
+      <%= link_to(movie.title, admin_movie_path(movie)) %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_admin_movie_path(movie)) %>
+      <%= link_to("Destroy", admin_movie_path(movie), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+    <td>
+      <%= movie.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
