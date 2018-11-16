@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
 before_action :authenticate_user!, only: %i(new create update edit destroy)
 
 def index
-  @movies = Movie.all
+  @movies = Movie.where(:is_hidden => false ).order("created_at DESC")
 end
 
 
@@ -48,7 +48,7 @@ end
 private
 
   def movie_params
-    params.require(:movie).permit(:title, :description, :douban)
+    params.require(:movie).permit(:title, :description, :douban, :is_hidden)
   end
 
 end

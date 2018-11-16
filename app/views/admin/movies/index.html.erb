@@ -6,6 +6,7 @@
   <% @movies.each do |movie| %>
   <tr>
     <td>
+      <%= render_movie_status(movie) %>
       <%= link_to(movie.title, admin_movie_path(movie)) %>
     </td>
     <td>
