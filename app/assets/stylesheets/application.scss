@@ -12,7 +12,69 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+.navbar-default {
+  background-color: #DCEDC8;
+  border-color: #37474F;
+  margin-buttom: 0;
+}
+.navbar-default .navbar-brand {
+  color: #37474F;
+  padding: 10px 15px;
+  line-height: 30px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #FF6F00;
+  background-color: #FFF59D;
+  // transparent;
+}
+.navbar-default .navbar-nav > li > a{
+  color: #EF6C00;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+   color: #FF6F00;
+   background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #FF6F00;
+
+  background-color: #FFE0B2;
+
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  background-color: #FFE0B2;
+
+  color: #212121;
+
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+.navbar-brand > img {
+  display: inline-block;
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+.container-fluid .jumbotron{
+  padding-buttom: 110px;
+  margin: 0 -15px 20px;
+  border-radius: 0;
+}

@@ -1,6 +1,7 @@
 class Admin::MoviesController < ApplicationController
   before_action :authenticate_user!, only: %i(new create update edit destroy)
   before_action :require_is_admin
+  layout "admin"
   def show
     @movie = Movie.find(params[:id])
   end
@@ -39,6 +40,18 @@ class Admin::MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie.destroy
     redirect_to admin_movies_path
+  end
+
+  def publish
+    @movie = Movie.find(params[:id])
+    @job.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @movie = Movie.find(params[:id])
+    @movie.hide!
+    redirect_to :back
   end
 
   private

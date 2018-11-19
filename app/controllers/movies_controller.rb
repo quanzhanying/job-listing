@@ -12,6 +12,10 @@ end
 
 def show
   @movie = Movie.find(params[:id])
+  if @movie.is_hidden
+    flash[:warning] = "This Movie already archived"
+    redirect_to root_path
+  end
 end
 
 def create

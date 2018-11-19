@@ -2,9 +2,9 @@ module Admin::MoviesHelper
 
   def render_movie_status(movie)
     if movie.is_hidden
-      "(Hidden)"
+      content_tag(:span, "", :class => "fa fa-lock")
     else
-      "(Public)"
+      content_tag(:span, "", :class => "fa fa-globe")
     end
   end
 end
