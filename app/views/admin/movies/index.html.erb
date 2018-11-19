@@ -13,9 +13,9 @@
       <%= link_to("Edit", edit_admin_movie_path(movie)) %>
       <%= link_to("Destroy", admin_movie_path(movie), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
       <% if movie.is_hidden %>
-        <%= link_to("Publish", :method => :post, :class => "btn btn-xs btn-default")%>
+        <%= link_to("Publish", publish_admin_movie_path(movie) , :method => :post, :class => "btn btn-xs btn-default")%>
       <% else %>
-        <%= link_to("Hide", :method => :post, :class => "btn btn-xs btn-default")%>
+        <%= link_to("Hide", hide_admin_movie_path(movie) , :method => :post, :class => "btn btn-xs btn-default")%>
       <% end %>
     </td>
     <td>

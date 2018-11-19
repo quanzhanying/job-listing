@@ -3,6 +3,12 @@ before_action :authenticate_user!, only: %i(new create update edit destroy)
 
 def index
   @movies = Movie.where(:is_hidden => false ).order("created_at DESC")
+  @movies = case params[:order]
+  when 'by_douban'
+    Movie.published.order('douban DESC')
+  else
+    Movie.published.recent
+  end
 end
 
 

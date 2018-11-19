@@ -44,7 +44,7 @@ class Admin::MoviesController < ApplicationController
 
   def publish
     @movie = Movie.find(params[:id])
-    @job.publish!
+    @movie.publish!
     redirect_to :back
   end
 
