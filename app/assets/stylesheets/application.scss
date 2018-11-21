@@ -78,3 +78,104 @@
   margin: 0 -15px 20px;
   border-radius: 0;
 }
+// .jumbotron {
+//   // background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+//   // background-image:src('https://picjumbo.com/wp-content/uploads/endless-hills-free-photo-2210x1473.jpg');
+// background-image: url("header.jpg");
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   padding-bottom: 110px;
+// }
+
+// .title {
+//   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+//   text-align: center;
+//   margin-top: 200px;
+//   margin-bottom: 80px;
+// }
+//
+// .slogan {
+//   margin-top: 10px;
+//   margin-bottom: 50px;
+//   text-align: center;
+//   color: white;
+//   top: 12px;
+// }
+
+
+.box {
+    background-image: url("header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
+     .box-inner {
+        background-color: rgba(250, 250, 250, 0.69);
+        padding-bottom: 5px;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+     .title {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+     .slogan {
+        color: #222;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        text-align: center;
+        font-size: 25px;
+        top: 12px;
+    }
+     .lead {
+        margin-bottom: 60px;
+        text-align: center;
+        color: white;
+    }
+}
+
+//---------Content---------
+ .content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+ .content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+ .section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+ .section-heading {
+    margin-bottom: 30px;
+}
+ .lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+//---------Footer---------
+ footer {
+    color: white;
+}
+ footer .footer-below {
+    padding: 25px 0;
+    background-color: #233140;
+}
+
+.custab{
+  border: 1px solid #ccc;
+
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}

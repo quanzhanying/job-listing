@@ -2,7 +2,7 @@
   <%= link_to("Add a movie", new_admin_movie_path, :class => "btn btn-default" ) %>
 </div>
 <br><br>
-<table class="table table-bordered">
+<table class="table table-bordered table-striped custab">
   <thead>
     <tr>
       <td>
@@ -32,12 +32,12 @@
     <td><%= link_to(movie.resumes.count, admin_movie_resumes_path(movie))%></td>
     <td><%= movie.douban %></td>
     <td>
-      <%= link_to("Edit", edit_admin_movie_path(movie)) %>
-      <%= link_to("Destroy", admin_movie_path(movie), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      <%= link_to("Edit", edit_admin_movie_path(movie), :class => "btn btn-xs btn-info") %>
+      <%= link_to("Destroy", admin_movie_path(movie), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
       <% if movie.is_hidden %>
-        <%= link_to("Publish", publish_admin_movie_path(movie) , :method => :post, :class => "btn btn-xs btn-default")%>
+        <%= link_to("Publish", publish_admin_movie_path(movie) , :method => :post, :class => "btn btn-xs btn-success")%>
       <% else %>
-        <%= link_to("Hide", hide_admin_movie_path(movie) , :method => :post, :class => "btn btn-xs btn-default")%>
+        <%= link_to("Hide", hide_admin_movie_path(movie) , :method => :post, :class => "btn btn-xs btn-warning")%>
       <% end %>
     </td>
     <td>
