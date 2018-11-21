@@ -1,0 +1,9 @@
+<h3> 投交影评到 <%= @movie.title %></h3>
+
+<hr>
+
+<%= simple_form_for [@movie,@resume] do |f|%>
+<%= f.input :content %>
+<%= f.input :attachment %>
+<%= f.submit "提交"%>
+<% end %>

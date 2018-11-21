@@ -10,7 +10,9 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :movies
+  resources :movies do
+    resources :resumes
+  end
   root 'movies#index'
 
 end
