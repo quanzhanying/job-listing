@@ -5,5 +5,5 @@
 </p>
 <h5>豆瓣评分：<%= simple_format(@movie.douban) %></h5>
 <div class="text-center">
-  <%= link_to("提交影评","#", :style => "font-size: 30px; text-decoration:")%>
+  <%= link_to("提交影评", new_movie_resume_path(@movie), :style => "font-size: 30px; text-decoration: underline;")%>
 </div>
