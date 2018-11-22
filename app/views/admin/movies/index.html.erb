@@ -1,0 +1,48 @@
+<div class="pull-right">
+  <%= link_to("Add a movie", new_admin_movie_path, :class => "btn btn-default" ) %>
+</div>
+<br><br>
+<table class="table table-bordered table-striped custab">
+  <thead>
+    <tr>
+      <td>
+        电影名
+      </td>
+      <td>
+        收到的影评数
+      </td>
+      <td>
+        豆瓣评分
+      </td>
+      <td>
+        管理选项
+      </td>
+      <td>
+        刊登时间
+      </td>
+    </tr>
+  </thead>
+
+  <% @movies.each do |movie| %>
+  <tr>
+    <td>
+      <%= render_movie_status(movie) %>
+      <%= link_to(movie.title, admin_movie_path(movie)) %>
+    </td>
+    <td><%= link_to(movie.resumes.count, admin_movie_resumes_path(movie))%></td>
+    <td><%= movie.douban %></td>
+    <td>
+      <%= link_to("Edit", edit_admin_movie_path(movie), :class => "btn btn-xs btn-info") %>
+      <%= link_to("Destroy", admin_movie_path(movie), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
+      <% if movie.is_hidden %>
+        <%= link_to("Publish", publish_admin_movie_path(movie) , :method => :post, :class => "btn btn-xs btn-success")%>
+      <% else %>
+        <%= link_to("Hide", hide_admin_movie_path(movie) , :method => :post, :class => "btn btn-xs btn-warning")%>
+      <% end %>
+    </td>
+    <td>
+      <%= movie.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

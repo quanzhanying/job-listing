@@ -1,0 +1,45 @@
+<div class="pull-right">
+  <%= link_to("Add a movie", new_movie_path, :class => "btn btn-default" )%>
+</div>
+<div class="dropdown clearfix pull-right">
+  <button class="btn bbtn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">排序
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+    <li>
+      <%= link_to("按照豆瓣评分从高到低排序", movies_path(:order => "by_douban"))%>
+    </li>
+    <li>
+      <%= link_to("按照发表时间排序", movies_path ) %>
+    </li>
+  </ul>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>电影名称</td>
+      <td>豆瓣评分</td>
+      <td>修改及删除</td>
+      <td>登陆时间</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+    <tr>
+      <td>
+        <%= link_to(movie.title, movie_path(movie)) %>
+      </td>
+      <td>
+        <%= movie.douban %>
+      </td>
+      <td>
+        <%= link_to("Edit", edit_movie_path(movie)) %> |
+        <%= link_to("Delete", movie_path(movie), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      </td>
+      <td>
+        <%= movie.created_at %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
