@@ -32,7 +32,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      redirect_back(fallback_location: root_path)
+      redirect_to jobs_path, notice: "Update Success"
     else
       render :edit
     end

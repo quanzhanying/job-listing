@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
-  after_filter :store_location
+  after_filter :store_location, only: [:after_sign_in_path_for]
 
   private
 
