@@ -1,5 +1,6 @@
 class Admin::JobsController < ApplicationController
-  before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_is_admin
 
   def index
     @jobs = Job.all.recent.paginate(:page => params[:page], :per_page => 5)
@@ -47,6 +48,13 @@ class Admin::JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:title, :description)
+  end
+
+  def require_is_admin
+    if !current_user.admin?
+      flash[:alert] = '你誰阿，不是管理員，給我滾~'
+      redirect_to root_path
+    end
   end
 
 end
