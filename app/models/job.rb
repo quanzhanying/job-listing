@@ -6,9 +6,6 @@ class Job < ApplicationRecord
   validates_format_of :contact_email,:with => Devise::email_regexp
   
   scope :recent, -> { order("created_at DESC")}
+  scope :published, -> { where(is_hidden: false) }
   
-  def hidden?
-    is_hidden
-  end
-
 end
