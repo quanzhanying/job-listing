@@ -1,8 +1,12 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("Edit", edit_admin_job_path(@job), class: "btn btn-primary pull-right")%>
+    <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right")%>
   </div>
   <h2><%= @job.title %></h2>
   <p><%= @job.description %></p>
+  <p><%= @job.wage_lower_bound %>
+  <p><%= @job.wage_upper_bound %>
+  <p><%= @job.contact_email %>
+  <p><%= @job.hidden? %>
 </div>
 

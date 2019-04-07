@@ -1,9 +1,9 @@
 class Admin::JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!
   before_action :require_is_admin
 
   def index
-    @jobs = Job.all.recent.paginate(:page => params[:page], :per_page => 5)
+    @jobs = Job.all.recent.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -47,7 +47,7 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
   end
 
   def require_is_admin

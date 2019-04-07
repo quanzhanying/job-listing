@@ -1,10 +1,11 @@
 class JobsController < ApplicationController
   
   before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_is_hidden, only: [:show]
   before_action :check_permission , only: [:edit, :update, :destroy]
 
   def index
-    @jobs = Job.all.recent.paginate(:page => params[:page], :per_page => 5)
+    @jobs = Job.where(:is_hidden => false).recent.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -48,13 +49,20 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
   end
 
   def check_permission
     @job = Job.find(params[:id])
     if @job.user != current_user
       redirect_to jobs_path, alert: "You don't have permission!"
+    end
+  end
+
+  def check_is_hidden
+    @job = Job.find(params[:id])
+    if @job.hidden? and !current_user.admin?
+      redirect_to jobs_path, alert: "此職缺不存在！"
     end
   end
     
