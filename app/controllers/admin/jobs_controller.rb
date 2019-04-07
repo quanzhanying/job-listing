@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!
   before_action :require_is_admin
+  layout 'admin'
 
   def index
     @jobs = Job.all.recent.paginate(:page => params[:page], :per_page => 10)
@@ -35,6 +36,13 @@ class Admin::JobsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def toggle_hidden
+    @job = Job.find(params[:id])
+    @job.is_hidden = !@job.is_hidden
+    @job.save
+    redirect_back(fallback_location: admin_jobs_path)
   end
 
   def destroy
