@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       member do
         put :toggle_hidden
       end
+
+      resources :resumes
+
     end
   end
 

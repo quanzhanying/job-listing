@@ -9,6 +9,7 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @resumes = @job.resumes
   end
 
   def new
@@ -56,13 +57,6 @@ class Admin::JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
-  end
-
-  def require_is_admin
-    if !current_user.admin?
-      flash[:alert] = '你誰阿，不是管理員，給我滾~'
-      redirect_to root_path
-    end
   end
 
 end
