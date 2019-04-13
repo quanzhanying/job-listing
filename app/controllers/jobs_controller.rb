@@ -71,7 +71,7 @@ class JobsController < ApplicationController
 
   def check_is_hidden
     @job = Job.find(params[:id])
-    if @job.hidden? and !current_user.admin?
+    if @job.is_hidden and !current_user.admin?
       redirect_to jobs_path, alert: "此職缺不存在！"
     end
   end
