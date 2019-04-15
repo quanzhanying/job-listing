@@ -15,7 +15,28 @@
  *= require font-awesome
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
 
+body {
+    background-color: #443d3d;
+    // color: #f5f6f5;
+}
+
+.navbar-inverse {
+    background-color: rgb(24, 21, 19);
+    padding: 0px 5%;
+}
+
+
+.footer {
+    margin-top: 100px;
+    position: absolute;
+    bottom: 20px;
+    margin: auto;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+}

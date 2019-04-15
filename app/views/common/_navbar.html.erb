@@ -1,30 +1,30 @@
-<header>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class='navbar-brand' href='/'>Need Job</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to('Jobs', jobs_path) %></li>
+      <li class="<%= current_class?(jobs_path) %>"><%= link_to('Jobs', jobs_path) %></li>
+      <li><a href="#">nothing</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if !current_user %>
-        <li><%= link_to('註冊', new_user_registration_path) %></li>
-        <li><%= link_to('登入', new_user_session_path) %></li>
+      <li class="<%= current_class?(new_user_registration_path) %>"><%= link_to('註冊', new_user_registration_path) %>
+      </li>
+      <li class="<%= current_class?(new_user_session_path) %>"><%= link_to('登入', new_user_session_path) %></li>
       <% else %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %>
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-	    <% if current_user.is_admin %>
-	      <li> <%= link_to("管理頁面", admin_jobs_path) %> </li>
-	    <% end %>
-            <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
-          </ul>
-        </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <% if current_user.is_admin %>
+          <li> <%= link_to("管理頁面", admin_jobs_path) %> </li>
+          <% end %>
+          <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+        </ul>
+      </li>
       <% end %>
     </ul>
   </div>
 </nav>
-</header>

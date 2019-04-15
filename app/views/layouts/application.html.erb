@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JobListing</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>JobListing</title>
+  <%= csrf_meta_tags %>
 
-  <body>
-    <div class='container-fluid'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div class='container-fluid'>
+    <div class="row">
       <%= render 'common/navbar' %>
-      <%= render "common/flashes" %>
-      <%= yield %>
     </div>
+    <%= render "common/flashes" %>
+    <%= yield %>
+  </div>
 
-    <%= render 'common/footer' %>
+  <%= render 'common/footer' %>
 
-  </body>
+</body>
+
 </html>

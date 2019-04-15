@@ -1,8 +1,9 @@
 <div class="col-md-12">
   <div class='order-by dropdown clearfix pull-right'>
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="true">
       排序
-         <span class="caret"></span>
+      <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
       <li>
@@ -18,27 +19,60 @@
       </li>
     </ul>
   </div>
-  <table class="table table-hover">
+  <!-- <table class="table table-hover">
     <thead>
       <tr>
-            <td>職缺</td>
-            <td>薪資下限</td>
-            <td>薪資上限</td>
-            <td>刊登時間</td>
+        <td>職缺</td>
+        <td>薪資下限</td>
+        <td>薪資上限</td>
+        <td>刊登時間</td>
       </tr>
     </thead>
     <tbody>
       <% @jobs.each do |job| %>
-        <tr>
-          <td><%= link_to(job.title, job_path(job)) %></td>
-	  <td><%= job.wage_lower_bound %></td>
-          <td><%= job.wage_upper_bound %></td>
-	  <td><%= job.created_at %></td>
-        </tr>
+      <tr>
+        <td><%= link_to(job.title, job_path(job)) %></td>
+        <td><%= job.wage_lower_bound %></td>
+        <td><%= job.wage_upper_bound %></td>
+        <td><%= job.created_at %></td>
+      </tr>
       <% end %>
     </tbody>
-  </table>
-  <div class="text-center">
-    <%= will_paginate @jobs %>
+  </table> -->
+
+
+
+  <div class="blog-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+      <ul class="details">
+        <li class="author"><a href="#">John Doe</a></li>
+        <li class="date">Aug. 24, 2015</li>
+        <li class="tags">
+          <ul>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Learning to Code</h1>
+      <h2>Opening a door to the future</h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta
+        praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+      <p class="read-more">
+        <a href="#">Read More</a>
+      </p>
+    </div>
   </div>
+</div>
+
+
+<div class="text-center">
+  <%= will_paginate @jobs %>
+</div>
 </div>
