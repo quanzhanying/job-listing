@@ -1,11 +1,11 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar stroke">
+  <header class='logo'>
+    <a href='/'><img src="/images/logo.png"></a>
+  </header>
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class='navbar-brand' href='/'>Need Job</a>
-    </div>
+
     <ul class="nav navbar-nav">
       <li class="<%= current_class?(jobs_path) %>"><%= link_to('Jobs', jobs_path) %></li>
-      <li><a href="#">nothing</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if !current_user %>

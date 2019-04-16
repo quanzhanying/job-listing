@@ -19,16 +19,81 @@
 @import "bootstrap";
 @import "font-awesome";
 
+$color_white: #f5f6f5;
+$color_prime: #d66c4b;
+$color_green: #759b4f;
+
 body {
     background-color: #443d3d;
     // color: #f5f6f5;
 }
 
-.navbar-inverse {
-    background-color: rgb(24, 21, 19);
-    padding: 0px 5%;
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+
+    a img {
+        height: 50px;
+    }
+
 }
 
+nav.stroke {
+    background-color: transparent;
+    padding: 0 7%;
+
+    ul {
+        list-style: none;
+        text-align: center;
+
+        li {
+            a {
+                display: block;
+                padding: 15px;
+                text-decoration: none;
+                font-weight: 800;
+                color: $color_white;
+                text-transform: uppercase;
+                margin: 0 10px;
+                position: relative;
+
+                &::after {
+                    transition: all .5s;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 0%;
+                    content: '.';
+                    color: transparent;
+                    background: rgb(247, 240, 240);
+                    height: 1px;
+                }
+
+                &:hover {
+                    color: $color_green;
+                    background-color: transparent;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        li.active {
+            a {
+                color: $color_prime;
+            }
+        }
+    }
+}
+
+.navbar-brand {
+    color: $color_prime;
+}
 
 .footer {
     margin-top: 100px;
@@ -38,5 +103,4 @@ body {
     width: 100%;
 }
 
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}

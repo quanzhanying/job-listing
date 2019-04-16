@@ -41,7 +41,7 @@
   </table> -->
 
 
-
+  <% @jobs.each do |job| %>
   <div class="blog-card">
     <div class="meta">
       <div class="photo"
@@ -60,7 +60,7 @@
       </ul>
     </div>
     <div class="description">
-      <h1>Learning to Code</h1>
+      <h1><%= link_to(job.title, job_path(job)) %></h1>
       <h2>Opening a door to the future</h2>
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta
         praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
@@ -69,10 +69,10 @@
       </p>
     </div>
   </div>
-</div>
+  <% end %>
 
 
-<div class="text-center">
-  <%= will_paginate @jobs %>
-</div>
+  <div class="text-center">
+    <%= will_paginate @jobs %>
+  </div>
 </div>
