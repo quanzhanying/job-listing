@@ -1,37 +1,16 @@
 <div class="col-md-12">
-  <!-- <div class='order-by dropdown clearfix pull-right'>
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="true">
-      排序
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-      <li>
-        <%= link_to("按照薪資下限排序", jobs_path(:order => "by_lower_bound")) %>
-      </li>
-
-      <li>
-        <%= link_to("按照薪資上限排序", jobs_path(:order => "by_upper_bound")) %>
-      </li>
-
-      <li>
-        <%= link_to("按照發佈時間排序", jobs_path) %>
-      </li>
-    </ul>
-  </div> -->
-
   <div>
     <ul class="order">
       <li>
-        <%= link_to("按照薪資下限排序", jobs_path(:order => "by_lower_bound")) %><span class="arrow asc"></span>
+        <%= sort_link(@search, :wage_lower_bound, '薪資下限', default_order: :desc) %>
       </li>
 
       <li>
-        <%= link_to("按照薪資上限排序", jobs_path(:order => "by_upper_bound")) %><span class="arrow asc"></span>
+        <%= sort_link(@search, :wage_upper_bound, '薪資上限', default_order: :desc) %>
       </li>
 
       <li>
-        <%= link_to("按照發佈時間排序", jobs_path) %><span class="arrow asc"></span>
+        <%= sort_link(@search, :created_at, '發佈時間', default_order: :desc) %>
       </li>
     </ul>
   </div>
