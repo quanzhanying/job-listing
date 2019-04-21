@@ -25,8 +25,11 @@ $color_prime: #d66c4b;
 $color_green: #759b4f;
 
 body {
-    background-color: #443d3d;
-    // color: #f5f6f5;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/bg-index.jpg) no-repeat center center fixed;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .logo {
