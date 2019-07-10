@@ -1,0 +1,32 @@
+.header {
+    border: 3px solid;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 15%;
+}
+
+.margin-center {
+    width: 40%;
+    margin: 45px auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: #fff
+}
+
+div .btn-cl {
+    padding: 1.25rem 2.25rem;
+    font-size: .85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10rem;
+    background-color: #f4623a;
+}

@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JobListing</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Need Job</title>
+  <%= csrf_meta_tags %>
 
-  <body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="shortcut icon" href="/images/logo.png">
+</head>
+
+<body>
+  <div class='container-fluid'>
+    <div class="row">
+      <%= render 'common/navbar' %>
+    </div>
+    <%= render "common/flashes" %>
     <%= yield %>
-  </body>
+  </div>
+
+  <%= render 'common/footer' %>
+
+</body>
+
 </html>

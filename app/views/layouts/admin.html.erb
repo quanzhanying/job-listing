@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Need Job</title>
+    <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='container-fluid'>
+      <%= render 'common/navbar' %>
+      <%= render "common/flashes" %>
+      <div class="row">
+        <div class="col-md-2">
+	  <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+            <li class="active"><%= link_to("Jobs", admin_jobs_path ) %> </li>
+          </ul>
+        </div>
+
+        <div class="col-md-10">
+          <%= yield %>
+        </div>
+     </div>
+    </div>
+
+    <%= render 'common/footer' %>
+
+  </body>
+</html>
+
