@@ -1,0 +1,37 @@
+<h2>新增职位-后台</h2>
+ <!-- <form class="form-group">
+	<%= form_for @job do |f| %>
+	  职位名称：
+	  <br>
+	  <%= f.text_field :title,class:"form-control" %>
+	  <br>
+	  职位描述：
+	  <br>
+	  <%= f.text_area :description,class:"form-control" %>
+	  <br>
+	  最高薪资：
+	  <br>
+	  <%= f.number_field :salary_max,class:"form-control" %>
+	  <br>
+	  最低薪资：
+	  <br>
+	  <%= f.number_field :salary_min,class:"form-control" %>
+	  <br>
+	  <%= f.submit "提交",class:"btn btn-primary" %>
+	<%end %>
+</form> -->
+	 
+<%= simple_form_for [:admin,@job] do |f| %>
+  <!-- :title对应的是表里的字段名 -->
+   <%= f.input :title,label:"职位名称" %>
+   <%= f.input :description,label:"职位描述" %>
+   <%= f.input :salary_max,label:"最高薪资" %>
+   <%= f.input :salary_min,label:"最低薪资" %>
+   <%= f.input :contact_email,label:"联系邮箱" %>
+   <%= f.input :is_hide %>
+   <%= f.submit "提交" ,class:"btn btn-primary" %>
+<%end  %>
+
+	
+
+

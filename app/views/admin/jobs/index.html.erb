@@ -1,0 +1,31 @@
+<h2>职位管理-后台</h2>
+<%= link_to("新增职位",new_admin_job_path,class:"btn btn-primary") %>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th scope="col">职位名称</th>
+			<th scope="col">职位描述</th>
+			<th scope="col">最低薪资</th>
+			<th scope="col">最高薪资</th>
+			<th scope="col">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%@jobs.each do |job| %>
+		<tr>
+			<td>
+				<!-- render_job_status在helper文件中定义，相比直接在view中写一堆ruby代码更优雅 -->
+				<%= render_job_status(job) %>
+				<%= link_to(job.title,admin_job_path(job)) %>
+			</td>
+			<td><%= job.description %></td>
+			<td><%= job.salary_min %></td>
+			<td><%= job.salary_max %></td>
+			<td>
+				<%= link_to("编辑",edit_admin_job_path(job)) %>
+				<%= link_to("删除",admin_job_path(job),method: :delete,data:{confirm:"你确定删除吗？"}) %>
+			</td>
+		</tr>
+		<%end %>
+	</tbody>
+</table>
