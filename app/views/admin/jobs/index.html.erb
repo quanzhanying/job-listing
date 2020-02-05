@@ -22,6 +22,13 @@
 			<td><%= job.salary_min %></td>
 			<td><%= job.salary_max %></td>
 			<td>
+				<!-- ！！！！！view中的事件调用controller层action，都是通过_path()匹配！！！！！ -->
+				<%if !job.is_hide %>
+				<!-- 注意方式要设为post，和route中配置的一致： -->
+				 <%= link_to("隐藏",setHide_admin_job_path(job),method: :post) %>
+				<%else  %>
+				 <%= link_to("开放",setOpen_admin_job_path(job),method: :post) %>
+				<%end %>
 				<%= link_to("编辑",edit_admin_job_path(job)) %>
 				<%= link_to("删除",admin_job_path(job),method: :delete,data:{confirm:"你确定删除吗？"}) %>
 			</td>

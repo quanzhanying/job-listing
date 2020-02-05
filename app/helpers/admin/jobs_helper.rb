@@ -1,9 +1,10 @@
 module Admin::JobsHelper
   def render_job_status(job)
 		if job.is_hide
-		  "【隐藏】"
+      #fontwsome图标：
+		  content_tag(:span,"", :class => "fa fa-lock")
 		else
-		  "【公开】"
+		  content_tag(:span,"", :class => "fa fa-unlock")
 		end 
   end
 end

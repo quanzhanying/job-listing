@@ -9,6 +9,11 @@ class JobsController < ApplicationController
   
   def show
     @job=Job.find(params[:id])
+    #防止直接通过url访问隐藏的职位
+    if @job.is_hide
+      flash[:warning]="这个职位已不开放"
+      redirect_to root_path
+    end
   end
   
   def new
