@@ -1,0 +1,17 @@
+<h3><%= @job.title%>职位的已投递简历</h3>
+
+<%@resumes.each do |resume|%>
+  投递人：<%= resume.user.email%>
+  <br>
+  简历内容：<%= resume.content%>
+  <br>
+  投递时间：<%= resume.updated_at%>
+  <br>
+  简历url：<%= resume.attachment_url%>
+  <br>
+  <!-- <%= link_to("下载", download_admin_job_resume_path(@job,resume))%> -->
+  <!-- ###link_to第二个参数除了_path(),当然可以直接是跳转的url！！！#### -->
+  <%= link_to("下载", resume.attachment_url)%>
+  <hr>
+   
+<%end%>

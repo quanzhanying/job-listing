@@ -1,5 +1,21 @@
-<h2>职位管理</h2>
-<%= link_to("新增职位",new_job_path,class:"btn btn-primary") %>
+<h2>职位浏览</h2>
+<!-- <%= link_to("新增职位",new_job_path,class:"btn btn-primary") %> -->
+
+
+
+<div class="dropdown pull-right">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    排序
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to("按最低薪资排序",jobs_path(:order =>"by_salary_min")) %></li>
+    <li><%= link_to("按最高薪资排序",jobs_path(:order =>"by_salary_max")) %></a></li>
+    <li><%= link_to("按发布时间排序",jobs_path) %></li>
+  </ul>
+</div>
+
+
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -7,7 +23,7 @@
 			<th scope="col">职位描述</th>
 			<th scope="col">最低薪资</th>
 			<th scope="col">最高薪资</th>
-			<th scope="col">操作</th>
+			<th scope="col">发布时间</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -18,11 +34,13 @@
 			<td><%= job.description %></td>
 			<td><%= job.salary_min %></td>
 			<td><%= job.salary_max %></td>
-			<td>
+			<td><%= job.created_at %></td>
+			<!-- <td>
 				<%= link_to("编辑",edit_job_path(job)) %>
 				<%= link_to("删除",job_path(job),method: :delete,data:{confirm:"你确定删除吗？"}) %>
-			</td>
+			</td> -->
 		</tr>
 		<%end %>
 	</tbody>
 </table>
+

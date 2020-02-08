@@ -4,6 +4,8 @@ class Job < ApplicationRecord
   validates :salary_min,presence: true
   validates :salary_min,numericality:{greater_than:0}
   
+  has_many :resumes
+  
 
   def setHide!
     #self指当前的job对象！！！！

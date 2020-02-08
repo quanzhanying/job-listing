@@ -7,3 +7,4 @@
 <p><%= @job.salary_max %></p>
 <label>最低薪资</label>
 <p><%= @job.salary_min %></p>
+<%= link_to("投简历",new_job_resume_path(@job),class:"btn btn-primary") %>
