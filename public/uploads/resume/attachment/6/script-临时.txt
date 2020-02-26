@@ -1,0 +1,39 @@
+廖雪峰js：
+
+一、
+var inputs=$('#test-form').find('input')
+var obj=inputs.filter(function(){
+   return this.type!='radio' || this.checked
+})
+
+var arr=obj.map(function(){
+   return {[this.name]:this.value}
+}).get()
+
+
+json = JSON.stringify(arr);
+
+————————
+obj=
+[<input name="name">,<input name="email">, <input name="password" type="password">,......]
+
+arr=
+[{"name":"ddd"},{"email":"dd"},{"password":"dd"},{"gender":"m"}]
+
+
+
+
+
+二、
+
+//新建数组，push入新元素
+var arr=['JavaScript','Python','Swift']
+arr.push('Pascal','Lua','Ruby')
+//进行排序，生成新数组
+newArray=arr.sort()
+//对新数组的每个元素使用map执行函数，作为元素内容append到ul中
+var ul=$("#test-div ul")
+ul.empty()//先清空ul下节点
+newArray.map(function(element){
+   ul.append("<li><span>"+element+"</span></li>")
+})

@@ -1,0 +1,13 @@
+<!-- #####根据rake routes中路由，该页面的操作事件（具体就是form的submit这一个事件）由 admin/jobs#edit 这个action响应######### -->
+
+<h2>编辑职位-后台</h2>
+<%= simple_form_for [:admin,@job] do |f| %>
+  <!-- :title对应的是表里的字段名 -->
+   <%= f.input :title,label:"职位名称" %>
+   <%= f.input :description,label:"职位描述" %>
+   <%= f.input :salary_max,label:"最高薪资" %>
+   <%= f.input :salary_min,label:"最低薪资" %>
+   <%= f.input :contact_email,label:"联系邮箱" %>
+   <%= f.input :is_hide %>
+   <%= f.submit "提交" ,class:"btn btn-primary" %>
+<%end  %>

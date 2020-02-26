@@ -1,0 +1,44 @@
+
+
+<!-- #####根据rake routes中路由，该页面的操作事件（具体就是form的submit这一个事件）由 admin/jobs#new 这个action响应######### -->
+
+<h2>新增职位-后台</h2>
+ <!-- <form class="form-group">
+	<%= form_for @job do |f| %>
+	  职位名称：
+	  <br>
+	  <%= f.text_field :title,class:"form-control" %>
+	  <br>
+	  职位描述：
+	  <br>
+	  <%= f.text_area :description,class:"form-control" %>
+	  <br>
+	  最高薪资：
+	  <br>
+	  <%= f.number_field :salary_max,class:"form-control" %>
+	  <br>
+	  最低薪资：
+	  <br>
+	  <%= f.number_field :salary_min,class:"form-control" %>
+	  <br>
+	  <%= f.submit "提交",class:"btn btn-primary" %>
+	<%end %>
+</form> -->
+
+<!-- 虽然是新增职位，注意form_for后面除了@job，还要有:admin.根据路由/admin/jobs/new ？ -->	 
+<%= simple_form_for [:admin,@job] do |f| %>
+  <!-- :title、:description...对应的是表里的字段名 -->
+   <%= f.input :title,label:"职位名称" %>
+   <%= f.input :description,label:"职位描述" %>
+   <%= f.input :salary_max,label:"最高薪资" %>
+   <%= f.input :salary_min,label:"最低薪资" %>
+   <%= f.input :contact_email,label:"联系邮箱" %>
+   <!--根据库表里is_hide字段数据类型为boolean，页面自动显示为radio组件！！！其他字段也是一样：根据字段类型自动显示对应的组件-->
+   <!--这种radio组件，能根据勾选值改变数据库中对应字段的值，和input框本质没区别，都是对应一个值 -->
+   <%= f.input :is_hide,label:"是否隐藏" %>
+   <%= f.submit "提交" ,class:"btn btn-primary" %>
+<%end  %>
+
+	
+
+

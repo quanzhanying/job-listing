@@ -1,0 +1,12 @@
+
+<!-- #####根据rake routes中路由，该页面的操作事件（具体就是form的submit这一个事件）由 admin/jobs#show 这个action响应######### -->
+
+<h2>职位详情-管理员</h2>
+<label>职位名称</label>
+<p><%= @job.title %></p>	
+<label>职位描述</label>
+<p><%= simple_format(@job.description) %></p>
+<label>最高薪资</label>
+<p><%= @job.salary_max %></p>
+<label>最低薪资</label>
+<p><%= @job.salary_min %></p>

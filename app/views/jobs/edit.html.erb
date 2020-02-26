@@ -1,0 +1,13 @@
+<!-- ########这个文件没用到了！！！！！！！！！普通用户不能编辑职位 -->
+
+<h2>编辑职位</h2>
+<%= simple_form_for @job do |f| %>
+  <!-- :title等对应的是表里的字段名 -->
+   <%= f.input :title,label:"职位名称" %>
+   <%= f.input :description,label:"职位描述" %>
+   <%= f.input :salary_max,label:"最高薪资" %>
+   <%= f.input :salary_min,label:"最低薪资" %>
+   <%= f.input :contact_email,label:"联系邮箱" %>
+   <%= f.input :is_hide %>
+   <%= f.submit "提交" ,class:"btn btn-primary" %>
+<%end  %>
