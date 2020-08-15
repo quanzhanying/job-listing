@@ -1,24 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+这一周作业
+<<原则>>这本书实在是太好看了.
+if do X then Y will happen - understanding reality gives us power to get what we want out of life.
+如果做到X就会得到Y.那么理解现实,能帮助我们去实现我们的梦想.
